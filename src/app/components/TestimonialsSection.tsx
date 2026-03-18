@@ -1,5 +1,9 @@
 import { useRef, useState, useEffect } from "react";
-import { motion, AnimatePresence, useInView } from "motion/react";
+import {
+  motion,
+  AnimatePresence,
+  useInView,
+} from "motion/react";
 
 const testimonials = [
   {
@@ -11,27 +15,50 @@ const testimonials = [
   },
   {
     quote:
-      "I might have met people who work as hard as Paulo but I can't think of anyone that would work harder than him. Some people, including myself, see product people categorized into the \"Problem Team\" and the \"Solution Team\". Paulo is the guy that plays well (and simultaneously) in both. Passionated, smart, talented, competent, and always willing to help. Definitely a great asset to any team.",
-    name: "Daniel Camargo",
-    role: "Founder at PracticeFront",
-    year: "2024",
-  },
-  {
-    quote:
       "Paulo, is a talented UX designer who has been a valuable member of our team. In his time with us, Paulo has consistently demonstrated their exceptional skills and creativity in designing innovative and intuitive user experiences. He is an excellent collaborator, always willing to go the extra mile to ensure that our projects meet the highest standards of quality. As a Mentor, he has played a huge role in my journey as a UX designer and set me on a path for growth. Overall, Paulo is an outstanding UX designer who would be a tremendous asset to any organization. I highly recommend him without reservation and would be happy to provide further information or answer any questions you may have.",
     name: "Alexander Hounsou",
     role: "UX Designer at Great American Insurance Group",
-    year: "2024",
+    year: "2023",
+  },
+  {
+    quote:
+      "I had the pleasure of working with Paulo Alexandre during our time at HealthPilot, where he was the Senior Product Designer. Paulo is incredibly passionate about design and consistently strives to refine his craft. His attention to detail and ability to create user experiences that are both intuitive and visually compelling made a significant impact on our projects. One of Paulo’s standout qualities is his commitment to understanding the end user. He takes the time to speak with users directly, gathering feedback and insights that shape his designs in meaningful ways. This user-focused approach, combined with his awareness of accessibility needs, ensures that his work is not only innovative but also inclusive and functional for everyone. What also sets Paulo apart is his dedication to staying ahead of the curve with UI/UX trends and best practices. He doesn’t just follow trends—he applies them thoughtfully to create designs that are modern, practical, and aligned with user needs. In addition to his technical expertise, Paulo is a collaborative and approachable team player. He’s always open to feedback and has a great ability to bring teams together to align on design goals. His talent for turning ideas into polished, user-focused solutions was a huge asset to our work at HealthPilot. Paulo’s work speaks for itself, and I would confidently recommend him to any organization looking for a skilled, user-centered, and results-driven designer.",
+    name: "Natasha Alves",
+    role: "UX Designer at Healthpilot",
+    year: "2023",
+  },
+  {
+    quote:
+      'I might have met people who work as hard as Paulo but I can\'t think of anyone that would work harder than him. Some people, including myself, see product people categorized into the "Problem Team" and the "Solution Team". Paulo is the guy that plays well (and simultaneously) in both. Passionated, smart, talented, competent, and always willing to help. Definitely a great asset to any team.',
+    name: "Daniel Camargo",
+    role: "Founder at PracticeFront",
+    year: "2021",
+  },
+  {
+    quote:
+      "It’s rare that you come across someone so eager to learn. I hired Paulo after he showed me some very impressive personal project that he was working on as he was learning to code.  Paulo's background in design and marketing made him an important asset to our team. We still miss him on the office Dota and CS games! Paulo would be an asset to any team.",
+    name: "Phil Alves",
+    role: "CEO at Devsquad & DevStats",
+    year: "2017",
   },
 ];
 
-function AnimatedQuote({ text, isActive }: { text: string; isActive: boolean }) {
+function AnimatedQuote({
+  text,
+  isActive,
+}: {
+  text: string;
+  isActive: boolean;
+}) {
   const words = text.split(" ");
 
   return (
     <p
       className="text-[clamp(0.95rem,1.8vw,1.5rem)] leading-[1.55]"
-      style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+      style={{
+        fontFamily: "var(--font-body)",
+        fontWeight: 300,
+      }}
     >
       {words.map((word, i) => (
         <motion.span
@@ -88,7 +115,10 @@ export function TestimonialsSection() {
   }, [active, isInView]);
 
   return (
-    <section ref={ref} className="relative px-6 md:px-12 lg:px-16 py-20 md:py-32">
+    <section
+      ref={ref}
+      className="relative px-6 md:px-12 lg:px-16 py-20 md:py-32"
+    >
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
         {/* Left label */}
         <div className="md:col-span-3">
@@ -98,7 +128,10 @@ export function TestimonialsSection() {
           {/* Serif editorial accent */}
           <span
             className="text-[clamp(0.9rem,1.4vw,1.2rem)] text-[#6b6b76]/30 block mb-10"
-            style={{ fontFamily: "var(--font-serif)", fontStyle: "italic" }}
+            style={{
+              fontFamily: "var(--font-serif)",
+              fontStyle: "italic",
+            }}
           >
             from collaborators
           </span>
@@ -134,7 +167,8 @@ export function TestimonialsSection() {
                   <span
                     className="type-label transition-colors duration-300"
                     style={{
-                      color: active === i ? "#c4ff00" : "#6b6b76",
+                      color:
+                        active === i ? "#c4ff00" : "#6b6b76",
                     }}
                   >
                     {String(i + 1).padStart(2, "0")}
@@ -142,7 +176,10 @@ export function TestimonialsSection() {
                   <motion.span
                     className="type-label-sm hidden md:block"
                     animate={{
-                      color: active === i ? "#6b6b76" : "rgba(107,107,118,0.3)",
+                      color:
+                        active === i
+                          ? "#6b6b76"
+                          : "rgba(107,107,118,0.3)",
                       height: active === i ? "auto" : 0,
                       opacity: active === i ? 1 : 0,
                     }}
@@ -178,7 +215,10 @@ export function TestimonialsSection() {
                   }}
                   initial={{ opacity: 0, scale: 0.7 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+                  transition={{
+                    duration: 0.8,
+                    ease: [0.25, 0.46, 0.45, 0.94],
+                  }}
                 >
                   "
                 </motion.span>
@@ -209,10 +249,9 @@ export function TestimonialsSection() {
                   >
                     {testimonials[active].name}
                   </span>
-                  <span
-                    className="type-label text-[#6b6b76] mt-1 block"
-                  >
-                    {testimonials[active].role} — {testimonials[active].year}
+                  <span className="type-label text-[#6b6b76] mt-1 block">
+                    {testimonials[active].role} —{" "}
+                    {testimonials[active].year}
                   </span>
                 </div>
               </motion.div>
