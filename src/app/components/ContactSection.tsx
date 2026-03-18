@@ -224,7 +224,7 @@ function PremiumCTAButton() {
 
       {/* Content */}
       <span
-        className="relative z-10 text-[0.625rem] md:text-[0.6875rem] tracking-[0.5em] uppercase transition-colors duration-500"
+        className="relative z-10 text-[0.6875rem] md:text-[0.6875rem] tracking-[0.5em] uppercase transition-colors duration-500"
         style={{
           fontFamily: "var(--font-mono)",
           color: hovered ? "#0a0a0b" : "#e8e6e3",
@@ -356,7 +356,7 @@ function SocialLink({
             {label}
           </span>
           <motion.span
-            className="text-[0.5625rem] tracking-[0.3em] uppercase"
+            className="text-[0.6875rem] tracking-[0.3em] uppercase"
             style={{ fontFamily: "var(--font-mono)" }}
             animate={{
               color: hovered ? "rgba(196,255,0,0.5)" : "rgba(107,107,118,0.3)",
@@ -653,7 +653,7 @@ export function ContactSection() {
                   }}
                 />
                 <span
-                  className="text-[0.5rem] tracking-[0.4em] uppercase text-[#6b6b76]"
+                  className="text-[0.6875rem] tracking-[0.4em] uppercase text-[#6b6b76]"
                   style={{ fontFamily: "var(--font-mono)" }}
                 >
                   Available Q2 2026
@@ -676,7 +676,7 @@ export function ContactSection() {
               >
                 <Download size={12} className="text-[#6b6b76]/40 group-hover:text-[#c4ff00] transition-colors duration-300" />
                 <span
-                  className="text-[0.5rem] tracking-[0.4em] uppercase text-[#6b6b76]/60 group-hover:text-[#c4ff00] transition-colors duration-300"
+                  className="text-[0.6875rem] tracking-[0.4em] uppercase text-[#6b6b76]/60 group-hover:text-[#c4ff00] transition-colors duration-300"
                   style={{ fontFamily: "var(--font-mono)" }}
                 >
                   View Resume
@@ -743,7 +743,7 @@ export function ContactSection() {
                 <div className="flex items-center gap-3">
                   <div className="w-1 h-1 rounded-full bg-[#c4ff00]/30" />
                   <span
-                    className="text-[0.5rem] tracking-[0.4em] uppercase text-[#3a3a42]"
+                    className="text-[0.6875rem] tracking-[0.4em] uppercase text-[#3a3a42]"
                     style={{ fontFamily: "var(--font-mono)" }}
                   >
                     {time} EST — Florida
@@ -822,7 +822,7 @@ export function ContactSection() {
                   <Reveal key={item.label} delay={0.05 + i * 0.04}>
                     <div>
                       <span
-                        className="block text-[0.5rem] tracking-[0.4em] uppercase text-[#3a3a42] mb-1"
+                        className="block text-[0.6875rem] tracking-[0.4em] uppercase text-[#3a3a42] mb-1"
                         style={{ fontFamily: "var(--font-mono)" }}
                       >
                         {item.label}

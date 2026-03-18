@@ -266,7 +266,7 @@ function StageCard({
             transition={{ duration: 0.5, delay: 0.5 }}
           >
             <span
-              className="text-[0.5625rem] tracking-[0.4em] text-[#6b6b76] group-hover:text-[#c4ff00] transition-colors duration-300"
+              className="text-[0.6875rem] tracking-[0.4em] text-[#6b6b76] group-hover:text-[#c4ff00] transition-colors duration-300"
               style={{ fontFamily: "var(--font-mono)" }}
             >
               {expanded ? "COLLAPSE" : "ACTIVITIES & ARTIFACTS"}
@@ -295,7 +295,7 @@ function StageCard({
               {/* Activities */}
               <div>
                 <span
-                  className="text-[0.5rem] tracking-[0.5em] text-[#3a3a42] block mb-4"
+                  className="text-[0.6875rem] tracking-[0.5em] text-[#3a3a42] block mb-4"
                   style={{ fontFamily: "var(--font-mono)" }}
                 >
                   ACTIVITIES
@@ -317,7 +317,7 @@ function StageCard({
               {/* Artifact */}
               <div>
                 <span
-                  className="text-[0.5rem] tracking-[0.5em] text-[#3a3a42] block mb-4"
+                  className="text-[0.6875rem] tracking-[0.5em] text-[#3a3a42] block mb-4"
                   style={{ fontFamily: "var(--font-mono)" }}
                 >
                   KEY ARTIFACT
@@ -472,7 +472,7 @@ export function ProcessSection() {
             <div className="flex items-center justify-center gap-4">
               <div className="w-8 h-px bg-[#c4ff00]/20" />
               <span
-                className="text-[0.5rem] tracking-[0.5em] text-[#3a3a42]"
+                className="text-[0.6875rem] tracking-[0.5em] text-[#3a3a42]"
                 style={{ fontFamily: "var(--font-mono)" }}
               >
                 LISTEN · FRAME · EXPLORE · CRAFT · VALIDATE · MULTIPLY

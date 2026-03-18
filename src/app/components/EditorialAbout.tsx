@@ -251,7 +251,7 @@ function StrengthBar({
           {label}
         </span>
         <span
-          className="text-[0.5625rem] tracking-[0.3em] text-[#6b6b76] tabular-nums"
+          className="text-[0.6875rem] tracking-[0.5em] text-[#6b6b76] tabular-nums"
           style={{ fontFamily: "var(--font-mono)" }}
         >
           {level}
@@ -307,7 +307,7 @@ function PrincipleCard({
 
       {/* Number */}
       <span
-        className="text-[0.5625rem] tracking-[0.5em] text-[#3a3a42] block mb-6"
+        className="text-[0.6875rem] tracking-[0.5em] text-[#3a3a42] block mb-6"
         style={{ fontFamily: "var(--font-mono)" }}
       >
         {principle.id}
@@ -375,7 +375,7 @@ function TimelineEntry({
       {/* Period */}
       <div className="md:col-span-3">
         <span
-          className="text-[0.625rem] tracking-[0.4em] text-[#6b6b76] group-hover:text-[#c4ff00]/60 transition-colors duration-500"
+          className="text-[0.6875rem] tracking-[0.4em] text-[#6b6b76] group-hover:text-[#c4ff00]/60 transition-colors duration-500"
           style={{ fontFamily: "var(--font-mono)" }}
         >
           {entry.period}
@@ -647,7 +647,7 @@ export function EditorialAbout() {
             <div className="mt-12 flex items-center gap-4">
               <div className="w-12 h-px bg-[#c4ff00]/30" />
               <span
-                className="text-[0.5625rem] tracking-[0.5em] text-[#6b6b76]"
+                className="text-[0.6875rem] tracking-[0.5em] text-[#6b6b76]"
                 style={{ fontFamily: "var(--font-mono)" }}
               >
                 PAULO ALEXANDRE — 2026
@@ -850,7 +850,7 @@ export function EditorialAbout() {
                 <div className="flex items-start gap-4 mb-6">
                   <div className="w-1.5 h-1.5 rounded-full bg-[#3a3a42] mt-2 shrink-0" />
                   <span
-                    className="text-[0.625rem] tracking-[0.4em] text-[#3a3a42]"
+                    className="text-[0.6875rem] tracking-[0.4em] text-[#3a3a42]"
                     style={{ fontFamily: "var(--font-mono)" }}
                   >
                     EDUCATION & CERTIFICATIONS
@@ -875,7 +875,7 @@ export function EditorialAbout() {
                           {edu.degree}
                         </span>
                         <span
-                          className="text-[0.625rem] tracking-[0.2em] text-[#3a3a42]"
+                          className="text-[0.6875rem] tracking-[0.2em] text-[#3a3a42]"
                           style={{ fontFamily: "var(--font-mono)" }}
                         >
                           {edu.year}

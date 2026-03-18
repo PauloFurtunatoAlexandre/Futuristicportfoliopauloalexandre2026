@@ -331,7 +331,7 @@ function StickyProjectCard({
                             {metric.value}
                           </span>
                           <span
-                            className="text-[9px] tracking-[0.25em] uppercase mt-1"
+                            className="text-[11px] tracking-[0.25em] uppercase mt-1"
                             style={{
                               fontFamily: "'JetBrains Mono', monospace",
                               color: `${project.color}90`,
@@ -455,7 +455,7 @@ function StickyProjectCard({
                 <div className="grid grid-cols-2 gap-4 mb-8">
                   <div>
                     <span
-                      className="block text-[9px] tracking-[0.4em] uppercase text-[#6b6b76]/60 mb-1.5"
+                      className="block text-[11px] tracking-[0.4em] uppercase text-[#6b6b76]/60 mb-1.5"
                       style={{ fontFamily: "'JetBrains Mono', monospace" }}
                     >
                       Client
@@ -469,7 +469,7 @@ function StickyProjectCard({
                   </div>
                   <div>
                     <span
-                      className="block text-[9px] tracking-[0.4em] uppercase text-[#6b6b76]/60 mb-1.5"
+                      className="block text-[11px] tracking-[0.4em] uppercase text-[#6b6b76]/60 mb-1.5"
                       style={{ fontFamily: "'JetBrains Mono', monospace" }}
                     >
                       Role
@@ -496,7 +496,7 @@ function StickyProjectCard({
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 text-[9px] tracking-[0.25em] uppercase border rounded-full"
+                      className="px-3 py-1 text-[11px] tracking-[0.25em] uppercase border rounded-full"
                       style={{
                         fontFamily: "'JetBrains Mono', monospace",
                         borderColor: `${project.color}20`,
@@ -755,7 +755,7 @@ export function SelectedWorks() {
         </motion.a>
 
         <span
-          className="text-[8px] tracking-[0.5em] uppercase text-[#6b6b76]/30"
+          className="text-[11px] tracking-[0.5em] uppercase text-[#6b6b76]/30"
           style={{ fontFamily: "'JetBrains Mono', monospace" }}
         >
           Let's build together

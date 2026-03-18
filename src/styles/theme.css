@@ -170,7 +170,7 @@
 
   label {
     font-family: var(--font-mono, 'JetBrains Mono', monospace);
-    font-size: 0.625rem;
+    font-size: 0.6875rem;
     font-weight: 400;
     line-height: 1;
     letter-spacing: 0.5em;
@@ -179,7 +179,7 @@
 
   button {
     font-family: var(--font-mono, 'JetBrains Mono', monospace);
-    font-size: 0.625rem;
+    font-size: 0.6875rem;
     font-weight: 400;
     line-height: 1.5;
     letter-spacing: 0.3em;
@@ -191,4 +191,14 @@
     font-weight: var(--font-weight-normal);
     line-height: 1.5;
   }
+}
+
+/* Enforce minimum font size of 11px — overrides Tailwind utility classes below 11px */
+[class*="text-\[8px\]"],
+[class*="text-\[9px\]"],
+[class*="text-\[10px\]"],
+[class*="text-\[0.5rem\]"],
+[class*="text-\[0.5625rem\]"],
+[class*="text-\[0.625rem\]"] {
+  font-size: 0.6875rem !important;
 }

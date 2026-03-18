@@ -19,7 +19,7 @@ const testimonials = [
   {
     quote:
       "Paulo, is a talented UX designer who has been a valuable member of our team. In his time with us, Paulo has consistently demonstrated their exceptional skills and creativity in designing innovative and intuitive user experiences. He is an excellent collaborator, always willing to go the extra mile to ensure that our projects meet the highest standards of quality. As a Mentor, he has played a huge role in my journey as a UX designer and set me on a path for growth. Overall, Paulo is an outstanding UX designer who would be a tremendous asset to any organization. I highly recommend him without reservation and would be happy to provide further information or answer any questions you may have.",
-    name: "Alexandre Hounsou",
+    name: "Alexander Hounsou",
     role: "UX Designer at Great American Insurance Group",
     year: "2024",
   },
