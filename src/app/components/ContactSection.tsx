@@ -21,6 +21,7 @@ const EMAIL = "furtuna.alexandre@gmail.com";
 const SOCIAL_LINKS = [
   { label: "LinkedIn", url: "https://www.linkedin.com/in/paulofurtunatoalexandre/", desc: "Professional" },
   { label: "Read.cv", url: "#", desc: "Background" },
+  { label: "Medium", url: "https://medium.com/@paulo-alexandreuxd", desc: "Writing" },
 ];
 
 const FOOTER_NAV = [

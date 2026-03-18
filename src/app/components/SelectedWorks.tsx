@@ -9,8 +9,9 @@ import {
   useInView,
 } from "motion/react";
 import { useIsMobile } from "./ui/useMediaQuery";
-import healthpilotImg from "figma:asset/e4a5a5199e012811840cc269dafae9f17eab509a.png";
-import gaigHeroImg from "figma:asset/62ef352eb234e315ecb528632c229cbc70cf743f.png";
+const healthpilotImg = "https://images.unsplash.com/photo-1682365114794-14b870355d21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGhjYXJlJTIwYXBwJTIwZGFzaGJvYXJkJTIwbWVkaWNhcmV8ZW58MXx8fHwxNzczODA3MDc1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+const gaigHeroImg = "https://images.unsplash.com/photo-1640323240640-ee731d18dcb1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbnN1cmFuY2UlMjBlbnRlcnByaXNlJTIwc29mdHdhcmUlMjBkYXNoYm9hcmR8ZW58MXx8fHwxNzczODA3MDc4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+import riseHeroImg from "figma:asset/056ac50d463ea370dd4879e1603d83c053b214c6.png";
 
 /* ─────────────────────────────────────────
    Data
@@ -83,8 +84,7 @@ const projects: Project[] = [
       "Users couldn't translate emotions into products on a platform built like a pharmaceutical catalog. Redesigned the entire shopping paradigm around feelings — a Fit Guide and emotion-tagged reviews turned confused browsing into confident buying.",
     category: "E-Commerce",
     year: "2021",
-    image:
-      "https://images.unsplash.com/photo-1764795849755-ab58c8fef307?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYW5uYWJpcyUyMGRpc3BlbnNhcnklMjBtb2Rlcm4lMjByZXRhaWwlMjBkYXJrJTIwbW9vZHl8ZW58MXx8fHwxNzczODAxNzEzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    image: riseHeroImg,
     color: "#f0abfc",
     metrics: [
       { label: "Product Matches", value: "+61%" },

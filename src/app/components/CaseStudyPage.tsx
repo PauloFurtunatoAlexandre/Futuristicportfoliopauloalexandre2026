@@ -8,18 +8,25 @@ import {
 } from "motion/react";
 import { useParams, useNavigate } from "react-router";
 import { ArrowUpRight, ArrowLeft, ChevronDown, List, X } from "lucide-react";
-import healthpilotImg from "figma:asset/e4a5a5199e012811840cc269dafae9f17eab509a.png";
-import healthpilotSprintsImg from "figma:asset/1716ce1c49656a8c6b7ed108d2f8ea0bf1891c96.png";
-import healthpilotPersonasImg from "figma:asset/d12b8d0f28944f665ff24b2503cd0667b2c18849.png";
-import healthpilotJourneyImg from "figma:asset/f4e01d9bd9e0b5a20864d8edf8848276619719b1.png";
-import healthpilotDesignSystemImg from "figma:asset/a65a47e40b122031e3edea3f4db3b0e7c34712e3.png";
-import healthpilotPrototypeImg from "figma:asset/0ff5f802078eee0cc87208000297f141c676d276.png";
-import gaigHeroImg from "figma:asset/62ef352eb234e315ecb528632c229cbc70cf743f.png";
-import gaigGovernanceImg from "figma:asset/e9bcfeb9d590ea4813cd3dcab10ec3f01f594e3d.png";
-import gaigOktaFlowImg from "figma:asset/ba37d01f4486682b841d3ecbab366554f1a7258a.png";
-import gaigDesignSystemImg from "figma:asset/242fd6410f29959bcd31e7bccd4cfba086c1e433.png";
-import gaigWireframesImg from "figma:asset/465ebd45bb5cbcfefb9b5a12bf4ed17f49a76fd6.png";
-import gaigPrototypeImg from "figma:asset/f675dbe636670e3f02d477fd5502cb397158849a.png";
+const healthpilotImg = "https://images.unsplash.com/photo-1682365114794-14b870355d21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGhjYXJlJTIwYXBwJTIwZGFzaGJvYXJkJTIwbWVkaWNhcmV8ZW58MXx8fHwxNzczODA3MDc1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+const healthpilotSprintsImg = "https://images.unsplash.com/photo-1529119835860-ce3d90485424?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ24lMjBzcHJpbnQlMjB3aGl0ZWJvYXJkJTIwc3RpY2t5JTIwbm90ZXN8ZW58MXx8fHwxNzczODA3MDc2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+const healthpilotPersonasImg = "https://images.unsplash.com/photo-1712797229216-f713e7813a9d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx1c2VyJTIwcGVyc29uYSUyMHJlc2VhcmNoJTIwVVh8ZW58MXx8fHwxNzczODA3MDc2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+const healthpilotJourneyImg = "https://images.unsplash.com/photo-1642428899339-db778a4af19a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdXN0b21lciUyMGpvdXJuZXklMjBtYXAlMjBkZXNpZ258ZW58MXx8fHwxNzczNzA0NjU3fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+const healthpilotDesignSystemImg = "https://images.unsplash.com/photo-1562601555-513820e5d0eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ24lMjBzeXN0ZW0lMjBjb21wb25lbnRzJTIwVUl8ZW58MXx8fHwxNzczNzM2OTE5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+const healthpilotPrototypeImg = "https://images.unsplash.com/photo-1748801583967-3038967d7279?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBwcm90b3R5cGUlMjBtb2NrdXB8ZW58MXx8fHwxNzczODA3MDc3fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+const gaigHeroImg = "https://images.unsplash.com/photo-1640323240640-ee731d18dcb1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbnN1cmFuY2UlMjBlbnRlcnByaXNlJTIwc29mdHdhcmUlMjBkYXNoYm9hcmR8ZW58MXx8fHwxNzczODA3MDc4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+const gaigGovernanceImg = "https://images.unsplash.com/photo-1676287568293-8cd7917e7d95?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjBnb3Zlcm5hbmNlJTIwY29tcGxpYW5jZSUyMGRvY3VtZW50fGVufDF8fHx8MTc3MzgwNzA3OHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+const gaigOktaFlowImg = "https://images.unsplash.com/photo-1592791770401-7a0cb5ee279b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhdXRoZW50aWNhdGlvbiUyMGxvZ2luJTIwc2VjdXJpdHklMjBmbG93fGVufDF8fHx8MTc3MzgwNzA3OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+const gaigDesignSystemImg = "https://images.unsplash.com/photo-1562601555-513820e5d0eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ24lMjBzeXN0ZW0lMjBjb21wb25lbnRzJTIwVUl8ZW58MXx8fHwxNzczNzM2OTE5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+const gaigWireframesImg = "https://images.unsplash.com/photo-1715528233539-5fe70a4e0d71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3aXJlZnJhbWUlMjBza2V0Y2glMjBsb3clMjBmaWRlbGl0eXxlbnwxfHx8fDE3NzM4MDcwNzl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+const gaigPrototypeImg = "https://images.unsplash.com/photo-1532102235608-dc8fc689c9ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbnRlcmFjdGl2ZSUyMHByb3RvdHlwZSUyMHVzYWJpbGl0eSUyMHRlc3R8ZW58MXx8fHwxNzczODA3MDgwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+import riseHeroImg from "figma:asset/056ac50d463ea370dd4879e1603d83c053b214c6.png";
+import riseRiskMatrixImg from "figma:asset/5d5d2ad62bc14ac7447a9fec0de1e482734c2cd3.png";
+import risePersonasImg from "figma:asset/10a5878ad6336967ee28a0ff6eda4008564a3ad3.png";
+import riseJourneyImg from "figma:asset/7ded4497ce0eb7f4880dca08b656477f26375c52.png";
+import riseWireframesImg from "figma:asset/af5273ec18d52ea53387689d454984855080ab82.png";
+import riseDesignSystemImg from "figma:asset/c75b3747df6783a7a047e8367927b0274e92100b.png";
+import risePrototypeImg from "figma:asset/0691bc5930b8b93f821fa98e0aff639551cff10a.png";
 import { CustomCursor } from "./CustomCursor";
 import { FloatingNav } from "./FloatingNav";
 import { useIsMobile, useReducedMotion } from "./ui/useMediaQuery";
@@ -341,7 +348,7 @@ const CASE_STUDIES: CaseStudyData[] = [
       "The incremental rollout — while necessary for legacy constraints — meant some business lines lived with inconsistency longer than ideal. A parallel 'fast track' for willing early adopters would have built internal momentum faster.",
       "Needed more formalized design-to-engineering handoff. The governance flow controlled design changes well, but translation to code still relied too heavily on tribal knowledge and individual relationships.",
     ],
-    nextProject: { slug: "rise", title: "RISE", image: "https://images.unsplash.com/photo-1764795849755-ab58c8fef307?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBkYXJrJTIwcHJvZHVjdCUyMHN0aWxsJTIwbGlmZSUyMG1pbmltYWx8ZW58MXx8fHwxNzczNDEwMTQ0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" },
+    nextProject: { slug: "rise", title: "RISE", image: riseHeroImg },
   },
   {
     slug: "rise",
@@ -355,7 +362,7 @@ const CASE_STUDIES: CaseStudyData[] = [
     platform: "Web (E-Commerce), Mobile Web",
     tools: ["Figma", "Mural", "Slack", "Photoshop"],
     color: "#f0abfc",
-    heroImage: "https://images.unsplash.com/photo-1764795849755-ab58c8fef307?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYW5uYWJpcyUyMGRpc3BlbnNhcnklMjBtb2Rlcm4lMjByZXRhaWwlMjBkYXJrJTIwbW9vZHl8ZW58MXx8fHwxNzczODAxNzEzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    heroImage: riseHeroImg,
     problem:
       "Nobody walks into a dispensary and says 'I'd like 3.5 grams of a sativa-dominant hybrid with 22% THC and a myrcene-forward terpene profile.' They say 'I want to relax after work' or 'I need something for creativity.' But Rise's online platform was built like a pharmaceutical catalog — strain names, THC percentages, and taxonomies that meant nothing to most customers. Users couldn't translate what they wanted to feel into what they should buy. They browsed, got confused, and left. Engagement was low, loyalty was leaking, and in a market where every dispensary sells the same products, the experience was the only differentiator Rise was wasting.",
     context:
@@ -367,6 +374,7 @@ const CASE_STUDIES: CaseStudyData[] = [
       "Existing technical architecture with limited engineering bandwidth for custom features",
       "Competitive market where product selection is nearly identical across brands — experience is the only moat",
     ],
+    researchImage: riseRiskMatrixImg,
     researchInsights: [
       {
         title: "People buy emotions, not products",
@@ -408,6 +416,7 @@ const CASE_STUDIES: CaseStudyData[] = [
           "Contextual learning moments woven throughout the shopping flow — not a separate 'learn' section nobody visits, but micro-education at the exact moment of relevance. What's the difference between indica and sativa? Explained when it matters, not before.",
       },
     ],
+    processImage: risePersonasImg,
     processSteps: [
       {
         title: "Discovery & Emotional Mapping",
@@ -440,7 +449,7 @@ const CASE_STUDIES: CaseStudyData[] = [
           "Conducted usability tests revealing a 60% success rate in users finding products aligned with their desired effects — a massive improvement over the baseline of confused browsing. Feedback drove iterative refinements to navigation labels, filter affordances, and educational touchpoint placement.",
       },
     ],
-    wireframeImage: "https://images.unsplash.com/photo-1621974182258-ce59c657267d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbW90aW9uJTIwbW9vZCUyMGNvbG9yJTIwZ3JhZGllbnQlMjBhYnN0cmFjdCUyMGRhcmt8ZW58MXx8fHwxNzczODAxNzE0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    wireframeImage: riseWireframesImg,
     designSystem: [
       { label: "Emotional UI", description: "Color, imagery, and micro-copy calibrated to reflect emotional states — warm tones for relaxation, vibrant for energy, soft for calm" },
       { label: "Fit Guide", description: "Interactive mood-to-product matching engine with progressive disclosure — simple entry, detailed results" },
@@ -448,14 +457,14 @@ const CASE_STUDIES: CaseStudyData[] = [
       { label: "Education", description: "Contextual learning moments integrated at decision points — not a knowledge base, but in-flow guidance" },
       { label: "Commerce Flow", description: "Redesigned cart, checkout, and order history with emotional reinforcement and simplified transitions" },
     ],
-    designSystemImage: "https://images.unsplash.com/photo-1621584309109-ff65ab71f9fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib3RhbmljYWwlMjBwbGFudCUyMGxlYXZlcyUyMGRhcmslMjBhcnRpc3RpYyUyMG1pbmltYWx8ZW58MXx8fHwxNzczODAxNzE0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    designSystemImage: riseDesignSystemImg,
     prototypeHighlights: [
       "Fit Guide mapping emotional states to product recommendations — 'How do you want to feel?' as the primary entry point",
       "Feelings in Reviews filter letting users sort products by real emotional experiences shared by other customers",
       "Redesigned dispensary pages with emotion-centric navigation replacing taxonomy-based browsing",
       "Cart-to-checkout flow with confidence-building cues and educational micro-moments reducing abandonment",
     ],
-    prototypeImage: "https://images.unsplash.com/photo-1720962158883-b0f2021fb51e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjBtb2JpbGUlMjBzaG9wcGluZyUyMGFwcCUyMGRhcmslMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzczODAxNzE0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    prototypeImage: risePrototypeImg,
     outcomes: [
       { label: "Product Matches", value: "+61%", change: "Users finding effect-aligned products" },
       { label: "Engagement", value: "+44%", change: "Time exploring via emotional navigation" },

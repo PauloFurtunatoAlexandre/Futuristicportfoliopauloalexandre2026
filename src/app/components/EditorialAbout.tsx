@@ -9,7 +9,7 @@ import {
   AnimatePresence,
 } from "motion/react";
 import { useIsMobile } from "./ui/useMediaQuery";
-import pauloPortrait from "figma:asset/77ee6f95f1028a6aa72b0b698c65d28bdd6d6881.png";
+const pauloPortrait = "https://images.unsplash.com/photo-1654097115079-5747760e96e0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMG1hbiUyMGRlc2lnbmVyfGVufDF8fHx8MTc3Mzc3MjYxM3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 
 /* ─────────────────────────────────────────
    Constants & Data
