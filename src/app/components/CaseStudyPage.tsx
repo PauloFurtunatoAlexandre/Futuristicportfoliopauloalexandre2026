@@ -57,140 +57,140 @@ interface CaseStudyData {
 const CASE_STUDIES: CaseStudyData[] = [
   {
     slug: "meridian",
-    title: "MERIDIAN",
-    subtitle: "Turning onboarding into a trust engine",
-    client: "Meridian Financial",
-    year: "2025",
-    role: "Lead Product Designer",
-    timeline: "8 months",
-    team: "2 designers, 4 engineers, 1 PM",
-    platform: "iOS, Android, Web",
-    tools: ["Figma", "Framer", "Principle", "Lottie", "Storybook"],
+    title: "HEALTHPILOT",
+    subtitle: "Turning Medicare chaos into confident decisions",
+    client: "HealthPilot",
+    year: "2023",
+    role: "Senior Product Designer",
+    timeline: "19 months",
+    team: "Cross-functional — PMs, engineers, stakeholders",
+    platform: "Web (Desktop & Mobile)",
+    tools: ["Figma", "FigJam", "Miro", "Jira", "Midjourney", "Slack"],
     color: "#c4ff00",
     heroImage:
-      "https://images.unsplash.com/photo-1626364131837-89a92c9a84d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXJrJTIwbW9vZHklMjBmaW50ZWNoJTIwYXBwJTIwc2NyZWVucyUyMG1vY2t1cHxlbnwxfHx8fDE3NzM0MTA2MDR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      "https://images.unsplash.com/photo-1702479744031-2bf1f4bdfd8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGhjYXJlJTIwaW5zdXJhbmNlJTIwZGlnaXRhbCUyMHBsYXRmb3JtJTIwZGFyayUyMG1vb2R5fGVufDF8fHx8MTc3MzgwMDY3NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     problem:
-      "Meridian was hemorrhaging ~$2.4M annually — 40% of users abandoned onboarding before identity verification. The flow was a wall of form fields: no progress cues, no context for why data was needed, zero emotional payoff. It felt like paperwork, not the start of a financial relationship.",
+      "Seniors were abandoning HealthPilot's Medicare enrollment mid-flow — frustrated, confused, and distrustful of their own decisions. The platform read like an insurance manual, not a tool built for the people who needed it most. Drop-offs were bleeding the business, and every lost user was someone left navigating healthcare alone.",
     context:
-      "Meridian is a digital bank targeting millennials and Gen-Z with competitive rates, but the product experience didn't match the brand promise. Engineer-built with minimal design input — functional but devoid of personality. My job: close the gap between what the brand marketed and what the product delivered.",
+      "HealthPilot simplifies Medicare plan selection for seniors — a demographic drowning in jargon, fine print, and paralyzing choice overload. The product team flagged high abandonment, but nobody had asked users why. I took the initiative to dig beneath the analytics, conducting interviews and usability tests to find the human story behind the numbers. What I found: people weren't confused by Medicare — they were confused by us.",
     constraints: [
-      "Strict KYC/AML compliance — every data collection point legally required",
-      "Backend locked for 6 months — had to design around existing API limitations",
-      "Must accommodate users with limited digital literacy",
-      "8-month timeline end-to-end, including engineering handoff",
-      "No illustration budget — had to rely on typography, photography, and motion",
+      "Medicare compliance requirements — every data point and disclaimer legally mandated",
+      "Users skew 65+ with varying digital literacy — no room for assumed tech fluency",
+      "Complex insurance terminology that must remain accurate while becoming accessible",
+      "Four-month deadline for V1 — speed without sacrificing quality",
+      "Must support the full enrollment funnel from discovery to plan selection to sign-up",
     ],
     researchInsights: [
       {
-        title: "Users scan, they don't read",
+        title: "Jargon is the enemy",
         detail:
-          "85% of test participants skipped instructional copy entirely. Visual hierarchy and progressive disclosure were the only reliable navigation cues.",
+          "70% of 349 surveyed users reported significant difficulty searching for plans. Terms like 'deductible' and 'coinsurance' created decision paralysis — users didn't just misunderstand, they stopped trusting the platform entirely.",
       },
       {
-        title: "Trust is earned in 30 seconds",
+        title: "Confusion compounds into abandonment",
         detail:
-          "Users who didn't feel confident by the third screen were 4× more likely to abandon. Familiar patterns and visible security signals were non-negotiable.",
+          "15 user interviews revealed a pattern: users who hit friction at navigation didn't try to recover — they left. One confused moment cascaded into total dropout. The flow had no safety nets.",
       },
       {
-        title: "'Why' outperforms 'what'",
+        title: "Guidance is trust",
         detail:
-          "Users who understood why they were sharing personal data completed onboarding at 2× the rate of those who only saw field labels.",
+          "Users who received contextual tips and progress cues reported feeling 'supported' — and completed enrollment at dramatically higher rates. A lack of visual guidance made the platform feel indifferent to their struggle.",
       },
       {
-        title: "Small wins compound",
+        title: "Comparison is the moment of truth",
         detail:
-          "Adding micro-celebrations after each step increased overall completion by 23%. Momentum is a design tool.",
+          "Usability testing showed the plan comparison step was the highest-friction point. Users couldn't hold plan differences in their heads. Side-by-side with clear pros/cons was the single most requested feature.",
       },
     ],
     strategy:
-      "Reframe onboarding entirely — not as a form to fill, but as a guided conversation. Each step explains its purpose before asking for input, celebrates completion, and progressively builds the trust needed for a financial relationship.",
+      "Strip the experience down to its emotional core: someone trying to make the best healthcare decision of their year. Every screen should earn trust, reduce cognitive load, and make the next step obvious. Replace insurance jargon with human language. Add progress indicators so nobody feels lost. Introduce plan comparison so nobody second-guesses.",
     strategyPillars: [
       {
-        title: "Conversational UX",
+        title: "Simplified Language",
         description:
-          "Replaced form-heavy screens with a step-by-step dialogue. Each screen has one job: explain context, then collect one piece of information.",
+          "Collaborated with subject matter experts to rewrite every term. 'Coinsurance' became 'your share of costs.' Accuracy preserved, anxiety eliminated. Users said it felt like talking to a knowledgeable friend.",
       },
       {
-        title: "Progressive Trust",
+        title: "Step-by-Step Guidance",
         description:
-          "Showed exactly where data goes and why at every step. Made security visible, not assumed.",
+          "Progress indicators and contextual tips at every decision point. Users always know where they are, what's next, and why it matters. No screen leaves them guessing.",
       },
       {
-        title: "Micro-Momentum",
+        title: "Plan Comparison Engine",
         description:
-          "Subtle animations after each completed step. Progress feels rewarding, not tedious. Small dopamine hits that keep users moving forward.",
+          "Side-by-side plan views with clear pros, cons, and cost breakdowns. Transformed the most anxiety-inducing step into the most confidence-building one.",
       },
     ],
     processSteps: [
       {
-        title: "Discovery & Audit",
+        title: "Discovery & Deep Dive",
         description:
-          "Audited the existing flow with heatmaps, session recordings, and 12 user interviews. Mapped every friction point and categorized by severity and fixability.",
+          "Conducted 15 user interviews, a 349-person survey, and live usability tests. Ran competitive analysis and desk research to benchmark against similar platforms and identify differentiation opportunities.",
       },
       {
-        title: "Competitive Analysis",
+        title: "Problem Mapping",
         description:
-          "Benchmarked 8 onboarding flows across fintech, neobanks, and top consumer apps. Identified patterns that worked and gaps nobody was filling.",
+          "Built user journey maps and personas from research. Used dot-voting with PMs and business stakeholders to prioritize the three core friction points: navigation confusion, jargon overload, and missing guidance.",
       },
       {
-        title: "Concept Sprints",
+        title: "Design Sprints",
         description:
-          "Ran 3 one-week sprints exploring different mental models — wizard, conversation, and narrative. Paper prototypes tested with 6 users narrowed us to conversational.",
+          "Facilitated collaborative Design Studio workshops generating 15+ ideas. Evaluated each on an Impact/Effort matrix — prioritized high-impact, low-effort wins like simplified navigation and step-by-step indicators.",
       },
       {
-        title: "Design & Iteration",
+        title: "Wireframes & Iteration",
         description:
-          "Built high-fidelity prototypes in Figma and Framer. Three rounds of usability testing, iterating between each. Cut 4 screens and reordered 3 based on test data.",
+          "Created low-fidelity wireframes for a streamlined enrollment flow. Tested early concepts with the team, killed what didn't work, doubled down on what did.",
       },
       {
-        title: "System & Handoff",
+        title: "High-Fidelity & Testing",
         description:
-          "Created a 120+ component library with motion tokens and accessibility annotations. Delivered via Storybook with detailed interaction specs.",
+          "Built detailed prototypes with simplified language, progress indicators, and plan comparison. Remote moderated testing with 10 participants showed 90% success rate — users praised clarity and usability.",
       },
       {
-        title: "Launch & Optimize",
+        title: "Design System & Launch",
         description:
-          "Rolled out to 10% of users first, then full release. Monitored daily for a month, making micro-adjustments to copy and timing based on real behavior.",
+          "Developed comprehensive token and component library for consistency and scale. Launched iteratively, continuously validating with user feedback and refining post-launch.",
       },
     ],
     wireframeImage:
-      "https://images.unsplash.com/photo-1571456610111-72c649ad3521?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3aXJlZnJhbWUlMjBza2V0Y2glMjB3aGl0ZWJvYXJkJTIwZGVzaWduJTIwcHJvY2Vzc3xlbnwxfHx8fDE3NzM0MTA2MDV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      "https://images.unsplash.com/photo-1615387000571-bdcfe92eb67c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3aXJlZnJhbWUlMjBwcm90b3R5cGUlMjBza2V0Y2glMjBVWCUyMGRlc2lnbiUyMHByb2Nlc3N8ZW58MXx8fHwxNzczODAwNjgxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     designSystem: [
-      { label: "Typography", description: "Inter for UI, Syne for marketing — 4 weights, strict modular scale" },
-      { label: "Color", description: "Dark-first palette with acid-green accent. WCAG AAA across all surfaces" },
-      { label: "Spacing", description: "4px base grid, 8/16/24/32/48/64 spacing tokens for consistent rhythm" },
-      { label: "Motion", description: "3 easing curves, 4 duration tokens. Choreographed step-to-step transitions" },
-      { label: "Components", description: "120+ components, 3 size variants, dark/light modes, full a11y annotations" },
+      { label: "Typography", description: "Clear, high-contrast type scale optimized for 65+ readability — generous sizing, tight hierarchy" },
+      { label: "Color", description: "Accessible palette meeting WCAG AAA. Trust-first blues and greens, warm neutrals for comfort" },
+      { label: "Components", description: "Plan cards, comparison tables, progress indicators, contextual tip modules — all senior-friendly tap targets" },
+      { label: "Language", description: "Full terminology glossary co-authored with SMEs — every insurance term has a plain-English equivalent" },
+      { label: "Patterns", description: "Reusable enrollment step templates, error recovery flows, and decision-support layouts" },
     ],
     designSystemImage:
-      "https://images.unsplash.com/photo-1754666104720-28f18a9130e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ24lMjB0b2tlbnMlMjBjb2xvciUyMHBhbGV0dGUlMjB0eXBvZ3JhcGh5JTIwc3BlY2ltZW58ZW58MXx8fHwxNzczNDI1NDI5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      "https://images.unsplash.com/photo-1720962158937-7ea890052166?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ24lMjBzeXN0ZW0lMjBjb21wb25lbnRzJTIwVUklMjBraXQlMjBkYXJrJTIwaW50ZXJmYWNlfGVufDF8fHx8MTc3MzgwMDY3N3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     prototypeHighlights: [
-      "One-question-per-screen conversational flow with contextual micro-copy explaining data purpose",
-      "Biometric verification with real-time progress ring and animated success states",
-      "First-transaction celebration with confetti particles and instant account summary",
-      "Shared-element page transitions creating a seamless, app-like navigation feel",
+      "Step-by-step enrollment flow with progress indicators and contextual micro-copy explaining every data request",
+      "Side-by-side plan comparison with plain-language pros, cons, and cost breakdowns",
+      "Contextual tooltips translating insurance jargon into human language on hover/tap",
+      "Decision-confidence scoring that helps users feel certain about their final plan choice",
     ],
     prototypeImage:
-      "https://images.unsplash.com/photo-1663153203126-08bbadc178ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBwcm90b3R5cGUlMjBkYXJrJTIwaW50ZXJmYWNlJTIwbW9ja3VwfGVufDF8fHx8MTc3MzQyNTQyN3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      "https://images.unsplash.com/photo-1592323401640-9c24ed330baf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGhjYXJlJTIwYXBwJTIwbW9iaWxlJTIwaW50ZXJmYWNlJTIwY2xlYW58ZW58MXx8fHwxNzczODAwNjgxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     outcomes: [
-      { label: "Onboarding Completion", value: "+67%", change: "33% → 55%" },
-      { label: "NPS Score", value: "82", change: "Up from 34" },
-      { label: "Time to First Transaction", value: "-53%", change: "14 min → 6.5 min" },
-      { label: "Support Tickets", value: "-71%", change: "Onboarding-related" },
-      { label: "App Store Rating", value: "4.8★", change: "Up from 3.2★" },
-      { label: "Annual Revenue Impact", value: "+$3.1M", change: "From recovered activations" },
+      { label: "Plan Selection Rate", value: "+6%", change: "Users choosing plans with confidence" },
+      { label: "Drop-Off Rate", value: "-25%", change: "Simplified navigation kept users engaged" },
+      { label: "User Satisfaction", value: "97%", change: "Post-launch survey approval" },
+      { label: "Usability Score", value: "+51%", change: "Iterative testing improvements" },
+      { label: "Investment Secured", value: "$10M", change: "New funding round post-redesign" },
+      { label: "Test Success Rate", value: "90%", change: "Remote moderated usability testing" },
     ],
     learnings: [
-      "Regulatory complexity doesn't excuse UX complexity. It just requires more design effort to abstract the hard parts away from the user.",
-      "Micro-celebrations aren't decorative — they're a measurable conversion tool when placed at the right moments in a flow.",
-      "Testing with real data instead of placeholders surfaced edge cases we never would have found otherwise. Always prototype with production-like content.",
+      "Decoding jargon isn't about dumbing down — it's about translating expertise into empathy. Collaborating with SMEs ensured accuracy while making every term feel approachable and trustworthy.",
+      "Stakeholder alignment requires storytelling, not just data. Connecting research findings directly to business goals created a shared vision across competing priorities.",
+      "Time constraints aren't enemies — they're forcing functions. Focusing on highest-impact features first and validating iteratively delivered more value than a perfect, late product ever would.",
     ],
     reflection:
-      "The most impactful design work happens at the systems level, not the screen level. By reframing onboarding as a conversation, we didn't just improve metrics — we changed how the company thinks about user trust. The hardest part wasn't the design. It was convincing stakeholders that 'too simple' was the right answer.",
+      "This project changed how I think about complexity. Medicare isn't inherently confusing — the interfaces we build around it are. The breakthrough wasn't a clever interaction pattern or a beautiful component. It was the decision to stop designing for insurance and start designing for people making one of the most consequential decisions of their year. The $10M investment wasn't won by pixels — it was won by proving that when you respect your users' intelligence while eliminating unnecessary friction, business results follow.",
     improvements: [
-      "Should have embedded with engineering from week one. Late-stage technical constraints forced us to simplify several animation decisions.",
-      "The design system needed stronger motion opinions earlier — we lost iteration time in later phases because motion tokens were underdefined.",
-      "Underestimated the impact of copy. A/B testing micro-copy variations showed the words mattered as much as the layouts.",
+      "Should have pushed for personalized plan recommendations earlier — a dynamic system using behavior data to surface relevant plans would have further simplified decision-making.",
+      "Live chat support during enrollment was a missed opportunity. Real-time human assistance at the highest-friction moments would have caught the users we couldn't save with design alone.",
+      "Post-launch metrics monitoring needed a more robust framework from day one. Continuous tracking of plan selection, drop-offs, and satisfaction should have been baked into the product roadmap, not bolted on.",
     ],
     nextProject: { slug: "void", title: "VOID", image: "https://images.unsplash.com/photo-1562672421-94d4c2aaabe5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aXJ0dWFsJTIwcmVhbGl0eSUyMG1peGVkJTIwcmVhbGl0eSUyMGRhcmslMjBzdHVkaW98ZW58MXx8fHwxNzczNDEwMTQyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" },
   },
@@ -312,126 +312,276 @@ const CASE_STUDIES: CaseStudyData[] = [
     learnings: ["The first 5 minutes determine whether someone becomes a creator or churns. Every onboarding decision should optimize for 'time to first beautiful output.'", "AI in creative tools works best when it expands the possibility space, not narrows it. Suggestion over substitution.", "Community features aren't add-ons — they're the retention engine. Sharing and remixing drove more return visits than any feature improvement."],
     reflection: "The best creative tools disappear. The hardest challenge was AI integration — balancing helpfulness with creative autonomy. Six iterations before finding the right tone: curious collaborator, not prescriptive assistant. The product succeeded because it made artists feel more capable, not replaced.",
     improvements: ["iPad version was adapted too late — should have been designed in parallel from the start with its own interaction model.", "Underinvested in onboarding tutorials for the initial learning curve. Progressive complexity only works if the first steps are truly effortless.", "The node editor needs a visual 'recipe' system for common generative patterns — templates that teach by example."],
-    nextProject: { slug: "forma", title: "FORMA", image: "https://images.unsplash.com/photo-1662906047226-971b484f5056?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxicnV0YWxpc3QlMjBjb25jcmV0ZSUyMGFyY2hpdGVjdHVyZSUyMHNoYWRvd3xlbnwxfHx8fDE3NzM0MTAxNDN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" },
+    nextProject: { slug: "forma", title: "GAIG", image: "https://images.unsplash.com/photo-1566748886022-ec212e5642fe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxicnV0YWxpc3QlMjBjb25jcmV0ZSUyMGFyY2hpdGVjdHVyZSUyMHNoYWRvd3xlbnwxfHx8fDE3NzM0MTAxNDN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" },
   },
   {
     slug: "forma",
-    title: "FORMA",
-    subtitle: "Unifying six products that grew up separately",
-    client: "Forma Inc.",
-    year: "2024",
-    role: "Systems Design Lead",
+    title: "GAIG",
+    subtitle: "Taming 33 business lines with one design language",
+    client: "Great American Insurance Group",
+    year: "2022",
+    role: "Lead Product Designer",
     timeline: "12 months",
-    team: "4 designers, 8 engineers, 2 PMs",
-    platform: "Web, iOS, Android, Design Tools",
-    tools: ["Figma", "Storybook", "Chromatic", "Style Dictionary", "Zeroheight"],
+    team: "2 product designers, 4 mentored designers, cross-functional stakeholders",
+    platform: "Web (B2B — Agent & Insured Portals)",
+    tools: ["Figma", "Miro", "Teams", "Jira"],
     color: "#06b6d4",
-    heroImage: "https://images.unsplash.com/photo-1662906047226-971b484f5056?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxicnV0YWxpc3QlMjBjb25jcmV0ZSUyMGFyY2hpdGVjdHVyZSUyMHNoYWRvd3xlbnwxfHx8fDE3NzM0MTAxNDN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    problem: "Six product teams, five years of independent evolution, zero shared language. 47 button variants, 23 grays, 3-week average to ship a component. The CEO called it 'six startups stitched together with duct tape.' Customers noticed — inconsistency eroded trust and made the platform feel broken.",
-    context: "Forma is a B2B SaaS platform where each product surface was built by a separate team with its own component library, color palette, and conventions. My mandate: create a unified design system all six teams would actually adopt — not a component library, but an organizational operating system for design decisions.",
-    constraints: ["Cannot break existing production UIs during migration — zero-downtime requirement", "Must support 6 teams with different velocity needs and technical stacks", "Token system must work across Figma, React, SwiftUI, and Kotlin simultaneously", "Full WCAG 2.1 AA compliance across all surfaces", "Must be adoptable incrementally — no big-bang migration"],
-    researchInsights: [
-      { title: "Autonomy within structure", detail: "Designers wanted consistency but resisted rigid control. The sweet spot: shared foundations with explicit extension points for team-specific needs." },
-      { title: "Documentation is the product", detail: "Adoption correlated directly with documentation quality, not component quality. Teams with clear usage examples and guidelines shipped 2× faster." },
-      { title: "Tokens matter more than components", detail: "Shared design tokens drove more visual consistency than shared components. Tokens are the DNA — components are just one expression of it." },
-      { title: "Migration needs incentives", detail: "Teams adopted faster when migration reduced their workload. The sell wasn't 'use the system for consistency' — it was 'use the system to ship faster.'" },
+    heroImage: "https://images.unsplash.com/photo-1566748886022-ec212e5642fe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjBpbnN1cmFuY2UlMjBlbnRlcnByaXNlJTIwcGxhdGZvcm0lMjBkYXJrJTIwbW9vZHl8ZW58MXx8fHwxNzczODAxNDQ1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    problem:
+      "Imagine a Fortune 500 insurance platform where every business line invented its own interface. 33 products, 33 different UIs, zero shared language. Agents learned one system only to face a completely different one for their next product. Insureds abandoned policy enrollment mid-flow — confused by clunky navigation, inconsistent patterns, and a platform that never once told them if their action actually worked. No feedback, no guidance, no trust.",
+    context:
+      "Great American Insurance Group operates across 33 distinct business lines — from property and casualty to specialty risk management. Over years of independent development, each line built its own UI conventions, component libraries, and interaction patterns. The result: a Frankenstein platform that punished both the agents who sold through it and the insureds who depended on it. I was brought in to lead the redesign of the insured and risk management portals, build a scalable design system, and establish a UX governance model that would prevent this kind of drift from ever happening again.",
+    constraints: [
+      "33 business lines with entrenched stakeholders — each believing their product's UI was 'different enough' to warrant custom treatment",
+      "Legacy technical architecture that couldn't absorb sweeping visual changes overnight — required incremental adoption",
+      "Insurance compliance requirements mandating specific data fields and disclosures across every product",
+      "No existing accessibility standards — the platform had grown without WCAG considerations",
+      "Must support both agent-facing (power user, speed-optimized) and insured-facing (first-time, guidance-heavy) experiences from a shared system",
     ],
-    strategy: "Three-layer architecture: universal token foundation, shared component library, team-specific extension layer. Key insight: consistency comes from shared decisions (tokens), not shared implementations (components). Automated pipelines keep Figma and code in sync as single source of truth.",
+    researchInsights: [
+      {
+        title: "Silence breeds distrust",
+        detail:
+          "12 insured user interviews revealed the same pattern: when the system gave no feedback after an action, users assumed it failed. They'd retry, create duplicates, or abandon entirely. One participant said, 'I clicked submit and nothing happened. I thought the whole thing was broken.' The platform's silence was its loudest design failure.",
+      },
+      {
+        title: "Inconsistency is cognitive tax",
+        detail:
+          "Agents working across multiple business lines reported spending up to 15 extra minutes per task reorienting themselves in unfamiliar UIs. The same action — submitting a policy endorsement — looked and behaved differently in each product. Consistency wasn't a nice-to-have; it was directly eroding productivity and revenue.",
+      },
+      {
+        title: "Navigation was the first casualty",
+        detail:
+          "Desk research and internal data analysis confirmed that users who hit friction at navigation never recovered. They didn't try alternative paths — they left. The enrollment funnel had no breadcrumbs, no progress indication, and no way back without starting over.",
+      },
+      {
+        title: "Accessibility was invisible",
+        detail:
+          "An internal audit revealed zero inclusive design practices. Color contrast failures, missing alt text, keyboard navigation gaps — the platform was functionally unusable for anyone relying on assistive technology, and legally exposed because of it.",
+      },
+    ],
+    strategy:
+      "Build once, apply everywhere. Create a token-first design system that encodes every visual and interaction decision into reusable, governed primitives — then establish a UX governance process that makes drift structurally impossible. The system wouldn't just fix what was broken; it would make consistency the path of least resistance for every team, every time.",
     strategyPillars: [
-      { title: "Token-First Architecture", description: "Every visual decision encoded as a semantic token. Components consume tokens, never raw values. Change a token, change everything." },
-      { title: "Composable, Not Rigid", description: "Primitives that teams compose into product-specific patterns. Flexibility at the edges, consistency at the core." },
-      { title: "Automated Governance", description: "CI/CD pipelines validate token usage, flag drift, and auto-generate changelogs. Compliance happens automatically, not through reviews." },
+      {
+        title: "Standardized Component Library",
+        description:
+          "Reusable UI components with built-in accessibility, consistent behavior, and clear documentation. Every button, form, modal, and feedback pattern behaves identically whether you're in specialty risk or property casualty. Designers stop reinventing; engineers stop guessing.",
+      },
+      {
+        title: "Design Tokens & Visual Identity",
+        description:
+          "Predefined variables for colors, typography, spacing, and elevation — a single source of truth that propagates across all 33 business lines. Change a token, change the entire ecosystem. No more rogue palettes and inconsistent grays.",
+      },
+      {
+        title: "UX Governance Framework",
+        description:
+          "A corporate-level change management process I co-created to control how the design system evolves. Any proposed change goes through impact assessment, stakeholder review, and accessibility validation before entering the system. Drift doesn't happen accidentally anymore.",
+      },
     ],
     processSteps: [
-      { title: "System Audit", description: "Cataloged every component, color, and spacing value across all six products. Quantified the inconsistency — 47 button variants, 23 grays, 12 type scales." },
-      { title: "Token Architecture", description: "Designed a 3-tier token system: global → alias → component. Built Style Dictionary pipelines for multi-platform output from a single source." },
-      { title: "Component Taxonomy", description: "Classified everything into primitives, composites, and patterns. Defined APIs, props, and accessibility contracts for each level." },
-      { title: "Migration Playbook", description: "Created phased migration plans with team-specific timelines and built codemods for automated token replacement. Made migration feel like an upgrade, not a chore." },
-      { title: "Documentation", description: "Launched Zeroheight docs with live code examples, usage guidelines, do/don't patterns, and contribution workflows. Treated docs as a product with its own roadmap." },
-      { title: "Governance & Adoption", description: "Built automated visual regression testing via Chromatic. Created community rituals — office hours, show-and-tells, contribution recognition." },
+      {
+        title: "Discovery & Research",
+        description:
+          "Participated in 12 user interviews with insureds alongside a UX researcher, uncovering deep pain points around navigation confusion, missing feedback, and trust erosion. Ran desk research analyzing existing analytics, previous user feedback, and internal specialist surveys to map every friction point across enrollment and claims flows.",
+      },
+      {
+        title: "Service Blueprinting",
+        description:
+          "Built comprehensive service blueprints mapping user journeys across policy enrollment, risk management, and claims submission. Visualized where users encountered friction and where the experience failed silently. The Okta verification blueprint alone revealed 6 unnecessary steps agents absorbed daily.",
+      },
+      {
+        title: "Design Studio Workshop",
+        description:
+          "Facilitated a cross-functional workshop generating 30+ ideas. Used Impact/Effort matrices to prioritize: standardizing UI components, introducing design tokens, and creating accessible layout patterns rose to the top. Quick wins first, systemic fixes in parallel.",
+      },
+      {
+        title: "Wireframing & Iteration",
+        description:
+          "Created low-fidelity wireframes for key workflows — enrollment, claims, risk assessment — introducing navigation patterns, progress indicators, and feedback mechanisms. Killed what didn't test well; doubled down on what users gravitated toward.",
+      },
+      {
+        title: "High-Fidelity Design System",
+        description:
+          "Evolved wireframes into a polished component library with standardized UI elements, design tokens, and accessibility baked into every component. Built detailed guidelines, usage examples, and do/don't documentation. The system wasn't a library — it was a language.",
+      },
+      {
+        title: "Testing & Governance Launch",
+        description:
+          "Conducted usability tests with 12 participants achieving 40% improvement in task completion rates. Simultaneously launched the UX governance process ensuring changes pass impact assessment and accessibility validation before release.",
+      },
     ],
-    wireframeImage: "https://images.unsplash.com/photo-1674509036252-5a517959a3b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx1c2VyJTIwcmVzZWFyY2glMjBzdGlja3klMjBub3RlcyUyMGFmZmluaXR5JTIwbWFwcGluZ3xlbnwxfHx8fDE3NzM0MjU0MzJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    wireframeImage: "https://images.unsplash.com/photo-1729710877209-1d2f9df0c8c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3aXJlZnJhbWUlMjBibHVlcHJpbnQlMjBVWCUyMHByb2Nlc3MlMjB3aGl0ZWJvYXJkJTIwZGFya3xlbnwxfHx8fDE3NzM4MDE0NDd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     designSystem: [
-      { label: "Tokens", description: "380+ semantic tokens across color, spacing, typography, motion, and elevation" },
-      { label: "Components", description: "480+ components with 3 size variants, dark/light modes, and RTL support" },
-      { label: "Platforms", description: "React, SwiftUI, Kotlin, Figma — all synced from a single token source" },
-      { label: "Accessibility", description: "WCAG 2.1 AA with automated CI/CD testing on every component change" },
-      { label: "Adoption", description: "6/6 teams fully migrated, 94% token compliance across all surfaces" },
+      { label: "Tokens", description: "Color, typography, spacing, and elevation tokens encoding every visual decision into a single governed source of truth across 33 business lines" },
+      { label: "Components", description: "Standardized UI library — buttons, forms, modals, feedback patterns, data tables — all with built-in accessibility and consistent behavior" },
+      { label: "Accessibility", description: "Inclusive design standards meeting WCAG compliance: contrast ratios, keyboard navigation, screen reader support, and focus management" },
+      { label: "Governance", description: "Corporate-level UX governance flow for proposing, reviewing, and approving design system changes — preventing drift at the organizational level" },
+      { label: "Documentation", description: "Comprehensive guidelines with usage examples, do/don't patterns, and Figma best practices mentored across a team of 6 designers" },
     ],
-    designSystemImage: "https://images.unsplash.com/photo-1546414701-81cc6963c67f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxicnV0YWxpc3QlMjBhcmNoaXRlY3R1cmUlMjBjb25jcmV0ZSUyMGdlb21ldHJpYyUyMG1pbmltYWx8ZW58MXx8fHwxNzczNDI1NDM1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    prototypeHighlights: ["Live Figma-to-code token syncing via Style Dictionary — change once, propagate everywhere", "Component playground with real-time prop manipulation and live code output", "Automated visual regression testing catching drift before it reaches production", "Contribution workflow with clear governance guardrails and automated validation"],
-    prototypeImage: "https://images.unsplash.com/photo-1754666104720-28f18a9130e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ24lMjB0b2tlbnMlMjBjb2xvciUyMHBhbGV0dGUlMjB0eXBvZ3JhcGh5JTIwc3BlY2ltZW58ZW58MXx8fHwxNzczNDI1NDI5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    designSystemImage: "https://images.unsplash.com/photo-1720962158937-7ea890052166?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ24lMjBzeXN0ZW0lMjBjb21wb25lbnRzJTIwVUklMjBraXQlMjBkYXJrJTIwaW50ZXJmYWNlfGVufDF8fHx8MTc3MzgwMDY3N3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    prototypeHighlights: [
+      "Redesigned insured portal with consistent navigation, progress indicators, and real-time feedback replacing the platform's silence",
+      "Risk management interface with standardized data tables, inline validation, and contextual help reducing agent reorientation time",
+      "Unified component library deployed across all 33 business lines with zero visual fragmentation",
+      "UX governance workflow ensuring every system change passes impact assessment and accessibility validation before release",
+    ],
+    prototypeImage: "https://images.unsplash.com/photo-1679601613261-88a176e4dbb9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbnRlcnByaXNlJTIwQjJCJTIwZGFzaGJvYXJkJTIwZGFyayUyMHByb2Zlc3Npb25hbHxlbnwxfHx8fDE3NzM4MDE0NDZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     outcomes: [
-      { label: "Design Velocity", value: "+120%", change: "Component-to-production time" },
-      { label: "Components", value: "480+", change: "Across all platforms" },
-      { label: "Team Adoption", value: "6/6", change: "Full migration in 8 months" },
-      { label: "Token Compliance", value: "94%", change: "Automated enforcement" },
-      { label: "Accessibility", value: "AA+", change: "WCAG 2.1 across all products" },
-      { label: "Cost Savings", value: "$1.8M/yr", change: "Eliminated duplication" },
+      { label: "Feature Delivery", value: "+30%", change: "Standardized components eliminated rebuild waste" },
+      { label: "User Satisfaction", value: "+39%", change: "Post-redesign survey improvement" },
+      { label: "Task Completion", value: "+40%", change: "Usability testing vs. legacy baseline" },
+      { label: "Business Lines", value: "33", change: "All unified under one design language" },
+      { label: "Designers Mentored", value: "4", change: "Guided through UX methods & Figma practices" },
+      { label: "Accessibility", value: "WCAG", change: "Inclusive design standards implemented platform-wide" },
     ],
-    learnings: ["If using the system is harder than building custom, the system has already failed. Adoption is a UX problem, not a governance problem.", "Automated enforcement beats manual code reviews every time. Make compliance the path of least resistance.", "The best design systems feel like creative accelerators, not constraints. If designers feel slowed down, the system needs work."],
-    reflection: "A design system isn't a component library — it's an organizational operating system. The human challenges were harder than the technical ones: navigating 'whose button wins' politics, building trust that the system would evolve with team needs, resisting the urge to over-prescribe. It succeeded because we treated adoption as a product problem, not a compliance problem.",
-    improvements: ["Should have started with a beta program of 2 willing teams before attempting full org adoption.", "Motion token system was underdeveloped — teams ended up creating ad-hoc animation patterns that diverged.", "Needed more community-building rituals among system consumers. Cultural adoption is as important as technical adoption."],
-    nextProject: { slug: "luxe", title: "LUXE", image: "https://images.unsplash.com/photo-1771955216611-0a826d819978?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBkYXJrJTIwcHJvZHVjdCUyMHN0aWxsJTIwbGlmZSUyMG1pbmltYWx8ZW58MXx8fHwxNzczNDEwMTQ0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" },
+    learnings: [
+      "In enterprise, the human challenge is harder than the design challenge. 33 business lines means 33 sets of stakeholders who believe their product is 'special.' The breakthrough wasn't the component library — it was building trust that a shared system could flex enough to serve everyone without flattening anyone's needs.",
+      "Governance isn't bureaucracy — it's the immune system. Without a formal change process, the design system would have fragmented within months. The governance framework I co-created wasn't about control; it was about making intentional decisions the default and accidental drift structurally impossible.",
+      "Mentorship multiplies impact. Training four designers on UX methodologies, design processes, and Figma best practices meant the system's quality extended far beyond what I could personally review. The best design systems don't just scale components — they scale design thinking.",
+    ],
+    reflection:
+      "This project taught me that a design system is never really about the components. It's about changing how an organization makes decisions. Great American had 33 business lines that had been designing in isolation for years — not because they wanted to, but because nobody had given them a shared language or a reason to converge. The real deliverable wasn't a Figma library. It was a governance model that made consistency feel like freedom instead of constraint. The 30% boost in feature delivery wasn't magic — it was the compounding effect of eliminating thousands of small, redundant decisions that had been draining every team, every sprint, for years. I left before seeing the full post-implementation metrics, and that's my one regret. But the foundation was built to outlast any individual contributor — and that, I think, is the mark of a system done right.",
+    improvements: [
+      "Should have pushed harder for a dedicated accessibility audit at the start, not midway through. Retrofitting inclusive design is always more expensive than building it in from day one.",
+      "The incremental rollout — while necessary for legacy constraints — meant some business lines lived with inconsistency longer than ideal. A parallel 'fast track' for willing early adopters would have built internal momentum faster.",
+      "Needed more formalized design-to-engineering handoff. The governance flow controlled design changes well, but translation to code still relied too heavily on tribal knowledge and individual relationships.",
+    ],
+    nextProject: { slug: "luxe", title: "RISE", image: "https://images.unsplash.com/photo-1764795849755-ab58c8fef307?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBkYXJrJTIwcHJvZHVjdCUyMHN0aWxsJTIwbGlmZSUyMG1pbmltYWx8ZW58MXx8fHwxNzczNDEwMTQ0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" },
   },
   {
     slug: "luxe",
-    title: "LUXE",
-    subtitle: "Where editorial storytelling meets commerce",
-    client: "Maison Luxe",
-    year: "2024",
-    role: "Lead Product Designer",
-    timeline: "5 months",
-    team: "2 designers, 3 engineers, 1 content strategist",
-    platform: "Web (Shopify Plus), Mobile Web",
-    tools: ["Figma", "Framer", "Shopify Liquid", "GSAP", "Contentful"],
+    title: "RISE",
+    subtitle: "When shopping becomes feeling",
+    client: "Rise Cannabis / Green Thumb Industries",
+    year: "2021",
+    role: "Product Designer",
+    timeline: "6 months",
+    team: "1 product designer, 1 UX strategist, PMs, developers",
+    platform: "Web (E-Commerce), Mobile Web",
+    tools: ["Figma", "Mural", "Slack", "Photoshop"],
     color: "#f0abfc",
-    heroImage: "https://images.unsplash.com/photo-1771955216611-0a826d819978?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBkYXJrJTIwcHJvZHVjdCUyMHN0aWxsJTIwbGlmZSUyMG1pbmltYWx8ZW58MXx8fHwxNzczNDEwMTQ0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    problem: "Maison Luxe's online store converted 40% below luxury benchmarks — a product catalog with a checkout button, completely disconnected from the curated, story-driven experience their boutiques are known for. The brand was losing credibility online.",
-    context: "Maison Luxe operates 12 boutiques across Europe and Japan, known for editorial curation and white-glove service. Their digital presence was an afterthought managed by a single developer. My brief: translate the boutique experience to the web — not by mimicking it, but by finding digital equivalents for what makes their stores feel special.",
-    constraints: ["Must build on Shopify Plus — no custom backend", "Page load under 2.5 seconds despite rich media and animation", "Non-technical merchandising team must be able to update content independently via Contentful", "Product photography must be the visual hero — UI can't compete with it", "Must integrate with existing ERP and inventory systems"],
-    researchInsights: [
-      { title: "Luxury buying is emotional", detail: "Story-driven product pages converted 2.4x better than feature-focused ones." },
-      { title: "White space signals premium", detail: "Users associated generous negative space with higher perceived quality." },
-      { title: "Discovery > Search", detail: "Luxury shoppers browse for inspiration. Curated journeys outperformed category navigation." },
-      { title: "Post-purchase matters", detail: "Post-purchase experience influenced repurchase rate by 34%." },
+    heroImage: "https://images.unsplash.com/photo-1764795849755-ab58c8fef307?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYW5uYWJpcyUyMGRpc3BlbnNhcnklMjBtb2Rlcm4lMjByZXRhaWwlMjBkYXJrJTIwbW9vZHl8ZW58MXx8fHwxNzczODAxNzEzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    problem:
+      "Nobody walks into a dispensary and says 'I'd like 3.5 grams of a sativa-dominant hybrid with 22% THC and a myrcene-forward terpene profile.' They say 'I want to relax after work' or 'I need something for creativity.' But Rise's online platform was built like a pharmaceutical catalog — strain names, THC percentages, and taxonomies that meant nothing to most customers. Users couldn't translate what they wanted to feel into what they should buy. They browsed, got confused, and left. Engagement was low, loyalty was leaking, and in a market where every dispensary sells the same products, the experience was the only differentiator Rise was wasting.",
+    context:
+      "Rise Cannabis, part of Green Thumb Industries — one of the largest multi-state operators in the U.S. — had a digital storefront that treated cannabis like commodity retail. But cannabis isn't commodity retail. It's one of the few product categories where the purchase decision is fundamentally emotional: people buy feelings, not SKUs. I was brought in as product designer alongside a UX strategist to redesign the shopping experience from the ground up — not by adding more filters to a broken catalog, but by reimagining how emotion could become the primary navigation paradigm.",
+    constraints: [
+      "Heavily regulated industry — product claims, health language, and marketing copy all legally constrained",
+      "Enormous product catalog across multiple dispensary locations with inconsistent inventory",
+      "Users range from first-time cannabis buyers to experienced connoisseurs — one experience must serve both",
+      "Existing technical architecture with limited engineering bandwidth for custom features",
+      "Competitive market where product selection is nearly identical across brands — experience is the only moat",
     ],
-    strategy: "E-commerce reimagined as editorial magazine — every product is a story. Commerce mechanics woven seamlessly into content, deliberately blurring the line between reading and shopping.",
+    researchInsights: [
+      {
+        title: "People buy emotions, not products",
+        detail:
+          "Surveys and customer feedback analysis revealed that the emotional outcome — relaxation, energy, creativity, pain relief — was the #1 factor in purchase decisions, yet the platform organized products by category and strain type. The entire information architecture was misaligned with how customers actually think.",
+      },
+      {
+        title: "Drop-offs cluster at decision points",
+        detail:
+          "Analytics review showed users engaged with product pages but abandoned at the moment of commitment. They'd browse 8-12 products, compare nothing meaningful, and leave. The platform gave them data but no decision framework — like handing someone a wine list sorted by grape chemistry.",
+      },
+      {
+        title: "Social proof outweighs expert opinion",
+        detail:
+          "Persona development and customer interviews showed that users trusted other customers' emotional experiences over brand descriptions or budtender recommendations. 'This made me feel calm and focused' was more persuasive than any marketing copy we could write.",
+      },
+      {
+        title: "Education builds confidence, not just knowledge",
+        detail:
+          "First-time buyers didn't just lack information — they lacked confidence. The intimidation factor of cannabis terminology was actively preventing purchases. Users who encountered educational touchpoints during browsing were significantly more likely to complete a purchase.",
+      },
+    ],
+    strategy:
+      "Flip the entire shopping paradigm. Instead of 'browse products → guess which one matches your mood,' make it 'tell us how you want to feel → here's exactly what to buy.' Two core tools: a Fit Guide that maps desired emotional states to product recommendations, and a Feelings in Reviews filter that lets customers sort by what other users actually felt. Commerce driven by empathy, not taxonomy.",
     strategyPillars: [
-      { title: "Editorial Commerce", description: "Every product page is a story. Context, craft, and heritage precede price." },
-      { title: "Cinematic Pacing", description: "Scroll-driven animations, full-bleed photography, and generous whitespace." },
-      { title: "Seamless Conversion", description: "Purchase CTAs appear contextually within the editorial flow." },
+      {
+        title: "The Fit Guide",
+        description:
+          "An interactive tool that starts with the question every customer is actually asking: 'How do you want to feel?' Users select from emotional states — relaxed, energized, creative, pain-free, social — and the system recommends products based on real effect profiles and user-reported outcomes. Decision-making simplified to its emotional core.",
+      },
+      {
+        title: "Feelings in Reviews",
+        description:
+          "A filter system layered on top of user-generated reviews, letting customers sort products by emotional experiences shared by real people. Not star ratings — feeling tags. 'Made me creative,' 'helped me sleep,' 'perfect for anxiety.' Social proof transformed into a navigation tool.",
+      },
+      {
+        title: "Educational Commerce",
+        description:
+          "Contextual learning moments woven throughout the shopping flow — not a separate 'learn' section nobody visits, but micro-education at the exact moment of relevance. What's the difference between indica and sativa? Explained when it matters, not before.",
+      },
     ],
     processSteps: [
-      { title: "Brand Immersion", description: "2 weeks in boutiques observing customer behavior and interviewing store associates." },
-      { title: "Editorial Framework", description: "5 flexible page templates blending storytelling with commerce for the merchandising team." },
-      { title: "Visual Design", description: "Dark canvas, generous white space, cinematic typography. Photography as hero." },
-      { title: "Interaction Design", description: "Scroll-driven reveals, hover micro-interactions, and premium page transitions." },
-      { title: "Shopify Customization", description: "Custom sections, metafields, and GSAP-powered animations pushing Shopify Plus limits." },
-      { title: "Post-Purchase", description: "Redesigned order confirmation, shipping emails, and return flow for luxury continuity." },
+      {
+        title: "Discovery & Emotional Mapping",
+        description:
+          "Conducted surveys and analyzed customer feedback to understand the emotional drivers behind cannabis purchases. Built a risk and assumptions matrix to identify what we knew, what we assumed, and where we needed validation. The biggest assumption we killed: that experienced users didn't need emotional guidance. They did — they just wouldn't admit it.",
+      },
+      {
+        title: "Persona & Journey Development",
+        description:
+          "Created detailed personas representing different customer archetypes — the curious first-timer, the wellness-focused regular, the recreational explorer — each mapped to emotional needs and shopping behaviors. Built customer journey maps revealing that the 'consideration' phase was where the entire experience collapsed.",
+      },
+      {
+        title: "Design Studio Workshop",
+        description:
+          "Facilitated a collaborative workshop with stakeholders generating 8+ ideas. Used Impact/Effort matrices to prioritize. The Fit Guide and Feelings in Reviews rose immediately — high impact, technically feasible, and directly addressing the emotional gap. Some advanced filtering features were deprioritized for future iterations.",
+      },
+      {
+        title: "Wireframing & Concept Validation",
+        description:
+          "Created low-fidelity wireframes for the Fit Guide flow, dispensary pages, and emotion-centric product filtering. Tested early concepts with internal teams to validate the paradigm shift from taxonomy-based to emotion-based navigation before investing in high-fidelity work.",
+      },
+      {
+        title: "High-Fidelity Prototyping",
+        description:
+          "Evolved wireframes into polished prototypes featuring the Fit Guide, Feelings in Reviews filter, redesigned dispensary pages, and a reimagined cart-to-checkout flow with emotional cues reinforcing purchase confidence throughout. Designed a marketing page introducing users to the new emotion-driven tools.",
+      },
+      {
+        title: "Usability Testing & Iteration",
+        description:
+          "Conducted usability tests revealing a 60% success rate in users finding products aligned with their desired effects — a massive improvement over the baseline of confused browsing. Feedback drove iterative refinements to navigation labels, filter affordances, and educational touchpoint placement.",
+      },
     ],
-    wireframeImage: "https://images.unsplash.com/photo-1609605348579-3123e3d40eb8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlZGl0b3JpYWwlMjBtYWdhemluZSUyMGxheW91dCUyMGRlc2lnbiUyMHR5cG9ncmFwaHl8ZW58MXx8fHwxNzczNDI1NDMxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    wireframeImage: "https://images.unsplash.com/photo-1621974182258-ce59c657267d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbW90aW9uJTIwbW9vZCUyMGNvbG9yJTIwZ3JhZGllbnQlMjBhYnN0cmFjdCUyMGRhcmt8ZW58MXx8fHwxNzczODAxNzE0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     designSystem: [
-      { label: "Typography", description: "Custom serif headlines, monospace details, generous type scale" },
-      { label: "Layout", description: "12-column grid with intentional asymmetry and full-bleed moments" },
-      { label: "Color", description: "Near-black with warm cream accents. Photography drives color" },
-      { label: "Motion", description: "GSAP scroll-triggered animations, parallax, reveal transitions" },
-      { label: "Templates", description: "5 editorial templates for merchandising team in Contentful" },
+      { label: "Emotional UI", description: "Color, imagery, and micro-copy calibrated to reflect emotional states — warm tones for relaxation, vibrant for energy, soft for calm" },
+      { label: "Fit Guide", description: "Interactive mood-to-product matching engine with progressive disclosure — simple entry, detailed results" },
+      { label: "Review Filters", description: "Feeling-tagged review system transforming social proof into navigable product discovery" },
+      { label: "Education", description: "Contextual learning moments integrated at decision points — not a knowledge base, but in-flow guidance" },
+      { label: "Commerce Flow", description: "Redesigned cart, checkout, and order history with emotional reinforcement and simplified transitions" },
     ],
-    designSystemImage: "https://images.unsplash.com/photo-1738247999551-6bee2ce9bc58?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBmYXNoaW9uJTIwZWRpdG9yaWFsJTIwcGhvdG9ncmFwaHklMjBkYXJrJTIwbW9vZHl8ZW58MXx8fHwxNzczNDI1NDMwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    prototypeHighlights: ["Full-bleed editorial product pages with scroll-driven parallax", "Contextual 'Add to Bag' within the editorial flow", "Ambient hover states with subtle perspective shifts", "Cinematic shared-element page transitions"],
-    prototypeImage: "https://images.unsplash.com/photo-1771955216611-0a826d819978?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBkYXJrJTIwcHJvZHVjdCUyMHN0aWxsJTIwbGlmZSUyMG1pbmltYWx8ZW58MXx8fHwxNzczNDEwMTQ0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    designSystemImage: "https://images.unsplash.com/photo-1621584309109-ff65ab71f9fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib3RhbmljYWwlMjBwbGFudCUyMGxlYXZlcyUyMGRhcmslMjBhcnRpc3RpYyUyMG1pbmltYWx8ZW58MXx8fHwxNzczODAxNzE0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    prototypeHighlights: [
+      "Fit Guide mapping emotional states to product recommendations — 'How do you want to feel?' as the primary entry point",
+      "Feelings in Reviews filter letting users sort products by real emotional experiences shared by other customers",
+      "Redesigned dispensary pages with emotion-centric navigation replacing taxonomy-based browsing",
+      "Cart-to-checkout flow with confidence-building cues and educational micro-moments reducing abandonment",
+    ],
+    prototypeImage: "https://images.unsplash.com/photo-1720962158883-b0f2021fb51e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjBtb2JpbGUlMjBzaG9wcGluZyUyMGFwcCUyMGRhcmslMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzczODAxNzE0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     outcomes: [
-      { label: "Conversion", value: "+89%", change: "From 1.2% to 2.3%" },
-      { label: "AOV", value: "+34%", change: "Editorial upsell effect" },
-      { label: "Return Rate", value: "3.2x", change: "Content-driven engagement" },
-      { label: "Bounce Rate", value: "-47%", change: "On product pages" },
-      { label: "Load Time", value: "1.8s", change: "Under 2.5s target" },
-      { label: "Revenue", value: "+$2.1M", change: "First quarter post-launch" },
+      { label: "Product Matches", value: "+61%", change: "Users finding effect-aligned products" },
+      { label: "Engagement", value: "+44%", change: "Time exploring via emotional navigation" },
+      { label: "Repeat Customers", value: "+52%", change: "Loyalty driven by personalized experience" },
+      { label: "Q3 Revenue", value: "$275M", change: "GTI quarterly — 9% sequential increase" },
+      { label: "Usability Success", value: "60%", change: "Effect-matching task completion rate" },
+      { label: "User Sentiment", value: "Positive", change: "'Intuitive' and 'easy to navigate'" },
     ],
-    learnings: ["Luxury e-commerce is closer to magazine design than traditional commerce.", "Performance and aesthetics don't have to conflict.", "The merchandising team's content independence was crucial for sustained impact."],
-    reflection: "Great design creates feeling. The website works because it respects the same principles as their boutiques: curation over abundance, story over spec sheet, atmosphere over efficiency. The moment I knew we'd succeeded was when the creative director said it felt like 'walking through the shop, but better.'",
-    improvements: ["Would have designed mobile-specific experience, not just responsive.", "Post-purchase emails deserved the same editorial treatment.", "Template system needs more flexibility for campaign-specific layouts."],
+    learnings: [
+      "Emotions aren't soft metrics — they're the hardest business lever in experiential commerce. When your product catalog is identical to every competitor's, the feeling of shopping is the product. Rise's 52% repeat customer surge wasn't driven by better inventory — it was driven by a platform that finally spoke the language customers were already thinking in.",
+      "Cross-functional alignment on emotional design requires evangelism, not just evidence. Stakeholders and developers initially resisted the shift from taxonomy-based to emotion-based navigation. The breakthrough was running the workshop — letting everyone experience the user's confusion firsthand, not just read about it in a research deck.",
+      "Regulatory constraints aren't creative enemies — they're creative forcing functions. Cannabis marketing restrictions meant we couldn't make health claims or use certain language. That constraint pushed us toward user-generated emotional content, which turned out to be more authentic and persuasive than anything we could have written ourselves.",
+    ],
+    reflection:
+      "This project changed how I think about commerce design. We spend so much energy optimizing funnels, reducing friction, A/B testing button colors — and none of it matters if the fundamental information architecture doesn't match how people actually make decisions. Rise customers weren't making rational choices based on THC percentages. They were making emotional choices based on how they wanted their evening to feel. The moment we rebuilt the entire shopping experience around that truth — feelings first, products second — everything moved. Engagement, loyalty, revenue. The $275M quarterly revenue wasn't caused by our redesign alone, but the 52% surge in repeat customers was. And in a commodity market, repeat customers are the only metric that actually compounds.",
+    improvements: [
+      "The Feelings in Reviews filter needed more data density at launch — with limited reviews tagged by emotion, some product categories felt sparse. Should have seeded the system with structured data from budtender expertise before relying on user-generated content alone.",
+      "Advanced filtering features were cut for scope, and I still think that was the right call. But the roadmap for re-introducing them needed to be more concrete — 'future iteration' isn't a plan, it's a postponement.",
+      "Should have pushed harder for A/B testing the cart and checkout flows. We redesigned them based on best practices and usability testing, but quantitative validation in production would have given us the confidence to iterate faster post-launch.",
+    ],
     nextProject: { slug: "synth", title: "SYNTH", image: "https://images.unsplash.com/photo-1751945965597-71171ec7a458?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhbWJpZW50JTIwbGlnaHRpbmclMjBzbWFydCUyMGhvbWUlMjBpbnRlcmlvciUyMG1vb2R5fGVufDF8fHx8MTc3MzQxMDE0NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" },
   },
   {
@@ -506,7 +656,7 @@ const CASE_STUDIES: CaseStudyData[] = [
       "Failure states for device disconnections needed more elegant handling. When a device went offline, the UI felt broken rather than gracefully degraded.",
       "Automation suggestions were sometimes too aggressive for non-daily routines — the system would suggest automations based on 2-3 occurrences, which felt presumptuous. Needed a higher confidence threshold before surfacing suggestions.",
     ],
-    nextProject: { slug: "meridian", title: "MERIDIAN", image: "https://images.unsplash.com/photo-1663000803107-132fb64cc148?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXJrJTIwbW9vZHklMjBiYW5raW5nJTIwYXBwJTIwbW9iaWxlJTIwaW50ZXJmYWNlfGVufDF8fHx8MTc3MzQxMDE0MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" },
+    nextProject: { slug: "meridian", title: "HEALTHPILOT", image: "https://images.unsplash.com/photo-1702479744031-2bf1f4bdfd8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGhjYXJlJTIwaW5zdXJhbmNlJTIwZGlnaXRhbCUyMHBsYXRmb3JtJTIwZGFyayUyMG1vb2R5fGVufDF8fHx8MTc3MzgwMDY3NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" },
   },
 ];
 
@@ -1637,7 +1787,7 @@ function ProcessLine({ color = "#c4ff00" }: { color?: string }) {
   return (
     <motion.div
       ref={ref}
-      className="w-full origin-top"
+      className="w-full origin-top relative"
       style={{ height, backgroundColor: `${color}40` }}
     />
   );

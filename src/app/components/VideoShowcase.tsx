@@ -34,7 +34,7 @@ const PROJECT_VIDEOS = [
     id: "meridian",
     poster:
       "https://images.unsplash.com/photo-1587803537744-c6d63897f2cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXJrJTIwcHJvZHVjdCUyMGludGVyZmFjZSUyMG1vYmlsZSUyMGFwcCUyMHNjcmVlbnxlbnwxfHx8fDE3NzM0MTg4MzN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    title: "Meridian",
+    title: "HealthPilot",
     subtitle: "Product Walkthrough",
     duration: "1:34",
     category: "PRODUCT DEMO",

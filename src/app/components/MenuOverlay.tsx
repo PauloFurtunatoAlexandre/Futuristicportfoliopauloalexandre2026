@@ -21,8 +21,8 @@ const EASE_SMOOTH = [0.43, 0.13, 0.23, 0.96] as const;
 
 const PROJECTS = [
   {
-    title: "MERIDIAN",
-    subtitle: "Turning Onboarding Into a Trust Engine",
+    title: "HEALTHPILOT",
+    subtitle: "Turning Medicare Chaos Into Confident Decisions",
     slug: "meridian",
     year: "2025",
     category: "Product Design",

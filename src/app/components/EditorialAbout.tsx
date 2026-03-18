@@ -109,7 +109,7 @@ function Reveal({
     <motion.div
       ref={ref}
       initial={{ opacity: 0, y }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
+      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y }}
       transition={{ duration: 0.9, delay, ease: EASE }}
       className={className}
     >
@@ -122,6 +122,39 @@ function Reveal({
    Scroll-Driven Manifesto Text
    Words illuminate as the reader scrolls
    ───────────────────────────────────────── */
+
+function ScrollWord({
+  word,
+  index,
+  total,
+  scrollYProgress,
+  isAccent,
+}: {
+  word: string;
+  index: number;
+  total: number;
+  scrollYProgress: ReturnType<typeof useScroll>["scrollYProgress"];
+  isAccent: boolean;
+}) {
+  const progress = useTransform(
+    scrollYProgress,
+    [index / total, (index + 1) / total],
+    [0, 1]
+  );
+  const wordOpacity = useTransform(progress, [0, 1], [0.08, 1]);
+
+  return (
+    <motion.span
+      className="inline-block mr-[0.3em] will-change-[opacity]"
+      style={{
+        opacity: wordOpacity,
+        color: isAccent ? "#c4ff00" : "#e8e6e3",
+      }}
+    >
+      {word}
+    </motion.span>
+  );
+}
 
 function ScrollManifesto({
   text,
@@ -155,28 +188,16 @@ function ScrollManifesto({
         className="text-[clamp(1.6rem,4.2vw,3.8rem)] leading-[1.18] tracking-[-0.018em]"
         style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
       >
-        {words.map((word, i) => {
-          const progress = useTransform(
-            scrollYProgress,
-            [i / words.length, (i + 1) / words.length],
-            [0, 1]
-          );
-          const wordOpacity = useTransform(progress, [0, 1], [0.08, 1]);
-          const isAccent = accentIndices.has(i);
-
-          return (
-            <motion.span
-              key={i}
-              className="inline-block mr-[0.3em] will-change-[opacity]"
-              style={{
-                opacity: wordOpacity,
-                color: isAccent ? "#c4ff00" : "#e8e6e3",
-              }}
-            >
-              {word}
-            </motion.span>
-          );
-        })}
+        {words.map((word, i) => (
+          <ScrollWord
+            key={i}
+            word={word}
+            index={i}
+            total={words.length}
+            scrollYProgress={scrollYProgress}
+            isAccent={accentIndices.has(i)}
+          />
+        ))}
       </p>
     </div>
   );
@@ -202,7 +223,7 @@ function StrengthBar({
     <motion.div
       ref={ref}
       initial={{ opacity: 0, x: -20 }}
-      animate={inView ? { opacity: 1, x: 0 } : {}}
+      animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
       transition={{ duration: 0.7, delay: index * 0.08, ease: EASE }}
       className="group"
     >
@@ -224,7 +245,7 @@ function StrengthBar({
         <motion.div
           className="absolute inset-y-0 left-0 bg-gradient-to-r from-[#c4ff00]/80 to-[#c4ff00]/20"
           initial={{ width: 0 }}
-          animate={inView ? { width: `${level}%` } : {}}
+          animate={inView ? { width: `${level}%` } : { width: 0 }}
           transition={{ duration: 1.2, delay: 0.3 + index * 0.08, ease: EASE }}
         />
       </div>
@@ -251,7 +272,7 @@ function PrincipleCard({
     <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
+      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.8, delay: index * 0.1, ease: EASE }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -331,7 +352,7 @@ function TimelineEntry({
     <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 30 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
+      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       transition={{ duration: 0.7, delay: index * 0.12, ease: EASE }}
       className="group grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 py-8 md:py-10 border-b border-white/[0.04] hover:border-[#c4ff00]/[0.08] transition-colors duration-700"
     >
@@ -500,7 +521,7 @@ function PortraitBlock() {
           className="type-label-sm text-[#6b6b76] block"
           style={{ writingMode: "vertical-lr", transform: "rotate(180deg)" }}
         >
-          Product Designer — Creative Director
+          Senior Product Designer — Full Stack Builder
         </span>
       </motion.div>
     </div>
@@ -527,7 +548,7 @@ function AnimatedStat({
     <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 30 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
+      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       transition={{ duration: 0.7, delay: index * 0.1, ease: EASE }}
       className="relative"
     >
@@ -535,7 +556,7 @@ function AnimatedStat({
         className="text-[clamp(2.2rem,4.5vw,4rem)] tracking-[-0.04em] text-[#e8e6e3] block"
         style={{ fontFamily: "var(--font-display)", fontWeight: 700, lineHeight: 1 }}
         initial={{ opacity: 0, scale: 0.8 }}
-        animate={inView ? { opacity: 1, scale: 1 } : {}}
+        animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
         transition={{ duration: 0.8, delay: 0.2 + index * 0.1, ease: EASE }}
       >
         {num}
@@ -543,7 +564,7 @@ function AnimatedStat({
       <motion.p
         className="type-label text-[#6b6b76] mt-3"
         initial={{ opacity: 0 }}
-        animate={inView ? { opacity: 1 } : {}}
+        animate={inView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ delay: 0.4 + index * 0.1, duration: 0.5 }}
       >
         {label}
@@ -644,7 +665,7 @@ export function EditorialAbout() {
                 className="text-[var(--type-body-lg)] leading-[1.85] text-[#8a8a96] mb-8"
                 style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
               >
-                I'm a product designer and creative director with 10+ years of experience
+                I'm a senior product designer and full stack builder with 10+ years of experience
                 shaping digital products at the intersection of strategy, aesthetics, and engineering.
                 I've led design at companies people actually use — and at studios small enough
                 that everyone's opinion mattered.

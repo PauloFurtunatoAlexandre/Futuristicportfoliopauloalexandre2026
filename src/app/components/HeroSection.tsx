@@ -77,10 +77,10 @@ export function HeroSection() {
   });
 
   // Reduce parallax intensity on mobile
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, isMobile ? -120 : -350]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, isMobile ? 0.95 : 0.85]);
-  const heroBlur = useTransform(scrollYProgress, [0, 0.6], [0, isMobile ? 4 : 10]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, isMobile ? -60 : -150]);
+  const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, isMobile ? 0.97 : 0.92]);
+  const heroBlur = useTransform(scrollYProgress, [0, 0.8], [0, isMobile ? 3 : 6]);
 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -157,7 +157,7 @@ export function HeroSection() {
     <section
       ref={ref}
       className="relative"
-      style={{ height: isMobile ? "160vh" : "200vh" }}
+      style={{ height: isMobile ? "115vh" : "130vh" }}
     >
       <div
         ref={containerRef}
@@ -343,7 +343,7 @@ export function HeroSection() {
             className="text-[clamp(1rem,2vw,1.6rem)] text-[#6b6b76]/60 mb-4"
             style={{ fontFamily: "var(--font-serif)", fontStyle: "italic" }}
           >
-            Product Designer & Creative Director
+            Senior Product Designer & Full Stack Builder
           </motion.span>
 
           {/* Role label line */}

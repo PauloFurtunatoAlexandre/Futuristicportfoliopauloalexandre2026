@@ -32,23 +32,23 @@ interface Project {
 const projects: Project[] = [
   {
     id: "01",
-    title: "MERIDIAN",
-    subtitle: "Turning Onboarding Into a Trust Engine",
-    client: "Meridian Financial",
-    role: "Lead Product Designer",
+    title: "HEALTHPILOT",
+    subtitle: "Turning Medicare Chaos Into Confident Decisions",
+    client: "HealthPilot",
+    role: "Senior Product Designer",
     problem:
-      "Hemorrhaging ~$2.4M annually — 40% abandoned onboarding before identity verification. Reframed the entire flow as a guided conversation with progressive trust, micro-celebrations, and compliance UX that doesn't feel like compliance.",
+      "Seniors abandoning Medicare enrollment mid-flow — confused by jargon, lost without guidance, distrustful of their own decisions. Rewrote the language, added step-by-step cues, and built a plan comparison engine that turned the scariest step into the most empowering one.",
     category: "Product Design",
-    year: "2025",
+    year: "2023",
     image:
-      "https://images.unsplash.com/photo-1663000803107-132fb64cc148?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXJrJTIwbW9vZHklMjBiYW5raW5nJTIwYXBwJTIwbW9iaWxlJTIwaW50ZXJmYWNlfGVufDF8fHx8MTc3MzQxMDE0MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      "https://images.unsplash.com/photo-1702479744031-2bf1f4bdfd8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGhjYXJlJTIwaW5zdXJhbmNlJTIwZGlnaXRhbCUyMHBsYXRmb3JtJTIwZGFyayUyMG1vb2R5fGVufDF8fHx8MTc3MzgwMDY3NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     color: "#c4ff00",
     metrics: [
-      { label: "Onboarding", value: "+67%" },
-      { label: "NPS", value: "82" },
-      { label: "Time to Value", value: "-53%" },
+      { label: "Drop-Off", value: "-25%" },
+      { label: "Satisfaction", value: "97%" },
+      { label: "Investment", value: "$10M" },
     ],
-    tags: ["Fintech", "Mobile", "Brand System"],
+    tags: ["Healthcare", "Web", "UX Research"],
     slug: "meridian",
   },
   {
@@ -95,44 +95,44 @@ const projects: Project[] = [
   },
   {
     id: "04",
-    title: "FORMA",
-    subtitle: "Unifying Six Products That Grew Up Separately",
-    client: "Forma Inc.",
-    role: "Systems Design Lead",
+    title: "GAIG",
+    subtitle: "Taming 33 Business Lines With One Design Language",
+    client: "Great American Insurance Group",
+    role: "Lead Product Designer",
     problem:
-      "Six teams, five years of drift, zero shared language — 47 button variants, 23 grays, 3-week component shipping time. Architected a token-first design system with automated governance that all six teams actually adopted.",
-    category: "Systems Design",
-    year: "2024",
+      "33 business lines, 33 different UIs, zero shared language. Agents lost 15+ minutes per task reorienting across products. Insureds abandoned enrollment mid-flow because the platform never confirmed their actions worked. Built a scalable design system and UX governance framework that unified everything.",
+    category: "Design Systems",
+    year: "2022",
     image:
-      "https://images.unsplash.com/photo-1662906047226-971b484f5056?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxicnV0YWxpc3QlMjBjb25jcmV0ZSUyMGFyY2hpdGVjdHVyZSUyMHNoYWRvd3xlbnwxfHx8fDE3NzM0MTAxNDN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      "https://images.unsplash.com/photo-1566748886022-ec212e5642fe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjBpbnN1cmFuY2UlMjBlbnRlcnByaXNlJTIwcGxhdGZvcm0lMjBkYXJrJTIwbW9vZHl8ZW58MXx8fHwxNzczODAxNDQ1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     color: "#06b6d4",
     metrics: [
-      { label: "Velocity", value: "+120%" },
-      { label: "Components", value: "480+" },
-      { label: "Adoption", value: "6/6" },
+      { label: "Feature Delivery", value: "+30%" },
+      { label: "Satisfaction", value: "+39%" },
+      { label: "Business Lines", value: "33" },
     ],
-    tags: ["Design Ops", "Tokens", "Figma"],
+    tags: ["Design Systems", "B2B", "Accessibility"],
     slug: "forma",
   },
   {
     id: "05",
-    title: "LUXE",
-    subtitle: "Where Editorial Storytelling Meets Commerce",
-    client: "Maison Luxe",
-    role: "Lead Product Designer",
+    title: "RISE",
+    subtitle: "When Shopping Becomes Feeling",
+    client: "Rise Cannabis / GTI",
+    role: "Product Designer",
     problem:
-      "Converting 40% below luxury benchmarks — a product catalog disconnected from the boutique experience. Reimagined e-commerce as editorial magazine where story-driven pages blur the line between reading and shopping.",
+      "Users couldn't translate emotions into products on a platform built like a pharmaceutical catalog. Redesigned the entire shopping paradigm around feelings — a Fit Guide and emotion-tagged reviews turned confused browsing into confident buying.",
     category: "E-Commerce",
-    year: "2024",
+    year: "2021",
     image:
-      "https://images.unsplash.com/photo-1771955216611-0a826d819978?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBkYXJrJTIwcHJvZHVjdCUyMHN0aWxsJTIwbGlmZSUyMG1pbmltYWx8ZW58MXx8fHwxNzczNDEwMTQ0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      "https://images.unsplash.com/photo-1764795849755-ab58c8fef307?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYW5uYWJpcyUyMGRpc3BlbnNhcnklMjBtb2Rlcm4lMjByZXRhaWwlMjBkYXJrJTIwbW9vZHl8ZW58MXx8fHwxNzczODAxNzEzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     color: "#f0abfc",
     metrics: [
-      { label: "Conversion", value: "+89%" },
-      { label: "AOV", value: "+34%" },
-      { label: "Return Rate", value: "3.2×" },
+      { label: "Product Matches", value: "+61%" },
+      { label: "Repeat Users", value: "+52%" },
+      { label: "Engagement", value: "+44%" },
     ],
-    tags: ["Shopify", "Brand", "Editorial"],
+    tags: ["Cannabis", "Emotion UX", "E-Commerce"],
     slug: "luxe",
   },
   {
@@ -561,15 +561,17 @@ function StickyProjectCard({
                       border: `1px solid ${project.color}25`,
                     }}
                   >
-                    <span
-                      className="relative z-10 text-[10px] tracking-[0.35em] uppercase transition-colors duration-500"
+                    <motion.span
+                      className="relative z-10 text-[10px] tracking-[0.35em] uppercase"
                       style={{
                         fontFamily: "'JetBrains Mono', monospace",
-                        color: isHovered ? "#0a0a0b" : project.color,
+                        color: project.color,
                       }}
+                      variants={{ hover: { color: "#0a0a0b" } }}
+                      transition={{ duration: 0.35 }}
                     >
                       Read Case Study
-                    </span>
+                    </motion.span>
                     <motion.div
                       className="absolute inset-0"
                       style={{ backgroundColor: project.color }}
