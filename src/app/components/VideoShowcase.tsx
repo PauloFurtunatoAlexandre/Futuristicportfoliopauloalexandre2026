@@ -896,7 +896,7 @@ export function VideoShowcase() {
   }, [stickyProgress]);
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden" id="reel">
+    <section ref={sectionRef} className="relative overflow-hidden" id="reel" style={{ position: "relative" }}>
       {/* ═══ CH.1 — HERO DESIGN REEL ═══ */}
       <div className="relative px-6 md:px-12 lg:px-16 pt-32 md:pt-48 pb-24 md:pb-36">
         {/* Oversized bg */}

@@ -456,6 +456,7 @@ export function ContactSection() {
       id="contact"
       ref={sectionRef}
       className="relative overflow-hidden"
+      style={{ position: "relative" }}
     >
       {/* ═══════════════════════════════════════
          PART 1 — ATMOSPHERIC PRELUDE

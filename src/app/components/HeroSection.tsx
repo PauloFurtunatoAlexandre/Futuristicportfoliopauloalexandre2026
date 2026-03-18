@@ -157,7 +157,7 @@ export function HeroSection() {
     <section
       ref={ref}
       className="relative"
-      style={{ height: isMobile ? "115vh" : "130vh" }}
+      style={{ height: isMobile ? "115vh" : "130vh", position: "relative" }}
     >
       <div
         ref={containerRef}

@@ -194,6 +194,7 @@ export function ImmersiveGallery() {
     <section
       ref={containerRef}
       className="relative py-24 md:py-40 overflow-hidden"
+      style={{ position: "relative" }}
     >
       {/* Oversized background label */}
       <motion.div

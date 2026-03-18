@@ -365,6 +365,7 @@ export function ProcessSection() {
       ref={sectionRef}
       id="process"
       className="relative overflow-hidden"
+      style={{ position: "relative" }}
     >
       {/* ═══ HEADER ═══ */}
       <div className="relative px-6 md:px-12 lg:px-16 pt-12 md:pt-20 pb-12 md:pb-20">

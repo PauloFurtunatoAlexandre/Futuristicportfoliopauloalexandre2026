@@ -14,7 +14,7 @@ export function SectionDivider({ label }: { label?: string }) {
   const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
 
   return (
-    <div ref={ref} className="relative py-6 md:py-12 px-6 md:px-12 lg:px-16">
+    <div ref={ref} className="relative py-6 md:py-12 px-6 md:px-12 lg:px-16" style={{ position: "relative" }}>
       <div className="relative flex items-center gap-0">
         {/* Left line grows right */}
         <motion.div

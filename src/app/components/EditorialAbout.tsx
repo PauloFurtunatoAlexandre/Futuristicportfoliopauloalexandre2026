@@ -599,6 +599,7 @@ export function EditorialAbout() {
       id="about"
       ref={sectionRef}
       className="relative overflow-hidden"
+      style={{ position: "relative" }}
     >
       {/* ═══ CH.1 — MANIFESTO ═══ */}
       <div className="relative px-6 md:px-12 lg:px-16 pt-12 md:pt-20 pb-12 md:pb-20">

@@ -197,7 +197,7 @@ export function ResumePage() {
         style={{ width: progressWidth }}
       />
 
-      <div ref={containerRef} className="relative min-h-screen bg-[#0a0a0b] text-[#e8e6e3]">
+      <div ref={containerRef} className="relative min-h-screen bg-[#0a0a0b] text-[#e8e6e3]" style={{ position: "relative" }}>
         {/* ─── HEADER BAR ─── */}
         <motion.header
           className="sticky top-0 z-50 backdrop-blur-xl bg-[#0a0a0b]/80 border-b border-white/[0.04]"

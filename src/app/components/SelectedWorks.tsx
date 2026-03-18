@@ -689,7 +689,7 @@ export function SelectedWorks() {
   const isMobile = useIsMobile();
 
   return (
-    <section id="work" ref={sectionRef} className="relative py-20 md:py-32">
+    <section id="work" ref={sectionRef} className="relative py-20 md:py-32" style={{ position: "relative" }}>
       <SectionHeader />
 
       {/* Sticky card stack */}
