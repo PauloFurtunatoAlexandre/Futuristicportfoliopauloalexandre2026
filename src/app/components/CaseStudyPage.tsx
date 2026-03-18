@@ -8,7 +8,7 @@ import {
 } from "motion/react";
 import { useParams, useNavigate } from "react-router";
 import { ArrowUpRight, ArrowLeft, ChevronDown, List, X } from "lucide-react";
-const hpHeroImg = "https://images.unsplash.com/photo-1747224317356-6dd1a4a078fd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZWRpY2FyZSUyMGhlYWx0aGNhcmUlMjBkaWdpdGFsJTIwcGxhdGZvcm0lMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzczODQ3NDI4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+import hpHeroImg from "figma:asset/7bbfacf2ed4c6625d9871c3ff14d7a198146a50e.png";
 const hpSprintsImg = "https://images.unsplash.com/photo-1529119835860-ce3d90485424?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGhjYXJlJTIwYXBwJTIwZGVzaWduJTIwc3ByaW50JTIwd2hpdGVib2FyZHxlbnwxfHx8fDE3NzM4NDc0MzF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 const hpPersonasImg = "https://images.unsplash.com/photo-1740777790268-98c4be7e5fd1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx1c2VyJTIwcGVyc29uYSUyMHJlc2VhcmNoJTIwaGVhbHRoY2FyZSUyMFVYfGVufDF8fHx8MTc3Mzg0NzQzNnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 const hpJourneyImg = "https://images.unsplash.com/photo-1624259458752-a2c5922abea0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdXN0b21lciUyMGpvdXJuZXklMjBtYXAlMjBVWCUyMGRlc2lnbiUyMHByb2Nlc3N8ZW58MXx8fHwxNzczODQ3NDQwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
@@ -492,7 +492,7 @@ const CASE_STUDIES: CaseStudyData[] = [
     title: "SOLSTICE",
     subtitle: "Scaling a consultancy's product through design system discipline",
     client: "Solstice Innovations (via Technology Consulting)",
-    year: "2024\u20132025",
+    year: "2024",
     role: "Senior Product Designer & Design Lead",
     timeline: "17 months",
     team: "3 mentored designers, 2 PMs, cross-functional engineering pods",
