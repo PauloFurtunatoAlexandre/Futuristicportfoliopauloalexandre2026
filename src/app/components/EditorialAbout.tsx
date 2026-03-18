@@ -57,34 +57,39 @@ const PRINCIPLES = [
 
 const TIMELINE = [
   {
-    period: "2024 — Now",
-    role: "Independent — Creative Direction & Product Design",
-    note: "Select partnerships with studios and startups building the next interface paradigms.",
+    period: "2025 — Now",
+    role: "Rentvine — Senior Product Designer",
+    note: "Leading end-to-end product design for a B2B property management SaaS platform. Pioneered AI-assisted design workflows with Claude AI, mentored senior designers in AI-augmented ResearchOps, and built DesignOps infrastructure that increased validated solution rate by 30%.",
   },
   {
-    period: "2021 — 2024",
-    role: "Stripe — Senior Product Designer",
-    note: "Led design for developer-facing billing infrastructure. Shipped systems used by millions of businesses.",
+    period: "2024 — 2025",
+    role: "Solstice Innovations — Senior Product Designer",
+    note: "Directed the creation of a company-wide design system that streamlined redesign cycles. Mentored 3 designers, refining Figma workflows and accelerating design-to-development handoff through functional prototypes.",
+  },
+  {
+    period: "2022 — 2023",
+    role: "HealthPilot — Senior Product Designer",
+    note: "Led the full UX/UI process for an AI-powered Medicare recommendation platform. Produced design specs and prototypes that supported a $10M funding round. Achieved 97% satisfaction rate and 51% usability increase.",
+  },
+  {
+    period: "2021 — 2022",
+    role: "Great American Insurance Group — Lead Product Designer",
+    note: "Led a team of 5 designers delivering digital products across insured portals and risk management platforms. Revamped the corporate design system with accessibility focus, reducing UI inconsistencies by 70%.",
   },
   {
     period: "2018 — 2021",
-    role: "Google — UX Designer, Material Design",
-    note: "Contributed to Material 3 component specs and cross-platform design language evolution.",
-  },
-  {
-    period: "2016 — 2018",
-    role: "Studio Rotation — Various",
-    note: "Cut teeth at boutique studios in Tokyo and Berlin. Learned that constraints are gifts.",
+    role: "Freelance & Advice Media — Product Designer",
+    note: "Built data-driven design solutions and visual systems across healthcare, cannabis, and media industries. Implemented WCAG standards and facilitated discovery workshops translating complex business goals into effective UX strategies.",
   },
 ];
 
 const STRENGTHS = [
-  { label: "Product Strategy", level: 92 },
-  { label: "Interaction Design", level: 97 },
-  { label: "Design Systems", level: 95 },
-  { label: "Prototyping", level: 90 },
-  { label: "Creative Direction", level: 88 },
-  { label: "Frontend Sensibility", level: 82 },
+  { label: "Product Strategy", level: 95 },
+  { label: "Design Systems", level: 97 },
+  { label: "UX Research", level: 92 },
+  { label: "Prototyping & Interaction", level: 94 },
+  { label: "AI-Augmented Design", level: 88 },
+  { label: "Frontend Development", level: 80 },
 ];
 
 /* ─────────────────────────────────────────
@@ -499,7 +504,7 @@ function PortraitBlock() {
         className="absolute -bottom-8 right-0 md:-right-16 bg-[#0a0a0b]/90 backdrop-blur-sm border border-white/[0.06] px-7 py-5 z-20 max-w-[220px]"
       >
         <span className="type-label text-[#c4ff00] block mb-2">
-          Based in Lisbon / Remote
+          Based in St. Pete, FL / Remote
         </span>
         <span
           className="text-[0.75rem] text-[#6b6b76] leading-[1.6]"
@@ -618,10 +623,10 @@ export function EditorialAbout() {
           </Reveal>
 
           <ScrollManifesto
-            text="I don't design interfaces. I architect moments of clarity in a world drowning in noise. Every pixel is a decision. Every interaction, a conversation. Every product, a story waiting to unfold. The work I care about sits in the tension between beauty and utility — where something can be both rigorous and alive."
+            text="I started in graphic design and never stopped evolving. Over 12 years, I've moved from pixels to products, from visual systems to full-stack builds, from following briefs to shaping strategy. I design for the moments that matter — when a confused Medicare enrollee finally understands their options, when an insurance team ships twice as fast because the system just works, when a cannabis shopper finds exactly the feeling they were looking for. The work I care about lives where empathy meets engineering."
             accentPhrases={[
-              "moments of clarity",
-              "beauty and utility",
+              "moments that matter",
+              "empathy meets engineering",
             ]}
           />
 
@@ -665,10 +670,11 @@ export function EditorialAbout() {
                 className="text-[var(--type-body-lg)] leading-[1.85] text-[#8a8a96] mb-8"
                 style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
               >
-                I'm a senior product designer and full stack builder with 10+ years of experience
-                shaping digital products at the intersection of strategy, aesthetics, and engineering.
-                I've led design at companies people actually use — and at studios small enough
-                that everyone's opinion mattered.
+                I'm a senior product designer with 12+ years of experience across insurance,
+                healthcare, SaaS, and emerging industries. I've led design teams, built
+                company-wide design systems from scratch, and shipped products that helped
+                secure $10M in funding. I also write code — React, JavaScript, Node — because
+                understanding what engineers build makes me a better designer.
               </p>
             </Reveal>
 
@@ -677,10 +683,13 @@ export function EditorialAbout() {
                 className="text-[var(--type-body)] leading-[1.85] text-[#6b6b76] mb-8"
                 style={{ fontFamily: "var(--font-body)" }}
               >
-                My work spans zero-to-one product creation, design system architecture,
-                brand identity systems, and interaction choreography. I'm drawn to projects
-                that demand both rigor and intuition — where the brief isn't just "make it
-                pretty" but "make it inevitable."
+                My career is a story of compounding breadth. I started in graphic design
+                and digital illustration in Brazil, studied business and marketing, then
+                went full-stack through a Bloomtech bootcamp. That path wasn't accidental —
+                I kept hitting walls where understanding the adjacent discipline was the only
+                way to break through. Today I design at the systems level: DesignOps
+                infrastructure, AI-augmented research workflows, and scalable product
+                experiences that survive contact with real users and real organizations.
               </p>
             </Reveal>
 
@@ -689,10 +698,12 @@ export function EditorialAbout() {
                 className="text-[var(--type-body)] leading-[1.85] text-[#6b6b76] mb-10"
                 style={{ fontFamily: "var(--font-body)" }}
               >
-                When I'm not designing, I'm probably developing film photographs in my
-                darkroom, reading about Japanese joinery, or arguing about typefaces
-                with people who don't care. I believe the best designers are
-                perpetually curious about things that have nothing to do with design.
+                Right now I'm at Rentvine, pioneering AI-assisted design workflows with Claude
+                and building DesignOps infrastructure for a B2B property management platform.
+                Before that, I helped HealthPilot translate complex AI into interfaces that
+                seniors could actually use, and led a 5-designer team at Great American Insurance
+                Group redesigning their entire corporate design system. I hold an MBA in UX
+                Research and Leadership and never stop learning.
               </p>
             </Reveal>
 
@@ -703,17 +714,17 @@ export function EditorialAbout() {
                   className="text-[clamp(1.05rem,1.6vw,1.35rem)] leading-[1.55] text-[#e8e6e3]/50 block"
                   style={{ fontFamily: "var(--font-serif)", fontStyle: "italic" }}
                 >
-                  "The difference between good and great is invisible to most — but felt by everyone."
+                  "I keep hitting walls where understanding the adjacent discipline is the only way to break through. So I keep learning."
                 </span>
               </blockquote>
             </Reveal>
 
             {/* Stats */}
             <div className="grid grid-cols-2 gap-x-12 gap-y-10 pt-10 border-t border-white/[0.04] mt-6">
-              <AnimatedStat num="47+" label="Products Shipped" index={0} />
-              <AnimatedStat num="12" label="Design Awards" index={1} />
-              <AnimatedStat num="3" label="Patents Filed" index={2} />
-              <AnimatedStat num="∞" label="Coffees Consumed" index={3} />
+              <AnimatedStat num="12+" label="Years in Design" index={0} />
+              <AnimatedStat num="$10M" label="Funding Supported" index={1} />
+              <AnimatedStat num="97%" label="Highest Satisfaction" index={2} />
+              <AnimatedStat num="70%" label="UI Inconsistencies Cut" index={3} />
             </div>
           </div>
         </div>
@@ -836,7 +847,7 @@ export function EditorialAbout() {
                     className="text-[0.875rem] text-[#6b6b76]"
                     style={{ fontFamily: "var(--font-body)", lineHeight: 1.6 }}
                   >
-                    BA Industrial Design — Royal College of Art, London
+                    MBA, UX Research & Leadership — UNIFATEC / Toronto Business School · Full Stack Web Dev — Bloomtech · Business — Columbia College
                   </span>
                 </div>
               </div>

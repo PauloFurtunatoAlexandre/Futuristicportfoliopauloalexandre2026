@@ -405,7 +405,7 @@ export function HeroSection() {
             style={{ fontFamily: "var(--font-mono)" }}
           >
             Designing products people <span className="text-[#c4ff00]">obsess</span> over —
-            from zero-to-one concepts to systems that scale across millions.
+            from AI-powered Medicare platforms to enterprise design systems that scale across millions.
           </motion.p>
 
           {/* CTA buttons */}
@@ -528,7 +528,7 @@ export function HeroSection() {
               className="text-[11px] tracking-[0.1em] text-[#6b6b76] hidden md:block"
               style={{ fontFamily: "var(--font-mono)" }}
             >
-              Based in Lisbon / Remote
+              Based in Saint Petersburg, FL / Remote
             </p>
           </motion.div>
         </motion.div>

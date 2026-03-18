@@ -287,7 +287,7 @@ export function MenuOverlay({
           hour: "2-digit",
           minute: "2-digit",
           hour12: false,
-          timeZone: "Europe/Lisbon",
+          timeZone: "America/New_York",
         })
       );
     };

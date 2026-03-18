@@ -47,10 +47,10 @@ const COLORS = {
    ───────────────────────────────────────── */
 
 const HERO_METRICS = [
-  { value: 340, suffix: "%", label: "Avg. Conversion Lift", prefix: "+", description: "Across 6 flagship redesigns" },
-  { value: 2.4, suffix: "M", label: "Users Impacted", prefix: "", description: "Monthly active users reached" },
-  { value: 67, suffix: "%", label: "Avg. Task-Time Reduction", prefix: "-", description: "Measured via usability studies" },
-  { value: 96, suffix: "", label: "NPS Score (Highest)", prefix: "", description: "Post-launch user satisfaction" },
+  { value: 51, suffix: "%", label: "Avg. Usability Increase", prefix: "+", description: "Across HealthPilot & Rentvine" },
+  { value: 97, suffix: "%", label: "Highest Satisfaction Rate", prefix: "", description: "HealthPilot Medicare platform" },
+  { value: 70, suffix: "%", label: "UI Inconsistencies Reduced", prefix: "-", description: "GAIG design system overhaul" },
+  { value: 49, suffix: "%", label: "Delivery Time Reduction", prefix: "-", description: "Design system impact at GAIG" },
 ];
 
 const GROWTH_DATA = [
@@ -70,36 +70,36 @@ const GROWTH_DATA = [
 
 const BEFORE_AFTER = [
   {
-    metric: "Onboarding Completion",
-    before: 23,
-    after: 71,
+    metric: "Usability Score",
+    before: 46,
+    after: 97,
     unit: "%",
-    project: "Meridian",
-    context: "Redesigned 12-step flow into 4 progressive stages",
+    project: "HealthPilot",
+    context: "AI-powered Medicare platform redesigned for seniors",
   },
   {
-    metric: "Support Tickets / Week",
+    metric: "Support Queries / Week",
     before: 340,
-    after: 89,
+    after: 150,
     unit: "",
-    project: "VOID",
-    context: "Clarity-driven UI reduced confusion by 74%",
-  },
-  {
-    metric: "Time-to-First-Value",
-    before: 14,
-    after: 3,
-    unit: " min",
-    project: "AETHER",
-    context: "Streamlined setup wizard with smart defaults",
+    project: "GAIG",
+    context: "Design QA workshops cut support queries by 56%",
   },
   {
     metric: "Feature Adoption Rate",
-    before: 12,
-    after: 58,
+    before: 38,
+    after: 60,
     unit: "%",
-    project: "FORMA",
-    context: "Progressive disclosure + contextual education",
+    project: "Rentvine",
+    context: "22% lift via outcome-aligned design decisions",
+  },
+  {
+    metric: "Task Completion Rate",
+    before: 64,
+    after: 82,
+    unit: "%",
+    project: "Rentvine",
+    context: "18% improvement through discovery workflows",
   },
 ];
 
@@ -121,34 +121,34 @@ const UX_IMPROVEMENTS = [
 
 const PROJECT_OUTCOMES = [
   {
-    project: "Meridian",
+    project: "HealthPilot",
+    role: "Senior Product Designer",
+    metrics: [
+      { label: "Funding Secured", value: "$10M" },
+      { label: "Satisfaction Rate", value: "97%" },
+      { label: "Usability Lift", value: "+51%" },
+    ],
+    summary: "Led full UX/UI for an AI-powered Medicare recommendation platform. Translated complex AI into intuitive flows that helped seniors navigate healthcare decisions with confidence.",
+  },
+  {
+    project: "GAIG",
     role: "Lead Product Designer",
     metrics: [
-      { label: "Revenue Impact", value: "+$4.2M ARR" },
-      { label: "Conversion Lift", value: "+340%" },
-      { label: "Churn Reduction", value: "-28%" },
+      { label: "UI Consistency", value: "+70%" },
+      { label: "Delivery Speed", value: "+49%" },
+      { label: "Support Reduction", value: "-56%" },
     ],
-    summary: "End-to-end billing platform redesign for Stripe. Transformed a developer-hostile flow into an intuitive self-serve experience.",
+    summary: "Revamped the corporate design system across 33 business lines. Led 5 designers in creating accessible, scalable component libraries that unified the entire product ecosystem.",
   },
   {
-    project: "VOID",
-    role: "Design Lead & Strategy",
+    project: "Rentvine",
+    role: "Senior Product Designer",
     metrics: [
-      { label: "DAU Growth", value: "+180%" },
-      { label: "Session Duration", value: "+4.2 min" },
-      { label: "NPS Score", value: "96" },
+      { label: "Feature Adoption", value: "+22%" },
+      { label: "Task Completion", value: "+18%" },
+      { label: "Rework Reduction", value: "-25%" },
     ],
-    summary: "Spatial computing interface for creative professionals. Pioneered gesture-based navigation that became an industry reference.",
-  },
-  {
-    project: "AETHER",
-    role: "Creative Director",
-    metrics: [
-      { label: "Adoption Rate", value: "+420%" },
-      { label: "Time-to-Value", value: "-78%" },
-      { label: "Retention (D30)", value: "72%" },
-    ],
-    summary: "AI-powered design tool. Reduced cognitive overhead through progressive complexity and smart defaults.",
+    summary: "Pioneered AI-assisted design workflows and built DesignOps infrastructure for a B2B property management SaaS, increasing validated solution rate by 30%.",
   },
 ];
 

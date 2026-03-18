@@ -441,7 +441,7 @@ export function ContactSection() {
           minute: "2-digit",
           second: "2-digit",
           hour12: false,
-          timeZone: "Europe/Lisbon",
+          timeZone: "America/New_York",
         })
       );
     };
@@ -736,7 +736,7 @@ export function ContactSection() {
                 >
                   Product designer crafting thoughtful digital experiences at the
                   intersection of strategy, aesthetics, and human behaviour.
-                  Based in Lisbon, available worldwide.
+                  Based in Saint Petersburg, FL — available worldwide.
                 </p>
               </Reveal>
 
@@ -747,7 +747,7 @@ export function ContactSection() {
                     className="text-[0.5rem] tracking-[0.4em] uppercase text-[#3a3a42]"
                     style={{ fontFamily: "var(--font-mono)" }}
                   >
-                    {time} WET — Lisbon
+                    {time} EST — Florida
                   </span>
                 </div>
               </Reveal>
