@@ -14,7 +14,7 @@ import hpPersonasImg from "figma:asset/14640d519882e99e696e2223fbbf15663f2564eb.
 import hpJourneyImg from "figma:asset/c352a90999e00126857a04eb13e42e7f5f69f24f.png";
 import hpDesignSystemImg from "figma:asset/4557a4d2218b0b670e8fd145275b787327362ddd.png";
 import hpPrototypeImg from "figma:asset/034ad9d3633de3ed493e98ea68bb2c011588308f.png";
-const gaigHeroImg = "https://images.unsplash.com/photo-1640323240640-ee731d18dcb1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbnN1cmFuY2UlMjBlbnRlcnByaXNlJTIwc29mdHdhcmUlMjBkYXNoYm9hcmR8ZW58MXx8fHwxNzczODA3MDc4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+import gaigHeroImg from "figma:asset/a14953c0d7236138483f4078155353567d3722c4.png";
 const gaigGovernanceImg = "https://images.unsplash.com/photo-1676287568293-8cd7917e7d95?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjBnb3Zlcm5hbmNlJTIwY29tcGxpYW5jZSUyMGRvY3VtZW50fGVufDF8fHx8MTc3MzgwNzA3OHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 const gaigOktaFlowImg = "https://images.unsplash.com/photo-1592791770401-7a0cb5ee279b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhdXRoZW50aWNhdGlvbiUyMGxvZ2luJTIwc2VjdXJpdHklMjBmbG93fGVufDF8fHx8MTc3MzgwNzA3OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 const gaigDesignSystemImg = "https://images.unsplash.com/photo-1562601555-513820e5d0eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ24lMjBzeXN0ZW0lMjBjb21wb25lbnRzJTIwVUl8ZW58MXx8fHwxNzczNzM2OTE5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
@@ -1172,7 +1172,7 @@ export function CaseStudyPage() {
 
       {/* ═══���═══════════════════════════════════
          2. OVERVIEW
-         ═══════════════════════════════════════ */}
+         ═════════════════���═════════════════════ */}
       <Section id="overview" className="px-6 md:px-12 lg:px-24 py-20 md:py-32" onInView={handleChapterChange}>
         <ChapterLabel number="01" title="Overview" accentColor={cs.color} />
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-12">
