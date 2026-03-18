@@ -4,23 +4,23 @@ import { motion, AnimatePresence, useInView } from "motion/react";
 const testimonials = [
   {
     quote:
-      "Paulo doesn't just design products — he redesigns how you think about them. Working with him felt like a masterclass in intentionality.",
-    name: "Sarah Chen",
-    role: "VP of Product, Meridian",
-    year: "2025",
+      "As our company's Lead UX Designer, Paulo was responsible for many core initiatives including a complete redesign of our design system and site branding, mobile first designs, site wide accessibility, and implementing user research practices. Paulo is strong in all aspects of UX design but certainly a very talented UX researcher. For instance, Paulo lead usability tests, moderated interviews, and broad-based user surveys that gave our teams immense insights into our users and had direct impacts on our product roadmap. Paulo is a terrific interviewer and was always able to extract deep user insights from his research. Paulo then was able to translate those insights into effective designs to solve users' needs.",
+    name: "Matthew Hoty",
+    role: "Head of Product & Data at HealthPilot",
+    year: "2024",
   },
   {
     quote:
-      "The level of craft is almost unnerving. Every micro-interaction, every transition, every spacing decision tells you someone cared deeply.",
-    name: "Marcus Webb",
-    role: "CEO, Void Labs",
-    year: "2025",
+      "I might have met people who work as hard as Paulo but I can't think of anyone that would work harder than him. Some people, including myself, see product people categorized into the \"Problem Team\" and the \"Solution Team\". Paulo is the guy that plays well (and simultaneously) in both. Passionated, smart, talented, competent, and always willing to help. Definitely a great asset to any team.",
+    name: "Daniel Camargo",
+    role: "Founder at PracticeFront",
+    year: "2024",
   },
   {
     quote:
-      "He brought a cinematic quality to our product that we didn't even know we were missing. Our users feel it, even if they can't name it.",
-    name: "Yuki Tanaka",
-    role: "Creative Director, Aether",
+      "Paulo, is a talented UX designer who has been a valuable member of our team. In his time with us, Paulo has consistently demonstrated their exceptional skills and creativity in designing innovative and intuitive user experiences. He is an excellent collaborator, always willing to go the extra mile to ensure that our projects meet the highest standards of quality. As a Mentor, he has played a huge role in my journey as a UX designer and set me on a path for growth. Overall, Paulo is an outstanding UX designer who would be a tremendous asset to any organization. I highly recommend him without reservation and would be happy to provide further information or answer any questions you may have.",
+    name: "Alexandre Hounsou",
+    role: "UX Designer at Great American Insurance Group",
     year: "2024",
   },
 ];
@@ -30,7 +30,7 @@ function AnimatedQuote({ text, isActive }: { text: string; isActive: boolean }) 
 
   return (
     <p
-      className="text-[clamp(1.15rem,2.4vw,2rem)] leading-[1.45]"
+      className="text-[clamp(0.95rem,1.8vw,1.5rem)] leading-[1.55]"
       style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
     >
       {words.map((word, i) => (
@@ -44,8 +44,8 @@ function AnimatedQuote({ text, isActive }: { text: string; isActive: boolean }) 
               : { opacity: 0, y: 12, filter: "blur(4px)" }
           }
           transition={{
-            delay: i * 0.025,
-            duration: 0.5,
+            delay: i * 0.012,
+            duration: 0.4,
             ease: [0.25, 0.46, 0.45, 0.94],
           }}
           style={{ color: "#e8e6e3" }}
@@ -67,7 +67,7 @@ export function TestimonialsSection() {
     if (!isInView) return;
     const interval = setInterval(() => {
       setActive((prev) => (prev + 1) % testimonials.length);
-    }, 6000);
+    }, 12000);
     return () => clearInterval(interval);
   }, [isInView]);
 
@@ -79,7 +79,7 @@ export function TestimonialsSection() {
     const start = Date.now();
     const frame = () => {
       const elapsed = Date.now() - start;
-      const pct = Math.min(elapsed / 6000, 1);
+      const pct = Math.min(elapsed / 12000, 1);
       setProgress(pct);
       if (pct < 1) requestAnimationFrame(frame);
     };
@@ -88,7 +88,7 @@ export function TestimonialsSection() {
   }, [active, isInView]);
 
   return (
-    <section ref={ref} className="relative px-6 md:px-12 lg:px-16 py-32 md:py-48">
+    <section ref={ref} className="relative px-6 md:px-12 lg:px-16 py-20 md:py-32">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
         {/* Left label */}
         <div className="md:col-span-3">

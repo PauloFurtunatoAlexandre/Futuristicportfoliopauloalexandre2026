@@ -367,7 +367,7 @@ export function ProcessSection() {
       className="relative overflow-hidden"
     >
       {/* ═══ HEADER ═══ */}
-      <div className="relative px-6 md:px-12 lg:px-16 pt-20 md:pt-32 pb-16 md:pb-24">
+      <div className="relative px-6 md:px-12 lg:px-16 pt-12 md:pt-20 pb-12 md:pb-20">
         {/* Oversized background */}
         <motion.div
           style={{ y: oversizedY }}
@@ -427,7 +427,7 @@ export function ProcessSection() {
       </div>
 
       {/* ═══ STAGES ═══ */}
-      <div className="relative px-6 md:px-12 lg:px-16 pb-20 md:pb-32 space-y-20 md:space-y-28">
+      <div className="relative px-6 md:px-12 lg:px-16 pb-16 md:pb-24 space-y-20 md:space-y-28">
         {/* Vertical timeline line */}
         <div className="hidden lg:block absolute top-0 bottom-0 left-[calc(33.333%+2rem)] w-px bg-gradient-to-b from-transparent via-white/[0.04] to-transparent pointer-events-none" />
 
@@ -437,8 +437,8 @@ export function ProcessSection() {
       </div>
 
       {/* ═══ CLOSING NOTE ═══ */}
-      <div className="relative px-6 md:px-12 lg:px-16 pb-20 md:pb-32">
-        <div className="editorial-rule mb-16" />
+      <div className="relative px-6 md:px-12 lg:px-16 pb-12 md:pb-20">
+        <div className="editorial-rule mb-12" />
         <div className="max-w-3xl mx-auto text-center">
           <Reveal>
             <span

@@ -601,7 +601,7 @@ export function EditorialAbout() {
       className="relative overflow-hidden"
     >
       {/* ═══ CH.1 — MANIFESTO ═══ */}
-      <div className="relative px-6 md:px-12 lg:px-16 pt-20 md:pt-32 pb-16 md:pb-28">
+      <div className="relative px-6 md:px-12 lg:px-16 pt-12 md:pt-20 pb-12 md:pb-20">
         {/* Oversized background label */}
         <motion.div
           style={{ y: oversizedY }}
@@ -650,7 +650,7 @@ export function EditorialAbout() {
       <div className="editorial-rule mx-6 md:mx-12 lg:mx-16" />
 
       {/* ═══ CH.2 — PORTRAIT + BIO ═══ */}
-      <div className="relative px-6 md:px-12 lg:px-16 py-20 md:py-32">
+      <div className="relative px-6 md:px-12 lg:px-16 py-16 md:py-24">
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-start">
           {/* Portrait column */}
           <div className="md:col-span-5 md:col-start-1 relative">
@@ -735,7 +735,7 @@ export function EditorialAbout() {
       <div className="editorial-rule mx-6 md:mx-12 lg:mx-16" />
 
       {/* ═══ CH.3 — DESIGN PRINCIPLES ═══ */}
-      <div className="relative px-6 md:px-12 lg:px-16 py-20 md:py-32">
+      <div className="relative px-6 md:px-12 lg:px-16 py-16 md:py-24">
         {/* Oversized background label */}
         <motion.div
           style={{ y: oversized2Y }}
@@ -803,7 +803,7 @@ export function EditorialAbout() {
       <div className="editorial-rule mx-6 md:mx-12 lg:mx-16" />
 
       {/* ═══ CH.4 — EXPERIENCE TIMELINE + STRENGTHS ═══ */}
-      <div className="relative px-6 md:px-12 lg:px-16 py-20 md:py-32">
+      <div className="relative px-6 md:px-12 lg:px-16 py-16 md:py-24">
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8">
           {/* Timeline column */}
           <div className="lg:col-span-7">
@@ -904,8 +904,8 @@ export function EditorialAbout() {
       </div>
 
       {/* ═══ CLOSING — personal note ═══ */}
-      <div className="relative px-6 md:px-12 lg:px-16 pb-20 md:pb-32">
-        <div className="editorial-rule mb-20" />
+      <div className="relative px-6 md:px-12 lg:px-16 pb-12 md:pb-20">
+        <div className="editorial-rule mb-14" />
         <div className="max-w-3xl mx-auto text-center">
           <Reveal>
             <span
