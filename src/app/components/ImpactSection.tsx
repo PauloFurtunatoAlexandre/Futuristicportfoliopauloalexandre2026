@@ -8,18 +8,6 @@ import {
   useMotionValue,
   AnimatePresence,
 } from "motion/react";
-import {
-  AreaChart,
-  Area,
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
-  Cell,
-} from "recharts";
 
 import { useIsMobile } from "./ui/useMediaQuery";
 
@@ -839,7 +827,7 @@ export function ImpactSection() {
       </div>
 
       {/* Divider */}
-      <div className="editorial-rule mx-6 md:mx-12 lg:mx-16" />
+      <div className="editorial-rule mx-6 md:px-12 lg:px-16" />
 
       {/* ═══ CH.2 — BEFORE / AFTER ═══ */}
       <div className="relative px-6 md:px-12 lg:px-16 py-16 md:py-24">
@@ -887,180 +875,6 @@ export function ImpactSection() {
           {BEFORE_AFTER.map((item, i) => (
             <BeforeAfterCard key={item.metric} item={item} index={i} />
           ))}
-        </div>
-      </div>
-
-      {/* Divider */}
-      <div className="editorial-rule mx-6 md:px-12 lg:px-16" />
-
-      {/* ═══ CH.3 — FUNNEL + EFFICIENCY ═══ */}
-      <div className="relative px-6 md:px-12 lg:px-16 py-16 md:py-24">
-        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12">
-          {/* Funnel */}
-          <div className="lg:col-span-7">
-            <Reveal>
-              <span className="type-label text-[#6b6b76] block mb-4">
-                Conversion Funnel
-              </span>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <span
-                className="text-[clamp(1.2rem,2.2vw,1.8rem)] tracking-[-0.02em] text-[#e8e6e3] block mb-3"
-                style={{ fontFamily: "var(--font-display)", fontWeight: 700, lineHeight: 1.1 }}
-              >
-                Meridian — Optimized Funnel
-              </span>
-            </Reveal>
-            <Reveal delay={0.15}>
-              <span
-                className="text-[0.8125rem] text-[#6b6b76] block mb-12"
-                style={{ fontFamily: "var(--font-body)" }}
-              >
-                Full-funnel optimization through progressive onboarding and trust signals
-              </span>
-            </Reveal>
-
-            <FunnelVisualization />
-
-            <Reveal delay={0.4}>
-              <blockquote className="mt-10 pl-6 border-l border-[#c4ff00]/15">
-                <span
-                  className="text-[clamp(0.85rem,1.2vw,1rem)] leading-[1.6] text-[#6b6b76]/60 block"
-                  style={{ fontFamily: "var(--font-serif)", fontStyle: "italic" }}
-                >
-                  "18% visitor-to-paid conversion is 3× the industry benchmark for SaaS. The redesign paid for itself in 6 weeks."
-                </span>
-              </blockquote>
-            </Reveal>
-          </div>
-
-          {/* Efficiency Bar Chart */}
-          <div className="lg:col-span-5" ref={barChartRef}>
-            <Reveal>
-              <span className="type-label text-[#6b6b76] block mb-4">
-                Team Efficiency
-              </span>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <span
-                className="text-[clamp(1.2rem,2.2vw,1.8rem)] tracking-[-0.02em] text-[#e8e6e3] block mb-3"
-                style={{ fontFamily: "var(--font-display)", fontWeight: 700, lineHeight: 1.1 }}
-              >
-                Days per Cycle
-              </span>
-            </Reveal>
-            <Reveal delay={0.15}>
-              <span
-                className="text-[0.8125rem] text-[#6b6b76] block mb-10"
-                style={{ fontFamily: "var(--font-body)" }}
-              >
-                Process improvements after design system adoption
-              </span>
-            </Reveal>
-
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={barChartInView ? { opacity: 1 } : {}}
-              transition={{ duration: 1, delay: 0.3 }}
-              className="relative h-[300px]"
-            >
-              {barChartInView && (
-              <ResponsiveContainer width="100%" height="100%" minWidth={100} minHeight={200}>
-                <BarChart
-                  data={EFFICIENCY_DATA}
-                  layout="vertical"
-                  margin={{ top: 0, right: 10, left: 0, bottom: 0 }}
-                  barGap={3}
-                  id="impact-bar-chart"
-                >
-                  <CartesianGrid
-                    key="bar-grid"
-                    stroke="rgba(255,255,255,0.03)"
-                    strokeDasharray="2 6"
-                    horizontal={false}
-                  />
-                  <XAxis
-                    key="bar-xaxis"
-                    type="number"
-                    stroke="rgba(255,255,255,0.08)"
-                    tick={{
-                      fill: "#3a3a42",
-                      fontSize: 9,
-                      fontFamily: "var(--font-mono)",
-                    }}
-                    tickLine={false}
-                    axisLine={false}
-                    domain={[0, 6]}
-                  />
-                  <YAxis
-                    key="bar-yaxis"
-                    type="category"
-                    dataKey="name"
-                    stroke="rgba(255,255,255,0.08)"
-                    tick={{
-                      fill: "#6b6b76",
-                      fontSize: 8,
-                      fontFamily: "var(--font-mono)",
-                      letterSpacing: "0.05em",
-                    }}
-                    tickLine={false}
-                    axisLine={false}
-                    width={isMobile ? 72 : 100}
-                  />
-                  <Tooltip key="bar-tooltip" content={<CustomTooltip />} />
-                  <Bar
-                    key="bar-before"
-                    dataKey="before"
-                    name="Before"
-                    fill="rgba(255,255,255,0.06)"
-                    radius={[0, 2, 2, 0]}
-                    barSize={8}
-                  />
-                  <Bar
-                    key="bar-after"
-                    dataKey="after"
-                    name="After"
-                    radius={[0, 2, 2, 0]}
-                    barSize={8}
-                  >
-                    {EFFICIENCY_DATA.map((entry, index) => (
-                      <Cell
-                        key={`cell-${index}`}
-                        fill={
-                          entry.after > entry.before
-                            ? "rgba(196,255,0,0.5)"
-                            : "rgba(196,255,0,0.3)"
-                        }
-                      />
-                    ))}
-                  </Bar>
-                </BarChart>
-              </ResponsiveContainer>
-              )}
-            </motion.div>
-
-            {/* Legend */}
-            <div className="flex items-center gap-6 mt-4">
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-2 bg-white/[0.06] rounded-sm" />
-                <span
-                  className="text-[0.5rem] tracking-[0.4em] text-[#6b6b76]"
-                  style={{ fontFamily: "var(--font-mono)" }}
-                >
-                  BEFORE
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-2 bg-[#c4ff00]/40 rounded-sm" />
-                <span
-                  className="text-[0.5rem] tracking-[0.4em] text-[#6b6b76]"
-                  style={{ fontFamily: "var(--font-mono)" }}
-                >
-                  AFTER
-                </span>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 

@@ -913,28 +913,6 @@ export function EditorialAbout() {
                 <StrengthBar key={s.label} {...s} index={i} />
               ))}
             </div>
-
-            {/* Workspace image */}
-            <Reveal delay={0.5}>
-              <div className="mt-16 relative overflow-hidden aspect-[16/10]">
-                <img
-                  src="https://images.unsplash.com/photo-1751200065687-a126e7c304da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXJrJTIwd29ya3NwYWNlJTIwZGVzaWduZXIlMjBkZXNrJTIwb3ZlcmhlYWQlMjBtb29keXxlbnwxfHx8fDE3NzM0MTc5OTN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="Workspace"
-                  className="w-full h-full object-cover"
-                  style={{ filter: "brightness(0.5) contrast(1.1) grayscale(0.3)" }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0b] via-transparent to-transparent" />
-                <div className="absolute inset-0 border border-white/[0.04]" />
-                <div className="absolute bottom-4 left-4">
-                  <span
-                    className="text-[0.5rem] tracking-[0.5em] uppercase text-[#6b6b76]/50"
-                    style={{ fontFamily: "var(--font-mono)" }}
-                  >
-                    The workshop
-                  </span>
-                </div>
-              </div>
-            </Reveal>
           </div>
         </div>
       </div>
