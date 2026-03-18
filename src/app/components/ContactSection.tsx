@@ -20,7 +20,7 @@ const EMAIL = "furtuna.alexandre@gmail.com";
 
 const SOCIAL_LINKS = [
   { label: "LinkedIn", url: "https://www.linkedin.com/in/paulofurtunatoalexandre/", desc: "Professional" },
-  { label: "Read.cv", url: "#", desc: "Background" },
+  { label: "Read.cv", url: "/resume", desc: "Background" },
   { label: "Medium", url: "https://medium.com/@paulo-alexandreuxd", desc: "Writing" },
 ];
 
@@ -670,7 +670,7 @@ export function ContactSection() {
 
             <Reveal delay={0.65}>
               <a
-                href="/resume.pdf"
+                href="/resume"
                 className="group flex items-center gap-2"
               >
                 <Download size={12} className="text-[#6b6b76]/40 group-hover:text-[#c4ff00] transition-colors duration-300" />
@@ -678,7 +678,7 @@ export function ContactSection() {
                   className="text-[0.5rem] tracking-[0.4em] uppercase text-[#6b6b76]/60 group-hover:text-[#c4ff00] transition-colors duration-300"
                   style={{ fontFamily: "var(--font-mono)" }}
                 >
-                  Download Resume
+                  View Resume
                 </span>
               </a>
             </Reveal>

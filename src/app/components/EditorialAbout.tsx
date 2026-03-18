@@ -756,7 +756,7 @@ export function EditorialAbout() {
             </Reveal>
             <Reveal delay={0.1}>
               <h2
-                className="text-[clamp(2rem,4.5vw,4rem)] tracking-[-0.035em] text-[#e8e6e3] mb-6"
+                className="text-[clamp(2rem,4.5vw,4rem)] tracking-[-0.035em] text-[#e8e6e3] mb-6 whitespace-nowrap"
                 style={{ fontFamily: "var(--font-display)", fontWeight: 800, lineHeight: 0.95 }}
               >
                 Six ideas I return

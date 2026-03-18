@@ -249,15 +249,6 @@ export function FloatingNav() {
       {/* Global scroll progress bar */}
       <GlobalProgressBar />
 
-      {/* Section dots — right rail (homepage only) */}
-      {isHome && (
-        <SectionDots
-          sections={HOME_SECTIONS}
-          activeSection={activeSection}
-          visible={visible}
-        />
-      )}
-
       {/* ════════ THE NAV BAR ════════ */}
       <AnimatePresence>
         {(visible || menuOpen) && (

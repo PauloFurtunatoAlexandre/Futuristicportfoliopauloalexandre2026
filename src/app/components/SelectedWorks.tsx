@@ -430,7 +430,7 @@ function StickyProjectCard({
 
                 {/* Title */}
                 <h3
-                  className="text-[clamp(2.2rem,5vw,4.5rem)] leading-[0.88] tracking-[-0.04em] text-[#e8e6e3] mb-3"
+                  className="text-[clamp(2.2rem,5vw,4.5rem)] leading-[0.88] tracking-[-0.04em] text-[#e8e6e3] mb-3 whitespace-nowrap"
                   style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800 }}
                 >
                   {project.title}
@@ -582,89 +582,6 @@ function StickyProjectCard({
 }
 
 /* ─────────────────────────────────────────
-   Progress Indicator
-   ───────────────────────────────────────── */
-function ProgressIndicator({
-  total,
-  scrollProgress,
-  colors,
-}: {
-  total: number;
-  scrollProgress: ReturnType<typeof useTransform>;
-  colors: string[];
-}) {
-  return (
-    <div className="fixed right-6 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col items-center gap-3">
-      {Array.from({ length: total }, (_, i) => {
-        const segmentStart = i / total;
-        const segmentEnd = (i + 1) / total;
-        return (
-          <ProgressDot
-            key={i}
-            index={i}
-            segmentStart={segmentStart}
-            segmentEnd={segmentEnd}
-            scrollProgress={scrollProgress}
-            color={colors[i]}
-            id={projects[i].id}
-          />
-        );
-      })}
-    </div>
-  );
-}
-
-function ProgressDot({
-  index,
-  segmentStart,
-  segmentEnd,
-  scrollProgress,
-  color,
-  id,
-}: {
-  index: number;
-  segmentStart: number;
-  segmentEnd: number;
-  scrollProgress: ReturnType<typeof useTransform>;
-  color: string;
-  id: string;
-}) {
-  const isActive = useTransform(scrollProgress, (v: number) => {
-    return v >= segmentStart && v < segmentEnd;
-  });
-  const scale = useTransform(isActive, (active: boolean) => (active ? 1 : 0.6));
-  const opacity = useTransform(isActive, (active: boolean) =>
-    active ? 1 : 0.25
-  );
-  const springScale = useSpring(scale, { stiffness: 300, damping: 25 });
-  const springOpacity = useSpring(opacity, { stiffness: 200, damping: 30 });
-
-  return (
-    <motion.div
-      className="flex items-center gap-2 group cursor-pointer"
-      style={{ opacity: springOpacity }}
-    >
-      <motion.div
-        className="w-2 h-2 rounded-full"
-        style={{
-          backgroundColor: color,
-          scale: springScale,
-        }}
-      />
-      <motion.span
-        className="text-[8px] tracking-[0.3em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        style={{
-          fontFamily: "'JetBrains Mono', monospace",
-          color,
-        }}
-      >
-        {id}
-      </motion.span>
-    </motion.div>
-  );
-}
-
-/* ─────────────────────────────────────────
    Section Header
    ───────────────────────────────────────── */
 function SectionHeader() {
@@ -712,7 +629,7 @@ function SectionHeader() {
                   duration: 1,
                   ease: [0.25, 0.46, 0.45, 0.94],
                 }}
-                className="type-display text-[#e8e6e3]"
+                className="type-display text-[#e8e6e3] whitespace-nowrap"
               >
                 SELECTED
               </motion.h2>
@@ -728,7 +645,7 @@ function SectionHeader() {
                     delay: 0.1,
                     ease: [0.25, 0.46, 0.45, 0.94],
                   }}
-                  className="type-display type-stroke"
+                  className="type-display type-stroke whitespace-nowrap"
                 >
                   WORKS
                 </motion.h2>
@@ -786,13 +703,6 @@ export function SelectedWorks() {
           />
         ))}
       </div>
-
-      {/* Side progress */}
-      <ProgressIndicator
-        total={projects.length}
-        scrollProgress={scrollYProgress}
-        colors={projectColors}
-      />
 
       {/* Bottom CTA */}
       <motion.div

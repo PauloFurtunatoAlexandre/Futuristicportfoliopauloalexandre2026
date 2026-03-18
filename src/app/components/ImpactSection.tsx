@@ -270,7 +270,7 @@ function KPICard({
       {/* Big number */}
       <div className="mb-4">
         <span
-          className="text-[clamp(2.4rem,5vw,4rem)] tracking-[-0.04em] text-[#e8e6e3] block"
+          className="text-[clamp(2.4rem,5vw,4rem)] tracking-[-0.04em] text-[#e8e6e3] block whitespace-nowrap"
           style={{ fontFamily: "var(--font-display)", fontWeight: 800, lineHeight: 1 }}
         >
           <AnimatedCounter
@@ -783,7 +783,7 @@ export function ImpactSection() {
           </Reveal>
           <Reveal delay={0.1}>
             <h2
-              className="text-[clamp(2rem,4.5vw,4rem)] tracking-[-0.035em] text-[#e8e6e3] mb-4"
+              className="text-[clamp(2rem,4.5vw,4rem)] tracking-[-0.035em] text-[#e8e6e3] mb-4 whitespace-nowrap"
               style={{ fontFamily: "var(--font-display)", fontWeight: 800, lineHeight: 0.95 }}
             >
               Design that moves
@@ -848,7 +848,7 @@ export function ImpactSection() {
           </Reveal>
           <Reveal delay={0.1}>
             <h2
-              className="text-[clamp(1.6rem,3.5vw,3rem)] tracking-[-0.03em] text-[#e8e6e3] mb-4"
+              className="text-[clamp(1.6rem,3.5vw,3rem)] tracking-[-0.03em] text-[#e8e6e3] mb-4 whitespace-nowrap"
               style={{ fontFamily: "var(--font-display)", fontWeight: 800, lineHeight: 1 }}
             >
               The delta that{" "}
@@ -891,7 +891,7 @@ export function ImpactSection() {
           </Reveal>
           <Reveal delay={0.1}>
             <h2
-              className="text-[clamp(1.6rem,3.5vw,3rem)] tracking-[-0.03em] text-[#e8e6e3] mb-4"
+              className="text-[clamp(1.6rem,3.5vw,3rem)] tracking-[-0.03em] text-[#e8e6e3] mb-4 whitespace-nowrap"
               style={{ fontFamily: "var(--font-display)", fontWeight: 800, lineHeight: 1 }}
             >
               Where craft met{" "}

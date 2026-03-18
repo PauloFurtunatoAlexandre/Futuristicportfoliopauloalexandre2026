@@ -386,7 +386,7 @@ export function ProcessSection() {
           </Reveal>
           <Reveal delay={0.1}>
             <h2
-              className="text-[clamp(2rem,4.5vw,4rem)] tracking-[-0.035em] text-[#e8e6e3] mb-4"
+              className="text-[clamp(2rem,4.5vw,4rem)] tracking-[-0.035em] text-[#e8e6e3] mb-4 whitespace-nowrap"
               style={{
                 fontFamily: "var(--font-display)",
                 fontWeight: 800,
