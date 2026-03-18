@@ -26,7 +26,7 @@ export function FullScreenMoment() {
   const accentWords = "it already knows you.".split(" ");
 
   return (
-    <section ref={ref} className="relative h-[130vh] overflow-hidden">
+    <section ref={ref} className="relative h-screen overflow-hidden">
       {/* Background image */}
       <motion.div className="absolute inset-0" style={{ scale: imgScale }}>
         <img

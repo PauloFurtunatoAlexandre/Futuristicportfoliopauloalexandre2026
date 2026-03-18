@@ -20,6 +20,7 @@ const EASE = [0.25, 0.46, 0.45, 0.94] as const;
 const HOME_SECTIONS = [
   { id: "work", label: "Work" },
   { id: "about", label: "About" },
+  { id: "process", label: "Process" },
   { id: "impact", label: "Impact" },
   { id: "reel", label: "Reel" },
   { id: "contact", label: "Contact" },
@@ -185,23 +186,38 @@ export function FloatingNav() {
   useEffect(() => {
     if (!isHome) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
+    // Use a scroll listener for more reliable section detection
+    // especially with sticky/scroll-driven sections like Process
+    const handleScroll = () => {
+      const viewportMiddle = window.scrollY + window.innerHeight * 0.35;
+      let closest = "";
+      let closestDistance = Infinity;
+
+      HOME_SECTIONS.forEach(({ id }) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const rect = el.getBoundingClientRect();
+        const elTop = window.scrollY + rect.top;
+        const elBottom = elTop + rect.height;
+        
+        // Check if viewport middle is within the section
+        if (viewportMiddle >= elTop && viewportMiddle <= elBottom) {
+          const distance = Math.abs(viewportMiddle - (elTop + rect.height / 2));
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            closest = id;
           }
-        });
-      },
-      { threshold: 0.15, rootMargin: "-15% 0px -65% 0px" }
-    );
+        }
+      });
 
-    HOME_SECTIONS.forEach(({ id }) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
+      if (closest && closest !== activeSection) {
+        setActiveSection(closest);
+      }
+    };
 
-    return () => observer.disconnect();
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [isHome]);
 
   // Derive slug from path for case study context

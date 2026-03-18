@@ -154,7 +154,7 @@ const PROJECT_OUTCOMES = [
 
 /* ─────────────────────────────────────────
    Reveal Wrapper
-   ───────────────────────────────────────── */
+   ───────────────────────────────��───────── */
 
 function Reveal({
   children,
@@ -775,7 +775,7 @@ export function ImpactSection() {
       className="relative overflow-hidden"
     >
       {/* ═══ CH.1 — HERO METRICS ═══ */}
-      <div className="relative px-6 md:px-12 lg:px-16 pt-32 md:pt-48 pb-24 md:pb-36">
+      <div className="relative px-6 md:px-12 lg:px-16 pt-20 md:pt-32 pb-16 md:pb-24">
         {/* Oversized background */}
         <motion.div
           style={{ y: oversizedY }}
@@ -842,7 +842,7 @@ export function ImpactSection() {
       <div className="editorial-rule mx-6 md:mx-12 lg:mx-16" />
 
       {/* ═══ CH.2 — GROWTH CHART + UX RINGS ═══ */}
-      <div className="relative px-6 md:px-12 lg:px-16 py-32 md:py-48">
+      <div className="relative px-6 md:px-12 lg:px-16 py-20 md:py-32">
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8">
           {/* Growth Chart */}
           <div className="lg:col-span-7" ref={chartRef}>
@@ -1019,7 +1019,7 @@ export function ImpactSection() {
       <div className="editorial-rule mx-6 md:mx-12 lg:px-16" />
 
       {/* ═══ CH.3 — BEFORE / AFTER ═══ */}
-      <div className="relative px-6 md:px-12 lg:px-16 py-32 md:py-48">
+      <div className="relative px-6 md:px-12 lg:px-16 py-20 md:py-32">
         <motion.div
           style={{ y: oversized2Y }}
           className="absolute top-10 md:top-20 left-0 right-0 pointer-events-none select-none z-0 overflow-hidden"
@@ -1071,7 +1071,7 @@ export function ImpactSection() {
       <div className="editorial-rule mx-6 md:px-12 lg:px-16" />
 
       {/* ═══ CH.4 — FUNNEL + EFFICIENCY ═══ */}
-      <div className="relative px-6 md:px-12 lg:px-16 py-32 md:py-48">
+      <div className="relative px-6 md:px-12 lg:px-16 py-20 md:py-32">
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12">
           {/* Funnel */}
           <div className="lg:col-span-7">
@@ -1245,7 +1245,7 @@ export function ImpactSection() {
       <div className="editorial-rule mx-6 md:px-12 lg:px-16" />
 
       {/* ═══ CH.5 — PROJECT OUTCOMES ═══ */}
-      <div className="relative px-6 md:px-12 lg:px-16 py-32 md:py-48">
+      <div className="relative px-6 md:px-12 lg:px-16 py-20 md:py-32">
         <div className="relative z-10 max-w-3xl mb-16 md:mb-24">
           <Reveal>
             <span className="type-label text-[#6b6b76] block mb-8">
@@ -1280,7 +1280,7 @@ export function ImpactSection() {
       </div>
 
       {/* ═══ CLOSING NOTE ═══ */}
-      <div className="relative px-6 md:px-12 lg:px-16 pb-32 md:pb-48">
+      <div className="relative px-6 md:px-12 lg:px-16 pb-20 md:pb-32">
         <div className="editorial-rule mb-20" />
         <div className="max-w-3xl mx-auto text-center">
           <Reveal>

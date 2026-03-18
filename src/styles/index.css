@@ -310,7 +310,7 @@ img {
   }
 
   .oversized-label {
-    font-size: clamp(4rem, 20vw, 10rem);
+    font-size: clamp(2.5rem, 14vw, 10rem);
   }
 
   .type-stroke {
@@ -333,7 +333,7 @@ img {
 /* Oversized section labels — positioned as decorative elements */
 .oversized-label {
   font-family: var(--font-display);
-  font-size: clamp(6rem, 18vw, 18rem);
+  font-size: clamp(3.5rem, 14vw, 18rem);
   line-height: 0.8;
   letter-spacing: -0.05em;
   font-weight: 800;

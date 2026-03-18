@@ -687,6 +687,7 @@ export function ProcessSection() {
   return (
     <section
       ref={sectionRef}
+      id="process"
       className="relative"
       style={{ height: isMobile ? `${STAGES.length * 80 + 40}vh` : `${STAGES.length * 120 + 60}vh` }}
     >
