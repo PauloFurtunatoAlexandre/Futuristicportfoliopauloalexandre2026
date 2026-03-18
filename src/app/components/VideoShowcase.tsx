@@ -1100,7 +1100,7 @@ export function VideoShowcase() {
       <div
         ref={stickyRef}
         className="relative"
-        style={{ height: isMobile ? `${STICKY_ANNOTATIONS.length * 70 + 30}vh` : `${STICKY_ANNOTATIONS.length * 100 + 50}vh` }}
+        style={{ height: isMobile ? `${STICKY_ANNOTATIONS.length * 70 + 30}vh` : `${STICKY_ANNOTATIONS.length * 100 + 50}vh`, position: "relative" }}
       >
         <div className="sticky top-0 h-screen overflow-hidden">
           <div className="absolute inset-0 grid grid-cols-1 lg:grid-cols-12 gap-0">

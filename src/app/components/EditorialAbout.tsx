@@ -189,7 +189,7 @@ function ScrollManifesto({
   });
 
   return (
-    <div ref={containerRef} className="relative">
+    <div ref={containerRef} className="relative" style={{ position: "relative" }}>
       <p
         className="text-[clamp(1.6rem,4.2vw,3.8rem)] leading-[1.18] tracking-[-0.018em]"
         style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
@@ -435,7 +435,7 @@ function PortraitBlock() {
   };
 
   return (
-    <div ref={containerRef} onMouseMove={handleMouse} className="relative">
+    <div ref={containerRef} onMouseMove={handleMouse} className="relative" style={{ position: "relative" }}>
       {/* Background texture image — blurred, offset */}
       <motion.div
         style={{ y: bgImgY }}

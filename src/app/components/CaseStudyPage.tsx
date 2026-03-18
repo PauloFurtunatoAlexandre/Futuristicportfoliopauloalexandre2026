@@ -8,12 +8,12 @@ import {
 } from "motion/react";
 import { useParams, useNavigate } from "react-router";
 import { ArrowUpRight, ArrowLeft, ChevronDown, List, X } from "lucide-react";
-const healthpilotImg = "https://images.unsplash.com/photo-1682365114794-14b870355d21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGhjYXJlJTIwYXBwJTIwZGFzaGJvYXJkJTIwbWVkaWNhcmV8ZW58MXx8fHwxNzczODA3MDc1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
-const healthpilotSprintsImg = "https://images.unsplash.com/photo-1529119835860-ce3d90485424?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ24lMjBzcHJpbnQlMjB3aGl0ZWJvYXJkJTIwc3RpY2t5JTIwbm90ZXN8ZW58MXx8fHwxNzczODA3MDc2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
-const healthpilotPersonasImg = "https://images.unsplash.com/photo-1712797229216-f713e7813a9d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx1c2VyJTIwcGVyc29uYSUyMHJlc2VhcmNoJTIwVVh8ZW58MXx8fHwxNzczODA3MDc2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
-const healthpilotJourneyImg = "https://images.unsplash.com/photo-1642428899339-db778a4af19a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdXN0b21lciUyMGpvdXJuZXklMjBtYXAlMjBkZXNpZ258ZW58MXx8fHwxNzczNzA0NjU3fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
-const healthpilotDesignSystemImg = "https://images.unsplash.com/photo-1562601555-513820e5d0eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ24lMjBzeXN0ZW0lMjBjb21wb25lbnRzJTIwVUl8ZW58MXx8fHwxNzczNzM2OTE5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
-const healthpilotPrototypeImg = "https://images.unsplash.com/photo-1748801583967-3038967d7279?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBwcm90b3R5cGUlMjBtb2NrdXB8ZW58MXx8fHwxNzczODA3MDc3fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+import hpHeroImg from "figma:asset/e4a5a5199e012811840cc269dafae9f17eab509a.png";
+import hpSprintsImg from "figma:asset/ad0aa8c92895960691320f2f129ce88b718af01a.png";
+import hpPersonasImg from "figma:asset/1fd6d4db6d10bbb2d6e920d42d454f46c44c1175.png";
+import hpJourneyImg from "figma:asset/faf765493dd9e825926b9ee11aeff9efbab16496.png";
+import hpDesignSystemImg from "figma:asset/15cbccb26a6c4318ce3ae0434db9a5da971959dd.png";
+import hpPrototypeImg from "figma:asset/19594de7de5a255e9a871a160c059c421ad5e35e.png";
 const gaigHeroImg = "https://images.unsplash.com/photo-1640323240640-ee731d18dcb1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbnN1cmFuY2UlMjBlbnRlcnByaXNlJTIwc29mdHdhcmUlMjBkYXNoYm9hcmR8ZW58MXx8fHwxNzczODA3MDc4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 const gaigGovernanceImg = "https://images.unsplash.com/photo-1676287568293-8cd7917e7d95?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjBnb3Zlcm5hbmNlJTIwY29tcGxpYW5jZSUyMGRvY3VtZW50fGVufDF8fHx8MTc3MzgwNzA3OHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 const gaigOktaFlowImg = "https://images.unsplash.com/photo-1592791770401-7a0cb5ee279b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhdXRoZW50aWNhdGlvbiUyMGxvZ2luJTIwc2VjdXJpdHklMjBmbG93fGVufDF8fHx8MTc3MzgwNzA3OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
@@ -88,7 +88,7 @@ const CASE_STUDIES: CaseStudyData[] = [
     platform: "Web (Desktop & Mobile)",
     tools: ["Figma", "FigJam", "Miro", "Jira", "Midjourney", "Slack"],
     color: "#c4ff00",
-    heroImage: healthpilotImg,
+    heroImage: hpHeroImg,
     problem:
       "When I joined HealthPilot, there was no design team — just me. I was the sole designer responsible for every pixel, every flow, every user experience on the platform. Seniors were abandoning Medicare enrollment mid-flow, frustrated and distrustful. The product read like an insurance manual, not a tool built for the people who needed it most. I didn't inherit a design system or a research practice — I built both from scratch. I conducted the interviews. I ran the usability tests. I redesigned the enrollment flow. I created the component library. Later, as the product matured and the company grew, I mentored a junior designer into the role, established UX research processes that outlasted my tenure, and built design practices that became the foundation for everything that followed. Every innovation on that platform — from the plan comparison engine to the simplified language framework — started with me, alone, asking the question nobody else had asked: why are people leaving?",
     context:
@@ -100,7 +100,7 @@ const CASE_STUDIES: CaseStudyData[] = [
       "Four-month deadline for V1 — speed without sacrificing quality",
       "Must support the full enrollment funnel from discovery to plan selection to sign-up",
     ],
-    researchImage: healthpilotPersonasImg,
+    researchImage: hpPersonasImg,
     researchInsights: [
       {
         title: "Jargon is the enemy",
@@ -142,7 +142,7 @@ const CASE_STUDIES: CaseStudyData[] = [
           "Side-by-side plan views with clear pros, cons, and cost breakdowns. Transformed the most anxiety-inducing step into the most confidence-building one.",
       },
     ],
-    processImage: healthpilotSprintsImg,
+    processImage: hpSprintsImg,
     processSteps: [
       {
         title: "Discovery & Deep Dive",
@@ -175,7 +175,7 @@ const CASE_STUDIES: CaseStudyData[] = [
           "Developed comprehensive token and component library for consistency and scale. Launched iteratively, continuously validating with user feedback and refining post-launch.",
       },
     ],
-    wireframeImage: healthpilotJourneyImg,
+    wireframeImage: hpJourneyImg,
     designSystem: [
       { label: "Typography", description: "Clear, high-contrast type scale optimized for 65+ readability — generous sizing, tight hierarchy" },
       { label: "Color", description: "Accessible palette meeting WCAG AAA. Trust-first blues and greens, warm neutrals for comfort" },
@@ -183,14 +183,14 @@ const CASE_STUDIES: CaseStudyData[] = [
       { label: "Language", description: "Full terminology glossary co-authored with SMEs — every insurance term has a plain-English equivalent" },
       { label: "Patterns", description: "Reusable enrollment step templates, error recovery flows, and decision-support layouts" },
     ],
-    designSystemImage: healthpilotDesignSystemImg,
+    designSystemImage: hpDesignSystemImg,
     prototypeHighlights: [
       "Step-by-step enrollment flow with progress indicators and contextual micro-copy explaining every data request",
       "Side-by-side plan comparison with plain-language pros, cons, and cost breakdowns",
       "Contextual tooltips translating insurance jargon into human language on hover/tap",
       "Decision-confidence scoring that helps users feel certain about their final plan choice",
     ],
-    prototypeImage: healthpilotPrototypeImg,
+    prototypeImage: hpPrototypeImg,
     outcomes: [
       { label: "Plan Selection Rate", value: "+6%", change: "Users choosing plans with confidence" },
       { label: "Drop-Off Rate", value: "-25%", change: "Simplified navigation kept users engaged" },
@@ -624,7 +624,7 @@ const CASE_STUDIES: CaseStudyData[] = [
       "The Angular-to-React migration happening in parallel with the design system rollout created friction I underestimated. Some engineering pods adopted the system's React components eagerly; others were stuck in Angular and felt left behind. A dedicated Angular component bridge — even a temporary one — would have accelerated adoption across the entire platform.",
       "I should have documented the mentorship framework more formally. What I did with those three designers worked, but it was intuitive and ad-hoc. A structured mentorship curriculum — with clear milestones, skill assessments, and growth tracks — would have made the model repeatable for future design leads.",
     ],
-    nextProject: { slug: "healthpilot", title: "HEALTHPILOT", image: healthpilotImg },
+    nextProject: { slug: "healthpilot", title: "HEALTHPILOT", image: hpHeroImg },
   },
 ];
 
@@ -914,7 +914,7 @@ function ImmersiveImage({ src, alt, caption, reducedMotion = false }: { src: str
 
   return (
     <Reveal className="my-16 md:my-24">
-      <div ref={ref} className="relative overflow-hidden rounded-sm">
+      <div ref={ref} className="relative overflow-hidden rounded-sm" style={{ position: "relative" }}>
         <motion.img
           src={src}
           alt={alt}
@@ -1106,7 +1106,7 @@ export function CaseStudyPage() {
       {/* ═══════════════════════════════════════
          1. HERO BANNER
          ═══════════════════════════════════════ */}
-      <section ref={heroRef} className="relative h-[85vh] md:h-screen overflow-hidden">
+      <section ref={heroRef} className="relative h-[85vh] md:h-screen overflow-hidden" style={{ position: "relative" }}>
         <motion.div className="absolute inset-0" style={{ y: heroImgY, scale: heroImgScale }}>
           <img src={cs.heroImage} alt={cs.title} className="w-full h-full object-cover brightness-[0.3]" />
         </motion.div>
@@ -1764,7 +1764,7 @@ function ProcessLine({ color = "#c4ff00" }: { color?: string }) {
     <motion.div
       ref={ref}
       className="w-full origin-top relative"
-      style={{ height, backgroundColor: `${color}40` }}
+      style={{ height, backgroundColor: `${color}40`, position: "relative" }}
     />
   );
 }
