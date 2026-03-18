@@ -1,14 +1,5 @@
-import { useRef, useState, useCallback, useMemo } from "react";
-import { useNavigate } from "react-router";
-import {
-  motion,
-  useScroll,
-  useTransform,
-  useMotionValue,
-  useSpring,
-  useInView,
-} from "motion/react";
 import { useIsMobile } from "./ui/useMediaQuery";
+import healthpilotImg from "figma:asset/e4a5a5199e012811840cc269dafae9f17eab509a.png";
 
 /* ─────────────────────────────────────────
    Data
@@ -41,7 +32,7 @@ const projects: Project[] = [
     category: "Product Design",
     year: "2023",
     image:
-      "https://images.unsplash.com/photo-1702479744031-2bf1f4bdfd8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGhjYXJlJTIwaW5zdXJhbmNlJTIwZGlnaXRhbCUyMHBsYXRmb3JtJTIwZGFyayUyMG1vb2R5fGVufDF8fHx8MTc3MzgwMDY3NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      healthpilotImg,
     color: "#c4ff00",
     metrics: [
       { label: "Drop-Off", value: "-25%" },
@@ -432,7 +423,7 @@ function StickyProjectCard({
                       View Project
                     </span>
                     <motion.div
-                      className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center backdrop-blur-sm"
+                      className="w-9 h-9 rounded-full border flex items-center justify-center backdrop-blur-sm"
                       animate={{
                         borderColor: isHovered
                           ? `${project.color}50`

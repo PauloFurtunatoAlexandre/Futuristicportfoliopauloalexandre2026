@@ -8,6 +8,7 @@ import {
 } from "motion/react";
 import { useParams, useNavigate } from "react-router";
 import { ArrowUpRight, ArrowLeft, ChevronDown, List, X } from "lucide-react";
+import healthpilotImg from "figma:asset/e4a5a5199e012811840cc269dafae9f17eab509a.png";
 import { CustomCursor } from "./CustomCursor";
 import { FloatingNav } from "./FloatingNav";
 import { useIsMobile, useReducedMotion } from "./ui/useMediaQuery";
@@ -67,8 +68,7 @@ const CASE_STUDIES: CaseStudyData[] = [
     platform: "Web (Desktop & Mobile)",
     tools: ["Figma", "FigJam", "Miro", "Jira", "Midjourney", "Slack"],
     color: "#c4ff00",
-    heroImage:
-      "https://images.unsplash.com/photo-1702479744031-2bf1f4bdfd8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGhjYXJlJTIwaW5zdXJhbmNlJTIwZGlnaXRhbCUyMHBsYXRmb3JtJTIwZGFyayUyMG1vb2R5fGVufDF8fHx8MTc3MzgwMDY3NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    heroImage: healthpilotImg,
     problem:
       "Seniors were abandoning HealthPilot's Medicare enrollment mid-flow — frustrated, confused, and distrustful of their own decisions. The platform read like an insurance manual, not a tool built for the people who needed it most. Drop-offs were bleeding the business, and every lost user was someone left navigating healthcare alone.",
     context:
@@ -795,7 +795,7 @@ const CASE_STUDIES: CaseStudyData[] = [
       "The Angular-to-React migration happening in parallel with the design system rollout created friction I underestimated. Some engineering pods adopted the system's React components eagerly; others were stuck in Angular and felt left behind. A dedicated Angular component bridge — even a temporary one — would have accelerated adoption across the entire platform.",
       "I should have documented the mentorship framework more formally. What I did with those three designers worked, but it was intuitive and ad-hoc. A structured mentorship curriculum — with clear milestones, skill assessments, and growth tracks — would have made the model repeatable for future design leads.",
     ],
-    nextProject: { slug: "meridian", title: "HEALTHPILOT", image: "https://images.unsplash.com/photo-1702479744031-2bf1f4bdfd8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGhjYXJlJTIwaW5zdXJhbmNlJTIwZGlnaXRhbCUyMHBsYXRmb3JtJTIwZGFyayUyMG1vb2R5fGVufDF8fHx8MTc3MzgwMDY3NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" },
+    nextProject: { slug: "meridian", title: "HEALTHPILOT", image: healthpilotImg },
   },
 ];
 

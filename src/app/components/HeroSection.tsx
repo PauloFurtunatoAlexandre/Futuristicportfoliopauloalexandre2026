@@ -404,8 +404,8 @@ export function HeroSection() {
             className="mt-12 max-w-lg text-center text-[var(--type-caption)] leading-relaxed text-[#6b6b76] tracking-wide"
             style={{ fontFamily: "var(--font-mono)" }}
           >
-            Designing products people <span className="text-[#c4ff00]">obsess</span> over —
-            from AI-powered Medicare platforms to enterprise design systems that scale across millions.
+            Translating <span className="text-[#c4ff00]">complex problems</span> into
+            intuitive experiences — from user research and design systems to accessible, data-driven products that impact millions.
           </motion.p>
 
           {/* CTA buttons */}
