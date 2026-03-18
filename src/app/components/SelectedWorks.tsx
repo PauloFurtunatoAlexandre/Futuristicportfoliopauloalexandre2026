@@ -430,7 +430,7 @@ function StickyProjectCard({
 
                 {/* Title */}
                 <h3
-                  className="text-[clamp(2.2rem,5vw,4.5rem)] leading-[0.88] tracking-[-0.04em] text-[#e8e6e3] mb-3 whitespace-nowrap"
+                  className="text-[clamp(1.8rem,4vw,3.5rem)] leading-[0.88] tracking-[-0.04em] text-[#e8e6e3] mb-3"
                   style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800 }}
                 >
                   {project.title}
@@ -629,7 +629,7 @@ function SectionHeader() {
                   duration: 1,
                   ease: [0.25, 0.46, 0.45, 0.94],
                 }}
-                className="type-display text-[#e8e6e3] whitespace-nowrap"
+                className="type-display text-[#e8e6e3]"
               >
                 SELECTED
               </motion.h2>
@@ -645,7 +645,7 @@ function SectionHeader() {
                     delay: 0.1,
                     ease: [0.25, 0.46, 0.45, 0.94],
                   }}
-                  className="type-display type-stroke whitespace-nowrap"
+                  className="type-display type-stroke"
                 >
                   WORKS
                 </motion.h2>

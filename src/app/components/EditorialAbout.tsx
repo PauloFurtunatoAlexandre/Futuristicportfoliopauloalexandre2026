@@ -9,7 +9,7 @@ import {
   AnimatePresence,
 } from "motion/react";
 import { useIsMobile } from "./ui/useMediaQuery";
-const pauloPortrait = "https://images.unsplash.com/photo-1654097115079-5747760e96e0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMG1hbiUyMGRlc2lnbmVyfGVufDF8fHx8MTc3Mzc3MjYxM3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+import pauloPortrait from "figma:asset/c0d70165aae60b6711dde956da155427c9546ea0.png";
 
 /* ─────────────────────────────────────────
    Constants & Data
@@ -756,7 +756,7 @@ export function EditorialAbout() {
             </Reveal>
             <Reveal delay={0.1}>
               <h2
-                className="text-[clamp(2rem,4.5vw,4rem)] tracking-[-0.035em] text-[#e8e6e3] mb-6 whitespace-nowrap"
+                className="text-[clamp(2rem,4.5vw,3.5rem)] tracking-[-0.035em] text-[#e8e6e3] mb-6"
                 style={{ fontFamily: "var(--font-display)", fontWeight: 800, lineHeight: 0.95 }}
               >
                 Six ideas I return
