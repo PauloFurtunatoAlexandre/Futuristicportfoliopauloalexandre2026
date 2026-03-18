@@ -156,6 +156,27 @@ const projects: Project[] = [
     tags: ["IoT", "Dashboard", "Ambient"],
     slug: "synth",
   },
+  {
+    id: "07",
+    title: "SOLSTICE",
+    subtitle: "Scaling a Consultancy's Product Through Design System Discipline",
+    client: "Solstice Innovations",
+    role: "Senior Product Designer & Design Lead",
+    problem:
+      "A powerful enterprise platform growing feature by feature with no shared design language — six different UI dialects, 120+ inconsistencies, and a team of three junior designers shipping in isolation. Built a design system, mentored the team, and turned chaos into a +63% usability lift.",
+    category: "Design Systems & Mentorship",
+    year: "2020",
+    image:
+      "https://images.unsplash.com/photo-1702726001096-096efcf640b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwY29uc3VsdGluZyUyMG9mZmljZSUyMG1vZGVybiUyMGRhcmslMjBtb29keXxlbnwxfHx8fDE3NzM4MDMwMTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    color: "#f59e0b",
+    metrics: [
+      { label: "Usability", value: "+63%" },
+      { label: "Inconsistencies", value: "-80%" },
+      { label: "Designers Mentored", value: "3" },
+    ],
+    tags: ["Design Systems", "Mentorship", "UX Research"],
+    slug: "solstice",
+  },
 ];
 
 /* ─────────────────────────────────────────

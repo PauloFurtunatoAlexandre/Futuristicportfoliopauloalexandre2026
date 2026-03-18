@@ -656,6 +656,145 @@ const CASE_STUDIES: CaseStudyData[] = [
       "Failure states for device disconnections needed more elegant handling. When a device went offline, the UI felt broken rather than gracefully degraded.",
       "Automation suggestions were sometimes too aggressive for non-daily routines — the system would suggest automations based on 2-3 occurrences, which felt presumptuous. Needed a higher confidence threshold before surfacing suggestions.",
     ],
+    nextProject: { slug: "solstice", title: "SOLSTICE", image: "https://images.unsplash.com/photo-1702726001096-096efcf640b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwY29uc3VsdGluZyUyMG9mZmljZSUyMG1vZGVybiUyMGRhcmslMjBtb29keXxlbnwxfHx8fDE3NzM4MDMwMTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" },
+  },
+  {
+    slug: "solstice",
+    title: "SOLSTICE",
+    subtitle: "Scaling a consultancy's product through design system discipline",
+    client: "Solstice Innovations (via Technology Consulting)",
+    year: "2020–2021",
+    role: "Senior Product Designer & Design Lead",
+    timeline: "14 months",
+    team: "3 mentored designers, 2 PMs, cross-functional engineering pods",
+    platform: "Web (Enterprise SaaS — Client Portals & Internal Tools)",
+    tools: ["Figma", "Miro", "Jira", "Storybook", "Slack", "Teams"],
+    color: "#f59e0b",
+    heroImage:
+      "https://images.unsplash.com/photo-1702726001096-096efcf640b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwY29uc3VsdGluZyUyMG9mZmljZSUyMG1vZGVybiUyMGRhcmslMjBtb29keXxlbnwxfHx8fDE3NzM4MDMwMTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    problem:
+      "Solstice had built a powerful enterprise platform — but it had grown the way most consultancy products grow: fast, client by client, feature by feature, with no shared design language holding it together. Every new engagement added UI debt. Every new developer interpreted the same component differently. The application worked, technically — but it felt like six different products wearing the same logo. Users stumbled through inconsistent navigation, contradictory interaction patterns, and an interface that demanded relearning with every module. The product was scaling in features but shrinking in usability.",
+    context:
+      "Solstice is a technology consulting and custom software development firm that builds digital products for enterprise clients across industries. Their internal platform — used by both consultants and client teams — had evolved organically through years of rapid delivery cycles. I was brought in as Senior Product Designer to lead UX research, own the product design for key modules, and — critically — mentor a team of three junior designers who had been shipping features without a unifying design framework. The mandate was clear: stop the bleeding, build the system, and teach the team to sustain it. This wasn't a redesign project. It was a rescue operation disguised as design system work.",
+    constraints: [
+      "Active client engagements running on the platform — no 'big bang' redesign possible without breaking live workflows",
+      "Three junior designers with varying skill levels who needed upskilling while simultaneously shipping features",
+      "Multiple engineering pods working in parallel sprints — any design system had to be adoptable incrementally, not all-at-once",
+      "Legacy codebase with inconsistent front-end architecture — some modules in React, others still in Angular",
+      "Stakeholders across multiple client accounts, each with different priorities and definitions of 'done'",
+    ],
+    researchInsights: [
+      {
+        title: "Nobody trusts the interface",
+        detail:
+          "8 user interviews with internal consultants and 6 with client stakeholders revealed a shared pattern: users had learned to distrust the platform's feedback. Buttons that looked clickable weren't. Forms submitted without confirmation. Success states looked identical to error states. One consultant said, 'I always screenshot my submissions because I never know if it actually worked.' The platform had a credibility problem disguised as a UI problem.",
+      },
+      {
+        title: "Designers were designing in isolation",
+        detail:
+          "The three junior designers were talented but disconnected. Each owned a module, each had developed their own component conventions, and none had visibility into what the others were building. The result: three parallel design dialects that made the product feel schizophrenic. This wasn't a people problem — it was a process problem. Nobody had given them a shared vocabulary.",
+      },
+      {
+        title: "Navigation was a maze built by committee",
+        detail:
+          "Heuristic evaluation and task analysis showed users averaging 7+ clicks to complete core workflows that should take 3. Navigation patterns changed between modules — sidebar in one, top-bar in another, hamburger menu in a third. Users couldn't build muscle memory because the interface kept changing the rules.",
+      },
+      {
+        title: "Accessibility was an afterthought everywhere",
+        detail:
+          "An audit revealed critical WCAG failures across every module: missing focus states, color contrast below AA, no keyboard navigation paths, unlabeled form inputs. The platform was functionally inaccessible to anyone using assistive technology — and legally exposed.",
+      },
+    ],
+    strategy:
+      "Build a design system that doesn't just unify components — it unifies the team. Create a shared design language that encodes decisions about interaction, feedback, navigation, and accessibility into reusable, governed primitives. Then embed that system into the team's daily workflow through mentorship, paired design sessions, and a review cadence that makes quality the default, not the exception. The system would scale the product by first scaling the people.",
+    strategyPillars: [
+      {
+        title: "Foundation-First Design System",
+        description:
+          "A token-driven component library built from audit findings — not aspirational ideals. Every component addressed a real inconsistency we'd documented. Color tokens, spacing scales, typography hierarchy, elevation system, and interaction states standardized across all modules. Not a library to admire — a language to speak.",
+      },
+      {
+        title: "Mentorship as Multiplier",
+        description:
+          "Weekly 1:1s with each junior designer. Bi-weekly design critiques where we reviewed work against the system — not aesthetics, but consistency, accessibility, and user intent. Paired design sessions on complex flows. The goal wasn't to create followers — it was to create three designers who could sustain the system without me.",
+      },
+      {
+        title: "Progressive Adoption Strategy",
+        description:
+          "Instead of demanding a full migration, we prioritized the highest-traffic modules first. New features adopted the system by default. Legacy screens were migrated during existing sprint work — never as a separate 'design debt' initiative that could be deprioritized. Consistency spread like an infection, not a mandate.",
+      },
+    ],
+    processSteps: [
+      {
+        title: "Research & Audit",
+        description:
+          "Conducted 14 user interviews (8 internal consultants, 6 client stakeholders) alongside heuristic evaluation of all 5 core modules. Documented 120+ inconsistencies across navigation, interaction patterns, feedback states, and visual treatment. Built a severity matrix that prioritized fixes by user impact, not visual severity.",
+      },
+      {
+        title: "Team Assessment & Mentorship Plan",
+        description:
+          "Assessed each junior designer's strengths, gaps, and growth goals. Created individualized mentorship tracks: one focused on interaction design rigor, another on visual systems thinking, the third on research-informed design. Established weekly rituals — 1:1s, critiques, paired sessions — that created psychological safety alongside accountability.",
+      },
+      {
+        title: "Design System Architecture",
+        description:
+          "Designed the token structure, component hierarchy, and pattern library based directly on audit findings. Every token and component traced back to a documented inconsistency. Built the system in Figma with auto-layout, variants, and detailed usage documentation — then worked with engineering to establish a Storybook instance as the source of truth.",
+      },
+      {
+        title: "Navigation & IA Redesign",
+        description:
+          "Unified the information architecture across all modules — consistent sidebar navigation, predictable breadcrumb patterns, and a global search that actually worked. Reduced average clicks-to-task from 7+ to 3. Tested with 10 users, iterated on label clarity and grouping logic.",
+      },
+      {
+        title: "Feedback & State System",
+        description:
+          "Designed a comprehensive feedback framework: loading states, success confirmations, error handling, empty states, and inline validation. Every user action now produced a visible, consistent response. Toasts, banners, inline messages — each with clear hierarchy and accessibility compliance. The platform learned to speak back.",
+      },
+      {
+        title: "Rollout & Governance",
+        description:
+          "Rolled out the design system progressively — highest-traffic modules first, then legacy screens during sprint work. Established a lightweight governance process: any new pattern required documentation, accessibility check, and peer review before entering the library. The system became self-sustaining because the team owned it, not just me.",
+      },
+    ],
+    wireframeImage:
+      "https://images.unsplash.com/photo-1630673489068-d329fa4e2767?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzb2Z0d2FyZSUyMGRldmVsb3BtZW50JTIwdGVhbSUyMGNvbGxhYm9yYXRpb24lMjB3aGl0ZWJvYXJkfGVufDF8fHx8MTc3MzgwMzAxN3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    designSystem: [
+      { label: "Tokens", description: "Color, typography, spacing, elevation, and shadow tokens encoding every visual decision into a single governed source of truth — with dark/light mode support" },
+      { label: "Components", description: "60+ production-ready components — inputs, buttons, tables, modals, toasts, navigation elements — all with built-in states, accessibility, and detailed usage docs" },
+      { label: "Patterns", description: "Reusable page templates for dashboards, forms, detail views, settings, and empty states — reducing design-from-scratch to configure-and-ship" },
+      { label: "Feedback System", description: "Unified loading, success, error, and validation patterns replacing the platform's silence with consistent, trustworthy interaction responses" },
+      { label: "Governance", description: "Lightweight review process for new patterns — documentation, a11y check, peer review — owned by the team, not dependent on any single designer" },
+    ],
+    designSystemImage:
+      "https://images.unsplash.com/photo-1731033182396-721f7ba29532?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ24lMjBzeXN0ZW0lMjBjb21wb25lbnRzJTIwVUklMjBsaWJyYXJ5JTIwZGFyayUyMGludGVyZmFjZXxlbnwxfHx8fDE3NzM4MDMwMjF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    prototypeHighlights: [
+      "Unified navigation system with consistent sidebar, breadcrumbs, and global search reducing average task clicks from 7+ to 3",
+      "Comprehensive feedback framework — every action produces visible, accessible confirmation replacing the platform's previous silence",
+      "Token-driven component library with 60+ components, all featuring built-in states, dark/light mode, and WCAG AA compliance",
+      "Progressive adoption strategy allowing live client engagements to migrate incrementally without workflow disruption",
+    ],
+    prototypeImage:
+      "https://images.unsplash.com/photo-1760670399462-f5e479452c27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbnRlcnByaXNlJTIwZGFzaGJvYXJkJTIwYW5hbHl0aWNzJTIwcGxhdGZvcm0lMjBkYXJrJTIwcHJvZmVzc2lvbmFsfGVufDF8fHx8MTc3MzgwMzAyNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    outcomes: [
+      { label: "Usability Score", value: "+63%", change: "Measured across all 5 core modules post-system adoption" },
+      { label: "Task Completion", value: "+45%", change: "Users completing core workflows without assistance" },
+      { label: "UI Inconsistencies", value: "-80%", change: "From 120+ documented issues to under 25" },
+      { label: "Design Velocity", value: "+55%", change: "Team shipping features faster with system components" },
+      { label: "Designers Mentored", value: "3", change: "All promoted within 12 months of program" },
+      { label: "Accessibility", value: "WCAG AA", change: "Full compliance achieved across all modules" },
+    ],
+    learnings: [
+      "A design system built in isolation is a museum piece. The reason Solstice's system actually stuck is because the team built it with me, not for me. Every token, every component, every pattern had a designer's name on it — someone who understood the 'why' because they'd fought through the 'how.' When I left, the system didn't leave with me. That's the only metric that matters for design system success.",
+      "Mentorship isn't about making people design like you — it's about giving them the frameworks to make better decisions on their own. The three designers I mentored didn't become copies of my approach. They became stronger versions of their own. One leaned into interaction design, another became the accessibility champion the team needed, the third developed a systems-thinking mindset that reshaped how the team approached new features. The best mentorship creates independence, not dependence.",
+      "Research in a consultancy environment is a political act. You're not just uncovering user needs — you're building the case for why design decisions should be evidence-based in an organization where speed often trumps rigor. Every insight I presented was framed in business terms: not 'users are confused' but 'confusion costs us X hours per week in support escalations.' The language of impact is the only language that travels upward.",
+    ],
+    reflection:
+      "This project lives in my memory as the one where I understood that design leadership isn't about the artifacts you create — it's about the capability you leave behind. When I joined Solstice, the platform was held together by duct tape and good intentions. Three talented but unsupported designers were doing their best in a vacuum. The product was growing in features but drowning in inconsistency. Fourteen months later, the platform had a unified design language, a governance process that made consistency automatic, and — most importantly — three designers who didn't need me anymore. The +63% usability improvement and -80% inconsistency reduction are the metrics I report. But the moment I'm proudest of is when one of my mentees pushed back on a stakeholder request using research data she'd gathered herself, defended her recommendation with clarity and confidence, and won. That's not a metric. That's a legacy. The design system was the deliverable. The team was the product.",
+    improvements: [
+      "Should have established the Storybook-to-Figma sync pipeline from day one. We built the Figma library first and the code components second, which created a drift window that cost us rework. In hindsight, parallel development with a clear source-of-truth protocol would have saved weeks.",
+      "The Angular-to-React migration happening in parallel with the design system rollout created friction I underestimated. Some engineering pods adopted the system's React components eagerly; others were stuck in Angular and felt left behind. A dedicated Angular component bridge — even a temporary one — would have accelerated adoption across the entire platform.",
+      "I should have documented the mentorship framework more formally. What I did with those three designers worked, but it was intuitive and ad-hoc. A structured mentorship curriculum — with clear milestones, skill assessments, and growth tracks — would have made the model repeatable for future design leads.",
+    ],
     nextProject: { slug: "meridian", title: "HEALTHPILOT", image: "https://images.unsplash.com/photo-1702479744031-2bf1f4bdfd8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGhjYXJlJTIwaW5zdXJhbmNlJTIwZGlnaXRhbCUyMHBsYXRmb3JtJTIwZGFyayUyMG1vb2R5fGVufDF8fHx8MTc3MzgwMDY3NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" },
   },
 ];
