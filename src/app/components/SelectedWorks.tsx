@@ -54,48 +54,6 @@ const projects: Project[] = [
   },
   {
     id: "02",
-    title: "VOID",
-    subtitle: "Designing for the Body, Not the Screen",
-    client: "VOID Technologies",
-    role: "Creative Director",
-    problem:
-      "Sub-60% task completion, 12-minute session fatigue. 2D paradigms extruded into 3D space. Built a gesture-first interaction model treating the body as input device — proximity-aware UI, multi-sensory feedback, adaptive rest states.",
-    category: "Interaction Design",
-    year: "2025",
-    image:
-      "https://images.unsplash.com/photo-1562672421-94d4c2aaabe5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aXJ0dWFsJTIwcmVhbGl0eSUyMG1peGVkJTIwcmVhbGl0eSUyMGRhcmslMjBzdHVkaW98ZW58MXx8fHwxNzczNDEwMTQyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    color: "#ff6b35",
-    metrics: [
-      { label: "Task Completion", value: "94%" },
-      { label: "Gesture Accuracy", value: "+41%" },
-      { label: "Satisfaction", value: "4.8/5" },
-    ],
-    tags: ["XR", "Spatial UI", "Prototyping"],
-    slug: "void",
-  },
-  {
-    id: "03",
-    title: "AETHER",
-    subtitle: "Making Algorithmic Art Feel Like Painting",
-    client: "Aether Labs",
-    role: "Product Designer & Strategist",
-    problem:
-      "80% of potential users — visual artists — had no path into algorithmic creation. Designed a dual-mode node editor with progressive complexity that converted visual-first creators at 4x the previous rate.",
-    category: "Creative Direction",
-    year: "2024",
-    image:
-      "https://images.unsplash.com/photo-1764866127860-1da95e9c74a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuZW9uJTIwYWJzdHJhY3QlMjBkaWdpdGFsJTIwYXJ0JTIwaW5zdGFsbGF0aW9ufGVufDF8fHx8MTc3MzQxMDE0M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    color: "#a855f7",
-    metrics: [
-      { label: "Creators", value: "12K+" },
-      { label: "Artworks", value: "1.2M" },
-      { label: "Avg. Session", value: "34min" },
-    ],
-    tags: ["Web App", "Creative Tools", "AI"],
-    slug: "aether",
-  },
-  {
-    id: "04",
     title: "GAIG",
     subtitle: "Taming 33 Business Lines With One Design Language",
     client: "Great American Insurance Group",
@@ -116,7 +74,7 @@ const projects: Project[] = [
     slug: "forma",
   },
   {
-    id: "05",
+    id: "03",
     title: "RISE",
     subtitle: "When Shopping Becomes Feeling",
     client: "Rise Cannabis / GTI",
@@ -137,28 +95,7 @@ const projects: Project[] = [
     slug: "luxe",
   },
   {
-    id: "06",
-    title: "SYNTH",
-    subtitle: "Making the Smart Home Disappear",
-    client: "SynthOS",
-    role: "Creative Director & Designer",
-    problem:
-      "Smart home controls scattered across 6+ apps — 73% of users had abandoned devices because the apps were too frustrating. Designed an ambient, room-centric interface that cut daily interactions from 47 to 8 with zero-config setup.",
-    category: "IoT / Dashboard",
-    year: "2023",
-    image:
-      "https://images.unsplash.com/photo-1751945965597-71171ec7a458?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhbWJpZW50JTIwbGlnaHRpbmclMjBzbWFydCUyMGhvbWUlMjBpbnRlcmlvciUyMG1vb2R5fGVufDF8fHx8MTc3MzQxMDE0NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    color: "#34d399",
-    metrics: [
-      { label: "DAU", value: "280K" },
-      { label: "Interactions", value: "47/day" },
-      { label: "Setup", value: "<2min" },
-    ],
-    tags: ["IoT", "Dashboard", "Ambient"],
-    slug: "synth",
-  },
-  {
-    id: "07",
+    id: "04",
     title: "SOLSTICE",
     subtitle: "Scaling a Consultancy's Product Through Design System Discipline",
     client: "Solstice Innovations",
