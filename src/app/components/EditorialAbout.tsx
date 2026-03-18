@@ -9,7 +9,7 @@ import {
   AnimatePresence,
 } from "motion/react";
 import { useIsMobile } from "./ui/useMediaQuery";
-const pauloPortrait = "https://images.unsplash.com/photo-1769628027250-d2a7a5a4eb64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBtYW4lMjBwb3J0cmFpdCUyMGRhcmslMjBtb29keSUyMGhlYWRzaG90fGVufDF8fHx8MTc3MzgwODkwOHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+import pauloPortrait from "figma:asset/adf191d37477726a5ba73913b5a0723d267cb156.png";
 
 /* ─────────────────────────────────────────
    Constants & Data
@@ -78,9 +78,19 @@ const TIMELINE = [
     note: "Led a team of 5 designers delivering digital products across insured portals and risk management platforms. Revamped the corporate design system with accessibility focus, reducing UI inconsistencies by 70%.",
   },
   {
-    period: "2018 — 2021",
-    role: "Freelance & Advice Media — Product Designer",
-    note: "Built data-driven design solutions and visual systems across healthcare, cannabis, and media industries. Implemented WCAG standards and facilitated discovery workshops translating complex business goals into effective UX strategies.",
+    period: "2018 — 2019",
+    role: "MyAdvice — Web Designer | Visual Designer",
+    note: "Led design and development of visual elements for web projects using CSS and JavaScript, boosting user engagement by 20%. Implemented WCAG 2.0 standards and facilitated discovery sessions translating complex business goals into actionable designs.",
+  },
+  {
+    period: "2017 — 2018",
+    role: "DevSquad — Jr. UI Designer (Intern)",
+    note: "Integrated with Agile teams contributing to stand-ups, sprint planning, and retrospectives. Extended expertise into frontend development, crafting responsive designs and ensuring design-to-development fidelity through iterative cycles.",
+  },
+  {
+    period: "2016 — 2017",
+    role: "Figger Creative Agency — Entry Level Web Designer",
+    note: "Aided in project development from concept to reality. Customized WordPress themes using HTML, CSS, Bootstrap, and JavaScript. Created and modified visual elements with Photoshop and Illustrator.",
   },
 ];
 

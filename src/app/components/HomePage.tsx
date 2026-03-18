@@ -107,7 +107,7 @@ export function HomePage() {
   return (
     <div
       className="w-full min-h-screen bg-[#0a0a0b] text-[#e8e6e3] overflow-x-hidden relative"
-      style={{ fontFamily: "var(--font-body)" }}
+      style={{ fontFamily: "var(--font-body)", position: "relative" }}
     >
       {/* Skip to content — accessibility */}
       <a href="#work" className="skip-to-content">
@@ -124,6 +124,7 @@ export function HomePage() {
       <motion.main
         id="main-content"
         className="relative"
+        style={{ position: "relative" }}
         initial={{ opacity: 0 }}
         animate={{ opacity: isLoading ? 0 : 1 }}
         transition={{ duration: 1.2, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}

@@ -492,9 +492,9 @@ const CASE_STUDIES: CaseStudyData[] = [
     title: "SOLSTICE",
     subtitle: "Scaling a consultancy's product through design system discipline",
     client: "Solstice Innovations (via Technology Consulting)",
-    year: "2020\u20132021",
+    year: "2024\u20132025",
     role: "Senior Product Designer & Design Lead",
-    timeline: "14 months",
+    timeline: "17 months",
     team: "3 mentored designers, 2 PMs, cross-functional engineering pods",
     platform: "Web (Enterprise SaaS — Client Portals & Internal Tools)",
     tools: ["Figma", "Miro", "Jira", "Storybook", "Slack", "Teams"],
@@ -1094,7 +1094,7 @@ export function CaseStudyPage() {
     <div
       ref={pageRef}
       className="w-full min-h-screen bg-[#0a0a0b] text-[#e8e6e3] overflow-x-hidden relative"
-      style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+      style={{ fontFamily: "'Space Grotesk', sans-serif", position: "relative" }}
     >
       {/* Grain */}
       <div className="grain-overlay" />
@@ -1486,7 +1486,7 @@ export function CaseStudyPage() {
         </div>
       </Section>
 
-      {/* ═══════════════════════════════════════
+      {/* ══════════════��════════════════════════
          10. PROTOTYPE
          ═══════════════════════════════════════ */}
       <Section id="prototype" className="px-6 md:px-12 lg:px-24 py-20 md:py-32" onInView={handleChapterChange}>

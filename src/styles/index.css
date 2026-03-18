@@ -71,6 +71,7 @@
 }
 
 html {
+  position: relative;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -78,6 +79,7 @@ html {
 }
 
 body {
+  position: relative;
   font-family: var(--font-body);
   background: var(--c-bg);
   color: var(--c-fg);

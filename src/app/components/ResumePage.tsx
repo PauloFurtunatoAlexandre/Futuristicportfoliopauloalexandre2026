@@ -85,14 +85,36 @@ const EXPERIENCE = [
     ],
   },
   {
-    company: "Advice Media",
-    role: "Visual Designer",
+    company: "MyAdvice",
+    role: "Web Designer | Visual Designer",
     location: "Park City, UT",
     period: "Jun 2018 – Nov 2019",
     bullets: [
-      "Designed comprehensive visual systems integrating CSS and JavaScript, boosting engagement by 20%.",
-      "Streamlined navigation flows and implemented WCAG 2.0 standards, resolving 25% of usability issues.",
-      "Facilitated discovery sessions and workshops translating complex business goals into effective UX/UI strategies.",
+      "Led the design and development of comprehensive visual elements for web projects using CSS and JavaScript, improving client satisfaction and increasing user engagement by 20%.",
+      "Simplified navigation flows and implemented WCAG 2.0 standards, resolving 25% of usability complaints.",
+      "Facilitated discovery sessions with clients to convert complex business goals into actionable designs, enhancing project success and fostering stronger client partnerships.",
+    ],
+  },
+  {
+    company: "DevSquad",
+    role: "Jr. UI Designer — Intern",
+    location: "Salt Lake City, UT",
+    period: "Jan 2017 – Jun 2018",
+    bullets: [
+      "Integrated with Agile teams, contributing to daily stand-ups, sprint planning, and retrospectives to enhance team synergy and communication.",
+      "Extended expertise beyond UI design into frontend development, crafting responsive designs, interactive elements, and ensuring design-to-development fidelity.",
+      "Adopted an iterative design strategy within Agile cycles, focusing on continuous feedback and design refinement to meet user and stakeholder expectations.",
+    ],
+  },
+  {
+    company: "Figger Creative Agency",
+    role: "Entry Level Web Designer",
+    location: "Orem, UT",
+    period: "Jun 2016 – Jan 2017",
+    bullets: [
+      "Aided in the development and execution of minor projects, applying hands-on skills to move initiatives from concept to reality.",
+      "Edited WordPress themes to tailor-fit customer requirements, leveraging HTML, CSS, Bootstrap, and JavaScript.",
+      "Used Photoshop and Illustrator to create and modify visual elements, enhancing user interfaces and experiences.",
     ],
   },
 ];
