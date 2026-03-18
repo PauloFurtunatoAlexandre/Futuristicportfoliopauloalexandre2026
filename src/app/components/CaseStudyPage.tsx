@@ -9,11 +9,11 @@ import {
 import { useParams, useNavigate } from "react-router";
 import { ArrowUpRight, ArrowLeft, ChevronDown, List, X } from "lucide-react";
 import hpHeroImg from "figma:asset/7bbfacf2ed4c6625d9871c3ff14d7a198146a50e.png";
-const hpSprintsImg = "https://images.unsplash.com/photo-1529119835860-ce3d90485424?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGhjYXJlJTIwYXBwJTIwZGVzaWduJTIwc3ByaW50JTIwd2hpdGVib2FyZHxlbnwxfHx8fDE3NzM4NDc0MzF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
-const hpPersonasImg = "https://images.unsplash.com/photo-1740777790268-98c4be7e5fd1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx1c2VyJTIwcGVyc29uYSUyMHJlc2VhcmNoJTIwaGVhbHRoY2FyZSUyMFVYfGVufDF8fHx8MTc3Mzg0NzQzNnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
-const hpJourneyImg = "https://images.unsplash.com/photo-1624259458752-a2c5922abea0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdXN0b21lciUyMGpvdXJuZXklMjBtYXAlMjBVWCUyMGRlc2lnbiUyMHByb2Nlc3N8ZW58MXx8fHwxNzczODQ3NDQwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
-const hpDesignSystemImg = "https://images.unsplash.com/photo-1616861771635-49063a4636ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ24lMjBzeXN0ZW0lMjBjb21wb25lbnRzJTIwVUklMjBsaWJyYXJ5fGVufDF8fHx8MTc3Mzg0NzQ0M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
-const hpPrototypeImg = "https://images.unsplash.com/photo-1650636353551-1275516077b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbnRlcmFjdGl2ZSUyMHByb3RvdHlwZSUyMG1vYmlsZSUyMGFwcCUyMHdpcmVmcmFtZXxlbnwxfHx8fDE3NzM4NDc0NDl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+import hpSprintsImg from "figma:asset/e2c9b5e4456bde9556a8dbcb865ef68da69e82d6.png";
+import hpPersonasImg from "figma:asset/14640d519882e99e696e2223fbbf15663f2564eb.png";
+import hpJourneyImg from "figma:asset/c352a90999e00126857a04eb13e42e7f5f69f24f.png";
+import hpDesignSystemImg from "figma:asset/4557a4d2218b0b670e8fd145275b787327362ddd.png";
+import hpPrototypeImg from "figma:asset/034ad9d3633de3ed493e98ea68bb2c011588308f.png";
 const gaigHeroImg = "https://images.unsplash.com/photo-1640323240640-ee731d18dcb1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbnN1cmFuY2UlMjBlbnRlcnByaXNlJTIwc29mdHdhcmUlMjBkYXNoYm9hcmR8ZW58MXx8fHwxNzczODA3MDc4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 const gaigGovernanceImg = "https://images.unsplash.com/photo-1676287568293-8cd7917e7d95?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjBnb3Zlcm5hbmNlJTIwY29tcGxpYW5jZSUyMGRvY3VtZW50fGVufDF8fHx8MTc3MzgwNzA3OHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 const gaigOktaFlowImg = "https://images.unsplash.com/photo-1592791770401-7a0cb5ee279b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhdXRoZW50aWNhdGlvbiUyMGxvZ2luJTIwc2VjdXJpdHklMjBmbG93fGVufDF8fHx8MTc3MzgwNzA3OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
