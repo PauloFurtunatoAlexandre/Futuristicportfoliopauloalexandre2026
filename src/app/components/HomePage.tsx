@@ -157,12 +157,7 @@ export function HomePage() {
           items={[
             "FIGMA",
             "FRAMER",
-            "AFTER EFFECTS",
-            "BLENDER",
-            "SWIFT UI",
             "REACT",
-            "THREE.JS",
-            "WEBGL",
           ]}
           direction="right"
           speed={35}

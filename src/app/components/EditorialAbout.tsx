@@ -9,7 +9,7 @@ import {
   AnimatePresence,
 } from "motion/react";
 import { useIsMobile } from "./ui/useMediaQuery";
-import pauloPortrait from "figma:asset/adf191d37477726a5ba73913b5a0723d267cb156.png";
+const pauloPortrait = "https://images.unsplash.com/photo-1649000808933-1f4aac7cad9a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9kdWN0JTIwZGVzaWduZXIlMjBwb3J0cmFpdCUyMHByb2Zlc3Npb25hbCUyMGNyZWF0aXZlfGVufDF8fHx8MTc3Mzg0NzQ1M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 
 /* ─────────────────────────────────────────
    Constants & Data
@@ -635,7 +635,7 @@ export function EditorialAbout() {
           </Reveal>
 
           <ScrollManifesto
-            text="I started in graphic design and never stopped evolving. Over 12 years, I've moved from pixels to products, from visual systems to full-stack builds, from following briefs to shaping strategy. I design for the moments that matter — when a confused Medicare enrollee finally understands their options, when an insurance team ships twice as fast because the system just works, when a cannabis shopper finds exactly the feeling they were looking for. The work I care about lives where empathy meets engineering."
+            text="I started in graphic design and never stopped evolving. Over 10 years, I've moved from pixels to products, from visual systems to full-stack builds, from following briefs to shaping strategy. I design for the moments that matter — when a confused Medicare enrollee finally understands their options, when an insurance team ships twice as fast because the system just works, when a cannabis shopper finds exactly the feeling they were looking for. The work I care about lives where empathy meets engineering."
             accentPhrases={[
               "moments that matter",
               "empathy meets engineering",
@@ -682,7 +682,7 @@ export function EditorialAbout() {
                 className="text-[var(--type-body-lg)] leading-[1.85] text-[#8a8a96] mb-8"
                 style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
               >
-                I'm a senior product designer with 12+ years of experience across insurance,
+                I'm a senior product designer with 10+ years of experience across insurance,
                 healthcare, SaaS, and emerging industries. I've led design teams, built
                 company-wide design systems from scratch, and shipped products that helped
                 secure $10M in funding. I also write code — React, JavaScript, Node — because
@@ -733,7 +733,7 @@ export function EditorialAbout() {
 
             {/* Stats */}
             <div className="grid grid-cols-2 gap-x-12 gap-y-10 pt-10 border-t border-white/[0.04] mt-6">
-              <AnimatedStat num="12+" label="Years in Design" index={0} />
+              <AnimatedStat num="10+" label="Years in Design" index={0} />
               <AnimatedStat num="$10M" label="Funding Supported" index={1} />
               <AnimatedStat num="97%" label="Highest Satisfaction" index={2} />
               <AnimatedStat num="70%" label="UI Inconsistencies Cut" index={3} />

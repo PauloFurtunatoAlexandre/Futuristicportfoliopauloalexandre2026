@@ -289,13 +289,8 @@ export function HeroSection() {
             transition={{ delay: 1.8, duration: 0.8 }}
             className="flex items-center gap-3"
           >
-            <motion.div
-              className="w-2 h-2 rounded-full bg-[#c4ff00]"
-              animate={{ opacity: [1, 0.4, 1] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            />
             <span className="type-label text-[#6b6b76]">
-              Available for work
+              Saint Petersburg, FL
             </span>
           </motion.div>
           <motion.div

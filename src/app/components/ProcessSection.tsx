@@ -420,8 +420,7 @@ export function ProcessSection() {
               My process isn't linear — it's a rhythm. Each project finds its own
               cadence, but the underlying discipline stays constant. Research
               before intuition. Testing before launch. People before pixels. These
-              are the six acts that recur across every project I've led, from
-              Medicare platforms to enterprise design systems.
+              are the six acts that recur across every project I've worked for.
             </p>
           </Reveal>
         </div>
