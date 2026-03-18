@@ -156,8 +156,11 @@ export function HomePage() {
         <MarqueeStrip
           items={[
             "FIGMA",
-            "FRAMER",
             "REACT",
+            "CLAUDE CODE",
+            "TAILWINDCSS",
+            "FRAMER",
+            "UX RESEARCH",
           ]}
           direction="right"
           speed={35}

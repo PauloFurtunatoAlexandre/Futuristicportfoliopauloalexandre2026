@@ -27,6 +27,15 @@ const PROJECTS = [
     image: hpHeroImg,
   },
   {
+    title: "SOLSTICE",
+    subtitle: "Scaling a Consultancy's Product Through Design System Discipline",
+    slug: "solstice",
+    year: "2024",
+    category: "Design Systems & Mentorship",
+    image:
+      "https://images.unsplash.com/photo-1702726001096-096efcf640b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwY29uc3VsdGluZyUyMG9mZmljZSUyMG1vZGVybiUyMGRhcmslMjBtb29keXxlbnwxfHx8fDE3NzM4MDMwMTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+  },
+  {
     title: "GAIG",
     subtitle: "Taming 33 Business Lines With One Design Language",
     slug: "gaig",
@@ -41,15 +50,6 @@ const PROJECTS = [
     year: "2021",
     category: "E-Commerce",
     image: riseHeroImg,
-  },
-  {
-    title: "SOLSTICE",
-    subtitle: "Scaling a Consultancy's Product Through Design System Discipline",
-    slug: "solstice",
-    year: "2020",
-    category: "Design Systems & Mentorship",
-    image:
-      "https://images.unsplash.com/photo-1702726001096-096efcf640b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwY29uc3VsdGluZyUyMG9mZmljZSUyMG1vZGVybiUyMGRhcmslMjBtb29keXxlbnwxfHx8fDE3NzM4MDMwMTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
   },
 ];
 

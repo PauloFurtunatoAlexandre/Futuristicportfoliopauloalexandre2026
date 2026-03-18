@@ -15,11 +15,11 @@ import hpJourneyImg from "figma:asset/c352a90999e00126857a04eb13e42e7f5f69f24f.p
 import hpDesignSystemImg from "figma:asset/4557a4d2218b0b670e8fd145275b787327362ddd.png";
 import hpPrototypeImg from "figma:asset/034ad9d3633de3ed493e98ea68bb2c011588308f.png";
 import gaigHeroImg from "figma:asset/a14953c0d7236138483f4078155353567d3722c4.png";
-const gaigGovernanceImg = "https://images.unsplash.com/photo-1676287568293-8cd7917e7d95?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjBnb3Zlcm5hbmNlJTIwY29tcGxpYW5jZSUyMGRvY3VtZW50fGVufDF8fHx8MTc3MzgwNzA3OHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
-const gaigOktaFlowImg = "https://images.unsplash.com/photo-1592791770401-7a0cb5ee279b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhdXRoZW50aWNhdGlvbiUyMGxvZ2luJTIwc2VjdXJpdHklMjBmbG93fGVufDF8fHx8MTc3MzgwNzA3OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
-const gaigDesignSystemImg = "https://images.unsplash.com/photo-1562601555-513820e5d0eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ24lMjBzeXN0ZW0lMjBjb21wb25lbnRzJTIwVUl8ZW58MXx8fHwxNzczNzM2OTE5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
-const gaigWireframesImg = "https://images.unsplash.com/photo-1715528233539-5fe70a4e0d71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3aXJlZnJhbWUlMjBza2V0Y2glMjBsb3clMjBmaWRlbGl0eXxlbnwxfHx8fDE3NzM4MDcwNzl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
-const gaigPrototypeImg = "https://images.unsplash.com/photo-1532102235608-dc8fc689c9ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbnRlcmFjdGl2ZSUyMHByb3RvdHlwZSUyMHVzYWJpbGl0eSUyMHRlc3R8ZW58MXx8fHwxNzczODA3MDgwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+import gaigGovernanceImg from "figma:asset/c35660da526b770b87bc8706aead9e0e29c30947.png";
+import gaigOktaFlowImg from "figma:asset/63e5e2c472eddce43fa09e3f9e9d33d39bfaec9b.png";
+import gaigDesignSystemImg from "figma:asset/ef8d5502022f65513bc7abb342bbd1ebeec7aad5.png";
+import gaigWireframesImg from "figma:asset/457fbf26f1b28dde307d0333bdc3e4a93e5f38d2.png";
+import gaigPrototypeImg from "figma:asset/0142f6db386879a40ccbbf223cde1c8e797dae2b.png";
 const riseHeroImg = "https://images.unsplash.com/photo-1764795849755-ab58c8fef307?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYW5uYWJpcyUyMGRpc3BlbnNhcnklMjBtb2Rlcm4lMjByZXRhaWwlMjBzdG9yZXxlbnwxfHx8fDE3NzM4MDc4Njd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 const riseRiskMatrixImg = "https://images.unsplash.com/photo-1508003937473-789a1839fd57?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyaXNrJTIwYXNzZXNzbWVudCUyMG1hdHJpeCUyMGNoYXJ0JTIwZGF0YXxlbnwxfHx8fDE3NzM4MDc4Njd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 const risePersonasImg = "https://images.unsplash.com/photo-1554103210-26d928978fb5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx1c2VyJTIwcGVyc29uYSUyMHJlc2VhcmNoJTIwYm9hcmQlMjBzdGlja3klMjBub3Rlc3xlbnwxfHx8fDE3NzM4MDc4Njh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
