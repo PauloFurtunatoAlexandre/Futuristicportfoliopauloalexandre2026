@@ -16,7 +16,7 @@ import { ArrowUpRight, ArrowUp, Mail, Download, Copy, Check } from "lucide-react
 
 const EASE = [0.25, 0.46, 0.45, 0.94] as const;
 const EASE_SMOOTH = [0.43, 0.13, 0.23, 0.96] as const;
-const EMAIL = "hello@pauloalexandre.com";
+const EMAIL = "furtuna.alexandre@gmail.com";
 
 const SOCIAL_LINKS = [
   { label: "LinkedIn", url: "https://www.linkedin.com/in/paulofurtunatoalexandre/", desc: "Professional" },
