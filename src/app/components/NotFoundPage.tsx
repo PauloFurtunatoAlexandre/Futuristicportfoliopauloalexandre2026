@@ -112,7 +112,8 @@ export function NotFoundPage() {
           whileHover="hover"
         >
           <motion.div
-            className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:border-[#c4ff00]/40 transition-colors duration-500"
+            className="w-10 h-10 rounded-full border flex items-center justify-center group-hover:border-[#c4ff00]/40 transition-colors duration-500"
+            style={{ borderColor: "rgba(255,255,255,0.1)" }}
             variants={{ hover: { scale: 1.05 } }}
             transition={{ duration: 0.3 }}
           >
@@ -137,25 +138,29 @@ export function NotFoundPage() {
         initial={{ opacity: 0 }}
         animate={isReady ? { opacity: 0.15 } : {}}
         transition={{ delay: 1.2, duration: 1 }}
-        className="absolute top-8 left-8 w-6 h-6 border-l border-t border-white/10 pointer-events-none hidden lg:block"
+        className="absolute top-8 left-8 w-6 h-6 pointer-events-none hidden lg:block"
+        style={{ borderLeft: "1px solid rgba(255,255,255,0.1)", borderTop: "1px solid rgba(255,255,255,0.1)" }}
       />
       <motion.div
         initial={{ opacity: 0 }}
         animate={isReady ? { opacity: 0.15 } : {}}
         transition={{ delay: 1.2, duration: 1 }}
-        className="absolute top-8 right-8 w-6 h-6 border-r border-t border-white/10 pointer-events-none hidden lg:block"
+        className="absolute top-8 right-8 w-6 h-6 pointer-events-none hidden lg:block"
+        style={{ borderRight: "1px solid rgba(255,255,255,0.1)", borderTop: "1px solid rgba(255,255,255,0.1)" }}
       />
       <motion.div
         initial={{ opacity: 0 }}
         animate={isReady ? { opacity: 0.15 } : {}}
         transition={{ delay: 1.2, duration: 1 }}
-        className="absolute bottom-8 left-8 w-6 h-6 border-l border-b border-white/10 pointer-events-none hidden lg:block"
+        className="absolute bottom-8 left-8 w-6 h-6 pointer-events-none hidden lg:block"
+        style={{ borderLeft: "1px solid rgba(255,255,255,0.1)", borderBottom: "1px solid rgba(255,255,255,0.1)" }}
       />
       <motion.div
         initial={{ opacity: 0 }}
         animate={isReady ? { opacity: 0.15 } : {}}
         transition={{ delay: 1.2, duration: 1 }}
-        className="absolute bottom-8 right-8 w-6 h-6 border-r border-b border-white/10 pointer-events-none hidden lg:block"
+        className="absolute bottom-8 right-8 w-6 h-6 pointer-events-none hidden lg:block"
+        style={{ borderRight: "1px solid rgba(255,255,255,0.1)", borderBottom: "1px solid rgba(255,255,255,0.1)" }}
       />
 
       {/* Bottom info */}

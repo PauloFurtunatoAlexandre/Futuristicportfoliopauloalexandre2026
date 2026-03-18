@@ -441,7 +441,8 @@ export function HeroSection() {
 
             <motion.a
               href="#contact"
-              className="group relative px-10 py-4 border border-white/10 text-[#e8e6e3] hover:border-[#c4ff00]/30 transition-colors duration-500"
+              className="group relative px-10 py-4 border text-[#e8e6e3] hover:border-[#c4ff00]/30 transition-colors duration-500"
+              style={{ borderColor: "rgba(255,255,255,0.1)" }}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >

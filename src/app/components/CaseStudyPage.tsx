@@ -38,7 +38,7 @@ import { BeforeAfterSlider } from "./BeforeAfterSlider";
 const EASE_OUT = [0.25, 0.46, 0.45, 0.94] as const;
 const EASE_SMOOTH = [0.43, 0.13, 0.23, 0.96] as const;
 
-/* ─────────────────────────────────
+/* ───────────────────────────��─────
    Case Study Data
    ───────────────────────────────── */
 interface CaseStudyData {
@@ -1170,7 +1170,7 @@ export function CaseStudyPage() {
         </motion.div>
       </section>
 
-      {/* ═══════════════════════════════════════
+      {/* ═══���═══════════════════════════════════
          2. OVERVIEW
          ═══════════════════════════════════════ */}
       <Section id="overview" className="px-6 md:px-12 lg:px-24 py-20 md:py-32" onInView={handleChapterChange}>
@@ -1437,25 +1437,7 @@ export function CaseStudyPage() {
          ═══════════════════════════════════════ */}
       <Section id="wireframes" className="px-6 md:px-12 lg:px-24 py-20 md:py-32" onInView={handleChapterChange}>
         <ChapterLabel number="07" title="Wireframes & Explorations" accentColor={cs.color} />
-        <ImmersiveImage src={cs.wireframeImage} alt="Wireframe explorations" caption="Early explorations — low-fidelity flows and concept sketches" reducedMotion={isMobile || reducedMotion} />
-        {/* Before / After comparison */}
-        <Reveal delay={0.15}>
-          <div className="mt-4 mb-4">
-            <span
-              className="block text-[10px] tracking-[0.4em] uppercase text-[#6b6b76]/60 mb-6"
-              style={{ fontFamily: "'JetBrains Mono', monospace" }}
-            >
-              Before → After — Drag to compare
-            </span>
-          </div>
-        </Reveal>
-        <BeforeAfterSlider
-          beforeImage={cs.wireframeImage}
-          afterImage={cs.prototypeImage}
-          beforeLabel="Wireframe"
-          afterLabel="Final Design"
-          accentColor={cs.color}
-        />
+        <ImmersiveImage src={cs.prototypeImage} alt="Final design" caption="High-fidelity screens — final design direction" reducedMotion={isMobile || reducedMotion} />
       </Section>
 
       {/* ═══════════════════════════════════════
@@ -1693,7 +1675,8 @@ export function CaseStudyPage() {
             </motion.div>
 
             <motion.div
-              className="w-16 h-16 md:w-20 md:h-20 rounded-full border border-white/10 flex items-center justify-center transition-all duration-500 shrink-0 lg:hidden"
+              className="w-16 h-16 md:w-20 md:h-20 rounded-full border flex items-center justify-center transition-all duration-500 shrink-0 lg:hidden"
+              style={{ borderColor: "rgba(255,255,255,0.1)" }}
               variants={{ hover: { scale: 1.1, borderColor: `${cs.color}66`, backgroundColor: `${cs.color}0d` } }}
               transition={{ duration: 0.3 }}
             >
