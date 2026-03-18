@@ -195,7 +195,7 @@ function StickyProjectCard({
       className="relative"
       style={{
         height: isMobile ? "auto" : "120vh",
-        marginBottom: index === total - 1 ? 0 : isMobile ? "1.5rem" : "-20vh",
+        marginBottom: index === total - 1 ? 0 : isMobile ? "2rem" : "-20vh",
         minHeight: isMobile ? undefined : undefined,
       }}
     >

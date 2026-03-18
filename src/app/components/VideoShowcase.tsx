@@ -31,7 +31,7 @@ const HERO_REEL = {
 
 const PROJECT_VIDEOS = [
   {
-    id: "meridian",
+    id: "healthpilot",
     poster:
       "https://images.unsplash.com/photo-1587803537744-c6d63897f2cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXJrJTIwcHJvZHVjdCUyMGludGVyZmFjZSUyMG1vYmlsZSUyMGFwcCUyMHNjcmVlbnxlbnwxfHx8fDE3NzM0MTg4MzN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     title: "HealthPilot",
@@ -39,40 +39,40 @@ const PROJECT_VIDEOS = [
     duration: "1:34",
     category: "PRODUCT DEMO",
     description:
-      "End-to-end onboarding redesign for Meridian Financial — from identity verification through first transaction, reducing drop-off by 67%.",
+      "End-to-end Medicare enrollment redesign for HealthPilot — from plan discovery through enrollment, reducing drop-off by 25%.",
   },
   {
-    id: "void",
-    poster:
-      "https://images.unsplash.com/photo-1760931969401-9bd6ee902798?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXJrJTIwZGlnaXRhbCUyMGFydCUyMGZ1dHVyaXN0aWMlMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzczNDE4ODM0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    title: "VOID",
-    subtitle: "Spatial Interface Demo",
-    duration: "2:12",
-    category: "PROTOTYPE DEMO",
-    description:
-      "Gesture-first spatial computing interface for mixed reality — demonstrating volumetric navigation and contextual layering in 3D space.",
-  },
-  {
-    id: "aether",
-    poster:
-      "https://images.unsplash.com/photo-1672957582204-b1972c5a7c91?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXJrJTIwbWluaW1hbCUyMFVJJTIwZGFzaGJvYXJkJTIwZGVzaWdufGVufDF8fHx8MTc3MzQxODgzM3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    title: "AETHER",
-    subtitle: "AI Tool Prototype",
-    duration: "1:58",
-    category: "CASE STUDY REEL",
-    description:
-      "AI-powered design assistant showcasing progressive complexity — from smart defaults to full manual override, adapting to user expertise level.",
-  },
-  {
-    id: "forma",
+    id: "gaig",
     poster:
       "https://images.unsplash.com/photo-1610736311554-fc17d5c43de8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXJrJTIwZGVza3RvcCUyMHdvcmtzcGFjZSUyMGNyZWF0aXZlJTIwdG9vbHN8ZW58MXx8fHwxNzczNDE4ODM0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    title: "FORMA",
+    title: "GAIG",
     subtitle: "Design System Motion",
     duration: "0:52",
     category: "MOTION DESIGN",
     description:
-      "Comprehensive motion language for FORMA's component library — establishing easing curves, choreography principles, and state transition patterns.",
+      "Comprehensive design system unifying 33 business lines at Great American Insurance Group — establishing shared components, governance, and accessibility standards.",
+  },
+  {
+    id: "rise",
+    poster:
+      "https://images.unsplash.com/photo-1760931969401-9bd6ee902798?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXJrJTIwZGlnaXRhbCUyMGFydCUyMGZ1dHVyaXN0aWMlMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzczNDE4ODM0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    title: "RISE",
+    subtitle: "Emotion-Driven Commerce",
+    duration: "2:12",
+    category: "CASE STUDY REEL",
+    description:
+      "Redesigning the Rise Cannabis shopping experience around feelings — Fit Guide, emotion-tagged reviews, and confidence-building commerce flows.",
+  },
+  {
+    id: "solstice",
+    poster:
+      "https://images.unsplash.com/photo-1672957582204-b1972c5a7c91?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXJrJTIwbWluaW1hbCUyMFVJJTIwZGFzaGJvYXJkJTIwZGVzaWdufGVufDF8fHx8MTc3MzQxODgzM3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    title: "SOLSTICE",
+    subtitle: "Design System & Mentorship",
+    duration: "1:58",
+    category: "CASE STUDY REEL",
+    description:
+      "Building a design system and mentoring three junior designers at Solstice Innovations — turning chaos into a +63% usability lift.",
   },
 ];
 

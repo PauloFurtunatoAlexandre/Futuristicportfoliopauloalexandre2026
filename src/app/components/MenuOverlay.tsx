@@ -1,12 +1,9 @@
-import { useRef, useState, useEffect, useCallback } from "react";
-import {
-  motion,
-  AnimatePresence,
-  useMotionValue,
-  useSpring,
-} from "motion/react";
+import { useState, useEffect, useRef, useCallback } from "react";
+import { motion, AnimatePresence, useMotionValue, useSpring } from "motion/react";
 import { useNavigate, useLocation } from "react-router";
 import { ArrowUpRight, X } from "lucide-react";
+import gaigHeroImg from "figma:asset/62ef352eb234e315ecb528632c229cbc70cf743f.png";
+import healthpilotImg from "figma:asset/e4a5a5199e012811840cc269dafae9f17eab509a.png";
 
 /* ─────────────────────────────────────────
    Constants
@@ -23,56 +20,36 @@ const PROJECTS = [
   {
     title: "HEALTHPILOT",
     subtitle: "Turning Medicare Chaos Into Confident Decisions",
-    slug: "meridian",
+    slug: "healthpilot",
     year: "2025",
     category: "Product Design",
-    image:
-      "https://images.unsplash.com/photo-1663000803107-132fb64cc148?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXJrJTIwbW9vZHklMjBiYW5raW5nJTIwYXBwJTIwbW9iaWxlJTIwaW50ZXJmYWNlfGVufDF8fHx8MTc3MzQxMDE0MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    image: healthpilotImg,
   },
   {
-    title: "VOID",
-    subtitle: "Designing for the Body, Not the Screen",
-    slug: "void",
-    year: "2025",
-    category: "Interaction Design",
-    image:
-      "https://images.unsplash.com/photo-1562672421-94d4c2aaabe5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aXJ0dWFsJTIwcmVhbGl0eSUyMG1peGVkJTIwcmVhbGl0eSUyMGRhcmslMjBzdHVkaW98ZW58MXx8fHwxNzczNDEwMTQyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    title: "GAIG",
+    subtitle: "Taming 33 Business Lines With One Design Language",
+    slug: "gaig",
+    year: "2022",
+    category: "Design Systems",
+    image: gaigHeroImg,
   },
   {
-    title: "AETHER",
-    subtitle: "Making Algorithmic Art Feel Like Painting",
-    slug: "aether",
-    year: "2024",
-    category: "Creative Direction",
-    image:
-      "https://images.unsplash.com/photo-1764866127860-1da95e9c74a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuZW9uJTIwYWJzdHJhY3QlMjBkaWdpdGFsJTIwYXJ0JTIwaW5zdGFsbGF0aW9ufGVufDF8fHx8MTc3MzQxMDE0M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-  },
-  {
-    title: "FORMA",
-    subtitle: "Unifying Six Products That Grew Up Separately",
-    slug: "forma",
-    year: "2024",
-    category: "Systems Design",
-    image:
-      "https://images.unsplash.com/photo-1662906047226-971b484f5056?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxicnV0YWxpc3QlMjBjb25jcmV0ZSUyMGFyY2hpdGVjdHVyZSUyMHNoYWRvd3xlbnwxfHx8fDE3NzM0MTAxNDN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-  },
-  {
-    title: "LUXE",
-    subtitle: "Where Editorial Storytelling Meets Commerce",
-    slug: "luxe",
-    year: "2024",
+    title: "RISE",
+    subtitle: "When Shopping Becomes Feeling",
+    slug: "rise",
+    year: "2021",
     category: "E-Commerce",
     image:
-      "https://images.unsplash.com/photo-1771955216611-0a826d819978?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBkYXJrJTIwcHJvZHVjdCUyMHN0aWxsJTIwbGlmZSUyMG1pbmltYWx8ZW58MXx8fHwxNzczNDEwMTQ0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      "https://images.unsplash.com/photo-1764795849755-ab58c8fef307?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYW5uYWJpcyUyMGRpc3BlbnNhcnklMjBtb2Rlcm4lMjByZXRhaWwlMjBkYXJrJTIwbW9vZHl8ZW58MXx8fHwxNzczODAxNzEzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
   },
   {
-    title: "SYNTH",
-    subtitle: "Making the Smart Home Disappear",
-    slug: "synth",
-    year: "2023",
-    category: "IoT / Dashboard",
+    title: "SOLSTICE",
+    subtitle: "Scaling a Consultancy's Product Through Design System Discipline",
+    slug: "solstice",
+    year: "2020",
+    category: "Design Systems & Mentorship",
     image:
-      "https://images.unsplash.com/photo-1751945965597-71171ec7a458?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhbWJpZW50JTIwbGlnaHRpbmclMjBzbWFydCUyMGhvbWUlMjBpbnRlcmlvciUyMG1vb2R5fGVufDF8fHx8MTc3MzQxMDE0NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      "https://images.unsplash.com/photo-1702726001096-096efcf640b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwY29uc3VsdGluZyUyMG9mZmljZSUyMG1vZGVybiUyMGRhcmslMjBtb29keXxlbnwxfHx8fDE3NzM4MDMwMTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
   },
 ];
 
@@ -80,7 +57,6 @@ const SECTION_LINKS = [
   { label: "Work", id: "work" },
   { label: "About", id: "about" },
   { label: "Impact", id: "impact" },
-  { label: "Reel", id: "reel" },
   { label: "Contact", id: "contact" },
 ];
 
@@ -142,7 +118,7 @@ function ProjectRow({
           {/* Title */}
           <div className="flex items-baseline gap-3 md:gap-5 min-w-0">
             <motion.span
-              className="text-[clamp(1.4rem,3vw,2.4rem)] tracking-[-0.03em] whitespace-nowrap"
+              className="text-[clamp(1rem,2vw,1.6rem)] tracking-[-0.03em] whitespace-nowrap"
               style={{
                 fontFamily: "var(--font-display)",
                 fontWeight: 800,

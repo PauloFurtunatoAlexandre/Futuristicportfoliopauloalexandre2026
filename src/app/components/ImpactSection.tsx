@@ -841,184 +841,7 @@ export function ImpactSection() {
       {/* Divider */}
       <div className="editorial-rule mx-6 md:mx-12 lg:mx-16" />
 
-      {/* ═══ CH.2 — GROWTH CHART + UX RINGS ═══ */}
-      <div className="relative px-6 md:px-12 lg:px-16 py-16 md:py-24">
-        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8">
-          {/* Growth Chart */}
-          <div className="lg:col-span-7" ref={chartRef}>
-            <Reveal>
-              <span className="type-label text-[#6b6b76] block mb-4">
-                Product Growth
-              </span>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <span
-                className="text-[clamp(1.2rem,2.2vw,1.8rem)] tracking-[-0.02em] text-[#e8e6e3] block mb-2"
-                style={{ fontFamily: "var(--font-display)", fontWeight: 700, lineHeight: 1.1 }}
-              >
-                Meridian — Year One Trajectory
-              </span>
-            </Reveal>
-            <Reveal delay={0.15}>
-              <span
-                className="text-[0.8125rem] text-[#6b6b76] block mb-10"
-                style={{ fontFamily: "var(--font-body)" }}
-              >
-                User growth (K) and engagement (%) post-redesign launch
-              </span>
-            </Reveal>
-
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={chartInView ? { opacity: 1 } : {}}
-              transition={{ duration: 1, delay: 0.3 }}
-              className="relative h-[280px] md:h-[340px]"
-            >
-              {/* Define gradients in a separate hidden SVG to avoid recharts duplicate key warnings */}
-              <svg width={0} height={0} style={{ position: 'absolute' }}>
-                <defs>
-                  <linearGradient id="impact-gradientUsers" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#c4ff00" stopOpacity={0.2} />
-                    <stop offset="100%" stopColor="#c4ff00" stopOpacity={0.01} />
-                  </linearGradient>
-                  <linearGradient id="impact-gradientEngagement" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#e8e6e3" stopOpacity={0.08} />
-                    <stop offset="100%" stopColor="#e8e6e3" stopOpacity={0.01} />
-                  </linearGradient>
-                </defs>
-              </svg>
-              {chartInView && (
-              <ResponsiveContainer width="100%" height="100%" minWidth={100} minHeight={200}>
-                <AreaChart data={GROWTH_DATA} margin={{ top: 10, right: 10, left: -20, bottom: 0 }} id="impact-area-chart">
-                  <CartesianGrid
-                    key="grid"
-                    stroke="rgba(255,255,255,0.03)"
-                    strokeDasharray="2 6"
-                    vertical={false}
-                  />
-                  <XAxis
-                    key="xaxis"
-                    dataKey="month"
-                    stroke="rgba(255,255,255,0.08)"
-                    tick={{
-                      fill: "#3a3a42",
-                      fontSize: 9,
-                      fontFamily: "var(--font-mono)",
-                      letterSpacing: "0.1em",
-                    }}
-                    tickLine={false}
-                    axisLine={false}
-                  />
-                  <YAxis
-                    key="yaxis"
-                    stroke="rgba(255,255,255,0.08)"
-                    tick={{
-                      fill: "#3a3a42",
-                      fontSize: 9,
-                      fontFamily: "var(--font-mono)",
-                    }}
-                    tickLine={false}
-                    axisLine={false}
-                  />
-                  <Tooltip key="tooltip" content={<CustomTooltip />} />
-                  <Area
-                    key="area-users"
-                    type="monotone"
-                    dataKey="users"
-                    name="Users"
-                    stroke="#c4ff00"
-                    strokeWidth={1.5}
-                    fill="url(#impact-gradientUsers)"
-                    dot={false}
-                    activeDot={{
-                      r: 4,
-                      fill: "#c4ff00",
-                      stroke: "#0a0a0b",
-                      strokeWidth: 2,
-                    }}
-                  />
-                  <Area
-                    key="area-engagement"
-                    type="monotone"
-                    dataKey="engagement"
-                    name="Engagement"
-                    stroke="rgba(232,230,227,0.2)"
-                    strokeWidth={1}
-                    fill="url(#impact-gradientEngagement)"
-                    dot={false}
-                    activeDot={{
-                      r: 3,
-                      fill: "#e8e6e3",
-                      stroke: "#0a0a0b",
-                      strokeWidth: 2,
-                    }}
-                    strokeDasharray="4 4"
-                  />
-                </AreaChart>
-              </ResponsiveContainer>
-              )}
-            </motion.div>
-
-            {/* Legend */}
-            <div className="flex items-center gap-8 mt-6">
-              <div className="flex items-center gap-2">
-                <div className="w-4 h-px bg-[#c4ff00]" />
-                <span
-                  className="text-[0.5rem] tracking-[0.4em] text-[#6b6b76]"
-                  style={{ fontFamily: "var(--font-mono)" }}
-                >
-                  USERS (K)
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-4 h-px bg-[#e8e6e3]/20" style={{ borderTop: "1px dashed rgba(232,230,227,0.2)" }} />
-                <span
-                  className="text-[0.5rem] tracking-[0.4em] text-[#6b6b76]"
-                  style={{ fontFamily: "var(--font-mono)" }}
-                >
-                  ENGAGEMENT (%)
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* UX Improvement Rings */}
-          <div className="lg:col-span-4 lg:col-start-9">
-            <Reveal>
-              <span className="type-label text-[#6b6b76] block mb-4">
-                UX Quality
-              </span>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <span
-                className="text-[clamp(1.2rem,2.2vw,1.8rem)] tracking-[-0.02em] text-[#e8e6e3] block mb-3"
-                style={{ fontFamily: "var(--font-display)", fontWeight: 700, lineHeight: 1.1 }}
-              >
-                Usability Benchmarks
-              </span>
-            </Reveal>
-            <Reveal delay={0.15}>
-              <span
-                className="text-[0.8125rem] text-[#6b6b76] block mb-12"
-                style={{ fontFamily: "var(--font-body)" }}
-              >
-                Averaged across 6 major product redesigns
-              </span>
-            </Reveal>
-
-            <div className="grid grid-cols-2 gap-10">
-              {UX_IMPROVEMENTS.map((item, i) => (
-                <RadialRing key={item.label} item={item} index={i} />
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Divider */}
-      <div className="editorial-rule mx-6 md:mx-12 lg:px-16" />
-
-      {/* ═══ CH.3 — BEFORE / AFTER ═══ */}
+      {/* ═══ CH.2 — BEFORE / AFTER ═══ */}
       <div className="relative px-6 md:px-12 lg:px-16 py-16 md:py-24">
         <motion.div
           style={{ y: oversized2Y }}
@@ -1070,7 +893,7 @@ export function ImpactSection() {
       {/* Divider */}
       <div className="editorial-rule mx-6 md:px-12 lg:px-16" />
 
-      {/* ═══ CH.4 — FUNNEL + EFFICIENCY ═══ */}
+      {/* ═══ CH.3 — FUNNEL + EFFICIENCY ═══ */}
       <div className="relative px-6 md:px-12 lg:px-16 py-16 md:py-24">
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12">
           {/* Funnel */}
@@ -1244,7 +1067,7 @@ export function ImpactSection() {
       {/* Divider */}
       <div className="editorial-rule mx-6 md:px-12 lg:px-16" />
 
-      {/* ═══ CH.5 — PROJECT OUTCOMES ═══ */}
+      {/* ═══ CH.4 — PROJECT OUTCOMES ═══ */}
       <div className="relative px-6 md:px-12 lg:px-16 py-16 md:py-24">
         <div className="relative z-10 max-w-3xl mb-16 md:mb-24">
           <Reveal>

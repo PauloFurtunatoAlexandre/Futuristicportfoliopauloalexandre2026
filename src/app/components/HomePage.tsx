@@ -7,7 +7,6 @@ import { EditorialAbout } from "./EditorialAbout";
 import { MarqueeStrip } from "./MarqueeStrip";
 import { ProcessSection } from "./ProcessSection";
 import { ImpactSection } from "./ImpactSection";
-import { ImmersiveGallery } from "./ImmersiveGallery";
 import { TestimonialsSection } from "./TestimonialsSection";
 import { ContactSection } from "./ContactSection";
 import { CustomCursor } from "./CustomCursor";
@@ -175,8 +174,6 @@ export function HomePage() {
         <SectionDivider label="Impact" />
 
         <ImpactSection />
-
-        <ImmersiveGallery />
 
         <SectionDivider label="Testimonials" />
 
