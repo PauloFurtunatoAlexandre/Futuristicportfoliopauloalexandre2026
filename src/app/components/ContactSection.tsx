@@ -20,8 +20,6 @@ const EMAIL = "hello@pauloalexandre.com";
 
 const SOCIAL_LINKS = [
   { label: "LinkedIn", url: "https://www.linkedin.com/in/paulofurtunatoalexandre/", desc: "Professional" },
-  { label: "Dribbble", url: "#", desc: "Visual Work" },
-  { label: "Twitter / X", url: "#", desc: "Thoughts" },
   { label: "Read.cv", url: "#", desc: "Background" },
   { label: "GitHub", url: "#", desc: "Code" },
 ];

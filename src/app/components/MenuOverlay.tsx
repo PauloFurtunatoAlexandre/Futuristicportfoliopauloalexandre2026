@@ -86,8 +86,6 @@ const SECTION_LINKS = [
 
 const SOCIALS = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/paulofurtunatoalexandre/" },
-  { label: "Dribbble", href: "#" },
-  { label: "Twitter/X", href: "#" },
   { label: "Read.cv", href: "#" },
 ];
 

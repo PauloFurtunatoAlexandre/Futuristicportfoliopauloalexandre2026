@@ -508,15 +508,14 @@ export function HeroSection() {
             transition={{ delay: 2.4, duration: 0.8 }}
             className="hidden md:flex items-center gap-8"
           >
-            {["Dribbble", "Twitter", "LinkedIn"].map((social) => (
-              <a
-                key={social}
-                href="#"
-                className="type-label text-[#6b6b76] hover:text-[#c4ff00] transition-colors duration-500"
-              >
-                {social}
-              </a>
-            ))}
+            <a
+              href="https://www.linkedin.com/in/paulofurtunatoalexandre/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="type-label text-[#6b6b76] hover:text-[#c4ff00] transition-colors duration-500"
+            >
+              LinkedIn
+            </a>
           </motion.div>
 
           <motion.div

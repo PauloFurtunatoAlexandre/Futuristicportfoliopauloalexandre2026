@@ -14,6 +14,12 @@ import healthpilotPersonasImg from "figma:asset/d12b8d0f28944f665ff24b2503cd0667
 import healthpilotJourneyImg from "figma:asset/f4e01d9bd9e0b5a20864d8edf8848276619719b1.png";
 import healthpilotDesignSystemImg from "figma:asset/a65a47e40b122031e3edea3f4db3b0e7c34712e3.png";
 import healthpilotPrototypeImg from "figma:asset/0ff5f802078eee0cc87208000297f141c676d276.png";
+import gaigHeroImg from "figma:asset/62ef352eb234e315ecb528632c229cbc70cf743f.png";
+import gaigGovernanceImg from "figma:asset/e9bcfeb9d590ea4813cd3dcab10ec3f01f594e3d.png";
+import gaigOktaFlowImg from "figma:asset/ba37d01f4486682b841d3ecbab366554f1a7258a.png";
+import gaigDesignSystemImg from "figma:asset/242fd6410f29959bcd31e7bccd4cfba086c1e433.png";
+import gaigWireframesImg from "figma:asset/465ebd45bb5cbcfefb9b5a12bf4ed17f49a76fd6.png";
+import gaigPrototypeImg from "figma:asset/f675dbe636670e3f02d477fd5502cb397158849a.png";
 import { CustomCursor } from "./CustomCursor";
 import { FloatingNav } from "./FloatingNav";
 import { useIsMobile, useReducedMotion } from "./ui/useMediaQuery";
@@ -64,7 +70,7 @@ interface CaseStudyData {
 
 const CASE_STUDIES: CaseStudyData[] = [
   {
-    slug: "meridian",
+    slug: "healthpilot",
     title: "HEALTHPILOT",
     subtitle: "Turning Medicare chaos into confident decisions",
     client: "HealthPilot",
@@ -77,7 +83,7 @@ const CASE_STUDIES: CaseStudyData[] = [
     color: "#c4ff00",
     heroImage: healthpilotImg,
     problem:
-      "Seniors were abandoning HealthPilot's Medicare enrollment mid-flow — frustrated, confused, and distrustful of their own decisions. The platform read like an insurance manual, not a tool built for the people who needed it most. Drop-offs were bleeding the business, and every lost user was someone left navigating healthcare alone.",
+      "When I joined HealthPilot, there was no design team — just me. I was the sole designer responsible for every pixel, every flow, every user experience on the platform. Seniors were abandoning Medicare enrollment mid-flow, frustrated and distrustful. The product read like an insurance manual, not a tool built for the people who needed it most. I didn't inherit a design system or a research practice — I built both from scratch. I conducted the interviews. I ran the usability tests. I redesigned the enrollment flow. I created the component library. Later, as the product matured and the company grew, I mentored a junior designer into the role, established UX research processes that outlasted my tenure, and built design practices that became the foundation for everything that followed. Every innovation on that platform — from the plan comparison engine to the simplified language framework — started with me, alone, asking the question nobody else had asked: why are people leaving?",
     context:
       "HealthPilot simplifies Medicare plan selection for seniors — a demographic drowning in jargon, fine print, and paralyzing choice overload. The product team flagged high abandonment, but nobody had asked users why. I took the initiative to dig beneath the analytics, conducting interviews and usability tests to find the human story behind the numbers. What I found: people weren't confused by Medicare — they were confused by us.",
     constraints: [
@@ -198,122 +204,10 @@ const CASE_STUDIES: CaseStudyData[] = [
       "Live chat support during enrollment was a missed opportunity. Real-time human assistance at the highest-friction moments would have caught the users we couldn't save with design alone.",
       "Post-launch metrics monitoring needed a more robust framework from day one. Continuous tracking of plan selection, drop-offs, and satisfaction should have been baked into the product roadmap, not bolted on.",
     ],
-    nextProject: { slug: "forma", title: "GAIG", image: "https://images.unsplash.com/photo-1566748886022-ec212e5642fe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjBpbnN1cmFuY2UlMjBlbnRlcnByaXNlJTIwcGxhdGZvcm0lMjBkYXJrJTIwbW9vZHl8ZW58MXx8fHwxNzczODAxNDQ1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" },
-  },
-  /* __VOID_AETHER_SCAN_START__ */
-  {
-    slug: "REMOVE_VOID_AETHER_BLOCK_START",
-    color: "#ff6b35",
-    heroImage: "https://images.unsplash.com/photo-1562672421-94d4c2aaabe5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aXJ0dWFsJTIwcmVhbGl0eSUyMG1peGVkJTIwcmVhbGl0eSUyMGRhcmslMjBzdHVkaW98ZW58MXx8fHwxNzczNDEwMTQyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    problem: "VOID's spatial computing tools had sub-60% task completion and session fatigue after just 12 minutes. The root cause: 2D paradigms extruded into 3D space. Users were fighting the interaction model instead of working with it.",
-    context: "VOID builds volumetric data manipulation tools for architects and 3D artists. Powerful but unusable for sustained work — the 2-hour deep sessions their users actually need. I was brought in to rethink the entire interaction paradigm from first principles, not reskin the existing UI.",
-    constraints: ["Must work across visionOS (hand tracking) and Quest (controllers) with different input methods", "Gesture recognition limited to ~85% accuracy in production environments", "No persistent menus or traditional UI chrome — spatial context is the only navigation", "Must support 2+ hour sessions without physical fatigue", "Strict 90fps performance floor — dropped frames break spatial presence"],
-    researchInsights: [
-      { title: "Hands want to rest", detail: "Arm fatigue set in after 8 minutes of sustained gesture input. Any interaction model that ignores gravity will fail. We needed passive states and resting positions baked into the core design." },
-      { title: "Peripheral vision is navigation", detail: "Users naturally glanced at peripheral elements before engaging. Spatial cues at vision edges outperformed central UI elements for wayfinding." },
-      { title: "Sound replaces pixels", detail: "In spatial contexts, subtle audio cues confirmed actions 3× more effectively than visual feedback alone. Sound became our primary confirmation layer." },
-      { title: "Proximity beats fixed position", detail: "Users wanted tools near the content they were manipulating, not anchored in fixed locations. Context-aware proximity UI outperformed every toolbar pattern we tested." },
-    ],
-    strategy: "A gesture-first interaction model treating the body as the primary input device. Instead of asking users to navigate to tools, tools navigate to users — surfacing contextually near active content with spatial audio and haptic confirmation replacing visual chrome.",
-    strategyPillars: [
-      { title: "Embodied Interaction", description: "Every action maps to a natural physical gesture — pinch to select, push to dismiss, pull to inspect. No learned abstractions." },
-      { title: "Ambient Intelligence", description: "The interface anticipates needs based on task context. Tools surface near active content without explicit invocation." },
-      { title: "Multi-Sensory Feedback", description: "Spatial audio, haptic pulses, and minimal visual cues combine for rich confirmation without visual clutter or attention competition." },
-    ],
-    processSteps: [
-      { title: "Embodied Research", description: "100+ hours of observation in VR/AR environments. Mapped natural gesture vocabularies across 24 users to establish what feels intuitive before designing anything." },
-      { title: "Gesture Grammar", description: "Developed a formal gesture language — 12 core interactions, each tested for ergonomic comfort, learnability, and cross-platform viability." },
-      { title: "Spatial Prototyping", description: "Built interactive prototypes in Unity with real hand-tracking. Measured gesture accuracy, cognitive load, and time-to-action in controlled sessions." },
-      { title: "Multi-Modal Design", description: "Designed audio and haptic feedback layers synchronized with visual transitions. Each modality carries distinct information so nothing is redundant." },
-      { title: "Endurance Testing", description: "Ran 2-hour session tests to identify fatigue patterns. Redesigned rest states and introduced passive interaction modes that reduced required arm elevation by 60%." },
-      { title: "Cross-Platform Adaptation", description: "Built separate interaction profiles for hand-tracking and controller input, sharing the same conceptual model but optimized for each input method's strengths." },
-    ],
-    wireframeImage: "https://images.unsplash.com/photo-1683225831293-6d289c20e963?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoYW5kJTIwZ2VzdHVyZSUyMGludGVyYWN0aW9uJTIwdG91Y2hsZXNzJTIwdGVjaG5vbG9neXxlbnwxfHx8fDE3NzM0MjU0MzZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    designSystem: [
-      { label: "Spatial Grid", description: "Volumetric 3D grid system with depth-aware spacing tokens for consistent layering" },
-      { label: "Gesture Library", description: "12 core gestures with ergonomic guidelines, fallback inputs, and accessibility alternatives" },
-      { label: "Audio Tokens", description: "48 spatial audio cues categorized by proximity, confirmation, error, and ambient context" },
-      { label: "Motion", description: "Physics-based springs for all spatial transitions, tuned to 90fps performance budget" },
-      { label: "Adaptive Density", description: "UI density scales dynamically based on viewing distance and task urgency" },
-    ],
-    designSystemImage: "https://images.unsplash.com/photo-1683821291889-3ad254f02e22?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxWUiUyMGhlYWRzZXQlMjBzcGF0aWFsJTIwY29tcHV0aW5nJTIwcHJvdG90eXBlJTIwbGFifGVufDF8fHx8MTc3MzQyNTQyN3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    prototypeHighlights: ["Gesture-first volumetric object manipulation with physics-based response curves", "Proximity-aware contextual toolbars that orbit active content without explicit invocation", "Spatial audio layer providing interaction confirmation without visual noise", "Adaptive rest states that reduce required arm elevation by 60% during sustained sessions"],
-    prototypeImage: "https://images.unsplash.com/photo-1687389806477-22be64a5480f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHwzRCUyMGhvbG9ncmFwaGljJTIwaW50ZXJmYWNlJTIwZnV0dXJpc3RpYyUyMGRpc3BsYXl8ZW58MXx8fHwxNzczNDI1NDI4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    outcomes: [
-      { label: "Task Completion", value: "94%", change: "Up from 58%" },
-      { label: "Gesture Accuracy", value: "+41%", change: "With new interaction model" },
-      { label: "Session Duration", value: "47min", change: "Up from 12 min avg" },
-      { label: "User Satisfaction", value: "4.8/5", change: "Post-launch survey" },
-      { label: "Arm Fatigue Reports", value: "-73%", change: "With adaptive rest states" },
-      { label: "Industry Recognition", value: "3 Awards", change: "Including IXDA Spatial" },
-    ],
-    learnings: ["Spatial design requires abandoning most 2D UI assumptions. Real-world physics and the human body are better design references than any screen-based pattern library.", "Ergonomics isn't a nice-to-have — it's a core design constraint that shapes every interaction decision.", "Multi-sensory design is exponentially more complex to coordinate, but the payoff in user confidence and task completion is transformative."],
-    reflection: "The most challenging project of my career — it required unlearning everything I knew about interface design. The breakthrough came when we stopped making 3D versions of 2D interfaces and started designing around the body as the input device. The best spatial interface is one you forget exists.",
-    improvements: ["Should have invested more in accessibility for users with limited hand mobility — gesture-first doesn't mean gesture-only.", "Cross-platform adaptation was compressed — each input method deserved its own dedicated design sprint, not a shared one.", "Audio design needed to adapt to ambient environment noise levels, which we only partially solved."],
-    nextProject: { slug: "aether", title: "AETHER", image: "https://images.unsplash.com/photo-1764866127860-1da95e9c74a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuZW9uJTIwYWJzdHJhY3QlMjBkaWdpdGFsJTIwYXJ0JTIwaW5zdGFsbGF0aW9ufGVufDF8fHx8MTc3MzQxMDE0M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" },
+    nextProject: { slug: "gaig", title: "GAIG", image: gaigHeroImg },
   },
   {
-    slug: "aether",
-    title: "AETHER",
-    subtitle: "Making algorithmic art feel like painting",
-    client: "Aether Labs",
-    year: "2024",
-    role: "Product Designer & Strategist",
-    timeline: "6 months",
-    team: "2 designers, 3 engineers, 1 ML engineer",
-    platform: "Web (Desktop-first), iPad",
-    tools: ["Figma", "Framer", "Three.js", "Storybook", "Lottie"],
-    color: "#a855f7",
-    heroImage: "https://images.unsplash.com/photo-1764866127860-1da95e9c74a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuZW9uJTIwYWJzdHJhY3QlMjBkaWdpdGFsJTIwYXJ0JTIwaW5zdGFsbGF0aW9ufGVufDF8fHx8MTc3MzQxMDE0M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    problem: "Generative art tools were split into two worlds: powerful-but-impenetrable code environments and dumbed-down visual toys. 80% of potential users — artists who think spatially, not syntactically — had no path into algorithmic creation. Aether's MVP was powerful but felt like an IDE, not a creative tool.",
-    context: "Aether Labs wants to democratize generative art. Their MVP attracted technical artists but completely failed to convert visual-first creators. I was brought in to bridge that gap — make the tool approachable without sacrificing output quality or creative depth.",
-    constraints: ["Must feel intuitive to artists with zero coding experience on first use", "Cannot sacrifice generative output quality or algorithmic complexity", "Real-time preview required for all parameter changes — WebGL at 60fps minimum", "Must support collaborative creation and social sharing from day one", "AI features must feel like creative partnership, not automation that replaces the artist"],
-    researchInsights: [
-      { title: "Visual creators think in layers", detail: "A node-based editor mapped more naturally to how visual artists think than timelines or code. They compose by stacking and connecting, not by writing sequences." },
-      { title: "Happy accidents drive adoption", detail: "Users who discovered unexpected results in their first session were 4× more likely to return the next day. Serendipity is the hook." },
-      { title: "Sharing precedes saving", detail: "87% of users wanted to share before saving. Social validation — not file management — was their primary motivation for finishing a piece." },
-      { title: "AI should expand, not decide", detail: "Users rejected AI that auto-generated finished work but embraced AI that suggested interesting parameter ranges and starting points. The key distinction: suggestion vs. substitution." },
-    ],
-    strategy: "A dual-mode interface: visual node editor for building generative systems, direct manipulation canvas for real-time parameter tweaking. Core principle: progressive complexity — start with 3 nodes and a beautiful default, unlock depth as confidence grows.",
-    strategyPillars: [
-      { title: "Progressive Complexity", description: "Start simple — 3 nodes, one beautiful output. Complexity unlocks gradually as the user explores, never overwhelming at the start." },
-      { title: "Creative Serendipity", description: "Randomization and 'happy accident' mechanics built into the core loop. Every parameter has a 'surprise me' state that generates within aesthetic bounds." },
-      { title: "Social Creation", description: "Every creation gets a shareable URL instantly. Gallery, remix, and fork mechanics turn individual creation into community momentum." },
-    ],
-    processSteps: [
-      { title: "Artist Interviews", description: "Interviewed 15 generative artists and 15 traditional digital artists separately. Mapped mental models and identified where workflows diverge and where they align." },
-      { title: "Interaction Modeling", description: "Prototyped 4 interaction paradigms in parallel. The node-based + direct manipulation hybrid won decisively in testing — fastest to first output, highest satisfaction." },
-      { title: "Visual Language", description: "Dark-first aesthetic that puts artwork center stage. All UI elements recede when not actively in use. The canvas is the hero, always." },
-      { title: "AI Integration", description: "Designed AI as a 'creative companion' — surfacing parameter explorations and interesting starting points without overriding artist intent. Six iterations to find the right balance." },
-      { title: "Performance Tuning", description: "Achieved real-time WebGL preview at 60fps while editing node parameters. Worked closely with engineering to optimize the render pipeline without sacrificing visual fidelity." },
-      { title: "Community Layer", description: "Gallery, remix, and collaboration features designed to make sharing the path of least resistance. Discovery mechanics that surface interesting work, not just popular work." },
-    ],
-    wireframeImage: "https://images.unsplash.com/photo-1771503735122-22405ba958f9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxub2RlJTIwZWRpdG9yJTIwdmlzdWFsJTIwcHJvZ3JhbW1pbmclMjBkYXJrJTIwaW50ZXJmYWNlfGVufDF8fHx8MTc3MzQyNTQyOHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    designSystem: [
-      { label: "Typography", description: "Space Grotesk for UI, monospace for parameter values — minimal and recessive" },
-      { label: "Color", description: "Near-black canvas with purple accent. Content always dominates the visual hierarchy" },
-      { label: "Components", description: "Node editor, parameter controls, gallery cards, sharing flows — 80+ components" },
-      { label: "Motion", description: "Smooth parameter transitions, node connection animations, canvas zoom/pan physics" },
-      { label: "Theming", description: "Accent color auto-adapts based on dominant color in current artwork" },
-    ],
-    designSystemImage: "https://images.unsplash.com/photo-1765445666227-dce7ccbf3c2c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwYXJ0JTIwY3JlYXRpdmUlMjBjb2RpbmclMjBnZW5lcmF0aXZlJTIwdmlzdWFsaXphdGlvbnxlbnwxfHx8fDE3NzM0MjU0Mjh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    prototypeHighlights: ["Node-based generative system builder with real-time WebGL preview at 60fps", "AI 'Creative Companion' suggesting parameter explorations without overriding artist decisions", "One-click sharing with auto-generated social preview images and instant public URL", "Remix mechanics letting users fork and evolve each other's work with full attribution"],
-    prototypeImage: "https://images.unsplash.com/photo-1767727239153-8bf7f6be90e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGdlb21ldHJpYyUyMG5lb24lMjBwYXJ0aWNsZXMlMjBkYXJrJTIwYmFja2dyb3VuZHxlbnwxfHx8fDE3NzM0MjU0MzN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    outcomes: [
-      { label: "Creators", value: "12K+", change: "First 3 months" },
-      { label: "Artworks", value: "1.2M", change: "6 months post-launch" },
-      { label: "Avg. Session", value: "34min", change: "3× industry average" },
-      { label: "Day-30 Retention", value: "72%", change: "Up from 18%" },
-      { label: "Remix Rate", value: "41%", change: "Of published artworks" },
-      { label: "Funding", value: "Series A", change: "$12M raised post-launch" },
-    ],
-    learnings: ["The first 5 minutes determine whether someone becomes a creator or churns. Every onboarding decision should optimize for 'time to first beautiful output.'", "AI in creative tools works best when it expands the possibility space, not narrows it. Suggestion over substitution.", "Community features aren't add-ons — they're the retention engine. Sharing and remixing drove more return visits than any feature improvement."],
-    reflection: "The best creative tools disappear. The hardest challenge was AI integration — balancing helpfulness with creative autonomy. Six iterations before finding the right tone: curious collaborator, not prescriptive assistant. The product succeeded because it made artists feel more capable, not replaced.",
-    improvements: ["iPad version was adapted too late — should have been designed in parallel from the start with its own interaction model.", "Underinvested in onboarding tutorials for the initial learning curve. Progressive complexity only works if the first steps are truly effortless.", "The node editor needs a visual 'recipe' system for common generative patterns — templates that teach by example."],
-    nextProject: { slug: "forma", title: "GAIG", image: "https://images.unsplash.com/photo-1566748886022-ec212e5642fe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxicnV0YWxpc3QlMjBjb25jcmV0ZSUyMGFyY2hpdGVjdHVyZSUyMHNoYWRvd3xlbnwxfHx8fDE3NzM0MTAxNDN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" },
-  },
-  {
-    slug: "forma",
+    slug: "gaig",
     title: "GAIG",
     subtitle: "Taming 33 business lines with one design language",
     client: "Great American Insurance Group",
@@ -324,7 +218,7 @@ const CASE_STUDIES: CaseStudyData[] = [
     platform: "Web (B2B — Agent & Insured Portals)",
     tools: ["Figma", "Miro", "Teams", "Jira"],
     color: "#06b6d4",
-    heroImage: "https://images.unsplash.com/photo-1566748886022-ec212e5642fe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjBpbnN1cmFuY2UlMjBlbnRlcnByaXNlJTIwcGxhdGZvcm0lMjBkYXJrJTIwbW9vZHl8ZW58MXx8fHwxNzczODAxNDQ1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    heroImage: gaigHeroImg,
     problem:
       "Imagine a Fortune 500 insurance platform where every business line invented its own interface. 33 products, 33 different UIs, zero shared language. Agents learned one system only to face a completely different one for their next product. Insureds abandoned policy enrollment mid-flow — confused by clunky navigation, inconsistent patterns, and a platform that never once told them if their action actually worked. No feedback, no guidance, no trust.",
     context:
@@ -336,6 +230,7 @@ const CASE_STUDIES: CaseStudyData[] = [
       "No existing accessibility standards — the platform had grown without WCAG considerations",
       "Must support both agent-facing (power user, speed-optimized) and insured-facing (first-time, guidance-heavy) experiences from a shared system",
     ],
+    researchImage: gaigGovernanceImg,
     researchInsights: [
       {
         title: "Silence breeds distrust",
@@ -377,6 +272,7 @@ const CASE_STUDIES: CaseStudyData[] = [
           "A corporate-level change management process I co-created to control how the design system evolves. Any proposed change goes through impact assessment, stakeholder review, and accessibility validation before entering the system. Drift doesn't happen accidentally anymore.",
       },
     ],
+    processImage: gaigOktaFlowImg,
     processSteps: [
       {
         title: "Discovery & Research",
@@ -409,7 +305,7 @@ const CASE_STUDIES: CaseStudyData[] = [
           "Conducted usability tests with 12 participants achieving 40% improvement in task completion rates. Simultaneously launched the UX governance process ensuring changes pass impact assessment and accessibility validation before release.",
       },
     ],
-    wireframeImage: "https://images.unsplash.com/photo-1729710877209-1d2f9df0c8c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3aXJlZnJhbWUlMjBibHVlcHJpbnQlMjBVWCUyMHByb2Nlc3MlMjB3aGl0ZWJvYXJkJTIwZGFya3xlbnwxfHx8fDE3NzM4MDE0NDd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    wireframeImage: gaigWireframesImg,
     designSystem: [
       { label: "Tokens", description: "Color, typography, spacing, and elevation tokens encoding every visual decision into a single governed source of truth across 33 business lines" },
       { label: "Components", description: "Standardized UI library — buttons, forms, modals, feedback patterns, data tables — all with built-in accessibility and consistent behavior" },
@@ -417,14 +313,14 @@ const CASE_STUDIES: CaseStudyData[] = [
       { label: "Governance", description: "Corporate-level UX governance flow for proposing, reviewing, and approving design system changes — preventing drift at the organizational level" },
       { label: "Documentation", description: "Comprehensive guidelines with usage examples, do/don't patterns, and Figma best practices mentored across a team of 6 designers" },
     ],
-    designSystemImage: "https://images.unsplash.com/photo-1720962158937-7ea890052166?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ24lMjBzeXN0ZW0lMjBjb21wb25lbnRzJTIwVUklMjBraXQlMjBkYXJrJTIwaW50ZXJmYWNlfGVufDF8fHx8MTc3MzgwMDY3N3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    designSystemImage: gaigDesignSystemImg,
     prototypeHighlights: [
       "Redesigned insured portal with consistent navigation, progress indicators, and real-time feedback replacing the platform's silence",
       "Risk management interface with standardized data tables, inline validation, and contextual help reducing agent reorientation time",
       "Unified component library deployed across all 33 business lines with zero visual fragmentation",
       "UX governance workflow ensuring every system change passes impact assessment and accessibility validation before release",
     ],
-    prototypeImage: "https://images.unsplash.com/photo-1679601613261-88a176e4dbb9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbnRlcnByaXNlJTIwQjJCJTIwZGFzaGJvYXJkJTIwZGFyayUyMHByb2Zlc3Npb25hbHxlbnwxfHx8fDE3NzM4MDE0NDZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    prototypeImage: gaigPrototypeImg,
     outcomes: [
       { label: "Feature Delivery", value: "+30%", change: "Standardized components eliminated rebuild waste" },
       { label: "User Satisfaction", value: "+39%", change: "Post-redesign survey improvement" },
@@ -445,10 +341,10 @@ const CASE_STUDIES: CaseStudyData[] = [
       "The incremental rollout — while necessary for legacy constraints — meant some business lines lived with inconsistency longer than ideal. A parallel 'fast track' for willing early adopters would have built internal momentum faster.",
       "Needed more formalized design-to-engineering handoff. The governance flow controlled design changes well, but translation to code still relied too heavily on tribal knowledge and individual relationships.",
     ],
-    nextProject: { slug: "luxe", title: "RISE", image: "https://images.unsplash.com/photo-1764795849755-ab58c8fef307?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBkYXJrJTIwcHJvZHVjdCUyMHN0aWxsJTIwbGlmZSUyMG1pbmltYWx8ZW58MXx8fHwxNzczNDEwMTQ0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" },
+    nextProject: { slug: "rise", title: "RISE", image: "https://images.unsplash.com/photo-1764795849755-ab58c8fef307?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBkYXJrJTIwcHJvZHVjdCUyMHN0aWxsJTIwbGlmZSUyMG1pbmltYWx8ZW58MXx8fHwxNzczNDEwMTQ0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" },
   },
   {
-    slug: "luxe",
+    slug: "rise",
     title: "RISE",
     subtitle: "When shopping becomes feeling",
     client: "Rise Cannabis / Green Thumb Industries",
@@ -494,7 +390,7 @@ const CASE_STUDIES: CaseStudyData[] = [
       },
     ],
     strategy:
-      "Flip the entire shopping paradigm. Instead of 'browse products → guess which one matches your mood,' make it 'tell us how you want to feel → here's exactly what to buy.' Two core tools: a Fit Guide that maps desired emotional states to product recommendations, and a Feelings in Reviews filter that lets customers sort by what other users actually felt. Commerce driven by empathy, not taxonomy.",
+      "Flip the entire shopping paradigm. Instead of 'browse products \u2192 guess which one matches your mood,' make it 'tell us how you want to feel \u2192 here's exactly what to buy.' Two core tools: a Fit Guide that maps desired emotional states to product recommendations, and a Feelings in Reviews filter that lets customers sort by what other users actually felt. Commerce driven by empathy, not taxonomy.",
     strategyPillars: [
       {
         title: "The Fit Guide",
@@ -583,85 +479,11 @@ const CASE_STUDIES: CaseStudyData[] = [
     nextProject: { slug: "solstice", title: "SOLSTICE", image: "https://images.unsplash.com/photo-1702726001096-096efcf640b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwY29uc3VsdGluZyUyMG9mZmljZSUyMG1vZGVybiUyMGRhcmslMjBtb29keXxlbnwxfHx8fDE3NzM4MDMwMTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" },
   },
   {
-    slug: "PLACEHOLDER_REMOVE_SYNTH",
-    title: "SYNTH",
-    subtitle: "Making the smart home disappear",
-    client: "SynthOS",
-    year: "2023",
-    role: "Creative Director & Designer",
-    timeline: "9 months",
-    team: "2 designers, 5 engineers, 1 PM, 1 IoT specialist",
-    platform: "iOS, Android, Smart Display, Watch",
-    tools: ["Figma", "Principle", "Swift Playgrounds", "Lottie", "Arduino"],
-    color: "#34d399",
-    heroImage: "https://images.unsplash.com/photo-1751945965597-71171ec7a458?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhbWJpZW50JTIwbGlnaHRpbmclMjBzbWFydCUyMGhvbWUlMjBpbnRlcmlvciUyMG1vb2R5fGVufDF8fHx8MTc3MzQxMDE0NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    problem: "Smart home controls scattered across 6+ apps — 73% of users had abandoned at least one device because controlling it was too frustrating. 47 daily interactions just to manage basic routines. The mental overhead made 'smart' homes feel actively dumb.",
-    context: "SynthOS integrates with 200+ device manufacturers as the unified layer for connected homes. But their app was a glorified remote control — flat device list, no intelligence, no spatial awareness. The CEO's vision: an ambient interface reducing daily interactions to near-zero. I was brought in to make that tangible across phone, tablet, smart display, and watch.",
-    constraints: [
-      "Must support 200+ device protocols with wildly varying latencies and reliability",
-      "Must work across phone, tablet, smart display, and watch — each with distinct use cases",
-      "Context-aware automation must feel helpful, not invasive or surveillance-like",
-      "Basic setup under 2 minutes — no manual device configuration",
-      "Must handle offline states and device disconnection gracefully without breaking the experience",
-    ],
-    researchInsights: [
-      { title: "Invisible is ideal", detail: "Users' ideal interaction count was zero. The more the home 'just worked,' the higher the satisfaction — regardless of how many features were available. Automation that eliminated taps always beat automation that added smarter taps." },
-      { title: "Rooms > Devices", detail: "Users think in rooms, not device categories. 'Make the bedroom cozy' is the mental model, not 'set Hue bulbs to 2700K, Nest to 72°, blinds to 40%.' The interface needed to speak in environments, not endpoints." },
-      { title: "Transparency builds trust", detail: "Users who could see why an automation triggered were 3× more likely to keep it enabled. Black-box intelligence scared people. Explainable automation was the only kind that stuck." },
-      { title: "Glanceable is essential", detail: "80% of interactions were status checks, not controls. The dashboard needed to communicate whole-home state in under 2 seconds — ambient information, not interactive dashboards." },
-    ],
-    strategy: "An ambient, room-centric interface treating the home as a living environment, not a device collection. Instead of managing individual endpoints, users interact through rooms and scenes — Morning, Focus, Relax, Sleep — that control multiple devices with one action. Proactive automation learns patterns and suggests routines, always explaining its reasoning so trust compounds over time.",
-    strategyPillars: [
-      { title: "Room-Centric Model", description: "Every interaction starts from a room context. Individual devices are abstracted into environmental controls — temperature, light, sound, privacy — so users manipulate feelings, not firmware." },
-      { title: "Ambient Intelligence", description: "The system observes daily patterns and suggests automations. Users approve or dismiss — never program. Over time, the home learns to anticipate needs without being told." },
-      { title: "Zero-Config Onboarding", description: "Auto-discover devices on network, suggest room assignments based on signal strength and type, propose initial scenes based on household size. Full setup in under 2 minutes." },
-    ],
-    processSteps: [
-      { title: "Home Ethnography", description: "Spent 1 week living in each of 4 'smart homes' with different setups. Documented daily routines, friction points, and the workarounds people invented. The biggest insight: most people used voice assistants as a crutch because the apps were too painful." },
-      { title: "Interaction Audit", description: "Mapped every tap across 6 competitor apps for common tasks. 'Turn off lights at bedtime' required 12 taps on average. Set a design target: every routine achievable in ≤2 taps or zero taps via automation." },
-      { title: "Scene Design", description: "Developed preset environmental states — Morning, Focus, Relax, Sleep — that control multiple devices simultaneously. Tested with 20 households, iterated on which defaults felt right vs. arbitrary." },
-      { title: "Ambient UI System", description: "Dashboard communicates state through visual warmth/coolness, ambient breathing animations, and contextual density. Active devices glow subtly; inactive ones recede. The interface breathes with the home." },
-      { title: "Multi-Surface Adaptation", description: "Designed distinct interface variants for phone (control), tablet (dashboard), smart display (ambient glance), and watch (quick actions). Each optimized for its primary use case, not responsive copies." },
-      { title: "Automation UX", description: "Built a visual automation builder using 'When → Then' logic with natural language. 'When I leave home → Turn off all lights and lock doors.' Tested extensively to ensure suggestions felt helpful, not presumptuous." },
-    ],
-    wireframeImage: "https://images.unsplash.com/photo-1583432949827-4360d9f484e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxJb1QlMjBkZXZpY2UlMjBjb250cm9sJTIwcGFuZWwlMjBtaW5pbWFsJTIwZGFya3xlbnwxfHx8fDE3NzM0MjU0MzJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    designSystem: [
-      { label: "Color System", description: "Adaptive palette that reflects home ambiance — warm tones for evening/cozy, cool tones for morning/focus. The UI color temperature matches the room's lighting state" },
-      { label: "Iconography", description: "120+ device and scene icons with consistent 1.5px stroke style, designed for legibility at glance distances across all four surfaces" },
-      { label: "Components", description: "Room cards, device controls, scene builders, automation tiles — 200+ components with 4 surface variants sharing a unified token system" },
-      { label: "Motion", description: "Ambient breathing animations for idle states, physics-based controls for direct manipulation, choreographed scene transitions" },
-      { label: "Multi-Surface", description: "Shared token foundation with surface-specific component variants — not responsive breakpoints, but distinct experiences per device" },
-    ],
-    designSystemImage: "https://images.unsplash.com/photo-1575388902449-6bca946ad549?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzbWFydCUyMGhvbWUlMjBkYXNoYm9hcmQlMjBhbWJpZW50JTIwaW50ZXJmYWNlJTIwZGFya3xlbnwxfHx8fDE3NzM0MjU0MzF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    prototypeHighlights: ["Ambient dashboard with visual temperature and mood indicators that communicate whole-home state at a glance", "One-tap scene activation with choreographed multi-device transitions and spatial audio confirmation", "Zero-config auto-discovery setup that configures a smart home in under 2 minutes with room suggestions", "Visual 'When → Then' automation builder using natural language and explainable trigger logic"],
-    prototypeImage: "https://images.unsplash.com/photo-1751945965597-71171ec7a458?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhbWJpZW50JTIwbGlnaHRpbmclMjBzbWFydCUyMGhvbWUlMjBpbnRlcmlvciUyMG1vb2R5fGVufDF8fHx8MTc3MzQxMDE0NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    outcomes: [
-      { label: "DAU", value: "280K", change: "6 months post-launch" },
-      { label: "Daily Interactions", value: "47→8", change: "83% reduction per user" },
-      { label: "Setup Time", value: "<2min", change: "Full basic configuration" },
-      { label: "Automation Adoption", value: "78%", change: "Users with 3+ active automations" },
-      { label: "App Store Rating", value: "4.9★", change: "Up from 2.8★" },
-      { label: "Device Abandonment", value: "-61%", change: "Users reconnecting previously abandoned devices" },
-    ],
-    learnings: [
-      "The best IoT design reduces interactions, not adds features. Every 'smart' feature requiring a tap was a design failure. North star: can this happen with zero input?",
-      "Multi-surface design is fundamentally different from responsive design. A watch is not a small phone. A smart display is not a wall-mounted tablet. Each surface needs its own interaction model, sharing concepts but not implementations.",
-      "Context-aware automation needs radical transparency. Every suggestion had to explain its reasoning in plain language, or users disabled it within a week. 'Because you usually do this at 7am' beats 'Suggested automation' every time.",
-    ],
-    reflection: "SYNTH changed how I think about digital interfaces and physical space. The interface isn't just on the screen — it's in the room. Ambient color, breathing animations, spatial audio — all contributing to a feeling that the home is alive and attentive. The most satisfying user quote from post-launch: 'I forgot I had a smart home. It just works.' That invisibility was the entire goal.",
-    improvements: [
-      "The watch interface was too feature-dense — it should have been scene activation and status only. We tried to pack phone-level control onto a 44mm screen and it showed.",
-      "Failure states for device disconnections needed more elegant handling. When a device went offline, the UI felt broken rather than gracefully degraded.",
-      "Automation suggestions were sometimes too aggressive for non-daily routines — the system would suggest automations based on 2-3 occurrences, which felt presumptuous. Needed a higher confidence threshold before surfacing suggestions.",
-    ],
-    nextProject: { slug: "solstice", title: "SOLSTICE", image: "https://images.unsplash.com/photo-1702726001096-096efcf640b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwY29uc3VsdGluZyUyMG9mZmljZSUyMG1vZGVybiUyMGRhcmslMjBtb29keXxlbnwxfHx8fDE3NzM4MDMwMTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" },
-  },
-  {
     slug: "solstice",
     title: "SOLSTICE",
     subtitle: "Scaling a consultancy's product through design system discipline",
     client: "Solstice Innovations (via Technology Consulting)",
-    year: "2020–2021",
+    year: "2020\u20132021",
     role: "Senior Product Designer & Design Lead",
     timeline: "14 months",
     team: "3 mentored designers, 2 PMs, cross-functional engineering pods",
@@ -793,7 +615,7 @@ const CASE_STUDIES: CaseStudyData[] = [
       "The Angular-to-React migration happening in parallel with the design system rollout created friction I underestimated. Some engineering pods adopted the system's React components eagerly; others were stuck in Angular and felt left behind. A dedicated Angular component bridge — even a temporary one — would have accelerated adoption across the entire platform.",
       "I should have documented the mentorship framework more formally. What I did with those three designers worked, but it was intuitive and ad-hoc. A structured mentorship curriculum — with clear milestones, skill assessments, and growth tracks — would have made the model repeatable for future design leads.",
     ],
-    nextProject: { slug: "meridian", title: "HEALTHPILOT", image: healthpilotImg },
+    nextProject: { slug: "healthpilot", title: "HEALTHPILOT", image: healthpilotImg },
   },
 ];
 
@@ -1884,8 +1706,8 @@ export function CaseStudyPage() {
       {/* Footer */}
       <div className="px-6 md:px-12 lg:px-24 py-8 border-t border-white/[0.03]">
         <div className="flex items-center justify-between">
-          <FooterLink onClick={() => navigate("/")} label="← Back to Portfolio" color={cs.color} />
-          <FooterLink onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} label="Back to Top ↑" color={cs.color} />
+          <FooterLink onClick={() => navigate("/")} label="\u2190 Back to Portfolio" color={cs.color} />
+          <FooterLink onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} label="Back to Top \u2191" color={cs.color} />
         </div>
         {/* Keyboard shortcuts hint — desktop only */}
         <div className="hidden md:flex items-center justify-center gap-6 mt-6 pt-4 border-t border-white/[0.02]">

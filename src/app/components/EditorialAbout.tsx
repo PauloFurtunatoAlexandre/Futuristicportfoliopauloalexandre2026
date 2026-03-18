@@ -833,23 +833,59 @@ export function EditorialAbout() {
               </div>
             </div>
 
-            {/* Education note */}
+            {/* Education & Certifications */}
             <Reveal delay={0.3}>
-              <div className="mt-12 md:pl-8 flex items-start gap-4">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#3a3a42] mt-2 shrink-0" />
-                <div>
+              <div className="mt-12 md:pl-8">
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#3a3a42] mt-2 shrink-0" />
                   <span
-                    className="text-[0.625rem] tracking-[0.4em] text-[#3a3a42] block mb-2"
+                    className="text-[0.625rem] tracking-[0.4em] text-[#3a3a42]"
                     style={{ fontFamily: "var(--font-mono)" }}
                   >
-                    EDUCATION
+                    EDUCATION & CERTIFICATIONS
                   </span>
-                  <span
-                    className="text-[0.875rem] text-[#6b6b76]"
-                    style={{ fontFamily: "var(--font-body)", lineHeight: 1.6 }}
-                  >
-                    MBA, UX Research & Leadership — UNIFATEC / Toronto Business School · Full Stack Web Dev — Bloomtech · Business — Columbia College
-                  </span>
+                </div>
+                <div className="space-y-4 pl-5">
+                  {[
+                    { degree: "MBA, UX Research & Leadership", year: "2024", school: "UNIFATEC / Toronto Business School", detail: "Product Discovery, UX Research, Leadership, UX Writing, Strategic UI Design, Cognitive Bias, Design Ops, Data Visualization" },
+                    { degree: "Certification, UX Unicorn", year: "2022", school: "UX Unicorn", detail: "UX & Product Strategy, Research, Mapping, Workshops, Facilitation, UI, Frontend" },
+                    { degree: "Certification, Interaction Design", year: "2022", school: "Interaction Design Foundation", detail: "User Research, Visual Design, Mobile Design, Usability, Interaction Design, Management" },
+                    { degree: "Full Stack Web Development & Computer Science", year: "2021", school: "Bloomtech Bootcamp", detail: "Frontend, Backend, Computer Science" },
+                    { degree: "Associates, Business", year: "2018", school: "Columbia College", detail: null },
+                    { degree: "Associates, Marketing", year: "2012", school: "UNIP", detail: null },
+                    { degree: "Technical Degree, Graphic Design & Digital Illustration", year: "2005", school: "Impacta", detail: null },
+                  ].map((edu) => (
+                    <div key={edu.degree} className="border-l border-white/[0.04] pl-4">
+                      <div className="flex items-baseline gap-2 flex-wrap">
+                        <span
+                          className="text-[0.8125rem] text-[#8a8a96]"
+                          style={{ fontFamily: "var(--font-body)" }}
+                        >
+                          {edu.degree}
+                        </span>
+                        <span
+                          className="text-[0.625rem] tracking-[0.2em] text-[#3a3a42]"
+                          style={{ fontFamily: "var(--font-mono)" }}
+                        >
+                          {edu.year}
+                        </span>
+                      </div>
+                      <span
+                        className="text-[0.75rem] text-[#6b6b76] block"
+                        style={{ fontFamily: "var(--font-body)" }}
+                      >
+                        {edu.school}
+                      </span>
+                      {edu.detail && (
+                        <span
+                          className="text-[0.6875rem] text-[#4a4a54] block mt-1"
+                          style={{ fontFamily: "var(--font-mono)", lineHeight: 1.5 }}
+                        >
+                          {edu.detail}
+                        </span>
+                      )}
+                    </div>
+                  ))}
                 </div>
               </div>
             </Reveal>

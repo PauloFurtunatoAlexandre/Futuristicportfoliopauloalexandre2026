@@ -10,6 +10,7 @@ import {
 } from "motion/react";
 import { useIsMobile } from "./ui/useMediaQuery";
 import healthpilotImg from "figma:asset/e4a5a5199e012811840cc269dafae9f17eab509a.png";
+import gaigHeroImg from "figma:asset/62ef352eb234e315ecb528632c229cbc70cf743f.png";
 
 /* ─────────────────────────────────────────
    Data
@@ -50,7 +51,7 @@ const projects: Project[] = [
       { label: "Investment", value: "$10M" },
     ],
     tags: ["Healthcare", "Web", "UX Research"],
-    slug: "meridian",
+    slug: "healthpilot",
   },
   {
     id: "02",
@@ -62,8 +63,7 @@ const projects: Project[] = [
       "33 business lines, 33 different UIs, zero shared language. Agents lost 15+ minutes per task reorienting across products. Insureds abandoned enrollment mid-flow because the platform never confirmed their actions worked. Built a scalable design system and UX governance framework that unified everything.",
     category: "Design Systems",
     year: "2022",
-    image:
-      "https://images.unsplash.com/photo-1566748886022-ec212e5642fe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjBpbnN1cmFuY2UlMjBlbnRlcnByaXNlJTIwcGxhdGZvcm0lMjBkYXJrJTIwbW9vZHl8ZW58MXx8fHwxNzczODAxNDQ1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    image: gaigHeroImg,
     color: "#06b6d4",
     metrics: [
       { label: "Feature Delivery", value: "+30%" },
@@ -71,7 +71,7 @@ const projects: Project[] = [
       { label: "Business Lines", value: "33" },
     ],
     tags: ["Design Systems", "B2B", "Accessibility"],
-    slug: "forma",
+    slug: "gaig",
   },
   {
     id: "03",
@@ -92,7 +92,7 @@ const projects: Project[] = [
       { label: "Engagement", value: "+44%" },
     ],
     tags: ["Cannabis", "Emotion UX", "E-Commerce"],
-    slug: "luxe",
+    slug: "rise",
   },
   {
     id: "04",
