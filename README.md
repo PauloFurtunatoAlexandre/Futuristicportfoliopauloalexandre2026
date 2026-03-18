@@ -1,7 +1,7 @@
 
-  # Futuristic—Portfolio
+  # Paulo Alexandre - Product Designer
 
-  This is a code bundle for Futuristic—Portfolio. The original project is available at https://www.figma.com/design/ncEBdx9YXZHNpspUuvhx9n/Futuristic%E2%80%94Portfolio.
+  This is a code bundle for Paulo Alexandre - Product Designer. The original project is available at https://www.figma.com/design/ncEBdx9YXZHNpspUuvhx9n/Paulo-Alexandre---Product-Designer.
 
   ## Running the code
 

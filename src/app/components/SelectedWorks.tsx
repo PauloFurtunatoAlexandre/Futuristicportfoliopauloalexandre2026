@@ -35,6 +35,26 @@ interface Project {
 const projects: Project[] = [
   {
     id: "01",
+    title: "RENTVINE",
+    subtitle: "Redesigning Lease Renewals & Property Operations for Scale",
+    client: "Rentvine",
+    role: "Senior Product Designer",
+    problem:
+      "Property managers drowning in manual lease renewals and a dashboard that showed everything but communicated nothing. Redesigned the renewal pipeline for batch processing and rebuilt the POD with information hierarchy — 22% feature adoption lift, 25% less engineering rework.",
+    category: "B2B SaaS & AI-Augmented Design",
+    year: "2025",
+    image: "https://images.unsplash.com/photo-1758304481488-c323378f89ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9wZXJ0eSUyMG1hbmFnZW1lbnQlMjBhcGFydG1lbnQlMjBidWlsZGluZyUyMG1vZGVybnxlbnwxfHx8fDE3NzM4NTExODB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    color: "#22c55e",
+    metrics: [
+      { label: "Feature Adoption", value: "+22%" },
+      { label: "Rework Reduction", value: "-25%" },
+      { label: "Validated Solutions", value: "+30%" },
+    ],
+    tags: ["B2B SaaS", "AI Workflows", "DesignOps"],
+    slug: "rentvine",
+  },
+  {
+    id: "02",
     title: "SOLSTICE",
     subtitle: "Scaling a Consultancy's Product Through Design System Discipline",
     client: "Solstice Innovations",
@@ -42,7 +62,7 @@ const projects: Project[] = [
     problem:
       "A powerful enterprise platform growing feature by feature with no shared design language — six different UI dialects, 120+ inconsistencies, and a team of three junior designers shipping in isolation. Built a design system, mentored the team, and turned chaos into a +63% usability lift.",
     category: "Design Systems & Mentorship",
-    year: "2024",
+    year: "2024 – 2025",
     image:
       "https://images.unsplash.com/photo-1702726001096-096efcf640b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwY29uc3VsdGluZyUyMG9mZmljZSUyMG1vZGVybiUyMGRhcmslMjBtb29keXxlbnwxfHx8fDE3NzM4MDMwMTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     color: "#f59e0b",
@@ -55,7 +75,7 @@ const projects: Project[] = [
     slug: "solstice",
   },
   {
-    id: "02",
+    id: "03",
     title: "HEALTHPILOT",
     subtitle: "Turning Medicare Chaos Into Confident Decisions",
     client: "HealthPilot",
@@ -76,7 +96,7 @@ const projects: Project[] = [
     slug: "healthpilot",
   },
   {
-    id: "03",
+    id: "04",
     title: "GAIG",
     subtitle: "Taming 33 Business Lines With One Design Language",
     client: "Great American Insurance Group",
@@ -96,7 +116,7 @@ const projects: Project[] = [
     slug: "gaig",
   },
   {
-    id: "04",
+    id: "05",
     title: "RISE",
     subtitle: "When Shopping Becomes Feeling",
     client: "Rise Cannabis / GTI",

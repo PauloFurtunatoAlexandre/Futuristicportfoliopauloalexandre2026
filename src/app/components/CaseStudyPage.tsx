@@ -27,6 +27,12 @@ const riseJourneyImg = "https://images.unsplash.com/photo-1684097821808-6baf8c9d
 const riseWireframesImg = "https://images.unsplash.com/photo-1600531597946-f9b1d7b0f486?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3aXJlZnJhbWUlMjBza2V0Y2glMjBub3RlYm9vayUyMHBlbnxlbnwxfHx8fDE3NzM4MDc4Njl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 const riseDesignSystemImg = "https://images.unsplash.com/photo-1659035260002-11d486d6e9f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ24lMjBzeXN0ZW0lMjBjb21wb25lbnRzJTIwbWFjYm9vayUyMHNjcmVlbnxlbnwxfHx8fDE3NzM4MDc4Njl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 const risePrototypeImg = "https://images.unsplash.com/photo-1757301714935-c8127a21abc6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBwcm90b3R5cGUlMjBjYXJ0JTIwY2hlY2tvdXQlMjBzY3JlZW58ZW58MXx8fHwxNzczODA3ODY5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+const rvHeroImg = "https://images.unsplash.com/photo-1758304481488-c323378f89ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9wZXJ0eSUyMG1hbmFnZW1lbnQlMjBhcGFydG1lbnQlMjBidWlsZGluZyUyMG1vZGVybnxlbnwxfHx8fDE3NzM4NTExODB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+const rvResearchImg = "https://images.unsplash.com/photo-1735639013995-086e648eaa38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx1c2VyJTIwcmVzZWFyY2glMjB3aGl0ZWJvYXJkJTIwc3RpY2t5JTIwbm90ZXMlMjBicmFpbnN0b3JtfGVufDF8fHx8MTc3Mzc2MzQxMnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+const rvWireframesImg = "https://images.unsplash.com/photo-1680016661694-1cd3faf31c3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3aXJlZnJhbWUlMjBza2V0Y2hlcyUyMG5vdGVib29rJTIwVVglMjBkZXNpZ258ZW58MXx8fHwxNzczODUxMTc5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+const rvDesignSystemImg = "https://images.unsplash.com/photo-1769149068959-b11392164add?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ24lMjBzeXN0ZW0lMjBjb21wb25lbnRzJTIwVUklMjBsaWJyYXJ5JTIwc2NyZWVufGVufDF8fHx8MTc3Mzg1MTE3OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+const rvPrototypeImg = "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxTYWFTJTIwZGFzaGJvYXJkJTIwYW5hbHl0aWNzJTIwcGxhdGZvcm0lMjBwcm9mZXNzaW9uYWx8ZW58MXx8fHwxNzczODUxMTgwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+const rvProcessImg = "https://images.unsplash.com/photo-1681505504714-4ded1bc247e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsZWFzZSUyMGFncmVlbWVudCUyMGRvY3VtZW50JTIwc2lnbmluZyUyMGRpZ2l0YWx8ZW58MXx8fHwxNzczODUxMTc4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 import { CustomCursor } from "./CustomCursor";
 import { FloatingNav } from "./FloatingNav";
 import { useIsMobile, useReducedMotion } from "./ui/useMediaQuery";
@@ -76,6 +82,143 @@ interface CaseStudyData {
 }
 
 const CASE_STUDIES: CaseStudyData[] = [
+  {
+    slug: "rentvine",
+    title: "RENTVINE",
+    subtitle: "Redesigning lease renewals and property operations for scale",
+    client: "Rentvine",
+    year: "2025",
+    role: "Senior Product Designer",
+    timeline: "Ongoing (joined Jul 2025)",
+    team: "Product Designers, VP of Product, Engineering leads",
+    platform: "Web (B2B SaaS — Property Management)",
+    tools: ["Figma", "Claude AI", "Jira", "Storybook", "Slack"],
+    color: "#22c55e",
+    heroImage: rvHeroImg,
+    problem:
+      "Property managers using Rentvine were drowning in lease renewals. Every renewal was a manual, multi-step odyssey — checking expiration dates across scattered spreadsheets, drafting new terms, chasing tenants for signatures, and praying nothing fell through the cracks. For portfolios of 200+ units, this wasn't tedious — it was structurally unsustainable. Renewals slipped. Tenants churned. Revenue leaked. And the platform's Property Operations Dashboard — the command center where managers were supposed to have total visibility — was a wall of numbers with no hierarchy, no actionable intelligence, and no way to distinguish what was urgent from what could wait. Managers opened the dashboard and felt more overwhelmed, not less. The tool designed to give them control was, ironically, the thing making them feel most out of control.",
+    context:
+      "Rentvine is a B2B property management SaaS platform serving property managers who oversee hundreds to thousands of rental units. The platform handles the full lifecycle — leasing, maintenance, accounting, owner reporting — but two critical modules had calcified into their least usable state: Lease Renewals and the Property Operations Dashboard (PODs). I was brought in as Senior Product Designer to lead end-to-end redesign of these modules, partnering directly with the VP of Product and Engineering leadership. The mandate wasn't just 'make it prettier' — it was 'make it so property managers can scale their portfolio without scaling their headcount.' This meant rethinking not just the UI, but the underlying mental model of how renewals and operational oversight should work in a platform built for growth.",
+    constraints: [
+      "Live production platform with thousands of active property managers — zero tolerance for workflow disruption during rollout",
+      "Complex lease logic involving state-specific regulations, variable renewal terms, and multi-party approval chains",
+      "Property managers range from tech-savvy operators managing 1,000+ units to solo landlords with 10 — one experience must serve both",
+      "Engineering team operating in aggressive sprint cycles — designs needed to be implementable incrementally, not as monolithic releases",
+      "Existing data architecture with deeply nested property-unit-tenant relationships that constrained information architecture decisions",
+    ],
+    researchImage: rvResearchImg,
+    researchInsights: [
+      {
+        title: "Renewals are invisible until they're emergencies",
+        detail:
+          "A full-platform experience audit revealed that lease expirations had no proactive surfacing mechanism. Property managers discovered upcoming renewals only when tenants asked — or worse, when the lease had already lapsed. There was no timeline view, no expiration alerts, no batch processing. Every renewal was treated as a one-off event in a business where renewals are the single most predictable, repeatable, revenue-critical workflow.",
+      },
+      {
+        title: "The dashboard shows everything and communicates nothing",
+        detail:
+          "Stakeholder interviews with 8 property managers showed a consistent pattern: they opened the POD, scanned it for 30+ seconds trying to orient themselves, then switched to their own spreadsheets for actual decision-making. The dashboard had data density but zero information hierarchy. Occupancy rates, maintenance tickets, lease statuses, and financial summaries all competed for attention at the same visual weight. One manager said: 'I have a $50M portfolio and I manage it from a Google Sheet because your dashboard doesn't tell me what to do next.'",
+      },
+      {
+        title: "Batch operations are a survival skill, not a nice-to-have",
+        detail:
+          "Task analysis showed that managers processing renewals spent an average of 12 minutes per unit — navigating to the lease, reviewing terms, generating a renewal offer, sending it for signature, and tracking the response. At 200 units, that's 40 hours of pure administrative friction per renewal cycle. The platform forced serial, unit-by-unit processing for a workflow that is inherently parallel. Managers needed to select 50 leases, apply terms, and send — not click through 50 individual workflows.",
+      },
+      {
+        title: "AI-assisted research revealed patterns humans missed",
+        detail:
+          "Using Claude AI to synthesize research data across interview transcripts, support tickets, and behavioral analytics, I identified a meta-pattern: the highest-churn property managers weren't the ones with the most units — they were the ones whose renewal-to-occupancy gap exceeded 14 days. The platform had no mechanism to surface, track, or reduce this gap. This insight reframed the entire renewal redesign from 'make it easier to renew' to 'make vacancy impossible to ignore.'",
+      },
+    ],
+    strategy:
+      "Transform lease renewals from a reactive, unit-by-unit administrative burden into a proactive, batch-capable, intelligence-driven workflow — and rebuild the Property Operations Dashboard from a data dump into an actionable command center that tells managers what needs attention right now, what's coming next, and what's already handled. The north star: a property manager should be able to process 50 renewals in the time it currently takes to process 5, and their dashboard should eliminate the need for any external spreadsheet.",
+    strategyPillars: [
+      {
+        title: "Proactive Renewal Pipeline",
+        description:
+          "A timeline-based renewal view that surfaces upcoming expirations 90, 60, and 30 days out — with batch selection, template-based term generation, and integrated e-signature workflows. Renewals stop being surprises and start being a managed pipeline, like a sales funnel for retention.",
+      },
+      {
+        title: "Intelligent POD Redesign",
+        description:
+          "A restructured Property Operations Dashboard built on information hierarchy — not data density. Critical actions surface as cards with clear CTAs. Metrics are grouped by decision context: financial health, occupancy risk, maintenance urgency, renewal pipeline. The dashboard answers 'what do I do next?' not 'here's everything at once.'",
+      },
+      {
+        title: "AI-Augmented DesignOps",
+        description:
+          "Pioneered AI-assisted design workflows using Claude AI across research synthesis, UX writing, and prototype iteration — compressing early-stage exploration from days to hours. Established structured frameworks for leveraging AI in insight generation, creating a repeatable methodology that senior designers adopted across the team.",
+      },
+    ],
+    processImage: rvProcessImg,
+    processSteps: [
+      {
+        title: "Full-Platform Experience Audit",
+        description:
+          "Conducted a comprehensive audit mapping all touchpoints across the lease renewal and POD workflows. Documented every friction point, dead end, and information gap. Built a severity matrix prioritizing issues by revenue impact and user pain — not visual severity. The audit became the foundational artifact that aligned Product, Engineering, and stakeholders on what to fix first.",
+      },
+      {
+        title: "Stakeholder & User Research",
+        description:
+          "Interviewed 8 property managers across portfolio sizes (50-unit solo operators to 1,000+ unit firms) to understand how renewals and daily operations actually worked — not how the platform assumed they worked. Used Claude AI to synthesize transcripts and surface cross-cutting patterns that manual analysis would have missed. The 14-day vacancy gap insight emerged directly from AI-assisted synthesis.",
+      },
+      {
+        title: "Journey Mapping & Opportunity Framing",
+        description:
+          "Built detailed journey maps for the renewal lifecycle (from 90-day-out awareness through signed renewal to occupancy continuity) and daily POD usage patterns. Identified 7 critical opportunity areas where the current experience forced managers into workarounds. Framed each opportunity as a design hypothesis testable through prototyping.",
+      },
+      {
+        title: "Concept Exploration & Wireframing",
+        description:
+          "Explored three distinct renewal pipeline models: timeline-based, kanban-based, and list-based. Wireframed all three at low fidelity and tested with 6 managers. The timeline model won decisively for renewal pipeline visibility, while the kanban approach was preferred for daily POD task management. Combined the strengths of both into the final direction.",
+      },
+      {
+        title: "High-Fidelity Design & System Integration",
+        description:
+          "Designed the renewal pipeline, batch processing flows, and restructured POD in high fidelity — integrating with Rentvine's existing component system while extending it with new patterns for timeline views, batch action bars, and priority-based card layouts. Every new pattern was documented with usage guidelines and accessibility specifications.",
+      },
+      {
+        title: "Validation & Iterative Delivery",
+        description:
+          "Conducted usability testing with property managers validating the new renewal batch flow (85% task success rate on first attempt) and POD restructure. Delivered designs incrementally aligned to engineering sprints — renewal pipeline first, POD restructure second — reducing engineering rework by 25% through tight design-to-dev collaboration.",
+      },
+    ],
+    wireframeImage: rvWireframesImg,
+    designSystem: [
+      { label: "Pipeline Views", description: "Timeline and kanban patterns for visualizing lease renewal stages — from upcoming expirations through negotiation, signing, and confirmed renewals" },
+      { label: "Batch Actions", description: "Multi-select interaction patterns with contextual action bars — select 50 leases, apply terms, send for signature in one flow" },
+      { label: "Priority Cards", description: "Information-hierarchy-driven card components for the POD — color-coded urgency, clear CTAs, and contextual metrics that answer 'what do I do next?'" },
+      { label: "Decision Logs", description: "Reusable documentation patterns capturing design rationale, research insights, and trade-off decisions — part of the DesignOps infrastructure" },
+      { label: "AI Workflows", description: "Structured frameworks for Claude AI-assisted research synthesis, UX writing iteration, and prototype exploration — compressing exploration cycles by 60%" },
+    ],
+    designSystemImage: rvDesignSystemImg,
+    prototypeHighlights: [
+      "Proactive renewal pipeline with 90/60/30-day expiration surfacing, batch selection, and template-based term generation — 50 renewals in the time of 5",
+      "Restructured Property Operations Dashboard with information hierarchy replacing data density — financial health, occupancy risk, and renewal pipeline at a glance",
+      "Batch processing flow with multi-select, contextual action bar, and integrated e-signature — eliminating the serial, unit-by-unit renewal grind",
+      "AI-augmented DesignOps toolkit: Claude-assisted research synthesis, UX writing frameworks, and decision documentation standards adopted team-wide",
+    ],
+    prototypeImage: rvPrototypeImg,
+    outcomes: [
+      { label: "Feature Adoption", value: "+22%", change: "New renewal pipeline usage across active managers" },
+      { label: "Task Completion", value: "+18%", change: "Improvement in renewal workflow completion rates" },
+      { label: "Engineering Rework", value: "-25%", change: "Reduced through tight design-to-dev collaboration" },
+      { label: "Release Cycle", value: "-15%", change: "Faster shipping through incremental delivery" },
+      { label: "Validated Solutions", value: "+30%", change: "DesignOps infrastructure increasing solution quality" },
+      { label: "Design Cycle", value: "-20%", change: "AI-assisted workflows compressing exploration time" },
+    ],
+    learnings: [
+      "AI doesn't replace design thinking — it accelerates it. Using Claude AI for research synthesis didn't give me answers I wouldn't have found manually. It gave me those answers in hours instead of days, which meant I could iterate on hypotheses faster, test more concepts, and arrive at stronger solutions. The designers I mentored in AI-assisted ResearchOps didn't become dependent on AI — they became faster at the parts of design that were bottlenecked by processing, not by creativity.",
+      "Batch operations are a design philosophy, not just a feature. The renewal pipeline redesign taught me that the difference between a tool that works at 50 units and one that works at 500 isn't performance optimization — it's interaction model design. Serial workflows that feel fine at small scale become structurally impossible at large scale. The question isn't 'can a user do this?' — it's 'can a user do this 200 times without losing their mind?'",
+      "Information hierarchy is the hardest design problem in B2B SaaS. The POD redesign wasn't about removing data — managers needed every metric we showed. It was about teaching the interface to have an opinion about what matters right now. A dashboard that treats everything as equally important is a dashboard that communicates nothing. Priority isn't just visual weight — it's a design point of view.",
+    ],
+    reflection:
+      "This project is still unfolding, and that's what makes it different from everything else in my portfolio. I'm not writing about it in retrospect — I'm writing about it in the middle. The lease renewal pipeline is live and already showing a 22% lift in feature adoption. The POD restructure is in development. The AI-assisted DesignOps framework I built is being adopted by senior designers across the team. What I'm most proud of isn't a single deliverable — it's the methodology. At Rentvine, I proved that AI-augmented design practice isn't a gimmick or a shortcut. It's a genuine multiplier for the parts of design work that have always been bottlenecked by time, not talent. The Claude-assisted research synthesis that surfaced the 14-day vacancy gap insight — that's the kind of finding that changes a product's trajectory. And it came not from AI alone, but from a designer who knew what questions to ask and a tool that could process the answers faster than any human could. That's the future of design practice. Not AI replacing designers, but designers who use AI replacing designers who don't.",
+    improvements: [
+      "Should have established a quantitative baseline for the POD earlier. We had qualitative evidence that managers preferred their spreadsheets, but didn't measure exactly how much time they spent outside the platform before the redesign. A time-on-task baseline would have made the post-launch improvement story more compelling to stakeholders.",
+      "The batch renewal flow needs more edge case coverage for multi-state portfolios. Lease regulations vary by state, and our current template system handles the common cases well but requires manual overrides for state-specific clauses. A smarter template engine that auto-applies state rules would eliminate the last manual bottleneck.",
+      "I underestimated the onboarding curve for AI-assisted workflows. The senior designers I mentored adopted Claude-assisted ResearchOps quickly, but the framework needs more structured documentation for designers who join later. What feels intuitive after months of practice needs to be codified into a repeatable curriculum.",
+    ],
+    nextProject: { slug: "solstice", title: "SOLSTICE", image: "https://images.unsplash.com/photo-1702726001096-096efcf640b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwY29uc3VsdGluZyUyMG9mZmljZSUyMG1vZGVybiUyMGRhcmslMjBtb29keXxlbnwxfHx8fDE3NzM4MDMwMTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" },
+  },
   {
     slug: "healthpilot",
     title: "HEALTHPILOT",
@@ -358,7 +501,7 @@ const CASE_STUDIES: CaseStudyData[] = [
     year: "2021",
     role: "Product Designer",
     timeline: "6 months",
-    team: "1 product designer, 1 UX strategist, PMs, developers",
+    team: "Product Designer, Strategist, and UX Researcher",
     platform: "Web (E-Commerce), Mobile Web",
     tools: ["Figma", "Mural", "Slack", "Photoshop"],
     color: "#f0abfc",
@@ -485,14 +628,14 @@ const CASE_STUDIES: CaseStudyData[] = [
       "Advanced filtering features were cut for scope, and I still think that was the right call. But the roadmap for re-introducing them needed to be more concrete — 'future iteration' isn't a plan, it's a postponement.",
       "Should have pushed harder for A/B testing the cart and checkout flows. We redesigned them based on best practices and usability testing, but quantitative validation in production would have given us the confidence to iterate faster post-launch.",
     ],
-    nextProject: { slug: "solstice", title: "SOLSTICE", image: "https://images.unsplash.com/photo-1702726001096-096efcf640b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwY29uc3VsdGluZyUyMG9mZmljZSUyMG1vZGVybiUyMGRhcmslMjBtb29keXxlbnwxfHx8fDE3NzM4MDMwMTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" },
+    nextProject: { slug: "rentvine", title: "RENTVINE", image: rvHeroImg },
   },
   {
     slug: "solstice",
     title: "SOLSTICE",
     subtitle: "Scaling a consultancy's product through design system discipline",
     client: "Solstice Innovations (via Technology Consulting)",
-    year: "2024",
+    year: "2024 – 2025",
     role: "Senior Product Designer & Design Lead",
     timeline: "17 months",
     team: "3 mentored designers, 2 PMs, cross-functional engineering pods",
@@ -1019,6 +1162,8 @@ export function CaseStudyPage() {
   const cs = getCaseStudy(slug);
   const pageRef = useRef<HTMLDivElement>(null);
   const [activeChapter, setActiveChapter] = useState("overview");
+  const activeChapterRef = useRef(activeChapter);
+  activeChapterRef.current = activeChapter;
 
   const handleChapterChange = useCallback((id: string) => {
     setActiveChapter(id);
@@ -1042,19 +1187,24 @@ export function CaseStudyPage() {
       )
         return;
 
-      const idx = CHAPTERS.findIndex((ch) => ch.id === activeChapter);
+      const current = activeChapterRef.current;
+      const idx = CHAPTERS.findIndex((ch) => ch.id === current);
 
       if (e.key === "j" || e.key === "ArrowDown") {
         // Next chapter
         if (idx < CHAPTERS.length - 1) {
           e.preventDefault();
-          document.getElementById(CHAPTERS[idx + 1].id)?.scrollIntoView({ behavior: "smooth" });
+          const nextId = CHAPTERS[idx + 1].id;
+          setActiveChapter(nextId);
+          document.getElementById(nextId)?.scrollIntoView({ behavior: "smooth" });
         }
       } else if (e.key === "k" || e.key === "ArrowUp") {
         // Previous chapter
         if (idx > 0) {
           e.preventDefault();
-          document.getElementById(CHAPTERS[idx - 1].id)?.scrollIntoView({ behavior: "smooth" });
+          const prevId = CHAPTERS[idx - 1].id;
+          setActiveChapter(prevId);
+          document.getElementById(prevId)?.scrollIntoView({ behavior: "smooth" });
         }
       } else if (e.key === "Escape") {
         // Back to top
@@ -1064,12 +1214,14 @@ export function CaseStudyPage() {
         const num = parseInt(e.key, 10) - 1;
         if (num < CHAPTERS.length) {
           e.preventDefault();
+          setActiveChapter(CHAPTERS[num].id);
           document.getElementById(CHAPTERS[num].id)?.scrollIntoView({ behavior: "smooth" });
         }
       } else if (e.key === "0") {
         // 0 => chapter 10
         if (CHAPTERS.length >= 10) {
           e.preventDefault();
+          setActiveChapter(CHAPTERS[9].id);
           document.getElementById(CHAPTERS[9].id)?.scrollIntoView({ behavior: "smooth" });
         }
       }
@@ -1077,7 +1229,7 @@ export function CaseStudyPage() {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [activeChapter]);
+  }, []);
 
   /* Hero parallax — reduced on mobile */
   const heroRef = useRef<HTMLDivElement>(null);

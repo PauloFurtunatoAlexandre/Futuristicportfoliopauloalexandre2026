@@ -19,6 +19,14 @@ const EASE_SMOOTH = [0.43, 0.13, 0.23, 0.96] as const;
 
 const PROJECTS = [
   {
+    title: "RENTVINE",
+    subtitle: "Redesigning Lease Renewals & Property Operations for Scale",
+    slug: "rentvine",
+    year: "2025",
+    category: "B2B SaaS & AI-Augmented Design",
+    image: "https://images.unsplash.com/photo-1758304481488-c323378f89ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9wZXJ0eSUyMG1hbmFnZW1lbnQlMjBhcGFydG1lbnQlMjBidWlsZGluZyUyMG1vZGVybnxlbnwxfHx8fDE3NzM4NTExODB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+  },
+  {
     title: "HEALTHPILOT",
     subtitle: "Turning Medicare Chaos Into Confident Decisions",
     slug: "healthpilot",

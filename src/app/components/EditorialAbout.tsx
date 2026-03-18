@@ -63,7 +63,7 @@ const TIMELINE = [
     note: "Leading end-to-end product design for a B2B property management SaaS platform. Pioneered AI-assisted design workflows with Claude AI, mentored senior designers in AI-augmented ResearchOps, and built DesignOps infrastructure that increased validated solution rate by 30%.",
   },
   {
-    period: "2024",
+    period: "2024 — 2025",
     role: "Solstice Innovations — Senior Product Designer",
     note: "Directed the creation of a company-wide design system that streamlined redesign cycles. Mentored 3 designers, refining Figma workflows and accelerating design-to-development handoff through functional prototypes.",
   },
@@ -100,7 +100,7 @@ const STRENGTHS = [
   { label: "UX Research", level: 92 },
   { label: "Prototyping & Interaction", level: 94 },
   { label: "AI-Augmented Design", level: 88 },
-  { label: "Frontend Development", level: 80 },
+  { label: "Frontend Development", level: 62 },
 ];
 
 /* ─────────────────────────────────────────
