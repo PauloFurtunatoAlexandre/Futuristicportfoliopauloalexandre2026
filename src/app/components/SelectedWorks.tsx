@@ -1,3 +1,13 @@
+import { useRef, useState, useCallback, useMemo } from "react";
+import { useNavigate } from "react-router";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useMotionValue,
+  useSpring,
+  useInView,
+} from "motion/react";
 import { useIsMobile } from "./ui/useMediaQuery";
 import healthpilotImg from "figma:asset/e4a5a5199e012811840cc269dafae9f17eab509a.png";
 

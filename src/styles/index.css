@@ -8,9 +8,9 @@
    ───────────────────────────────────────── */
 :root {
   /* Typographic scale — dramatic contrast between display & body */
-  --type-mega: clamp(5rem, 14vw, 14rem);
-  --type-display: clamp(3.5rem, 10vw, 10rem);
-  --type-headline: clamp(2.4rem, 6vw, 5.5rem);
+  --type-mega: clamp(3.5rem, 12vw, 11rem);
+  --type-display: clamp(2.8rem, 8vw, 8rem);
+  --type-headline: clamp(2rem, 5vw, 4.5rem);
   --type-title: clamp(1.6rem, 3.2vw, 3rem);
   --type-body-lg: clamp(1.05rem, 1.4vw, 1.35rem);
   --type-body: 0.9375rem;
@@ -195,6 +195,8 @@ img {
   line-height: var(--lead-tight);
   letter-spacing: var(--track-tight);
   font-weight: 800;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .type-display {
@@ -203,6 +205,8 @@ img {
   line-height: var(--lead-display);
   letter-spacing: var(--track-display);
   font-weight: 800;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .type-headline {
@@ -211,6 +215,8 @@ img {
   line-height: var(--lead-display);
   letter-spacing: var(--track-display);
   font-weight: 800;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .type-title {
@@ -356,4 +362,10 @@ img {
   transform: translateY(-50%) rotate(-90deg);
   transform-origin: center center;
   white-space: nowrap;
+}
+
+/* Prevent long titles from overflowing */
+h1, h2, h3, h4 {
+  overflow-wrap: break-word;
+  word-break: break-word;
 }

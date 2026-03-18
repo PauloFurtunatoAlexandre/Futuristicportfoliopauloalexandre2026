@@ -9,6 +9,11 @@ import {
 import { useParams, useNavigate } from "react-router";
 import { ArrowUpRight, ArrowLeft, ChevronDown, List, X } from "lucide-react";
 import healthpilotImg from "figma:asset/e4a5a5199e012811840cc269dafae9f17eab509a.png";
+import healthpilotSprintsImg from "figma:asset/1716ce1c49656a8c6b7ed108d2f8ea0bf1891c96.png";
+import healthpilotPersonasImg from "figma:asset/d12b8d0f28944f665ff24b2503cd0667b2c18849.png";
+import healthpilotJourneyImg from "figma:asset/f4e01d9bd9e0b5a20864d8edf8848276619719b1.png";
+import healthpilotDesignSystemImg from "figma:asset/a65a47e40b122031e3edea3f4db3b0e7c34712e3.png";
+import healthpilotPrototypeImg from "figma:asset/0ff5f802078eee0cc87208000297f141c676d276.png";
 import { CustomCursor } from "./CustomCursor";
 import { FloatingNav } from "./FloatingNav";
 import { useIsMobile, useReducedMotion } from "./ui/useMediaQuery";
@@ -40,9 +45,11 @@ interface CaseStudyData {
   context: string;
   constraints: string[];
   researchInsights: { title: string; detail: string }[];
+  researchImage?: string;
   strategy: string;
   strategyPillars: { title: string; description: string }[];
   processSteps: { title: string; description: string }[];
+  processImage?: string;
   wireframeImage: string;
   designSystem: { label: string; description: string }[];
   designSystemImage: string;
@@ -80,6 +87,7 @@ const CASE_STUDIES: CaseStudyData[] = [
       "Four-month deadline for V1 — speed without sacrificing quality",
       "Must support the full enrollment funnel from discovery to plan selection to sign-up",
     ],
+    researchImage: healthpilotPersonasImg,
     researchInsights: [
       {
         title: "Jargon is the enemy",
@@ -121,6 +129,7 @@ const CASE_STUDIES: CaseStudyData[] = [
           "Side-by-side plan views with clear pros, cons, and cost breakdowns. Transformed the most anxiety-inducing step into the most confidence-building one.",
       },
     ],
+    processImage: healthpilotSprintsImg,
     processSteps: [
       {
         title: "Discovery & Deep Dive",
@@ -153,8 +162,7 @@ const CASE_STUDIES: CaseStudyData[] = [
           "Developed comprehensive token and component library for consistency and scale. Launched iteratively, continuously validating with user feedback and refining post-launch.",
       },
     ],
-    wireframeImage:
-      "https://images.unsplash.com/photo-1615387000571-bdcfe92eb67c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3aXJlZnJhbWUlMjBwcm90b3R5cGUlMjBza2V0Y2glMjBVWCUyMGRlc2lnbiUyMHByb2Nlc3N8ZW58MXx8fHwxNzczODAwNjgxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    wireframeImage: healthpilotJourneyImg,
     designSystem: [
       { label: "Typography", description: "Clear, high-contrast type scale optimized for 65+ readability — generous sizing, tight hierarchy" },
       { label: "Color", description: "Accessible palette meeting WCAG AAA. Trust-first blues and greens, warm neutrals for comfort" },
@@ -162,16 +170,14 @@ const CASE_STUDIES: CaseStudyData[] = [
       { label: "Language", description: "Full terminology glossary co-authored with SMEs — every insurance term has a plain-English equivalent" },
       { label: "Patterns", description: "Reusable enrollment step templates, error recovery flows, and decision-support layouts" },
     ],
-    designSystemImage:
-      "https://images.unsplash.com/photo-1720962158937-7ea890052166?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ24lMjBzeXN0ZW0lMjBjb21wb25lbnRzJTIwVUklMjBraXQlMjBkYXJrJTIwaW50ZXJmYWNlfGVufDF8fHx8MTc3MzgwMDY3N3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    designSystemImage: healthpilotDesignSystemImg,
     prototypeHighlights: [
       "Step-by-step enrollment flow with progress indicators and contextual micro-copy explaining every data request",
       "Side-by-side plan comparison with plain-language pros, cons, and cost breakdowns",
       "Contextual tooltips translating insurance jargon into human language on hover/tap",
       "Decision-confidence scoring that helps users feel certain about their final plan choice",
     ],
-    prototypeImage:
-      "https://images.unsplash.com/photo-1592323401640-9c24ed330baf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGhjYXJlJTIwYXBwJTIwbW9iaWxlJTIwaW50ZXJmYWNlJTIwY2xlYW58ZW58MXx8fHwxNzczODAwNjgxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    prototypeImage: healthpilotPrototypeImg,
     outcomes: [
       { label: "Plan Selection Rate", value: "+6%", change: "Users choosing plans with confidence" },
       { label: "Drop-Off Rate", value: "-25%", change: "Simplified navigation kept users engaged" },
@@ -1307,7 +1313,7 @@ export function CaseStudyPage() {
               initial={{ y: 150 }}
               animate={{ y: 0 }}
               transition={{ delay: 0.15, duration: 1.1, ease: EASE_OUT }}
-              className="text-[clamp(3rem,12vw,10rem)] leading-[0.85] tracking-[-0.04em]"
+              className="text-[clamp(2.5rem,9vw,7rem)] leading-[0.85] tracking-[-0.04em]"
               style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800 }}
             >
               {cs.title}
@@ -1457,7 +1463,7 @@ export function CaseStudyPage() {
       <Section id="research" className="px-6 md:px-12 lg:px-24 py-20 md:py-32" onInView={handleChapterChange}>
         <ChapterLabel number="04" title="Research Insights" accentColor={cs.color} />
         <ImmersiveImage
-          src="https://images.unsplash.com/photo-1693044216415-e2c1d759ed62?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx1c2VyJTIwcmVzZWFyY2glMjBpbnRlcnZpZXclMjBzZXNzaW9uJTIwb2ZmaWNlfGVufDF8fHx8MTc3MzQxMDYwNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+          src={cs.researchImage || "https://images.unsplash.com/photo-1693044216415-e2c1d759ed62?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx1c2VyJTIwcmVzZWFyY2glMjBpbnRlcnZpZXclMjBzZXNzaW9uJTIwb2ZmaWNlfGVufDF8fHx8MTc3MzQxMDYwNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"}
           alt="Research sessions"
           caption="12 user interviews conducted over 3 weeks"
           reducedMotion={isMobile || reducedMotion}
@@ -1547,7 +1553,15 @@ export function CaseStudyPage() {
          ═══════════════════════════════════════ */}
       <Section id="process" className="px-6 md:px-12 lg:px-24 py-20 md:py-32" onInView={handleChapterChange}>
         <ChapterLabel number="06" title="UX Process" accentColor={cs.color} />
-        <div className="relative">
+        {cs.processImage && (
+          <ImmersiveImage
+            src={cs.processImage}
+            alt="Design process overview"
+            caption="Design sprint timeline and methodology"
+            reducedMotion={isMobile || reducedMotion}
+          />
+        )}
+        <div className="relative mt-12">
           {/* Timeline line */}
           <div className="absolute left-0 md:left-3 top-0 bottom-0 w-px bg-white/[0.04] hidden md:block">
             <ProcessLine color={cs.color} />
@@ -1830,7 +1844,7 @@ export function CaseStudyPage() {
               </span>
               <div className="overflow-hidden">
                 <motion.h2
-                  className="text-[clamp(3rem,10vw,8rem)] leading-[0.85] tracking-[-0.04em] text-[#e8e6e3]"
+                  className="text-[clamp(2.5rem,8vw,6rem)] leading-[0.85] tracking-[-0.04em] text-[#e8e6e3]"
                   style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800 }}
                   variants={{ hover: { x: 20 } }}
                   transition={{ duration: 0.5, ease: EASE_OUT }}

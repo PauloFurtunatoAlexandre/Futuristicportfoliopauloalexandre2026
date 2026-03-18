@@ -377,7 +377,7 @@ export function HeroSection() {
             className="overflow-hidden relative"
           >
             <h1
-              className="text-[clamp(2.8rem,11vw,14rem)] leading-[0.82] tracking-[-0.045em] text-center"
+              className="text-[clamp(2.8rem,9vw,11rem)] leading-[0.82] tracking-[-0.045em] text-center text-[#e8e6e3]"
               style={{
                 fontFamily: "var(--font-display)",
                 fontWeight: 800,
