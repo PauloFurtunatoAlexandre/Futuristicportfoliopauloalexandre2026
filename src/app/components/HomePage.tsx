@@ -7,9 +7,7 @@ import { EditorialAbout } from "./EditorialAbout";
 import { MarqueeStrip } from "./MarqueeStrip";
 import { ProcessSection } from "./ProcessSection";
 import { ImpactSection } from "./ImpactSection";
-import { VideoShowcase } from "./VideoShowcase";
 import { ImmersiveGallery } from "./ImmersiveGallery";
-import { FullScreenMoment } from "./FullScreenMoment";
 import { TestimonialsSection } from "./TestimonialsSection";
 import { ContactSection } from "./ContactSection";
 import { CustomCursor } from "./CustomCursor";
@@ -151,8 +149,6 @@ export function HomePage() {
           speed={40}
         />
 
-        <FullScreenMoment />
-
         <SectionDivider label="About" />
 
         <EditorialAbout />
@@ -179,10 +175,6 @@ export function HomePage() {
         <SectionDivider label="Impact" />
 
         <ImpactSection />
-
-        <SectionDivider label="In Motion" />
-
-        <VideoShowcase />
 
         <ImmersiveGallery />
 

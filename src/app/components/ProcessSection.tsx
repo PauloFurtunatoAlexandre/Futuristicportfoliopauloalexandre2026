@@ -1,11 +1,9 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import {
   motion,
   useScroll,
   useTransform,
   useInView,
-  useMotionValueEvent,
-  AnimatePresence,
 } from "motion/react";
 import { useIsMobile } from "./ui/useMediaQuery";
 
@@ -16,234 +14,109 @@ import { useIsMobile } from "./ui/useMediaQuery";
 const EASE = [0.25, 0.46, 0.45, 0.94] as const;
 
 /* ─────────────────────────────────────────
-   Process Stage Data — 7 acts
+   Process Stage Data — 6 acts
+   Based on Paulo's real methodology across
+   HealthPilot, GAIG, Solstice, Rentvine
    ───────────────────────────────────────── */
 
 const STAGES = [
   {
     num: "01",
-    title: "DISCOVER",
-    subtitle: "Understanding the terrain",
-    serifAccent: "listen before you leap",
-    philosophy:
-      "Before designing anything, I immerse myself in the problem space until I can articulate the pain better than the people experiencing it. This isn't about gathering requirements — it's about building conviction.",
+    title: "LISTEN",
+    subtitle: "Before designing, I disappear into the problem",
+    serifAccent: "empathy is the first skill, not the soft one",
+    story:
+      "At HealthPilot, I didn't start with wireframes — I started with 15 user interviews and a 349-person survey. At GAIG, I sat through 12 insured interviews watching people fail silently at enrollment. At Solstice, I audited 5 modules and documented 120+ inconsistencies before touching Figma. The pattern is always the same: resist the urge to solve until you've earned the right to understand.",
     activities: [
-      "Stakeholder depth-interviews",
-      "Competitive & analogous audits",
+      "User interviews & contextual inquiry",
+      "Heuristic evaluation & competitive audit",
       "Quantitative data analysis",
-      "User shadowing & contextual inquiry",
-      "Jobs-to-be-done mapping",
+      "Stakeholder alignment sessions",
+      "Journey mapping & service blueprints",
     ],
-    deliverables: ["Research synthesis deck", "Opportunity landscape map", "User persona archetypes"],
-    duration: "2–4 weeks",
-    collaborators: "Product, Engineering, Research",
-    insight:
-      "The best insights come from the things people don't say. I pay attention to workarounds, frustrations masked as habits, and the questions nobody thought to ask.",
-    icon: "discover",
+    artifact: "Research synthesis & opportunity map",
   },
   {
     num: "02",
-    title: "DEFINE",
-    subtitle: "Framing the right problem",
-    serifAccent: "precision before ambition",
-    philosophy:
-      "A beautiful solution to the wrong problem is still a failure. This phase is about ruthless focus — narrowing from infinite possibility to the one constraint that, if solved, unlocks everything else.",
+    title: "FRAME",
+    subtitle: "Turn chaos into a clear problem statement",
+    serifAccent: "a well-framed problem is half-solved",
+    story:
+      "The hardest part of design isn't generating solutions — it's choosing which problem to solve. At Rise Cannabis, analytics showed drop-offs at product pages, but framing revealed the real issue: the entire information architecture was misaligned with how customers make emotional decisions. At GAIG, 33 business lines each thought their UI was 'special enough' to warrant custom treatment. The frame that unlocked progress: consistency isn't constraint — it's freedom.",
     activities: [
-      "Problem statement synthesis",
-      "Opportunity prioritization (RICE/ICE)",
-      "Experience principles definition",
-      "Success metrics alignment",
-      "Scope negotiation with stakeholders",
+      "Problem prioritization (Impact/Effort)",
+      "Design Studio workshops",
+      "Persona & scenario development",
+      "Risk & assumptions matrix",
+      "Stakeholder storytelling",
     ],
-    deliverables: ["Strategic brief", "Design principles", "Measurable success criteria"],
-    duration: "1–2 weeks",
-    collaborators: "Product, Leadership, Data",
-    insight:
-      "I've learned that the define phase is where projects are won or lost. Skip it, and you'll design three things instead of the right one.",
-    icon: "define",
+    artifact: "Problem brief & strategy pillars",
   },
   {
     num: "03",
     title: "EXPLORE",
-    subtitle: "Divergent thinking at scale",
-    serifAccent: "dare to be wrong",
-    philosophy:
-      "This is where I push past the first good idea — and the second, and the tenth. The breakthrough usually hides behind the concepts you almost discarded. Exploration demands courage and volume.",
+    subtitle: "Generate divergently, then converge with conviction",
+    serifAccent: "the first idea is never the best one",
+    story:
+      "I believe in structured divergence — not brainstorming chaos, but disciplined exploration. At HealthPilot, I facilitated Design Studio workshops that generated 15+ ideas, then used dot-voting with PMs and engineers to converge on the three highest-impact interventions. At Solstice, I prototyped four navigation patterns in parallel before testing showed the unified sidebar won decisively. The goal isn't more ideas — it's better-tested convictions.",
     activities: [
-      "Rapid concept sketching (Crazy 8s)",
-      "Cross-functional ideation workshops",
-      "Analogous inspiration mapping",
-      "Low-fidelity wireframe sprints",
-      "Concept narrative storyboarding",
+      "Rapid sketching & concept generation",
+      "Low-fidelity wireframing",
+      "Parallel prototyping",
+      "Design critique sessions",
+      "Early concept testing",
     ],
-    deliverables: ["Concept directions (3–5)", "Annotated wireframes", "Experience storyboards"],
-    duration: "2–3 weeks",
-    collaborators: "Design, Product, Engineering, Content",
-    insight:
-      "I intentionally explore at least one direction I think won't work. It almost always teaches me something the 'safe' concepts don't.",
-    icon: "explore",
+    artifact: "Validated wireframes & interaction specs",
   },
   {
     num: "04",
-    title: "PROTOTYPE",
-    subtitle: "Making ideas tangible",
-    serifAccent: "think with your hands",
-    philosophy:
-      "Prototypes aren't deliverables — they're thinking tools. I build to learn, not to impress. Fidelity follows intent: sometimes a paper sketch reveals more than a polished Figma comp.",
+    title: "CRAFT",
+    subtitle: "Where pixel-level precision meets system-level thinking",
+    serifAccent: "the details are not the details — they make the design",
+    story:
+      "This is where my graphic design roots and full-stack experience compound. At GAIG, I didn't just design components — I built a token-first system encoding every visual decision into governed primitives across 33 business lines. At Solstice, I established a Storybook instance as the engineering source of truth alongside the Figma library. Every interaction state, every feedback pattern, every accessibility requirement gets the same obsessive attention as the hero screen.",
     activities: [
-      "Interactive prototype construction",
-      "Micro-interaction choreography",
-      "Design system component authoring",
-      "Motion design & easing specification",
-      "Responsive behavior definition",
+      "High-fidelity UI design",
+      "Design system architecture",
+      "Interaction & motion design",
+      "Accessibility compliance (WCAG)",
+      "Design-to-dev specification",
     ],
-    deliverables: ["Interactive prototypes (Figma/code)", "Interaction specification", "Component library updates"],
-    duration: "2–4 weeks",
-    collaborators: "Design, Engineering (early pairing)",
-    insight:
-      "I prototype in code when the interaction can't be faked. The gap between a Figma click-through and a real gesture is where magic lives — or dies.",
-    icon: "prototype",
+    artifact: "Production-ready design system & specs",
   },
   {
     num: "05",
     title: "VALIDATE",
-    subtitle: "Testing assumptions with reality",
-    serifAccent: "let the work be questioned",
-    philosophy:
-      "Validation isn't a gate — it's a conversation. I test early and often, using methods matched to the question: usability tests for flow, A/B tests for conversion, diary studies for long-term adoption.",
+    subtitle: "Test with real humans, not assumptions",
+    serifAccent: "opinions are free — data costs effort",
+    story:
+      "At HealthPilot, remote moderated testing with 10 participants showed a 90% success rate — and revealed edge cases no stakeholder had predicted. At Rise, usability tests showed 60% of users could find products matching their desired effects, transforming confused browsing into confident buying. At Rentvine, I pioneered AI-assisted research workflows with Claude that let us run continuous validation without waiting for formal test cycles. Testing isn't a phase — it's a habit.",
     activities: [
-      "Moderated usability testing (5–8 users)",
-      "Unmoderated remote testing at scale",
-      "Heuristic evaluation with peers",
-      "Accessibility audit (WCAG 2.1 AA)",
-      "Stakeholder design review",
+      "Moderated usability testing",
+      "Unmoderated remote studies",
+      "A/B testing & analytics",
+      "AI-augmented research synthesis",
+      "Stakeholder review & sign-off",
     ],
-    deliverables: ["Test findings & recommendations", "Iteration backlog", "Confidence score matrix"],
-    duration: "1–2 weeks per round",
-    collaborators: "Research, Product, Accessibility",
-    insight:
-      "I've watched users break my most 'intuitive' designs in seconds. That humility is the most valuable design skill I've developed.",
-    icon: "validate",
+    artifact: "Test results & iteration backlog",
   },
   {
     num: "06",
-    title: "SHIP",
-    subtitle: "From design to production",
-    serifAccent: "craft survives the handoff",
-    philosophy:
-      "Shipping isn't the finish line — it's the first real test. I stay embedded with engineering through implementation, because the 100 micro-decisions made during development define the actual user experience.",
+    title: "MULTIPLY",
+    subtitle: "Scale the work by scaling the people",
+    serifAccent: "the best system outlives its creator",
+    story:
+      "Design that depends on one person doesn't scale. At Solstice, I mentored 3 junior designers through individualized growth tracks — all were promoted within 12 months. At GAIG, I trained 4 designers on UX methodologies and Figma best practices, then co-created a governance framework that made consistency self-sustaining. At Rentvine, I'm building DesignOps infrastructure that increases validated solution rate by 30%. My job isn't to be the best designer in the room — it's to make the room better.",
     activities: [
-      "Detailed engineering handoff (spec + tokens)",
-      "Implementation QA & visual regression",
-      "Edge case & error state design",
-      "Launch sequence planning",
-      "Stakeholder alignment & go/no-go",
+      "Mentorship & design coaching",
+      "DesignOps infrastructure",
+      "Governance & documentation",
+      "Knowledge transfer & workshops",
+      "Continuous improvement rituals",
     ],
-    deliverables: ["Production-ready specs", "QA checklist", "Launch playbook"],
-    duration: "2–6 weeks (with eng)",
-    collaborators: "Engineering, QA, Product, Marketing",
-    insight:
-      "I review every pull request that touches UI. Not to gatekeep — to partner. The best engineering relationships are built on mutual craft obsession.",
-    icon: "ship",
-  },
-  {
-    num: "07",
-    title: "LEARN",
-    subtitle: "Closing the loop",
-    serifAccent: "the work is never done",
-    philosophy:
-      "Launch is a hypothesis, not a conclusion. I set up measurement frameworks before shipping and revisit them relentlessly — because the only way to get better is to honestly evaluate what you've built.",
-    activities: [
-      "Post-launch metric analysis",
-      "Qualitative feedback synthesis",
-      "Design retrospective with team",
-      "Pattern documentation for future work",
-      "Backlog grooming for v2 iteration",
-    ],
-    deliverables: ["Impact report", "Lessons-learned document", "V2 opportunity brief"],
-    duration: "Ongoing",
-    collaborators: "Data, Product, Full team",
-    insight:
-      "Every product I've shipped has taught me something the research couldn't. The learn phase is where junior designers become senior ones.",
-    icon: "learn",
+    artifact: "Self-sustaining design culture",
   },
 ];
-
-/* ─────────────────────────────────────────
-   SVG Icons — bespoke, minimal line art
-   ───────────────────────────────────────── */
-
-function StageIcon({ icon, active }: { icon: string; active: boolean }) {
-  const color = active ? "#c4ff00" : "#3a3a42";
-  const size = 48;
-
-  const paths: Record<string, React.ReactNode> = {
-    discover: (
-      <>
-        <circle cx="24" cy="24" r="10" stroke={color} strokeWidth="1.2" fill="none" />
-        <line x1="31" y1="31" x2="38" y2="38" stroke={color} strokeWidth="1.2" strokeLinecap="round" />
-        <circle cx="24" cy="24" r="4" stroke={color} strokeWidth="0.8" fill="none" opacity="0.4" />
-      </>
-    ),
-    define: (
-      <>
-        <rect x="12" y="12" width="24" height="24" rx="2" stroke={color} strokeWidth="1.2" fill="none" />
-        <line x1="17" y1="20" x2="31" y2="20" stroke={color} strokeWidth="0.8" opacity="0.5" />
-        <line x1="17" y1="24" x2="27" y2="24" stroke={color} strokeWidth="0.8" opacity="0.5" />
-        <line x1="17" y1="28" x2="23" y2="28" stroke={color} strokeWidth="0.8" opacity="0.5" />
-        <circle cx="33" cy="14" r="4" stroke={color} strokeWidth="1" fill="none" />
-      </>
-    ),
-    explore: (
-      <>
-        <path d="M12 24 C12 12, 36 12, 36 24 C36 36, 12 36, 12 24" stroke={color} strokeWidth="1.2" fill="none" />
-        <path d="M18 24 C18 18, 30 18, 30 24" stroke={color} strokeWidth="0.8" fill="none" opacity="0.4" />
-        <circle cx="24" cy="24" r="2" fill={color} opacity="0.6" />
-      </>
-    ),
-    prototype: (
-      <>
-        <rect x="14" y="10" width="20" height="28" rx="3" stroke={color} strokeWidth="1.2" fill="none" />
-        <line x1="14" y1="16" x2="34" y2="16" stroke={color} strokeWidth="0.8" opacity="0.3" />
-        <line x1="14" y1="32" x2="34" y2="32" stroke={color} strokeWidth="0.8" opacity="0.3" />
-        <polygon points="21,22 21,28 28,25" stroke={color} strokeWidth="1" fill="none" />
-      </>
-    ),
-    validate: (
-      <>
-        <path d="M16 24 L22 30 L34 16" stroke={color} strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-        <circle cx="24" cy="24" r="14" stroke={color} strokeWidth="1" fill="none" opacity="0.3" />
-      </>
-    ),
-    ship: (
-      <>
-        <path d="M24 10 L24 32" stroke={color} strokeWidth="1.2" strokeLinecap="round" />
-        <path d="M18 26 L24 32 L30 26" stroke={color} strokeWidth="1.2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-        <line x1="14" y1="38" x2="34" y2="38" stroke={color} strokeWidth="1.2" strokeLinecap="round" />
-      </>
-    ),
-    learn: (
-      <>
-        <path d="M12 30 C16 18, 20 26, 24 20 C28 14, 32 22, 36 16" stroke={color} strokeWidth="1.2" fill="none" strokeLinecap="round" />
-        <circle cx="36" cy="16" r="2.5" stroke={color} strokeWidth="1" fill="none" />
-        <circle cx="12" cy="30" r="1.5" fill={color} opacity="0.5" />
-      </>
-    ),
-  };
-
-  return (
-    <motion.svg
-      width={size}
-      height={size}
-      viewBox="0 0 48 48"
-      fill="none"
-      animate={{ opacity: active ? 1 : 0.3 }}
-      transition={{ duration: 0.5 }}
-    >
-      {paths[icon]}
-    </motion.svg>
-  );
-}
 
 /* ─────────────────────────────────────────
    Reveal Wrapper
@@ -252,7 +125,7 @@ function StageIcon({ icon, active }: { icon: string; active: boolean }) {
 function Reveal({
   children,
   delay = 0,
-  y = 30,
+  y = 35,
   className = "",
 }: {
   children: React.ReactNode;
@@ -262,7 +135,6 @@ function Reveal({
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
-
   return (
     <motion.div
       ref={ref}
@@ -277,673 +149,337 @@ function Reveal({
 }
 
 /* ─────────────────────────────────────────
-   Timeline Dot — vertical nav
+   Stage Card
    ───────────────────────────────────────── */
 
-function TimelineDot({
+function StageCard({
   stage,
   index,
-  active,
-  onClick,
 }: {
   stage: (typeof STAGES)[0];
   index: number;
-  active: boolean;
-  onClick: () => void;
 }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const [expanded, setExpanded] = useState(false);
+  const isEven = index % 2 === 0;
+
   return (
-    <button
-      onClick={onClick}
-      className="group flex items-center gap-3 py-2 relative"
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 60 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.9, delay: 0.1, ease: EASE }}
+      className="relative"
     >
-      {/* Dot */}
-      <motion.div
-        className="relative w-2.5 h-2.5 rounded-full shrink-0"
-        animate={{
-          backgroundColor: active ? "#c4ff00" : "rgba(58,58,66,0.6)",
-          scale: active ? 1.3 : 1,
-        }}
-        transition={{ duration: 0.4, ease: EASE }}
-      >
-        {active && (
-          <motion.div
-            className="absolute inset-0 rounded-full bg-[#c4ff00]/20"
-            animate={{ scale: [1, 2.5, 1], opacity: [0.5, 0, 0.5] }}
-            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-          />
-        )}
-      </motion.div>
-
-      {/* Label */}
-      <motion.span
-        className="text-[0.5rem] tracking-[0.4em] uppercase whitespace-nowrap"
-        style={{ fontFamily: "var(--font-mono)" }}
-        animate={{
-          color: active ? "#c4ff00" : "#3a3a42",
-          x: active ? 2 : 0,
-        }}
-        transition={{ duration: 0.3 }}
-      >
-        {stage.num}
-      </motion.span>
-    </button>
-  );
-}
-
-/* ─────────────────────────────────────────
-   Detail Panel — expandable content drawer
-   ───────────────────────────────────────── */
-
-function DetailPanel({
-  stage,
-  expanded,
-  onToggle,
-}: {
-  stage: (typeof STAGES)[0];
-  expanded: boolean;
-  onToggle: () => void;
-}) {
-  return (
-    <div className="mt-10">
-      {/* Toggle */}
-      <button
-        onClick={onToggle}
-        className="flex items-center gap-3 group/toggle mb-0"
-      >
+      {/* Connector line from timeline */}
+      <div className="hidden lg:block absolute top-14 left-0 w-full pointer-events-none">
         <motion.div
-          className="w-5 h-5 border border-[#c4ff00]/30 rounded-full flex items-center justify-center"
-          animate={{ rotate: expanded ? 45 : 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          <span
-            className="text-[9px] text-[#c4ff00] leading-none"
-            style={{ fontFamily: "var(--font-mono)" }}
-          >
-            +
-          </span>
-        </motion.div>
-        <span
-          className="text-[0.5625rem] tracking-[0.4em] uppercase text-[#6b6b76] group-hover/toggle:text-[#c4ff00] transition-colors duration-300"
-          style={{ fontFamily: "var(--font-mono)" }}
-        >
-          {expanded ? "Collapse Details" : "Expand Details"}
-        </span>
-      </button>
+          className="h-px bg-gradient-to-r from-[#c4ff00]/20 via-[#c4ff00]/[0.06] to-transparent"
+          initial={{ scaleX: 0 }}
+          animate={inView ? { scaleX: 1 } : {}}
+          transition={{ duration: 1, delay: 0.3, ease: EASE }}
+          style={{ originX: 0 }}
+        />
+      </div>
 
-      <AnimatePresence>
-        {expanded && (
+      <div
+        className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 ${
+          isEven ? "" : "lg:direction-rtl"
+        }`}
+      >
+        {/* Left column — number & title */}
+        <div className={`lg:col-span-4 ${isEven ? "" : "lg:col-start-9"}`}>
+          {/* Number */}
+          <motion.span
+            className="text-[clamp(4rem,8vw,7rem)] tracking-[-0.06em] block leading-[0.8]"
+            style={{
+              fontFamily: "var(--font-display)",
+              fontWeight: 800,
+              WebkitTextStroke: "1.5px rgba(196,255,0,0.15)",
+              color: "transparent",
+            }}
+            initial={{ opacity: 0, x: -20 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.2, ease: EASE }}
+          >
+            {stage.num}
+          </motion.span>
+
+          {/* Title */}
+          <motion.h3
+            className="text-[clamp(1.6rem,3vw,2.4rem)] tracking-[-0.035em] text-[#e8e6e3] mt-4 mb-3"
+            style={{
+              fontFamily: "var(--font-display)",
+              fontWeight: 800,
+              lineHeight: 1,
+            }}
+            initial={{ opacity: 0, y: 15 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.3, ease: EASE }}
+          >
+            {stage.title}
+          </motion.h3>
+
+          {/* Subtitle */}
+          <motion.p
+            className="text-[0.875rem] text-[#6b6b76] leading-[1.6] mb-4"
+            style={{ fontFamily: "var(--font-body)" }}
+            initial={{ opacity: 0 }}
+            animate={inView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.6, delay: 0.4, ease: EASE }}
+          >
+            {stage.subtitle}
+          </motion.p>
+
+          {/* Serif accent */}
+          <motion.span
+            className="text-[clamp(0.85rem,1.2vw,1rem)] text-[#c4ff00]/30 block"
+            style={{ fontFamily: "var(--font-serif)", fontStyle: "italic" }}
+            initial={{ opacity: 0, x: -10 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.5, ease: EASE }}
+          >
+            — {stage.serifAccent}
+          </motion.span>
+        </div>
+
+        {/* Right column — story & details */}
+        <div className={`lg:col-span-7 ${isEven ? "lg:col-start-6" : "lg:col-start-1"}`}>
+          {/* Story paragraph */}
+          <motion.p
+            className="text-[clamp(0.9rem,1.1vw,1rem)] leading-[1.85] text-[#8a8a96] mb-8"
+            style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.35, ease: EASE }}
+          >
+            {stage.story}
+          </motion.p>
+
+          {/* Expandable details */}
+          <motion.button
+            onClick={() => setExpanded(!expanded)}
+            className="flex items-center gap-3 group mb-6"
+            initial={{ opacity: 0 }}
+            animate={inView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.5 }}
+          >
+            <span
+              className="text-[0.5625rem] tracking-[0.4em] text-[#6b6b76] group-hover:text-[#c4ff00] transition-colors duration-300"
+              style={{ fontFamily: "var(--font-mono)" }}
+            >
+              {expanded ? "COLLAPSE" : "ACTIVITIES & ARTIFACTS"}
+            </span>
+            <motion.div
+              animate={{ rotate: expanded ? 180 : 0 }}
+              transition={{ duration: 0.3 }}
+              className="text-[#6b6b76] group-hover:text-[#c4ff00] transition-colors duration-300"
+            >
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                <path d="M2 4L5 7L8 4" stroke="currentColor" strokeWidth="1" strokeLinecap="round" />
+              </svg>
+            </motion.div>
+          </motion.button>
+
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.6, ease: EASE }}
+            initial={false}
+            animate={{
+              height: expanded ? "auto" : 0,
+              opacity: expanded ? 1 : 0,
+            }}
+            transition={{ duration: 0.4, ease: EASE }}
             className="overflow-hidden"
           >
-            <div className="pt-8 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pb-4">
               {/* Activities */}
               <div>
                 <span
-                  className="text-[0.5rem] tracking-[0.5em] uppercase text-[#3a3a42] block mb-5"
+                  className="text-[0.5rem] tracking-[0.5em] text-[#3a3a42] block mb-4"
                   style={{ fontFamily: "var(--font-mono)" }}
                 >
-                  KEY ACTIVITIES
+                  ACTIVITIES
                 </span>
-                <ul className="space-y-3">
+                <ul className="space-y-2">
                   {stage.activities.map((a, i) => (
-                    <motion.li
-                      key={a}
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: i * 0.05, duration: 0.4 }}
-                      className="flex items-start gap-3"
+                    <li
+                      key={i}
+                      className="flex items-start gap-2 text-[0.8125rem] text-[#6b6b76] leading-[1.5]"
+                      style={{ fontFamily: "var(--font-body)" }}
                     >
-                      <span className="w-1 h-1 rounded-full bg-[#c4ff00]/40 mt-[7px] shrink-0" />
-                      <span
-                        className="text-[0.8125rem] text-[#8a8a96] leading-[1.6]"
-                        style={{ fontFamily: "var(--font-body)" }}
-                      >
-                        {a}
-                      </span>
-                    </motion.li>
+                      <span className="w-1 h-1 rounded-full bg-[#c4ff00]/30 mt-2 shrink-0" />
+                      {a}
+                    </li>
                   ))}
                 </ul>
               </div>
 
-              {/* Deliverables */}
+              {/* Artifact */}
               <div>
                 <span
-                  className="text-[0.5rem] tracking-[0.5em] uppercase text-[#3a3a42] block mb-5"
+                  className="text-[0.5rem] tracking-[0.5em] text-[#3a3a42] block mb-4"
                   style={{ fontFamily: "var(--font-mono)" }}
                 >
-                  DELIVERABLES
+                  KEY ARTIFACT
                 </span>
-                <ul className="space-y-3">
-                  {stage.deliverables.map((d, i) => (
-                    <motion.li
-                      key={d}
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.1 + i * 0.05, duration: 0.4 }}
-                      className="flex items-start gap-3"
-                    >
-                      <span className="w-1 h-1 rounded-full bg-[#c4ff00]/40 mt-[7px] shrink-0" />
-                      <span
-                        className="text-[0.8125rem] text-[#8a8a96] leading-[1.6]"
-                        style={{ fontFamily: "var(--font-body)" }}
-                      >
-                        {d}
-                      </span>
-                    </motion.li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Meta */}
-              <div className="space-y-6">
-                <div>
+                <div className="border border-white/[0.04] px-5 py-4">
                   <span
-                    className="text-[0.5rem] tracking-[0.5em] uppercase text-[#3a3a42] block mb-3"
-                    style={{ fontFamily: "var(--font-mono)" }}
+                    className="text-[0.8125rem] text-[#e8e6e3]/70"
+                    style={{ fontFamily: "var(--font-body)" }}
                   >
-                    TYPICAL DURATION
-                  </span>
-                  <span
-                    className="text-[0.9375rem] text-[#e8e6e3]"
-                    style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
-                  >
-                    {stage.duration}
-                  </span>
-                </div>
-                <div>
-                  <span
-                    className="text-[0.5rem] tracking-[0.5em] uppercase text-[#3a3a42] block mb-3"
-                    style={{ fontFamily: "var(--font-mono)" }}
-                  >
-                    COLLABORATORS
-                  </span>
-                  <span
-                    className="text-[0.9375rem] text-[#e8e6e3]"
-                    style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
-                  >
-                    {stage.collaborators}
+                    {stage.artifact}
                   </span>
                 </div>
               </div>
             </div>
-
-            {/* Insight quote */}
-            <motion.blockquote
-              className="mt-10 pl-6 border-l border-[#c4ff00]/15 max-w-2xl"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-            >
-              <span
-                className="text-[clamp(0.9rem,1.3vw,1.1rem)] leading-[1.6] text-[#6b6b76]/80 block"
-                style={{ fontFamily: "var(--font-serif)", fontStyle: "italic" }}
-              >
-                "{stage.insight}"
-              </span>
-            </motion.blockquote>
           </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-}
 
-/* ─────────────────────────────────────────
-   Stage Content — the main card for each step
-   ───────────────────────────────────────── */
-
-function StageContent({
-  stage,
-  isActive,
-  direction,
-}: {
-  stage: (typeof STAGES)[0];
-  isActive: boolean;
-  direction: number;
-}) {
-  const [detailExpanded, setDetailExpanded] = useState(false);
-
-  // Reset expanded state when stage changes
-  useEffect(() => {
-    if (!isActive) setDetailExpanded(false);
-  }, [isActive]);
-
-  return (
-    <motion.div
-      key={stage.num}
-      initial={{ opacity: 0, y: direction > 0 ? 60 : -60 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: direction > 0 ? -40 : 40 }}
-      transition={{ duration: 0.7, ease: EASE }}
-      className="relative"
-    >
-      {/* Icon + Number row */}
-      <div className="flex items-start gap-6 md:gap-10 mb-8">
-        <StageIcon icon={stage.icon} active={true} />
-        <div className="flex-1 min-w-0">
-          {/* Number */}
-          <motion.span
-            className="text-[clamp(4rem,9vw,8rem)] leading-[0.8] tracking-[-0.05em] block"
-            style={{
-              fontFamily: "var(--font-display)",
-              fontWeight: 800,
-              WebkitTextStroke: "1.5px rgba(196,255,0,0.2)",
-              color: "transparent",
-            }}
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: EASE }}
-          >
-            {stage.num}
-          </motion.span>
+          {/* Bottom rule */}
+          <div className="h-px bg-white/[0.04] mt-6" />
         </div>
       </div>
-
-      {/* Title */}
-      <motion.h3
-        className="text-[clamp(2rem,5vw,4.5rem)] tracking-[-0.04em] text-[#e8e6e3] mb-3"
-        style={{ fontFamily: "var(--font-display)", fontWeight: 800, lineHeight: 0.95 }}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.1, duration: 0.7, ease: EASE }}
-      >
-        {stage.title}
-      </motion.h3>
-
-      {/* Subtitle */}
-      <motion.span
-        className="text-[clamp(0.85rem,1.4vw,1.1rem)] text-[#6b6b76] block mb-2"
-        style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.2, duration: 0.6 }}
-      >
-        {stage.subtitle}
-      </motion.span>
-
-      {/* Serif accent */}
-      <motion.span
-        className="text-[clamp(0.85rem,1.2vw,1rem)] text-[#c4ff00]/30 block mb-8"
-        style={{ fontFamily: "var(--font-serif)", fontStyle: "italic" }}
-        initial={{ opacity: 0, x: -10 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.3, duration: 0.6 }}
-      >
-        — {stage.serifAccent}
-      </motion.span>
-
-      {/* Divider */}
-      <motion.div
-        className="w-16 h-px bg-gradient-to-r from-[#c4ff00]/40 to-transparent mb-8"
-        initial={{ scaleX: 0 }}
-        animate={{ scaleX: 1 }}
-        transition={{ delay: 0.35, duration: 0.6, ease: EASE }}
-        style={{ originX: 0 }}
-      />
-
-      {/* Philosophy text */}
-      <motion.p
-        className="text-[clamp(0.9rem,1.3vw,1.15rem)] leading-[1.85] text-[#8a8a96] max-w-2xl mb-0"
-        style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
-        initial={{ opacity: 0, y: 15 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4, duration: 0.7, ease: EASE }}
-      >
-        {stage.philosophy}
-      </motion.p>
-
-      {/* Expandable details */}
-      <DetailPanel
-        stage={stage}
-        expanded={detailExpanded}
-        onToggle={() => setDetailExpanded(!detailExpanded)}
-      />
     </motion.div>
-  );
-}
-
-/* ─────────────────────────────────────────
-   Progress Ring — circular micro-visualization
-   ───────────────────────────────────────── */
-
-function ProgressRing({ current, total }: { current: number; total: number }) {
-  const circumference = 2 * Math.PI * 20;
-  const progress = ((current + 1) / total) * circumference;
-
-  return (
-    <div className="relative w-12 h-12">
-      <svg width="48" height="48" viewBox="0 0 48 48" className="rotate-[-90deg]">
-        <circle cx="24" cy="24" r="20" stroke="rgba(255,255,255,0.04)" strokeWidth="1" fill="none" />
-        <motion.circle
-          cx="24"
-          cy="24"
-          r="20"
-          stroke="#c4ff00"
-          strokeWidth="1"
-          fill="none"
-          strokeLinecap="round"
-          strokeDasharray={circumference}
-          animate={{ strokeDashoffset: circumference - progress }}
-          transition={{ duration: 0.8, ease: EASE }}
-        />
-      </svg>
-      <span
-        className="absolute inset-0 flex items-center justify-center text-[0.5rem] tracking-[0.2em] text-[#6b6b76]"
-        style={{ fontFamily: "var(--font-mono)" }}
-      >
-        {current + 1}/{total}
-      </span>
-    </div>
   );
 }
 
 /* ═════════════════════════════════════════
    MAIN — ProcessSection
-   Sticky scroll-driven storytelling layout
    ═════════════════════════════════════════ */
 
 export function ProcessSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const headerRef = useRef<HTMLDivElement>(null);
-  const headerInView = useInView(headerRef, { once: true, margin: "-80px" });
   const isMobile = useIsMobile();
-
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start start", "end end"],
+    offset: ["start end", "end start"],
   });
 
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [direction, setDirection] = useState(1);
-
-  // Map scroll progress to active stage
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    // Reserve top 10% for header, bottom 5% for outro
-    const adjusted = Math.max(0, (latest - 0.1) / 0.85);
-    const idx = Math.min(STAGES.length - 1, Math.floor(adjusted * STAGES.length));
-    if (idx !== activeIndex && idx >= 0) {
-      setDirection(idx > activeIndex ? 1 : -1);
-      setActiveIndex(idx);
-    }
-  });
-
-  // Parallax for background elements
-  const oversizedY = useTransform(scrollYProgress, [0, 1], isMobile ? [40, -60] : [100, -200]);
-  const lineProgress = useTransform(scrollYProgress, [0.08, 0.95], ["0%", "100%"]);
-
-  // Stage progress for the horizontal bar
-  const stageBarWidth = useTransform(
+  const oversizedY = useTransform(
     scrollYProgress,
-    [0.1, 0.95],
-    ["0%", "100%"]
+    [0, 1],
+    isMobile ? [20, -30] : [60, -80]
   );
-
-  const activeStage = STAGES[activeIndex];
 
   return (
     <section
       ref={sectionRef}
       id="process"
-      className="relative"
-      style={{ height: isMobile ? `${STAGES.length * 80 + 40}vh` : `${STAGES.length * 120 + 60}vh` }}
+      className="relative overflow-hidden"
     >
-      {/* ── Sticky container ── */}
-      <div className="sticky top-0 h-screen overflow-hidden">
-        {/* Grain */}
-        <div
-          className="absolute inset-0 z-50 pointer-events-none opacity-[0.02]"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E")`,
-          }}
-        />
-
-        {/* Oversized background number */}
+      {/* ═══ HEADER ═══ */}
+      <div className="relative px-6 md:px-12 lg:px-16 pt-20 md:pt-32 pb-16 md:pb-24">
+        {/* Oversized background */}
         <motion.div
           style={{ y: oversizedY }}
-          className="absolute -top-12 -right-8 md:right-0 pointer-events-none select-none z-0"
+          className="absolute top-8 md:top-16 left-0 right-0 pointer-events-none select-none z-0 overflow-hidden"
         >
-          <AnimatePresence mode="wait">
-            <motion.span
-              key={activeStage.num}
-              className="text-[clamp(14rem,40vw,36rem)] leading-[0.75] tracking-[-0.06em] block"
-              style={{
-                fontFamily: "var(--font-display)",
-                fontWeight: 800,
-                WebkitTextStroke: "1px rgba(255,255,255,0.015)",
-                color: "transparent",
-              }}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 1.05 }}
-              transition={{ duration: 0.8, ease: EASE }}
-            >
-              {activeStage.num}
-            </motion.span>
-          </AnimatePresence>
-        </motion.div>
-
-        {/* Background image — ultra subtle */}
-        <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.03]">
-          <img
-            src="https://images.unsplash.com/photo-1622185412539-2b4ddeb7d0ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGxpZ2h0JTIwcmF5cyUyMGRhcmslMjBtaW5pbWFsfGVufDF8fHx8MTc3MzQxODMyMXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-            alt=""
-            className="w-full h-full object-cover"
-            style={{ filter: "grayscale(100%)" }}
-          />
-        </div>
-
-        {/* ── Header — only visible at start ── */}
-        <motion.div
-          ref={headerRef}
-          className="absolute top-0 left-0 right-0 z-10 px-6 md:px-12 lg:px-16 pt-24 md:pt-32"
-          style={{
-            opacity: useTransform(scrollYProgress, [0, 0.06, 0.12], [1, 1, 0]),
-            y: useTransform(scrollYProgress, [0.06, 0.14], [0, -60]),
-          }}
-        >
-          <motion.span
-            className="type-label text-[#6b6b76] block mb-8"
-            initial={{ opacity: 0, y: 10 }}
-            animate={headerInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-          >
-            Process
-          </motion.span>
-          <div className="overflow-hidden">
-            <motion.h2
-              className="type-headline text-[#e8e6e3]"
-              initial={{ y: 80 }}
-              animate={headerInView ? { y: 0 } : {}}
-              transition={{ duration: 1, ease: EASE }}
-            >
-              HOW I
-            </motion.h2>
-          </div>
-          <div className="flex items-end gap-6">
-            <div className="overflow-hidden">
-              <motion.h2
-                className="type-headline type-stroke"
-                initial={{ y: 80 }}
-                animate={headerInView ? { y: 0 } : {}}
-                transition={{ delay: 0.1, duration: 1, ease: EASE }}
-              >
-                WORK
-              </motion.h2>
-            </div>
-            <motion.span
-              className="text-[clamp(1rem,2vw,1.6rem)] text-[#6b6b76]/30 mb-2 hidden md:block"
-              style={{ fontFamily: "var(--font-serif)", fontStyle: "italic" }}
-              initial={{ opacity: 0, x: -20 }}
-              animate={headerInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ delay: 0.5, duration: 0.8 }}
-            >
-              — a seven-act structure
-            </motion.span>
-          </div>
-        </motion.div>
-
-        {/* ── Main stage content ── */}
-        <motion.div
-          className="absolute inset-0 z-10 flex items-center"
-          style={{
-            opacity: useTransform(scrollYProgress, [0.05, 0.12], [0, 1]),
-          }}
-        >
-          <div className="w-full px-6 md:px-12 lg:px-16">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-              {/* Left: Vertical timeline nav — desktop only */}
-              <div className="hidden lg:flex lg:col-span-1 flex-col items-center pt-4 relative">
-                {/* Vertical track */}
-                <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-px bg-white/[0.04]">
-                  <motion.div
-                    className="w-full bg-[#c4ff00]/20 origin-top"
-                    style={{ height: lineProgress }}
-                  />
-                </div>
-
-                <div className="relative flex flex-col gap-1">
-                  {STAGES.map((stage, i) => (
-                    <TimelineDot
-                      key={stage.num}
-                      stage={stage}
-                      index={i}
-                      active={i === activeIndex}
-                      onClick={() => {
-                        // Scroll to corresponding position
-                        if (!sectionRef.current) return;
-                        const rect = sectionRef.current.getBoundingClientRect();
-                        const sectionTop = window.scrollY + rect.top;
-                        const sectionHeight = rect.height;
-                        const targetScroll = sectionTop + (0.1 + (i / STAGES.length) * 0.85) * sectionHeight;
-                        window.scrollTo({ top: targetScroll, behavior: "smooth" });
-                      }}
-                    />
-                  ))}
-                </div>
-              </div>
-
-              {/* Center: Stage content */}
-              <div className="lg:col-span-8 lg:col-start-3 max-w-3xl">
-                <AnimatePresence mode="wait" custom={direction}>
-                  <StageContent
-                    key={activeStage.num}
-                    stage={activeStage}
-                    isActive={true}
-                    direction={direction}
-                  />
-                </AnimatePresence>
-              </div>
-
-              {/* Right: Meta sidebar — desktop only */}
-              <div className="hidden lg:flex lg:col-span-2 lg:col-start-11 flex-col items-end gap-8 pt-4">
-                <ProgressRing current={activeIndex} total={STAGES.length} />
-
-                {/* All stage titles */}
-                <div className="flex flex-col items-end gap-3">
-                  {STAGES.map((s, i) => (
-                    <motion.span
-                      key={s.num}
-                      className="text-[0.5rem] tracking-[0.35em] uppercase text-right cursor-pointer"
-                      style={{ fontFamily: "var(--font-mono)" }}
-                      animate={{
-                        color: i === activeIndex ? "#c4ff00" : "#3a3a42",
-                        opacity: i === activeIndex ? 1 : 0.5,
-                      }}
-                      whileHover={{ color: "#6b6b76" }}
-                      transition={{ duration: 0.3 }}
-                      onClick={() => {
-                        if (!sectionRef.current) return;
-                        const rect = sectionRef.current.getBoundingClientRect();
-                        const sectionTop = window.scrollY + rect.top;
-                        const sectionHeight = rect.height;
-                        const targetScroll = sectionTop + (0.1 + (i / STAGES.length) * 0.85) * sectionHeight;
-                        window.scrollTo({ top: targetScroll, behavior: "smooth" });
-                      }}
-                    >
-                      {s.title}
-                    </motion.span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* ── Mobile: Bottom progress bar ── */}
-        <div className="lg:hidden absolute bottom-0 left-0 right-0 z-20">
-          {/* Stage indicator pills */}
-          <div className="px-6 pb-4 flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              {STAGES.map((s, i) => (
-                <motion.button
-                  key={s.num}
-                  className="relative h-1 rounded-full overflow-hidden"
-                  animate={{
-                    width: i === activeIndex ? 28 : 8,
-                    backgroundColor:
-                      i === activeIndex
-                        ? "#c4ff00"
-                        : i < activeIndex
-                        ? "rgba(196,255,0,0.3)"
-                        : "rgba(255,255,255,0.06)",
-                  }}
-                  transition={{ duration: 0.4, ease: EASE }}
-                  onClick={() => {
-                    if (!sectionRef.current) return;
-                    const rect = sectionRef.current.getBoundingClientRect();
-                    const sectionTop = window.scrollY + rect.top;
-                    const sectionHeight = rect.height;
-                    const targetScroll = sectionTop + (0.1 + (i / STAGES.length) * 0.85) * sectionHeight;
-                    window.scrollTo({ top: targetScroll, behavior: "smooth" });
-                  }}
-                />
-              ))}
-            </div>
-            <span
-              className="text-[0.5rem] tracking-[0.4em] text-[#6b6b76]"
-              style={{ fontFamily: "var(--font-mono)" }}
-            >
-              {activeStage.num} / 07
-            </span>
-          </div>
-
-          {/* Full-width progress bar */}
-          <div className="h-px bg-white/[0.04] relative">
-            <motion.div
-              className="absolute inset-y-0 left-0 bg-gradient-to-r from-[#c4ff00]/60 to-[#c4ff00]/20"
-              style={{ width: stageBarWidth }}
-            />
-          </div>
-        </div>
-
-        {/* ── Scroll hint — visible at very start ── */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
-          style={{
-            opacity: useTransform(scrollYProgress, [0, 0.04, 0.08], [1, 0.5, 0]),
-          }}
-        >
-          <motion.div
-            animate={{ y: [0, 6, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="w-px h-6 bg-gradient-to-b from-[#c4ff00]/30 to-transparent"
-          />
-          <span
-            className="type-label-sm text-[#6b6b76]/40"
-          >
-            Scroll to explore
+          <span className="oversized-label block text-right pr-[5%]">
+            HOW
           </span>
         </motion.div>
 
-        {/* Corner accents */}
-        <div className="absolute top-6 left-6 w-5 h-5 border-l border-t border-white/[0.04] pointer-events-none hidden lg:block" />
-        <div className="absolute top-6 right-6 w-5 h-5 border-r border-t border-white/[0.04] pointer-events-none hidden lg:block" />
-        <div className="absolute bottom-6 left-6 w-5 h-5 border-l border-b border-white/[0.04] pointer-events-none hidden lg:block" />
-        <div className="absolute bottom-6 right-6 w-5 h-5 border-r border-b border-white/[0.04] pointer-events-none hidden lg:block" />
+        <div className="relative z-10 max-w-4xl">
+          <Reveal>
+            <span className="type-label text-[#6b6b76] block mb-8">
+              How I Work
+            </span>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <h2
+              className="text-[clamp(2rem,4.5vw,4rem)] tracking-[-0.035em] text-[#e8e6e3] mb-4"
+              style={{
+                fontFamily: "var(--font-display)",
+                fontWeight: 800,
+                lineHeight: 0.95,
+              }}
+            >
+              Six acts of{" "}
+              <span
+                style={{
+                  WebkitTextStroke: "1.5px rgba(232,230,227,0.2)",
+                  color: "transparent",
+                }}
+              >
+                disciplined
+              </span>
+              <br />
+              <span
+                style={{ fontFamily: "var(--font-serif)", fontStyle: "italic" }}
+                className="text-[#c4ff00]/60"
+              >
+                creative rigor
+              </span>
+            </h2>
+          </Reveal>
+          <Reveal delay={0.2}>
+            <p
+              className="text-[var(--type-body)] leading-[1.85] text-[#6b6b76] max-w-[var(--max-prose)]"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              My process isn't linear — it's a rhythm. Each project finds its own
+              cadence, but the underlying discipline stays constant. Research
+              before intuition. Testing before launch. People before pixels. These
+              are the six acts that recur across every project I've led, from
+              Medicare platforms to enterprise design systems.
+            </p>
+          </Reveal>
+        </div>
+      </div>
+
+      {/* ═══ STAGES ═══ */}
+      <div className="relative px-6 md:px-12 lg:px-16 pb-20 md:pb-32 space-y-20 md:space-y-28">
+        {/* Vertical timeline line */}
+        <div className="hidden lg:block absolute top-0 bottom-0 left-[calc(33.333%+2rem)] w-px bg-gradient-to-b from-transparent via-white/[0.04] to-transparent pointer-events-none" />
+
+        {STAGES.map((stage, i) => (
+          <StageCard key={stage.num} stage={stage} index={i} />
+        ))}
+      </div>
+
+      {/* ═══ CLOSING NOTE ═══ */}
+      <div className="relative px-6 md:px-12 lg:px-16 pb-20 md:pb-32">
+        <div className="editorial-rule mb-16" />
+        <div className="max-w-3xl mx-auto text-center">
+          <Reveal>
+            <span
+              className="text-[clamp(0.9rem,1.5vw,1.2rem)] text-[#6b6b76]/40 block mb-8"
+              style={{ fontFamily: "var(--font-serif)", fontStyle: "italic" }}
+            >
+              A note on process
+            </span>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p
+              className="text-[clamp(1rem,2vw,1.6rem)] leading-[1.5] tracking-[-0.01em] text-[#8a8a96] mb-8"
+              style={{ fontFamily: "var(--font-body)", fontWeight: 300 }}
+            >
+              Process isn't a cage — it's a{" "}
+              <span className="text-[#e8e6e3]">compass</span>. The best work
+              happens when you have enough structure to stay focused and enough
+              flexibility to follow{" "}
+              <span
+                style={{ fontFamily: "var(--font-serif)", fontStyle: "italic" }}
+                className="text-[#c4ff00]/50"
+              >
+                what the research is actually telling you
+              </span>
+              . Every project I've led has deviated from the plan — and been
+              better for it.
+            </p>
+          </Reveal>
+          <Reveal delay={0.2}>
+            <div className="flex items-center justify-center gap-4">
+              <div className="w-8 h-px bg-[#c4ff00]/20" />
+              <span
+                className="text-[0.5rem] tracking-[0.5em] text-[#3a3a42]"
+                style={{ fontFamily: "var(--font-mono)" }}
+              >
+                LISTEN · FRAME · EXPLORE · CRAFT · VALIDATE · MULTIPLY
+              </span>
+              <div className="w-8 h-px bg-[#c4ff00]/20" />
+            </div>
+          </Reveal>
+        </div>
       </div>
     </section>
   );

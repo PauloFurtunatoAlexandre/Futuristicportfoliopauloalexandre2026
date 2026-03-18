@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import {
   motion,
   useScroll,
@@ -9,6 +9,7 @@ import {
   AnimatePresence,
 } from "motion/react";
 import { useIsMobile } from "./ui/useMediaQuery";
+import pauloPortrait from "figma:asset/77ee6f95f1028a6aa72b0b698c65d28bdd6d6881.png";
 
 /* ─────────────────────────────────────────
    Constants & Data
@@ -455,7 +456,7 @@ function PortraitBlock() {
       >
         <motion.div className="w-full h-full" style={{ scale: imgScale }}>
           <img
-            src="https://images.unsplash.com/photo-1627890458144-4c0c481bf4b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaW5lbWF0aWMlMjBwb3J0cmFpdCUyMGNyZWF0aXZlJTIwZGlyZWN0b3IlMjBkYXJrJTIwc3R1ZGlvJTIwbW9vZHl8ZW58MXx8fHwxNzczNDE3OTkxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+            src={pauloPortrait}
             alt="Paulo Alexandre — portrait"
             className="w-full h-full object-cover"
             style={{ filter: "brightness(0.7) contrast(1.1)" }}

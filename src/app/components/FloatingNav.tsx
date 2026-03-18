@@ -22,7 +22,6 @@ const HOME_SECTIONS = [
   { id: "about", label: "About" },
   { id: "process", label: "Process" },
   { id: "impact", label: "Impact" },
-  { id: "reel", label: "Reel" },
   { id: "contact", label: "Contact" },
 ];
 
