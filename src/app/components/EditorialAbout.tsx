@@ -9,7 +9,7 @@ import {
   AnimatePresence,
 } from "motion/react";
 import { useIsMobile } from "./ui/useMediaQuery";
-import pauloPortrait from "figma:asset/0aa11b8ba35a62b76abc989aa67f743ffb2f8e98.png";
+import pauloPortrait from "../../assets/0aa11b8ba35a62b76abc989aa67f743ffb2f8e98.png";
 
 /* ─────────────────────────────────────────
    Constants & Data

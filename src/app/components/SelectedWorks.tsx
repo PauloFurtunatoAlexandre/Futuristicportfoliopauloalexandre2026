@@ -9,8 +9,8 @@ import {
   useInView,
 } from "motion/react";
 import { useIsMobile } from "./ui/useMediaQuery";
-import hpHeroImg from "figma:asset/7bbfacf2ed4c6625d9871c3ff14d7a198146a50e.png";
-import gaigHeroImg from "figma:asset/a14953c0d7236138483f4078155353567d3722c4.png";
+import hpHeroImg from "../../assets/7bbfacf2ed4c6625d9871c3ff14d7a198146a50e.png";
+import gaigHeroImg from "../../assets/a14953c0d7236138483f4078155353567d3722c4.png";
 const riseHeroImg = "https://images.unsplash.com/photo-1764795849755-ab58c8fef307?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYW5uYWJpcyUyMGRpc3BlbnNhcnklMjBtb2Rlcm4lMjByZXRhaWwlMjBzdG9yZXxlbnwxfHx8fDE3NzM4MDc4Njd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 
 /* ─────────────────────────────────────────
@@ -44,7 +44,7 @@ const projects: Project[] = [
     category: "B2B SaaS & AI-Augmented Design",
     year: "2025",
     image: "https://images.unsplash.com/photo-1758304481488-c323378f89ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9wZXJ0eSUyMG1hbmFnZW1lbnQlMjBhcGFydG1lbnQlMjBidWlsZGluZyUyMG1vZGVybnxlbnwxfHx8fDE3NzM4NTExODB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    color: "#22c55e",
+    color: "#c4ff00",
     metrics: [
       { label: "Feature Adoption", value: "+22%" },
       { label: "Rework Reduction", value: "-25%" },
@@ -65,7 +65,7 @@ const projects: Project[] = [
     year: "2024 – 2025",
     image:
       "https://images.unsplash.com/photo-1702726001096-096efcf640b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwY29uc3VsdGluZyUyMG9mZmljZSUyMG1vZGVybiUyMGRhcmslMjBtb29keXxlbnwxfHx8fDE3NzM4MDMwMTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    color: "#f59e0b",
+    color: "#c4ff00",
     metrics: [
       { label: "Usability", value: "+63%" },
       { label: "Inconsistencies", value: "-80%" },
@@ -106,7 +106,7 @@ const projects: Project[] = [
     category: "Design Systems",
     year: "2022",
     image: gaigHeroImg,
-    color: "#06b6d4",
+    color: "#c4ff00",
     metrics: [
       { label: "Feature Delivery", value: "+30%" },
       { label: "Satisfaction", value: "+39%" },
@@ -126,7 +126,7 @@ const projects: Project[] = [
     category: "E-Commerce",
     year: "2021",
     image: riseHeroImg,
-    color: "#f0abfc",
+    color: "#c4ff00",
     metrics: [
       { label: "Product Matches", value: "+61%" },
       { label: "Repeat Users", value: "+52%" },

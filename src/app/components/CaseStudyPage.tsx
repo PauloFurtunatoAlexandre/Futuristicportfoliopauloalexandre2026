@@ -8,19 +8,19 @@ import {
 } from "motion/react";
 import { useParams, useNavigate } from "react-router";
 import { ArrowUpRight, ArrowLeft, ChevronDown, List, X } from "lucide-react";
-import hpHeroImg from "figma:asset/7bbfacf2ed4c6625d9871c3ff14d7a198146a50e.png";
-import hpSprintsImg from "figma:asset/e2c9b5e4456bde9556a8dbcb865ef68da69e82d6.png";
-import hpPersonasImg from "figma:asset/14640d519882e99e696e2223fbbf15663f2564eb.png";
-import hpJourneyImg from "figma:asset/c352a90999e00126857a04eb13e42e7f5f69f24f.png";
-import hpDesignSystemImg from "figma:asset/4557a4d2218b0b670e8fd145275b787327362ddd.png";
-import hpPrototypeImg from "figma:asset/034ad9d3633de3ed493e98ea68bb2c011588308f.png";
-import gaigHeroImg from "figma:asset/a14953c0d7236138483f4078155353567d3722c4.png";
-import gaigGovernanceImg from "figma:asset/c35660da526b770b87bc8706aead9e0e29c30947.png";
-import gaigOktaFlowImg from "figma:asset/63e5e2c472eddce43fa09e3f9e9d33d39bfaec9b.png";
-import gaigDesignSystemImg from "figma:asset/ef8d5502022f65513bc7abb342bbd1ebeec7aad5.png";
-import gaigWireframesImg from "figma:asset/457fbf26f1b28dde307d0333bdc3e4a93e5f38d2.png";
-import gaigPrototypeImg from "figma:asset/0142f6db386879a40ccbbf223cde1c8e797dae2b.png";
-const riseHeroImg = "https://images.unsplash.com/photo-1764795849755-ab58c8fef307?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYW5uYWJpcyUyMGRpc3BlbnNhcnklMjBtb2Rlcm4lMjByZXRhaWwlMjBzdG9yZXxlbnwxfHx8fDE3NzM4MDc4Njd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+import hpHeroImg from "../../assets/7bbfacf2ed4c6625d9871c3ff14d7a198146a50e.png";
+import hpSprintsImg from "../../assets/e2c9b5e4456bde9556a8dbcb865ef68da69e82d6.png";
+import hpPersonasImg from "../../assets/14640d519882e99e696e2223fbbf15663f2564eb.png";
+import hpJourneyImg from "../../assets/c352a90999e00126857a04eb13e42e7f5f69f24f.png";
+import hpDesignSystemImg from "../../assets/4557a4d2218b0b670e8fd145275b787327362ddd.png";
+import hpPrototypeImg from "../../assets/034ad9d3633de3ed493e98ea68bb2c011588308f.png";
+import gaigHeroImg from "../../assets/a14953c0d7236138483f4078155353567d3722c4.png";
+import gaigGovernanceImg from "../../assets/c35660da526b770b87bc8706aead9e0e29c30947.png";
+import gaigOktaFlowImg from "../../assets/63e5e2c472eddce43fa09e3f9e9d33d39bfaec9b.png";
+import gaigDesignSystemImg from "../../assets/ef8d5502022f65513bc7abb342bbd1ebeec7aad5.png";
+import gaigWireframesImg from "../../assets/457fbf26f1b28dde307d0333bdc3e4a93e5f38d2.png";
+import gaigPrototypeImg from "../../assets/0142f6db386879a40ccbbf223cde1c8e797dae2b.png";
+import riseHeroImg from "../../assets/rise.jpeg";
 const riseRiskMatrixImg = "https://images.unsplash.com/photo-1508003937473-789a1839fd57?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyaXNrJTIwYXNzZXNzbWVudCUyMG1hdHJpeCUyMGNoYXJ0JTIwZGF0YXxlbnwxfHx8fDE3NzM4MDc4Njd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 const risePersonasImg = "https://images.unsplash.com/photo-1554103210-26d928978fb5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx1c2VyJTIwcGVyc29uYSUyMHJlc2VhcmNoJTIwYm9hcmQlMjBzdGlja3klMjBub3Rlc3xlbnwxfHx8fDE3NzM4MDc4Njh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 const riseJourneyImg = "https://images.unsplash.com/photo-1684097821808-6baf8c9dafec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdXN0b21lciUyMGpvdXJuZXklMjBtYXAlMjB3aGl0ZWJvYXJkfGVufDF8fHx8MTc3MzgwNzg2OHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
@@ -93,7 +93,7 @@ const CASE_STUDIES: CaseStudyData[] = [
     team: "Product Designers, VP of Product, Engineering leads",
     platform: "Web (B2B SaaS — Property Management)",
     tools: ["Figma", "Claude AI", "Jira", "Storybook", "Slack"],
-    color: "#22c55e",
+    color: "#c4ff00",
     heroImage: rvHeroImg,
     problem:
       "Property managers using Rentvine were drowning in lease renewals. Every renewal was a manual, multi-step odyssey — checking expiration dates across scattered spreadsheets, drafting new terms, chasing tenants for signatures, and praying nothing fell through the cracks. For portfolios of 200+ units, this wasn't tedious — it was structurally unsustainable. Renewals slipped. Tenants churned. Revenue leaked. And the platform's Property Operations Dashboard — the command center where managers were supposed to have total visibility — was a wall of numbers with no hierarchy, no actionable intelligence, and no way to distinguish what was urgent from what could wait. Managers opened the dashboard and felt more overwhelmed, not less. The tool designed to give them control was, ironically, the thing making them feel most out of control.",
@@ -367,7 +367,7 @@ const CASE_STUDIES: CaseStudyData[] = [
     team: "2 product designers, 4 mentored designers, cross-functional stakeholders",
     platform: "Web (B2B — Agent & Insured Portals)",
     tools: ["Figma", "Miro", "Teams", "Jira"],
-    color: "#06b6d4",
+    color: "#c4ff00",
     heroImage: gaigHeroImg,
     problem:
       "Imagine a Fortune 500 insurance platform where every business line invented its own interface. 33 products, 33 different UIs, zero shared language. Agents learned one system only to face a completely different one for their next product. Insureds abandoned policy enrollment mid-flow — confused by clunky navigation, inconsistent patterns, and a platform that never once told them if their action actually worked. No feedback, no guidance, no trust.",
@@ -496,136 +496,136 @@ const CASE_STUDIES: CaseStudyData[] = [
   {
     slug: "rise",
     title: "RISE",
-    subtitle: "When shopping becomes feeling",
+    subtitle: "Designing emotion-driven shopping that turned confused browsers into loyal customers",
     client: "Rise Cannabis / Green Thumb Industries",
     year: "2021",
-    role: "Product Designer",
+    role: "Senior Product Designer",
     timeline: "6 months",
-    team: "Product Designer, Strategist, and UX Researcher",
+    team: "Elizabeth Bacon (UX Strategist), Jamison Caloras (Product Designer), Lara Ledoroff (UX Researcher)",
     platform: "Web (E-Commerce), Mobile Web",
     tools: ["Figma", "Mural", "Slack", "Photoshop"],
-    color: "#f0abfc",
+    color: "#c4ff00",
     heroImage: riseHeroImg,
     problem:
-      "Nobody walks into a dispensary and says 'I'd like 3.5 grams of a sativa-dominant hybrid with 22% THC and a myrcene-forward terpene profile.' They say 'I want to relax after work' or 'I need something for creativity.' But Rise's online platform was built like a pharmaceutical catalog — strain names, THC percentages, and taxonomies that meant nothing to most customers. Users couldn't translate what they wanted to feel into what they should buy. They browsed, got confused, and left. Engagement was low, loyalty was leaking, and in a market where every dispensary sells the same products, the experience was the only differentiator Rise was wasting.",
+      "Cannabis isn't like buying a phone case. Nobody walks into a dispensary thinking 'I want 3.5 grams of Blue Dream.' They walk in thinking 'I want to feel relaxed after the worst week of my life' or 'I need something that helps me focus without the jitters.' The purchase decision is fundamentally emotional — but Rise Cannabis's platform was treating it like a catalog. The existing experience was built on a third-party system embedded through iFrames inside a WordPress site. That architecture created three compounding problems: we couldn't see what users were doing, we couldn't control how the experience felt, and the brand was invisible behind a generic shopping shell. Users were stuck translating their feelings into product specifications they didn't understand — and most of them just left. With competition accelerating, this wasn't just a UX problem. It was a business survival question: how do you turn an emotionally-driven purchase into an intuitive digital experience when you can't even track what users are clicking?",
     context:
-      "Rise Cannabis, part of Green Thumb Industries — one of the largest multi-state operators in the U.S. — had a digital storefront that treated cannabis like commodity retail. But cannabis isn't commodity retail. It's one of the few product categories where the purchase decision is fundamentally emotional: people buy feelings, not SKUs. I was brought in as product designer alongside a UX strategist to redesign the shopping experience from the ground up — not by adding more filters to a broken catalog, but by reimagining how emotion could become the primary navigation paradigm.",
+      "Rise Cannabis, part of Green Thumb Industries — one of the largest multi-state operators in the U.S. — had a digital storefront that treated cannabis like commodity retail. The iFrame architecture meant zero behavioral data: no heatmaps, no funnel analysis, no understanding of where users dropped off or why. The brand had a distinct identity — premium, approachable, education-forward — but the third-party platform stripped all of that away. In a commoditized market, that invisibility was a death sentence for loyalty. I was brought in as Senior Product Designer alongside a UX strategist and researcher to redesign the shopping experience from the ground up — not by adding more filters to a broken catalog, but by reimagining how emotion could become the primary navigation paradigm.",
     constraints: [
+      "iFrame architecture had blocked behavioral tracking for years — no analytics baseline to start from",
       "Heavily regulated industry — product claims, health language, and marketing copy all legally constrained",
       "Enormous product catalog across multiple dispensary locations with inconsistent inventory",
       "Users range from first-time cannabis buyers to experienced connoisseurs — one experience must serve both",
-      "Existing technical architecture with limited engineering bandwidth for custom features",
       "Competitive market where product selection is nearly identical across brands — experience is the only moat",
     ],
     researchImage: riseRiskMatrixImg,
     researchInsights: [
       {
-        title: "People buy emotions, not products",
+        title: "Designing without a safety net",
         detail:
-          "Surveys and customer feedback analysis revealed that the emotional outcome — relaxation, energy, creativity, pain relief — was the #1 factor in purchase decisions, yet the platform organized products by category and strain type. The entire information architecture was misaligned with how customers actually think.",
+          "The iFrame setup had been blocking behavioral tracking for years. No conversion funnels, no click patterns, no session recordings. Instead of relying on historical data, I went straight to the source — surveying users and analyzing every piece of customer feedback available: support tickets, social comments, dispensary staff anecdotes. The pattern was immediate: users felt 'overwhelmed' and 'confused.' They knew how they wanted to feel, but the platform gave them strain names, THC percentages, and terpene profiles. The translation gap was enormous.",
       },
       {
-        title: "Drop-offs cluster at decision points",
+        title: "The purchase decision is emotional first, informational second",
         detail:
-          "Analytics review showed users engaged with product pages but abandoned at the moment of commitment. They'd browse 8-12 products, compare nothing meaningful, and leave. The platform gave them data but no decision framework — like handing someone a wine list sorted by grape chemistry.",
+          "Heuristic analysis and competitive benchmarking revealed the core insight: users needed to feel understood before they could feel confident. The existing information architecture assumed users would learn cannabis taxonomy — but they never would, and never should have needed to. Every drop-off point mapped back to the same moment: when the platform forced users to translate feelings into specs.",
       },
       {
-        title: "Social proof outweighs expert opinion",
+        title: "Personas built on emotional needs, not demographics",
         detail:
-          "Persona development and customer interviews showed that users trusted other customers' emotional experiences over brand descriptions or budtender recommendations. 'This made me feel calm and focused' was more persuasive than any marketing copy we could write.",
+          "The typical persona might say 'Sarah, 34, marketing manager.' Ours said 'Sarah wants to unwind after a 12-hour day and doesn't know the difference between indica and sativa — and shouldn't have to.' That reframing changed every design decision that followed. We built personas grounded in desired emotional states, not demographic buckets.",
       },
       {
-        title: "Education builds confidence, not just knowledge",
+        title: "Social proof as emotional validation",
         detail:
-          "First-time buyers didn't just lack information — they lacked confidence. The intimidation factor of cannabis terminology was actively preventing purchases. Users who encountered educational touchpoints during browsing were significantly more likely to complete a purchase.",
+          "Customer interviews showed that users trusted other customers' emotional experiences over brand descriptions or budtender recommendations. 'This made me feel calm and focused' was more persuasive than any marketing copy we could write. That insight directly shaped the Feelings in Reviews concept — turning user-generated content into a navigation tool.",
       },
     ],
     strategy:
-      "Flip the entire shopping paradigm. Instead of 'browse products \u2192 guess which one matches your mood,' make it 'tell us how you want to feel \u2192 here's exactly what to buy.' Two core tools: a Fit Guide that maps desired emotional states to product recommendations, and a Feelings in Reviews filter that lets customers sort by what other users actually felt. Commerce driven by empathy, not taxonomy.",
+      "Flip the entire shopping paradigm. Instead of 'browse products → guess which one matches your mood,' make it 'tell us how you want to feel → here's exactly what to buy.' Two core tools surfaced from an 8-concept collaborative workshop: a Fit Guide that maps desired emotional states to product recommendations, and a Feelings in Reviews filter that lets customers sort by what other users actually felt. Commerce driven by empathy, not taxonomy.",
     strategyPillars: [
       {
         title: "The Fit Guide",
         description:
-          "An interactive tool that starts with the question every customer is actually asking: 'How do you want to feel?' Users select from emotional states — relaxed, energized, creative, pain-free, social — and the system recommends products based on real effect profiles and user-reported outcomes. Decision-making simplified to its emotional core.",
+          "An interactive tool that starts with the only question that matters: 'How do you want to feel?' Users select emotional states — relaxed, energized, creative, focused, pain-free — through visual, approachable UI. The language is human ('I want to unwind,' not 'Select desired effect: Relaxation'). The system recommends products based on real effect profiles and user-reported outcomes. The moment the interface felt clinical, users disengaged — so every interaction was designed to feel like a conversation, not a form.",
       },
       {
         title: "Feelings in Reviews",
         description:
-          "A filter system layered on top of user-generated reviews, letting customers sort products by emotional experiences shared by real people. Not star ratings — feeling tags. 'Made me creative,' 'helped me sleep,' 'perfect for anxiety.' Social proof transformed into a navigation tool.",
+          "A filter system layered on top of user-generated reviews, letting customers sort products by emotional experiences shared by real people. Not star ratings — feeling tags. 'Made me creative,' 'helped me sleep,' 'perfect for anxiety.' The system used a layered information architecture: surface-level emotional tags visible at a glance, with deeper review content available on demand. Users could scan quickly or dig deep — their choice, their pace.",
       },
       {
-        title: "Educational Commerce",
+        title: "Emotional Continuity Through Commerce",
         description:
-          "Contextual learning moments woven throughout the shopping flow — not a separate 'learn' section nobody visits, but micro-education at the exact moment of relevance. What's the difference between indica and sativa? Explained when it matters, not before.",
+          "The mood-based language and visual cues were carried through the entire purchase funnel — cart, checkout, order history — so the experience never abruptly shifted from 'warm and personal' to 'cold and transactional.' Confirmation language, order history organization, and re-order suggestions tied to previous mood selections reinforced that Rise remembered who you were and what you cared about.",
       },
     ],
     processImage: risePersonasImg,
     processSteps: [
       {
-        title: "Discovery & Emotional Mapping",
+        title: "Discovery Without a Data Safety Net",
         description:
-          "Conducted surveys and analyzed customer feedback to understand the emotional drivers behind cannabis purchases. Built a risk and assumptions matrix to identify what we knew, what we assumed, and where we needed validation. The biggest assumption we killed: that experienced users didn't need emotional guidance. They did — they just wouldn't admit it.",
+          "With no behavioral analytics available, I reframed the constraint as an opportunity. Instead of validating assumptions with historical data, I went straight to source: surveys, customer feedback analysis, support tickets, social comments, and dispensary staff anecdotes. Built a risk and assumptions matrix to identify what we knew, what we assumed, and where we needed validation.",
       },
       {
-        title: "Persona & Journey Development",
+        title: "Heuristic Audit & Competitive Benchmarking",
         description:
-          "Created detailed personas representing different customer archetypes — the curious first-timer, the wellness-focused regular, the recreational explorer — each mapped to emotional needs and shopping behaviors. Built customer journey maps revealing that the 'consideration' phase was where the entire experience collapsed.",
+          "Evaluated existing user flows to identify drop-off patterns through heuristic analysis — not analytics. Where did similar platforms lose people? Where were cognitive loads highest? The checkout flow alone had unnecessary steps that created friction at the exact moment users had committed to a purchase.",
       },
       {
-        title: "Design Studio Workshop",
+        title: "Emotional Persona & Journey Development",
         description:
-          "Facilitated a collaborative workshop with stakeholders generating 8+ ideas. Used Impact/Effort matrices to prioritize. The Fit Guide and Feelings in Reviews rose immediately — high impact, technically feasible, and directly addressing the emotional gap. Some advanced filtering features were deprioritized for future iterations.",
+          "Created personas grounded in emotional needs, not demographics. Built customer journey maps revealing that the 'consideration' phase — the moment of translating feelings into product specs — was where the entire experience collapsed. This reframing changed every design decision that followed.",
+      },
+      {
+        title: "Collaborative Workshop & Concept Prioritization",
+        description:
+          "Facilitated a structured workshop with stakeholders generating 8 distinct concepts, evaluated through an Impact/Effort matrix. The Fit Guide and Feelings in Reviews rose immediately — high impact, technically feasible, directly attacking the emotional gap from both directions. The Fit Guide solved 'I don't know where to start' paralysis; Feelings in Reviews solved 'I don't trust the description' hesitation. Some advanced filtering features were deliberately deprioritized to protect the simplicity of the core experience.",
       },
       {
         title: "Wireframing & Concept Validation",
         description:
-          "Created low-fidelity wireframes for the Fit Guide flow, dispensary pages, and emotion-centric product filtering. Tested early concepts with internal teams to validate the paradigm shift from taxonomy-based to emotion-based navigation before investing in high-fidelity work.",
+          "Created low-fidelity wireframes for the Fit Guide flow, dispensary pages, and emotion-centric product filtering. Every round of refinement was guided by a single question: does this reduce the emotional distance between the user and the product? Tested early concepts with internal teams before investing in high-fidelity work.",
       },
       {
-        title: "High-Fidelity Prototyping",
+        title: "High-Fidelity Prototyping & Usability Testing",
         description:
-          "Evolved wireframes into polished prototypes featuring the Fit Guide, Feelings in Reviews filter, redesigned dispensary pages, and a reimagined cart-to-checkout flow with emotional cues reinforcing purchase confidence throughout. Designed a marketing page introducing users to the new emotion-driven tools.",
-      },
-      {
-        title: "Usability Testing & Iteration",
-        description:
-          "Conducted usability tests revealing a 60% success rate in users finding products aligned with their desired effects — a massive improvement over the baseline of confused browsing. Feedback drove iterative refinements to navigation labels, filter affordances, and educational touchpoint placement.",
+          "Evolved wireframes into polished prototypes featuring the Fit Guide, Feelings in Reviews filter, redesigned dispensary pages, and a marketing page educating users on the new tools. Usability testing revealed a 60% success rate in users finding products aligned with their desired effects on the first attempt — and surfaced the tension around advanced filtering that led to the deliberate scope decision.",
       },
     ],
     wireframeImage: riseWireframesImg,
     designSystem: [
-      { label: "Emotional UI", description: "Color, imagery, and micro-copy calibrated to reflect emotional states — warm tones for relaxation, vibrant for energy, soft for calm" },
-      { label: "Fit Guide", description: "Interactive mood-to-product matching engine with progressive disclosure — simple entry, detailed results" },
-      { label: "Review Filters", description: "Feeling-tagged review system transforming social proof into navigable product discovery" },
-      { label: "Education", description: "Contextual learning moments integrated at decision points — not a knowledge base, but in-flow guidance" },
-      { label: "Commerce Flow", description: "Redesigned cart, checkout, and order history with emotional reinforcement and simplified transitions" },
+      { label: "Emotional UI", description: "Color, imagery, and micro-copy calibrated to reflect emotional states — warm tones for relaxation, vibrant for energy, soft for calm. Cannabis is personal; the interface honors that." },
+      { label: "Fit Guide", description: "Conversational mood-to-product matching engine — visual emotional state selectors, human language throughout, progressive disclosure from simple entry to detailed results" },
+      { label: "Feelings in Reviews", description: "Layered feeling-tag system: surface-level emotional tags at a glance, deeper review content on demand. Social proof transformed into a navigable discovery tool." },
+      { label: "Educational Commerce", description: "Contextual micro-education woven at decision points — not a separate knowledge base, but in-flow guidance at the exact moment of relevance" },
+      { label: "Commerce Flow", description: "Cart, checkout, and order history redesigned with emotional continuity — mood-based language and re-order suggestions tied to previous feeling selections carry through the full funnel" },
     ],
     designSystemImage: riseDesignSystemImg,
     prototypeHighlights: [
-      "Fit Guide mapping emotional states to product recommendations — 'How do you want to feel?' as the primary entry point",
-      "Feelings in Reviews filter letting users sort products by real emotional experiences shared by other customers",
-      "Redesigned dispensary pages with emotion-centric navigation replacing taxonomy-based browsing",
-      "Cart-to-checkout flow with confidence-building cues and educational micro-moments reducing abandonment",
+      "Fit Guide: 'How do you want to feel?' as the primary entry point — conversational UI mapping emotional states to curated product recommendations",
+      "Feelings in Reviews filter letting users sort products by real emotional experiences, with surface-level tags and deep-dive review content on demand",
+      "Marketing page as strategic onboarding — educating users on the Fit Guide and Feelings filter before they encounter them organically",
+      "Cart-to-checkout flow with emotional continuity: mood-based language, confidence-building cues, and order history tied to previous mood selections",
     ],
     prototypeImage: risePrototypeImg,
     outcomes: [
-      { label: "Product Matches", value: "+61%", change: "Users finding effect-aligned products" },
-      { label: "Engagement", value: "+44%", change: "Time exploring via emotional navigation" },
-      { label: "Repeat Customers", value: "+52%", change: "Loyalty driven by personalized experience" },
+      { label: "Product Match Accuracy", value: "+61%", change: "Users finding effect-aligned products more efficiently" },
+      { label: "User Engagement", value: "+44%", change: "More time exploring — rewarded exploration, not confusion" },
+      { label: "Repeat Customers", value: "+52%", change: "Emotional continuity turned transactions into relationships" },
       { label: "Q3 Revenue", value: "$275M", change: "GTI quarterly — 9% sequential increase" },
-      { label: "Usability Success", value: "60%", change: "Effect-matching task completion rate" },
-      { label: "User Sentiment", value: "Positive", change: "'Intuitive' and 'easy to navigate'" },
+      { label: "Usability Success", value: "60%", change: "First-attempt effect-matching task completion rate" },
+      { label: "User Sentiment", value: "Positive", change: "Users said the platform 'got them' — intuitive, easy to navigate" },
     ],
     learnings: [
-      "Emotions aren't soft metrics — they're the hardest business lever in experiential commerce. When your product catalog is identical to every competitor's, the feeling of shopping is the product. Rise's 52% repeat customer surge wasn't driven by better inventory — it was driven by a platform that finally spoke the language customers were already thinking in.",
-      "Cross-functional alignment on emotional design requires evangelism, not just evidence. Stakeholders and developers initially resisted the shift from taxonomy-based to emotion-based navigation. The breakthrough was running the workshop — letting everyone experience the user's confusion firsthand, not just read about it in a research deck.",
-      "Regulatory constraints aren't creative enemies — they're creative forcing functions. Cannabis marketing restrictions meant we couldn't make health claims or use certain language. That constraint pushed us toward user-generated emotional content, which turned out to be more authentic and persuasive than anything we could have written ourselves.",
+      "Designing for emotion is a strategic advantage, not a soft skill. The most impactful design decision on this project wasn't a UI pattern or an interaction model — it was the choice to organize the entire experience around how people feel rather than what products exist. That reframing unlocked everything that followed.",
+      "Working without data forces sharper instincts. The lack of behavioral analytics was a constraint, but it pushed me to go deeper into qualitative research and develop stronger hypotheses. When you can't A/B test your way to an answer, you have to actually understand your users.",
+      "Knowing what to cut is as important as knowing what to build. Postponing advanced filtering was the right call. It protected the simplicity of the core experience and gave us a clear roadmap for v2. Scope discipline isn't about doing less — it's about doing the right things first.",
     ],
     reflection:
-      "This project changed how I think about commerce design. We spend so much energy optimizing funnels, reducing friction, A/B testing button colors — and none of it matters if the fundamental information architecture doesn't match how people actually make decisions. Rise customers weren't making rational choices based on THC percentages. They were making emotional choices based on how they wanted their evening to feel. The moment we rebuilt the entire shopping experience around that truth — feelings first, products second — everything moved. Engagement, loyalty, revenue. The $275M quarterly revenue wasn't caused by our redesign alone, but the 52% surge in repeat customers was. And in a commodity market, repeat customers are the only metric that actually compounds.",
+      "This project changed how I think about commerce design. We spend so much energy optimizing funnels, reducing friction, A/B testing button colors — and none of it matters if the fundamental information architecture doesn't match how people actually make decisions. Rise customers weren't making rational choices based on THC percentages. They were making emotional choices based on how they wanted their evening to feel. The moment we rebuilt the entire shopping experience around that truth — feelings first, products second — everything moved. The 52% surge in repeat customers was the metric I cared about most. A one-time purchase is a transaction. A return visit is a relationship. And in a commodity market, repeat customers are the only metric that actually compounds.",
     improvements: [
       "The Feelings in Reviews filter needed more data density at launch — with limited reviews tagged by emotion, some product categories felt sparse. Should have seeded the system with structured data from budtender expertise before relying on user-generated content alone.",
-      "Advanced filtering features were cut for scope, and I still think that was the right call. But the roadmap for re-introducing them needed to be more concrete — 'future iteration' isn't a plan, it's a postponement.",
+      "Advanced filtering features were cut for scope, and I still think that was the right call. But 'future iteration' isn't a plan — the roadmap for re-introducing them needed to be concrete, with defined triggers for when to build them.",
       "Should have pushed harder for A/B testing the cart and checkout flows. We redesigned them based on best practices and usability testing, but quantitative validation in production would have given us the confidence to iterate faster post-launch.",
     ],
     nextProject: { slug: "rentvine", title: "RENTVINE", image: rvHeroImg },
@@ -641,7 +641,7 @@ const CASE_STUDIES: CaseStudyData[] = [
     team: "3 mentored designers, 2 PMs, cross-functional engineering pods",
     platform: "Web (Enterprise SaaS — Client Portals & Internal Tools)",
     tools: ["Figma", "Miro", "Jira", "Storybook", "Slack", "Teams"],
-    color: "#f59e0b",
+    color: "#c4ff00",
     heroImage:
       "https://images.unsplash.com/photo-1702726001096-096efcf640b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwY29uc3VsdGluZyUyMG9mZmljZSUyMG1vZGVybiUyMGRhcmslMjBtb29keXxlbnwxfHx8fDE3NzM4MDMwMTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     problem:
