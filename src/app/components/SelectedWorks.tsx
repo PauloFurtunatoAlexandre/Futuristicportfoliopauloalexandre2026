@@ -36,42 +36,42 @@ const projects: Project[] = [
   {
     id: "01",
     title: "RENTVINE",
-    subtitle: "Redesigning Lease Renewals & Property Operations for Scale",
+    subtitle: "A four-stage pipeline replacing spreadsheets and workarounds",
     client: "Rentvine",
-    role: "Senior Product Designer",
+    role: "Senior Product Designer & Product Engineer",
     problem:
-      "Property managers drowning in manual lease renewals and a dashboard that showed everything but communicated nothing. Redesigned the renewal pipeline for batch processing and rebuilt the POD with information hierarchy — 22% feature adoption lift, 25% less engineering rework.",
-    category: "B2B SaaS & AI-Augmented Design",
+      "Lease renewals — Rentvine's highest-impact recurring workflow — had no home in the platform. Managers ran them in Airtable, Google Sheets, and Asana. Designed a four-stage pipeline with grid-first UI, assignee accountability, bulk actions, and owner messaging templates — 22% feature adoption, 18% faster task completion.",
+    category: "B2B SaaS · Property Management · AI-Augmented Design",
     year: "2025",
     image: "https://images.unsplash.com/photo-1758304481488-c323378f89ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9wZXJ0eSUyMG1hbmFnZW1lbnQlMjBhcGFydG1lbnQlMjBidWlsZGluZyUyMG1vZGVybnxlbnwxfHx8fDE3NzM4NTExODB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     color: "#c4ff00",
     metrics: [
       { label: "Feature Adoption", value: "+22%" },
-      { label: "Rework Reduction", value: "-25%" },
-      { label: "Validated Solutions", value: "+30%" },
+      { label: "Task Completion", value: "+18%" },
+      { label: "Engineering Rework", value: "-25%" },
     ],
-    tags: ["B2B SaaS", "AI Workflows", "DesignOps"],
+    tags: ["B2B SaaS", "AI-Augmented", "Design Systems"],
     slug: "rentvine",
   },
   {
     id: "02",
     title: "SOLSTICE",
-    subtitle: "Scaling a Consultancy's Product Through Design System Discipline",
+    subtitle: "Design system from scratch for a cloud-native insurtech platform",
     client: "Solstice Innovations",
-    role: "Senior Product Designer & Design Lead",
+    role: "Senior Product Designer",
     problem:
-      "A powerful enterprise platform growing feature by feature with no shared design language — six different UI dialects, 120+ inconsistencies, and a team of three junior designers shipping in isolation. Built a design system, mentored the team, and turned chaos into a +63% usability lift.",
-    category: "Design Systems & Mentorship",
+      "No design system, no shared language, and a dev team building in silos on a platform competing against Guidewire and Duck Creek. Built a MUI-aligned design system from zero, redesigned core insurance workflows, and established the design–engineering operating model — 52% faster product launches, 37% fewer user errors.",
+    category: "Insurtech · Design Systems · B2B SaaS",
     year: "2024 – 2025",
     image:
       "https://images.unsplash.com/photo-1702726001096-096efcf640b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwY29uc3VsdGluZyUyMG9mZmljZSUyMG1vZGVybiUyMGRhcmslMjBtb29keXxlbnwxfHx8fDE3NzM4MDMwMTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     color: "#c4ff00",
     metrics: [
-      { label: "Usability", value: "+63%" },
-      { label: "Inconsistencies", value: "-80%" },
-      { label: "Designers Mentored", value: "3" },
+      { label: "Product Launch Speed", value: "+52%" },
+      { label: "User Errors", value: "-37%" },
+      { label: "Dev Time", value: "-34%" },
     ],
-    tags: ["Design Systems", "Mentorship", "UX Research"],
+    tags: ["Insurtech", "Design Systems", "MUI"],
     slug: "solstice",
   },
   {
@@ -98,21 +98,21 @@ const projects: Project[] = [
   {
     id: "04",
     title: "GAIG",
-    subtitle: "Taming 33 Business Lines With One Design Language",
+    subtitle: "One design language across 33 insurance business lines",
     client: "Great American Insurance Group",
     role: "Lead Product Designer",
     problem:
-      "33 business lines, 33 different UIs, zero shared language. Agents lost 15+ minutes per task reorienting across products. Insureds abandoned enrollment mid-flow because the platform never confirmed their actions worked. Built a scalable design system and UX governance framework that unified everything.",
-    category: "Design Systems",
-    year: "2022",
+      "33 business lines, zero design standards, and every screen telling a different story. Built a token-first design system, a UX governance framework, and mentored a team of 4 — cutting delivery time 49%, eliminating 70% of UI inconsistencies, and making consistency the path of least resistance for every team.",
+    category: "Design Systems & Enterprise UX",
+    year: "2021 – 2022",
     image: gaigHeroImg,
     color: "#c4ff00",
     metrics: [
-      { label: "Feature Delivery", value: "+30%" },
-      { label: "Satisfaction", value: "+39%" },
+      { label: "Delivery Speed", value: "+49%" },
+      { label: "UI Inconsistencies", value: "-70%" },
       { label: "Business Lines", value: "33" },
     ],
-    tags: ["Design Systems", "B2B", "Accessibility"],
+    tags: ["Design Systems", "B2B Enterprise", "Accessibility"],
     slug: "gaig",
   },
   {
@@ -451,7 +451,7 @@ function StickyProjectCard({
 
                 {/* Title */}
                 <h3
-                  className="text-[clamp(1.8rem,4vw,3.5rem)] leading-[0.88] tracking-[-0.04em] text-[#e8e6e3] mb-3"
+                  className="text-[clamp(1.8rem,4vw,3.5rem)] leading-[0.88] tracking-[-0.04em] text-[#e8e6e3] mb-3 whitespace-nowrap overflow-hidden"
                   style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800 }}
                 >
                   {project.title}
@@ -459,7 +459,7 @@ function StickyProjectCard({
 
                 {/* Subtitle */}
                 <p
-                  className="text-[clamp(0.95rem,1.4vw,1.15rem)] text-[#e8e6e3]/50 mb-8"
+                  className="text-[clamp(0.95rem,1.4vw,1.15rem)] text-[#e8e6e3]/50 mb-8 line-clamp-1"
                   style={{ fontFamily: "'Syne', sans-serif", fontWeight: 500 }}
                 >
                   {project.subtitle}

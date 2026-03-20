@@ -85,137 +85,139 @@ const CASE_STUDIES: CaseStudyData[] = [
   {
     slug: "rentvine",
     title: "RENTVINE",
-    subtitle: "Redesigning lease renewals and property operations for scale",
+    subtitle: "Turning property managers' messiest workflow into a four-stage pipeline",
     client: "Rentvine",
     year: "2025",
-    role: "Senior Product Designer",
-    timeline: "Ongoing (joined Jul 2025)",
-    team: "Product Designers, VP of Product, Engineering leads",
+    role: "Senior Product Designer & Product Engineer",
+    timeline: "Jul 2025 – Present",
+    team: "Rentvine Product & Engineering Leadership",
     platform: "Web (B2B SaaS — Property Management)",
-    tools: ["Figma", "Claude AI", "Jira", "Storybook", "Slack"],
+    tools: ["Figma", "Jira", "Claude AI", "Figma-to-Claude MCP"],
     color: "#c4ff00",
     heroImage: rvHeroImg,
     problem:
-      "Property managers using Rentvine were drowning in lease renewals. Every renewal was a manual, multi-step odyssey — checking expiration dates across scattered spreadsheets, drafting new terms, chasing tenants for signatures, and praying nothing fell through the cracks. For portfolios of 200+ units, this wasn't tedious — it was structurally unsustainable. Renewals slipped. Tenants churned. Revenue leaked. And the platform's Property Operations Dashboard — the command center where managers were supposed to have total visibility — was a wall of numbers with no hierarchy, no actionable intelligence, and no way to distinguish what was urgent from what could wait. Managers opened the dashboard and felt more overwhelmed, not less. The tool designed to give them control was, ironically, the thing making them feel most out of control.",
+      "Rentvine covers the full property management lifecycle — portfolios, screening, leasing, accounting, maintenance, reporting. But lease renewals, one of the highest-impact recurring workflows in the entire industry, had no home in the software. Every active lease in a portfolio eventually needs renewal. Every lease that lapses into month-to-month status represents lost revenue for owners, eroded confidence in the management company, and a growing administrative burden that compounds month after month. Property managers were handling this entirely outside the platform: Airtable boards, Google Sheets with 90-day formulas, Asana for task distribution, ad-hoc emails drafted from scratch for every owner. The result was a workflow that was fragile, opaque, and deeply personal. Every property manager had reinvented the wheel, and every reinvention had its own failure modes. Renewals slipped. Owners received inconsistent messaging. Team leads had no visibility into who was handling what. And when a lease lapsed because nobody caught the expiration — that was revenue walking out the door.",
     context:
-      "Rentvine is a B2B property management SaaS platform serving property managers who oversee hundreds to thousands of rental units. The platform handles the full lifecycle — leasing, maintenance, accounting, owner reporting — but two critical modules had calcified into their least usable state: Lease Renewals and the Property Operations Dashboard (PODs). I was brought in as Senior Product Designer to lead end-to-end redesign of these modules, partnering directly with the VP of Product and Engineering leadership. The mandate wasn't just 'make it prettier' — it was 'make it so property managers can scale their portfolio without scaling their headcount.' This meant rethinking not just the UI, but the underlying mental model of how renewals and operational oversight should work in a platform built for growth.",
+      "The business case wasn't abstract: every lapsed lease costs real money, renewal management was where competitors could steal clients, and the inefficiency scaled dangerously with portfolio size. A solo manager with 30 units could muscle through manually. A firm managing 500+ units with a team of coordinators? Without assignment tracking, bulk operations, and templated communications, it was operationally unsustainable. Those exact customers — the ones Rentvine needed to retain and grow — were feeling the most pain. I designed the system that would replace all of those workarounds using Rentvine's proprietary design system, Trellis, and pioneered an AI-assisted design workflow using Claude AI with a direct Figma-to-Claude MCP integration.",
     constraints: [
-      "Live production platform with thousands of active property managers — zero tolerance for workflow disruption during rollout",
-      "Complex lease logic involving state-specific regulations, variable renewal terms, and multi-party approval chains",
-      "Property managers range from tech-savvy operators managing 1,000+ units to solo landlords with 10 — one experience must serve both",
-      "Engineering team operating in aggressive sprint cycles — designs needed to be implementable incrementally, not as monolithic releases",
-      "Existing data architecture with deeply nested property-unit-tenant relationships that constrained information architecture decisions",
+      "No existing renewal feature to build on — designing a net-new workflow from zero inside an established production platform",
+      "Four distinct user personas with fundamentally different operational scales (30 units to 1,000+) that must be served by the same system",
+      "State-specific lease regulations requiring template flexibility without sacrificing workflow standardization",
+      "Design system constraints of Trellis — Rentvine's proprietary system — which had to be extended without breaking existing patterns",
+      "Phased delivery mandate — Phase 1 beta had to ship intentionally incomplete to validate the core loop before investing in collaboration and efficiency layers",
     ],
     researchImage: rvResearchImg,
     researchInsights: [
       {
-        title: "Renewals are invisible until they're emergencies",
+        title: "Four personas, four completely different renewal realities",
         detail:
-          "A full-platform experience audit revealed that lease expirations had no proactive surfacing mechanism. Property managers discovered upcoming renewals only when tenants asked — or worse, when the lease had already lapsed. There was no timeline view, no expiration alerts, no batch processing. Every renewal was treated as a one-off event in a business where renewals are the single most predictable, repeatable, revenue-critical workflow.",
+          "The solo operator (30–80 units) needs speed — every minute saved is a minute for her hundred other responsibilities. The portfolio coordinator (150–400 units) sits at the breakdown point where manual tracking fails; he needs a single view that feels like a spreadsheet. The team lead (400–800+ units) isn't processing renewals herself — she's distributing them and needs accountability and workload visibility. The enterprise director (1,000+ units) thinks in systems: reporting, automation rules, and confidence that the process scales without proportional headcount growth. These personas became the lens through which every design decision was evaluated.",
       },
       {
-        title: "The dashboard shows everything and communicates nothing",
+        title: "Five universal problems beneath the persona differences",
         detail:
-          "Stakeholder interviews with 8 property managers showed a consistent pattern: they opened the POD, scanned it for 30+ seconds trying to orient themselves, then switched to their own spreadsheets for actual decision-making. The dashboard had data density but zero information hierarchy. Occupancy rates, maintenance tickets, lease statuses, and financial summaries all competed for attention at the same visual weight. One manager said: 'I have a $50M portfolio and I manage it from a Google Sheet because your dashboard doesn't tell me what to do next.'",
+          "No centralized status view — managers couldn't answer 'how many leases expire in 90 days?' without leaving Rentvine. No structured workflow — every renewal was an ad-hoc project with inconsistent steps. No owner communication tools — identical emails drafted from scratch dozens of times per quarter. No bulk operations — every action required per-row interaction at any scale. No internal accountability — teams managed ownership through Slack and standup because the software offered nothing. These five problems became the design brief.",
       },
       {
-        title: "Batch operations are a survival skill, not a nice-to-have",
+        title: "Grid-first is a trust signal for power users",
         detail:
-          "Task analysis showed that managers processing renewals spent an average of 12 minutes per unit — navigating to the lease, reviewing terms, generating a renewal offer, sending it for signature, and tracking the response. At 200 units, that's 40 hours of pure administrative friction per renewal cycle. The platform forced serial, unit-by-unit processing for a workflow that is inherently parallel. Managers needed to select 50 leases, apply terms, and send — not click through 50 individual workflows.",
+          "Research consistently showed that property managers think in rows and columns. They expect to scan 50+ records without clicking into detail views, sort by any column, and move fast with keyboard shortcuts. When a property manager sees a data grid, they immediately know they're in a tool built for people who work at volume. Choosing a grid-first experience wasn't just a UX decision — it was a positioning choice that communicated 'we understand your scale' before a single interaction occurred.",
       },
       {
-        title: "AI-assisted research revealed patterns humans missed",
+        title: "The beta should ship incomplete — by design",
         detail:
-          "Using Claude AI to synthesize research data across interview transcripts, support tickets, and behavioral analytics, I identified a meta-pattern: the highest-churn property managers weren't the ones with the most units — they were the ones whose renewal-to-occupancy gap exceeded 14 days. The platform had no mechanism to surface, track, or reduce this gap. This insight reframed the entire renewal redesign from 'make it easier to renew' to 'make vacancy impossible to ignore.'",
+          "Phased delivery isn't cutting corners; it's a research strategy. Launching the beta without team assignment, bulk actions, or owner messaging templates created a controlled environment to validate the core loop — can users move a renewal through four stages and complete it? The post-beta research was more actionable than initial discovery because users were reacting to a real product, not a theoretical one. The gaps they surfaced first (accountability, bulk operations, owner messaging) matched the research hypotheses exactly, giving the roadmap an evidence base instead of an assumption base.",
       },
     ],
     strategy:
-      "Transform lease renewals from a reactive, unit-by-unit administrative burden into a proactive, batch-capable, intelligence-driven workflow — and rebuild the Property Operations Dashboard from a data dump into an actionable command center that tells managers what needs attention right now, what's coming next, and what's already handled. The north star: a property manager should be able to process 50 renewals in the time it currently takes to process 5, and their dashboard should eliminate the need for any external spreadsheet.",
+      "Design in phases because shipping the wrong thing fast is worse than shipping the right thing iteratively. Phase 1 (Beta) establishes the core pipeline: Review → Price & Send → Sign → Finalize. These four stages mirror how property managers already think about renewals — extracted from research, not imposed. Phase 2 validates the gaps through post-beta observation. Phase 3 addresses each gap with targeted additions: the assignee system for accountability, bulk actions for scale, and owner messaging templates to compress a 5-minute task into 30 seconds. Not a redesign between phases — targeted extensions that preserve the core pipeline.",
     strategyPillars: [
       {
-        title: "Proactive Renewal Pipeline",
+        title: "Four-Stage Pipeline with Grid-First Interface",
         description:
-          "A timeline-based renewal view that surfaces upcoming expirations 90, 60, and 30 days out — with batch selection, template-based term generation, and integrated e-signature workflows. Renewals stop being surprises and start being a managed pipeline, like a sales funnel for retention.",
+          "Review → Price & Send → Sign → Finalize mirrors how property managers already think. The primary interface is a data grid — not a kanban, not a card view. Spreadsheet-speed interactions: inline editing, keyboard navigation, scan-and-act patterns — inside a product interface that tracks state, enforces workflow, and maintains audit trails in ways a spreadsheet never could. The grid communicates 'we understand your volume' before the first interaction.",
       },
       {
-        title: "Intelligent POD Redesign",
+        title: "Accountability Without Process Overhead",
         description:
-          "A restructured Property Operations Dashboard built on information hierarchy — not data density. Critical actions surface as cards with clear CTAs. Metrics are grouped by decision context: financial health, occupancy risk, maintenance urgency, renewal pipeline. The dashboard answers 'what do I do next?' not 'here's everything at once.'",
+          "The assignee system had to work for team leads managing workload distribution and stay invisible to solo operators who don't need it. Assignee as a first-class grid column — not a detail panel field. Assignment via inline popover, not a modal, so managers stay in grid context. Unassigned state as a dashed circle — not an empty cell — combined with a red count badge and workload summary bar that replaces the Asana boards teams were building manually.",
       },
       {
-        title: "AI-Augmented DesignOps",
+        title: "AI-Augmented Design Infrastructure",
         description:
-          "Pioneered AI-assisted design workflows using Claude AI across research synthesis, UX writing, and prototype iteration — compressing early-stage exploration from days to hours. Established structured frameworks for leveraging AI in insight generation, creating a repeatable methodology that senior designers adopted across the team.",
+          "Documented and operationalized the full Trellis token system. Codified the Rentvine application shell for reuse across every future prototype. Built an engineering principles skill encoding Rentvine's domain model and a seven-step workflow — the team's shared operating model for AI-augmented design. Established a direct Figma-to-Claude MCP connection enabling real-time design context to flow into the prototyping workflow. Infrastructure that pays dividends across every project, not just renewals.",
       },
     ],
     processImage: rvProcessImg,
     processSteps: [
       {
-        title: "Full-Platform Experience Audit",
+        title: "Persona Development & Problem Mapping",
         description:
-          "Conducted a comprehensive audit mapping all touchpoints across the lease renewal and POD workflows. Documented every friction point, dead end, and information gap. Built a severity matrix prioritizing issues by revenue impact and user pain — not visual severity. The audit became the foundational artifact that aligned Product, Engineering, and stakeholders on what to fix first.",
+          "Mapped four distinct operational realities — solo operator, portfolio coordinator, team lead, enterprise director — with fundamentally different renewal needs. Identified five universal problems that cut across all four: no status view, no structured workflow, no owner communication tools, no bulk operations, and no internal accountability. These five became the design brief, with every subsequent decision evaluated against all four personas.",
       },
       {
-        title: "Stakeholder & User Research",
+        title: "Phase 1 Beta — Core Pipeline Design",
         description:
-          "Interviewed 8 property managers across portfolio sizes (50-unit solo operators to 1,000+ unit firms) to understand how renewals and daily operations actually worked — not how the platform assumed they worked. Used Claude AI to synthesize transcripts and surface cross-cutting patterns that manual analysis would have missed. The 14-day vacancy gap insight emerged directly from AI-assisted synthesis.",
+          "Designed the four-stage pipeline (Review → Price & Send → Sign → Finalize) with a grid-first interface. Made the critical decision to ship intentionally incomplete — excluding team assignment, bulk actions, and owner messaging templates. The goal was to validate the core loop: can users complete a renewal through four stages? Inline editing, keyboard navigation, and column sorting gave property managers the spreadsheet-speed interactions they demanded.",
       },
       {
-        title: "Journey Mapping & Opportunity Framing",
+        title: "Post-Beta Research & Gap Validation",
         description:
-          "Built detailed journey maps for the renewal lifecycle (from 90-day-out awareness through signed renewal to occupancy continuity) and daily POD usage patterns. Identified 7 critical opportunity areas where the current experience forced managers into workarounds. Framed each opportunity as a design hypothesis testable through prototyping.",
+          "Observed which gaps users surfaced first after beta launch. Team organizations immediately asked 'Who is handling this?' — validating the accountability gap. Solo operators described copy-paste email workflows in nearly identical terms — validating the owner communication gap. Every user managing 30+ renewals expressed frustration with one-at-a-time interactions — validating the bulk operations gap. Behavioral evidence confirmed research hypotheses before Phase 3 investment.",
       },
       {
-        title: "Concept Exploration & Wireframing",
+        title: "Assignee System — Accountability Made Visible",
         description:
-          "Explored three distinct renewal pipeline models: timeline-based, kanban-based, and list-based. Wireframed all three at low fidelity and tested with 6 managers. The timeline model won decisively for renewal pipeline visibility, while the kanban approach was preferred for daily POD task management. Combined the strengths of both into the final direction.",
+          "Assignee as first-class grid column positioned after Tenant and before Status — answering 'Who owns this?' and 'Where is it?' simultaneously. Assignment via inline popover (not modal) to preserve grid flow and spreadsheet speed. Unassigned state as a dashed circle with red count badge and workload summary bar showing each team member's renewal count. The interface makes accountability gaps visible passively — team leads don't need to chase people.",
       },
       {
-        title: "High-Fidelity Design & System Integration",
+        title: "Bulk Actions — Batch Processing Workspace",
         description:
-          "Designed the renewal pipeline, batch processing flows, and restructured POD in high fidelity — integrating with Rentvine's existing component system while extending it with new patterns for timeline views, batch action bars, and priority-based card layouts. Every new pattern was documented with usage guidelines and accessibility specifications.",
+          "Multi-select with three input modes: checkbox clicks, Shift-click range selection, and Ctrl/Cmd-click for non-contiguous picks — the selection behavior managers already have from spreadsheets, no learning curve. Dark toolbar anchored to viewport bottom with Assign, Change Status, and Vacate actions. Toast confirmations ('12 renewals assigned to Sarah Chen'), not modal dialogs — bulk operations should feel fast and reversible, not ceremonial. Every bulk action generates a per-renewal audit log entry.",
       },
       {
-        title: "Validation & Iterative Delivery",
+        title: "Owner Messaging Templates & Design Infrastructure",
         description:
-          "Conducted usability testing with property managers validating the new renewal batch flow (85% task success rate on first attempt) and POD restructure. Delivered designs incrementally aligned to engineering sprints — renewal pipeline first, POD restructure second — reducing engineering rework by 25% through tight design-to-dev collaboration.",
+          "Templates triggered contextually at the Price & Send stage — where the work happens, not in a generic settings library. Pre-populated with system data: property address, unit number, lease dates, current rent, proposed rent, calculated percentage increase. Reduces a 5-minute email to a 30-second review-and-send. Alongside this: documented the full Trellis token system, codified the application shell for reuse, pioneered the Figma-to-Claude MCP connection, and created a comprehensive Claude engineering principles skill adopted as the team's shared AI-augmented design operating model.",
       },
     ],
     wireframeImage: rvWireframesImg,
     designSystem: [
-      { label: "Pipeline Views", description: "Timeline and kanban patterns for visualizing lease renewal stages — from upcoming expirations through negotiation, signing, and confirmed renewals" },
-      { label: "Batch Actions", description: "Multi-select interaction patterns with contextual action bars — select 50 leases, apply terms, send for signature in one flow" },
-      { label: "Priority Cards", description: "Information-hierarchy-driven card components for the POD — color-coded urgency, clear CTAs, and contextual metrics that answer 'what do I do next?'" },
-      { label: "Decision Logs", description: "Reusable documentation patterns capturing design rationale, research insights, and trade-off decisions — part of the DesignOps infrastructure" },
-      { label: "AI Workflows", description: "Structured frameworks for Claude AI-assisted research synthesis, UX writing iteration, and prototype exploration — compressing exploration cycles by 60%" },
+      { label: "Trellis Tokens", description: "Full documentation of Rentvine's proprietary Trellis system — semantic color tokens with Light/Dark mode, Inter Variable + Space Mono typography scales, spacing 0–3200, border radius/width tokens, and four-breakpoint responsive grid" },
+      { label: "Grid-First Patterns", description: "Data grid interaction model with inline editing, keyboard navigation, multi-select (checkbox, Shift-click, Ctrl/Cmd-click), and scan-and-act patterns — spreadsheet speed inside a stateful product interface" },
+      { label: "Pipeline Stage Components", description: "Four-stage renewal pipeline UI — Review, Price & Send, Sign, Finalize — with stage transition logic, inline status updates, and audit trail generation per action" },
+      { label: "Bulk Action Toolbar", description: "Viewport-anchored dark toolbar activating on multi-select with contextual actions, toast confirmation system, and per-renewal audit log entries for every batch operation" },
+      { label: "Figma-to-Claude MCP", description: "Direct Figma Desktop to Claude AI bridge via Model Context Protocol over WebSocket — real-time design context flowing into prototyping workflows, enabling high-fidelity prototypes referencing actual Figma components" },
     ],
     designSystemImage: rvDesignSystemImg,
     prototypeHighlights: [
-      "Proactive renewal pipeline with 90/60/30-day expiration surfacing, batch selection, and template-based term generation — 50 renewals in the time of 5",
-      "Restructured Property Operations Dashboard with information hierarchy replacing data density — financial health, occupancy risk, and renewal pipeline at a glance",
-      "Batch processing flow with multi-select, contextual action bar, and integrated e-signature — eliminating the serial, unit-by-unit renewal grind",
-      "AI-augmented DesignOps toolkit: Claude-assisted research synthesis, UX writing frameworks, and decision documentation standards adopted team-wide",
+      "Four-stage renewal pipeline (Review → Price & Send → Sign → Finalize) with grid-first interface — spreadsheet-speed interactions inside a stateful, audit-tracked product workflow",
+      "Assignee system as first-class grid column with inline popover assignment, dashed-circle unassigned state, workload summary bar replacing manual Asana boards",
+      "Bulk action toolbar with three-mode multi-select, viewport-anchored contextual actions, and toast confirmations — batch processing workspace for portfolio-scale renewals",
+      "Owner messaging templates triggered at Price & Send stage, pre-populated with system data — compressing a 5-minute email composition to a 30-second review-and-send",
+      "Figma-to-Claude MCP integration enabling real-time design context in prototyping workflows, adopted as the team's shared AI-augmented design operating model",
     ],
     prototypeImage: rvPrototypeImg,
     outcomes: [
-      { label: "Feature Adoption", value: "+22%", change: "New renewal pipeline usage across active managers" },
-      { label: "Task Completion", value: "+18%", change: "Improvement in renewal workflow completion rates" },
-      { label: "Engineering Rework", value: "-25%", change: "Reduced through tight design-to-dev collaboration" },
-      { label: "Release Cycle", value: "-15%", change: "Faster shipping through incremental delivery" },
-      { label: "Validated Solutions", value: "+30%", change: "DesignOps infrastructure increasing solution quality" },
-      { label: "Design Cycle", value: "-20%", change: "AI-assisted workflows compressing exploration time" },
+      { label: "Feature Adoption", value: "+22%", change: "Property managers migrated from external tracking tools into the in-product renewal pipeline" },
+      { label: "Task Completion", value: "+18%", change: "Four-stage pipeline and grid-first interface completing renewals without context switching" },
+      { label: "Engineering Rework", value: "-25%", change: "Trellis documentation and design-to-dev precision eliminated spec ambiguity" },
+      { label: "Design Cycle Time", value: "-20%", change: "Figma-to-Claude MCP and AI-assisted workflows compressed concept-to-prototype time" },
+      { label: "Validated Solution Rate", value: "+30%", change: "Phased discovery framework grounding shipped features in behavioral evidence" },
+      { label: "Pipeline Stages", value: "4", change: "Review → Price & Send → Sign → Finalize, matching how managers already think" },
     ],
     learnings: [
-      "AI doesn't replace design thinking — it accelerates it. Using Claude AI for research synthesis didn't give me answers I wouldn't have found manually. It gave me those answers in hours instead of days, which meant I could iterate on hypotheses faster, test more concepts, and arrive at stronger solutions. The designers I mentored in AI-assisted ResearchOps didn't become dependent on AI — they became faster at the parts of design that were bottlenecked by processing, not by creativity.",
-      "Batch operations are a design philosophy, not just a feature. The renewal pipeline redesign taught me that the difference between a tool that works at 50 units and one that works at 500 isn't performance optimization — it's interaction model design. Serial workflows that feel fine at small scale become structurally impossible at large scale. The question isn't 'can a user do this?' — it's 'can a user do this 200 times without losing their mind?'",
-      "Information hierarchy is the hardest design problem in B2B SaaS. The POD redesign wasn't about removing data — managers needed every metric we showed. It was about teaching the interface to have an opinion about what matters right now. A dashboard that treats everything as equally important is a dashboard that communicates nothing. Priority isn't just visual weight — it's a design point of view.",
+      "The best product design systematizes behavior users already have. Property managers already thought about renewals in four stages. They already wanted spreadsheet-speed interactions. They already tracked workload distribution visually. I didn't invent a new workflow — I gave their existing workflow a home inside the product, with the structure and automation that external tools couldn't provide.",
+      "Phased delivery is a research strategy, not a compromise. Launching the beta incomplete created a controlled environment to observe which gaps users surfaced first, validating hypotheses with behavioral evidence rather than interview recall. The post-beta research was more actionable than initial discovery because users were reacting to a real product.",
+      "Grid-first design is a trust signal. When a property manager sees a data grid, they immediately know they're in a tool built for people who work at scale. The decision to lead with the grid was a positioning choice as much as a UX choice — it communicates 'we understand your volume' before a single interaction occurs.",
+      "AI-assisted design isn't about replacing thinking — it's about compressing setup. The Claude AI workflows and MCP integration didn't design the features. They eliminated hours of boilerplate work: prototype scaffolding, realistic data population, component spec encoding. That compression created more time for the thinking that actually matters — understanding users, making trade-offs, and validating decisions.",
     ],
     reflection:
-      "This project is still unfolding, and that's what makes it different from everything else in my portfolio. I'm not writing about it in retrospect — I'm writing about it in the middle. The lease renewal pipeline is live and already showing a 22% lift in feature adoption. The POD restructure is in development. The AI-assisted DesignOps framework I built is being adopted by senior designers across the team. What I'm most proud of isn't a single deliverable — it's the methodology. At Rentvine, I proved that AI-augmented design practice isn't a gimmick or a shortcut. It's a genuine multiplier for the parts of design work that have always been bottlenecked by time, not talent. The Claude-assisted research synthesis that surfaced the 14-day vacancy gap insight — that's the kind of finding that changes a product's trajectory. And it came not from AI alone, but from a designer who knew what questions to ask and a tool that could process the answers faster than any human could. That's the future of design practice. Not AI replacing designers, but designers who use AI replacing designers who don't.",
+      "This project represents how I work at my best: deep in the domain, iterating with real users, building infrastructure that outlasts any single feature, and designing systems that respect how people already think. Lease renewals aren't glamorous. But for every property manager who stopped dreading the 90-day window because the software finally handled it — that's the impact I design for. What I'm most proud of isn't a single deliverable. It's that the methodology I built here — the phased validation approach, the Figma-to-Claude MCP infrastructure, the AI-augmented design operating model — is now how the team works. The feature shipped. The infrastructure stays.",
     improvements: [
-      "Should have established a quantitative baseline for the POD earlier. We had qualitative evidence that managers preferred their spreadsheets, but didn't measure exactly how much time they spent outside the platform before the redesign. A time-on-task baseline would have made the post-launch improvement story more compelling to stakeholders.",
-      "The batch renewal flow needs more edge case coverage for multi-state portfolios. Lease regulations vary by state, and our current template system handles the common cases well but requires manual overrides for state-specific clauses. A smarter template engine that auto-applies state rules would eliminate the last manual bottleneck.",
-      "I underestimated the onboarding curve for AI-assisted workflows. The senior designers I mentored adopted Claude-assisted ResearchOps quickly, but the framework needs more structured documentation for designers who join later. What feels intuitive after months of practice needs to be codified into a repeatable curriculum.",
+      "Should have established a time-on-task baseline before the beta — measuring exactly how much time managers spent in external tools. Qualitative evidence was compelling, but a quantitative before/after on external-tool usage would have made the adoption story more precise for stakeholders.",
+      "The owner messaging template system needs smarter state-specific rule handling. The current approach covers common cases well but requires manual overrides for state-specific legal clauses. A template engine that auto-applies state rules would eliminate the last manual bottleneck in the workflow.",
+      "The Figma-to-Claude MCP documentation needs to mature into a structured onboarding curriculum. What feels intuitive after months of practice needs codification — clear setup steps, example prompts, and pattern libraries — so designers joining the team can adopt it without bottlenecking through me.",
     ],
     nextProject: { slug: "solstice", title: "SOLSTICE", image: "https://images.unsplash.com/photo-1702726001096-096efcf640b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwY29uc3VsdGluZyUyMG9mZmljZSUyMG1vZGVybiUyMGRhcmslMjBtb29keXxlbnwxfHx8fDE3NzM4MDMwMTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" },
   },
@@ -359,67 +361,67 @@ const CASE_STUDIES: CaseStudyData[] = [
   {
     slug: "gaig",
     title: "GAIG",
-    subtitle: "Taming 33 business lines with one design language",
+    subtitle: "Building a design system across 33 business lines — cutting delivery time 49% and eliminating 70% of UI inconsistencies",
     client: "Great American Insurance Group",
-    year: "2022",
+    year: "2021 – 2022",
     role: "Lead Product Designer",
-    timeline: "12 months",
-    team: "2 product designers, 4 mentored designers, cross-functional stakeholders",
-    platform: "Web (B2B — Agent & Insured Portals)",
-    tools: ["Figma", "Miro", "Teams", "Jira"],
+    timeline: "12 months · Jun 2021 – Jul 2022",
+    team: "Alexander Hounsou (Junior Designer), Austin O'Brien (Midlevel Designer), Chris Roblee (VP of Product), Melanie Book (Senior Developer) + 3 additional designers I mentored",
+    platform: "Web (B2B Enterprise — Agent & Insured Portals)",
+    tools: ["Figma", "Miro", "Microsoft Teams", "Jira"],
     color: "#c4ff00",
     heroImage: gaigHeroImg,
     problem:
-      "Imagine a Fortune 500 insurance platform where every business line invented its own interface. 33 products, 33 different UIs, zero shared language. Agents learned one system only to face a completely different one for their next product. Insureds abandoned policy enrollment mid-flow — confused by clunky navigation, inconsistent patterns, and a platform that never once told them if their action actually worked. No feedback, no guidance, no trust.",
+      "Great American Insurance Group is a Fortune 500 company with over 33 distinct business lines. Each one had its own screens, its own workflows, its own visual language. Not by strategy — by neglect. Over years of siloed development, the platform had become a patchwork of interfaces that didn't talk to each other. An agent navigating from property insurance to risk management felt like switching between entirely different products. Form patterns changed. Button styles changed. Even the way the system communicated errors changed. The only consistent thing about the experience was inconsistency. For the agents, underwriters, and insured individuals using this platform daily, the cost was real. Every time they moved between modules, they had to relearn the interface. Tasks that should have taken minutes took longer because users couldn't transfer their knowledge from one section to another. The cognitive load wasn't just annoying — it was slowing down the business operations of a company that manages billions in coverage.",
     context:
-      "Great American Insurance Group operates across 33 distinct business lines — from property and casualty to specialty risk management. Over years of independent development, each line built its own UI conventions, component libraries, and interaction patterns. The result: a Frankenstein platform that punished both the agents who sold through it and the insureds who depended on it. I was brought in to lead the redesign of the insured and risk management portals, build a scalable design system, and establish a UX governance model that would prevent this kind of drift from ever happening again.",
+      "When I joined as Lead Product Designer, the challenge was clear but the scope was enormous: unify a sprawling enterprise platform under a single, scalable design system — without breaking the 33 business lines that depended on it every day. There was no UX governance. No one owned the question of how things should look and behave across the company. Every team made local decisions that made sense in isolation but created chaos at scale. Agents reported feeling uncertain during critical tasks like policy enrollment and risk evaluation. In insurance, where a single form error can have legal and financial consequences, that uncertainty isn't just a UX problem — it's a business liability. Accessibility was an afterthought, creating compliance exposure in a heavily regulated industry. And without reusable components, every new feature was built from scratch, compounding time and quality costs across every team.",
     constraints: [
       "33 business lines with entrenched stakeholders — each believing their product's UI was 'different enough' to warrant custom treatment",
-      "Legacy technical architecture that couldn't absorb sweeping visual changes overnight — required incremental adoption",
-      "Insurance compliance requirements mandating specific data fields and disclosures across every product",
-      "No existing accessibility standards — the platform had grown without WCAG considerations",
-      "Must support both agent-facing (power user, speed-optimized) and insured-facing (first-time, guidance-heavy) experiences from a shared system",
+      "Legacy backend architecture that couldn't absorb sweeping visual changes overnight — required incremental adoption strategy",
+      "Insurance compliance requirements mandating specific data fields, disclosures, and legal language across every product",
+      "No existing accessibility standards — the platform had grown entirely without WCAG considerations",
+      "Must support both agent-facing (power user, speed-optimized) and insured-facing (first-time, guidance-heavy) experiences from one shared system",
     ],
     researchImage: gaigGovernanceImg,
     researchInsights: [
       {
         title: "Silence breeds distrust",
         detail:
-          "12 insured user interviews revealed the same pattern: when the system gave no feedback after an action, users assumed it failed. They'd retry, create duplicates, or abandon entirely. One participant said, 'I clicked submit and nothing happened. I thought the whole thing was broken.' The platform's silence was its loudest design failure.",
+          "Interviews with 12 insured users alongside a UX researcher revealed the same pattern: when the system gave no feedback after an action, users assumed it had failed. They'd retry, create duplicates, or abandon entirely. One participant said, 'I clicked submit and nothing happened. I thought the whole thing was broken.' The platform's silence was its loudest design failure — and in insurance, where a submitted form can have legal consequences, that silence was creating genuine anxiety and workflow paralysis.",
       },
       {
-        title: "Inconsistency is cognitive tax",
+        title: "Inconsistency is a productivity tax",
         detail:
-          "Agents working across multiple business lines reported spending up to 15 extra minutes per task reorienting themselves in unfamiliar UIs. The same action — submitting a policy endorsement — looked and behaved differently in each product. Consistency wasn't a nice-to-have; it was directly eroding productivity and revenue.",
+          "Desk research and internal analytics confirmed what agents already knew: navigating between business lines forced constant cognitive reorientation. The same action — submitting a policy endorsement — looked and behaved differently in each product. Agents reported spending up to 15 extra minutes per task reorienting themselves. Across a full workday spanning multiple products, that tax compounded into hours of lost productivity per week, per agent.",
       },
       {
-        title: "Navigation was the first casualty",
+        title: "The enrollment funnel had no safety net",
         detail:
-          "Desk research and internal data analysis confirmed that users who hit friction at navigation never recovered. They didn't try alternative paths — they left. The enrollment funnel had no breadcrumbs, no progress indication, and no way back without starting over.",
+          "Service blueprints built across critical workflows revealed that users who hit friction at navigation never recovered. They didn't try alternative paths — they left. The enrollment funnel had no breadcrumbs, no progress indication, and no way back without starting over. The Okta verification flow blueprint alone uncovered three separate points where users received zero feedback, leading them to assume the system had broken.",
       },
       {
-        title: "Accessibility was invisible",
+        title: "Accessibility was invisible — and legally exposed",
         detail:
-          "An internal audit revealed zero inclusive design practices. Color contrast failures, missing alt text, keyboard navigation gaps — the platform was functionally unusable for anyone relying on assistive technology, and legally exposed because of it.",
+          "An internal audit revealed zero inclusive design practices. Color contrast failures, missing alt text, keyboard navigation gaps — the platform was functionally unusable for anyone relying on assistive technology. For a company operating in a heavily regulated industry managing billions in coverage, this wasn't just a moral failure. It was a compliance liability waiting to surface.",
       },
     ],
     strategy:
-      "Build once, apply everywhere. Create a token-first design system that encodes every visual and interaction decision into reusable, governed primitives — then establish a UX governance process that makes drift structurally impossible. The system wouldn't just fix what was broken; it would make consistency the path of least resistance for every team, every time.",
+      "Build the system in two parallel tracks: the artifacts and the process. On the artifact side, a token-first design system encoding every visual and interaction decision into reusable, governed primitives. On the process side, a UX governance model that makes drift structurally impossible. The system wouldn't just fix what was broken — it would make consistency the path of least resistance for every team, every time. I facilitated a Design Studio workshop with cross-functional members that generated 30+ ideas, then evaluated each through an impact/effort matrix, surfacing three foundational workstreams: standardized UI components, design tokens, and accessibility improvements.",
     strategyPillars: [
       {
         title: "Standardized Component Library",
         description:
-          "Reusable UI components with built-in accessibility, consistent behavior, and clear documentation. Every button, form, modal, and feedback pattern behaves identically whether you're in specialty risk or property casualty. Designers stop reinventing; engineers stop guessing.",
+          "Reusable UI components with built-in accessibility, consistent behavior, and clear documentation — covering the most common interaction patterns across all 33 business lines: forms, tables, navigation, modals, feedback states. Every button, form, and data table behaves identically whether you're in specialty risk or property casualty. Designers stop reinventing; developers stop rebuilding. Each component shipped with usage guidelines, do/don't examples, and implementation specs so the library could be used without interpretation.",
       },
       {
         title: "Design Tokens & Visual Identity",
         description:
-          "Predefined variables for colors, typography, spacing, and elevation — a single source of truth that propagates across all 33 business lines. Change a token, change the entire ecosystem. No more rogue palettes and inconsistent grays.",
+          "Predefined variables for colors, typography, spacing, and elevation — a single source of truth that propagates across all 33 business lines. Before tokens, teams would approximate colors and spacing close to brand guidelines, but never exact. Over 33 lines, those approximations compounded into visual chaos. Tokens solved the 'close enough' problem: update one token, the change cascades everywhere. No more rogue palettes, inconsistent grays, or pixel-off spacing that accumulated into friction.",
       },
       {
         title: "UX Governance Framework",
         description:
-          "A corporate-level change management process I co-created to control how the design system evolves. Any proposed change goes through impact assessment, stakeholder review, and accessibility validation before entering the system. Drift doesn't happen accidentally anymore.",
+          "A corporate-level change management process I built to control how the design system evolves. Any proposed change goes through impact assessment, stakeholder review, and accessibility validation before entering the library. I positioned myself as the gatekeeper — not to control the system, but to protect it. This role required equal parts design judgment and diplomatic skill. The governance model gave every team a voice while maintaining centralized quality control. Without it, the system would have fragmented within months.",
       },
     ],
     processImage: gaigOktaFlowImg,
@@ -427,69 +429,71 @@ const CASE_STUDIES: CaseStudyData[] = [
       {
         title: "Discovery & Research",
         description:
-          "Participated in 12 user interviews with insureds alongside a UX researcher, uncovering deep pain points around navigation confusion, missing feedback, and trust erosion. Ran desk research analyzing existing analytics, previous user feedback, and internal specialist surveys to map every friction point across enrollment and claims flows.",
+          "Partnered with a UX researcher to conduct interviews with 12 insured users, watching people struggle through real tasks — policy enrollment, claims submission, risk assessment. Ran desk research across internal analytics, support ticket patterns, and specialist consultations to build a broader picture. Reviewed which UI problems generated the most confusion. Talked to internal specialists who fielded agent questions daily to surface what analytics couldn't reveal. The research gave me more than a UI problem list — it gave me a map of organizational behavior.",
       },
       {
         title: "Service Blueprinting",
         description:
-          "Built comprehensive service blueprints mapping user journeys across policy enrollment, risk management, and claims submission. Visualized where users encountered friction and where the experience failed silently. The Okta verification blueprint alone revealed 6 unnecessary steps agents absorbed daily.",
+          "Built comprehensive service blueprints mapping the full experience across critical workflows — not just user journeys, but backend systems, team handoff points, and places where technology and experience diverged. The Okta verification flow blueprint alone revealed three separate points where users received no feedback about what was happening, leading them to assume the system had broken. These blueprints made invisible failure points impossible to ignore.",
       },
       {
         title: "Design Studio Workshop",
         description:
-          "Facilitated a cross-functional workshop generating 30+ ideas. Used Impact/Effort matrices to prioritize: standardizing UI components, introducing design tokens, and creating accessible layout patterns rose to the top. Quick wins first, systemic fixes in parallel.",
+          "Facilitated a cross-functional workshop with team members from design, product, and engineering that generated 30+ ideas for addressing the platform's consistency and usability gaps. Evaluated each through an impact/effort matrix. Three workstreams rose to the top: standardized UI components, design tokens, and accessibility improvements. Quick wins pursued in parallel with systemic fixes — building organizational momentum alongside the infrastructure.",
       },
       {
         title: "Wireframing & Iteration",
         description:
-          "Created low-fidelity wireframes for key workflows — enrollment, claims, risk assessment — introducing navigation patterns, progress indicators, and feedback mechanisms. Killed what didn't test well; doubled down on what users gravitated toward.",
+          "Created low-fidelity wireframes for key workflows — enrollment, claims, risk assessment — introducing logical navigation patterns, progress indicators, and real-time feedback mechanisms. Made a deliberate decision to implement incrementally rather than attempt a company-wide launch. The legacy architecture couldn't absorb a big-bang redesign. Focused the first rollout on the two highest-impact surfaces: the insured platform and risk management. Used them as proof of concept to build organizational confidence.",
       },
       {
         title: "High-Fidelity Design System",
         description:
-          "Evolved wireframes into a polished component library with standardized UI elements, design tokens, and accessibility baked into every component. Built detailed guidelines, usage examples, and do/don't documentation. The system wasn't a library — it was a language.",
+          "Evolved wireframes into a polished component library with standardized UI elements, design tokens, and accessibility baked into every component from day one. Enhanced form design was where the biggest usability wins lived — insurance is a form-heavy domain, and I redesigned forms with logical grouping, inline validation, progressive disclosure, and clear feedback at every step. Built comprehensive documentation with usage examples and do/don't patterns. The system wasn't a library — it was a language.",
       },
       {
-        title: "Testing & Governance Launch",
+        title: "Testing, Governance Launch & Mentorship",
         description:
-          "Conducted usability tests with 12 participants achieving 40% improvement in task completion rates. Simultaneously launched the UX governance process ensuring changes pass impact assessment and accessibility validation before release.",
+          "Conducted usability tests with 12 participants, achieving 40% improvement in task completion rates. Simultaneously launched the UX governance process ensuring changes pass impact assessment and accessibility validation before release. Led design QA workshops with engineering and QA teams establishing a repeatable quality assurance process. Mentored 4 designers through UX methodologies, design processes, and Figma best practices — establishing structured critique sessions, design review rituals, and feedback loops that scaled quality beyond what I could personally review.",
       },
     ],
     wireframeImage: gaigWireframesImg,
     designSystem: [
-      { label: "Tokens", description: "Color, typography, spacing, and elevation tokens encoding every visual decision into a single governed source of truth across 33 business lines" },
-      { label: "Components", description: "Standardized UI library — buttons, forms, modals, feedback patterns, data tables — all with built-in accessibility and consistent behavior" },
-      { label: "Accessibility", description: "Inclusive design standards meeting WCAG compliance: contrast ratios, keyboard navigation, screen reader support, and focus management" },
-      { label: "Governance", description: "Corporate-level UX governance flow for proposing, reviewing, and approving design system changes — preventing drift at the organizational level" },
-      { label: "Documentation", description: "Comprehensive guidelines with usage examples, do/don't patterns, and Figma best practices mentored across a team of 6 designers" },
+      { label: "Tokens", description: "Color, typography, spacing, and elevation tokens encoding every visual decision into a single governed source of truth — update once, propagate across all 33 business lines" },
+      { label: "Components", description: "Standardized UI library — forms, tables, modals, navigation, feedback patterns — all with built-in accessibility, consistent behavior, and implementation specs" },
+      { label: "Accessibility", description: "WCAG-compliant inclusive design: contrast ratios, keyboard navigation, screen reader support, focus management, and inline validation built into every component from day one" },
+      { label: "Governance", description: "Corporate-level UX governance flow for proposing, reviewing, and approving design system changes — with impact assessment and accessibility validation as non-negotiable gates" },
+      { label: "Documentation", description: "Comprehensive guidelines with usage examples, do/don't patterns, and Figma best practices — designed to outlast any individual contributor and enable the team to maintain and extend the system independently" },
     ],
     designSystemImage: gaigDesignSystemImg,
     prototypeHighlights: [
-      "Redesigned insured portal with consistent navigation, progress indicators, and real-time feedback replacing the platform's silence",
-      "Risk management interface with standardized data tables, inline validation, and contextual help reducing agent reorientation time",
-      "Unified component library deployed across all 33 business lines with zero visual fragmentation",
-      "UX governance workflow ensuring every system change passes impact assessment and accessibility validation before release",
+      "Redesigned insured portal with consistent navigation, progress indicators, and real-time feedback replacing years of platform silence",
+      "Risk management interface with standardized data tables, inline validation, and contextual help — eliminating agent reorientation time between business lines",
+      "Unified component library deployed across all 33 business lines, from specialty risk to property casualty, with zero visual fragmentation",
+      "UX governance workflow ensuring every system change passes impact assessment and accessibility validation before release — making drift structurally impossible",
+      "Mentored 4 designers through structured critique sessions and design reviews, scaling system quality across the entire team",
     ],
     prototypeImage: gaigPrototypeImg,
     outcomes: [
-      { label: "Feature Delivery", value: "+30%", change: "Standardized components eliminated rebuild waste" },
-      { label: "User Satisfaction", value: "+39%", change: "Post-redesign survey improvement" },
-      { label: "Task Completion", value: "+40%", change: "Usability testing vs. legacy baseline" },
-      { label: "Business Lines", value: "33", change: "All unified under one design language" },
-      { label: "Designers Mentored", value: "4", change: "Guided through UX methods & Figma practices" },
-      { label: "Accessibility", value: "WCAG", change: "Inclusive design standards implemented platform-wide" },
+      { label: "Feature Delivery Speed", value: "+49%", change: "Standardized components eliminated rebuild waste across every sprint and every team" },
+      { label: "UI Inconsistencies", value: "-70%", change: "Visual chaos replaced by a coherent, recognizable experience across all 33 business lines" },
+      { label: "Task Completion Rate", value: "+40%", change: "Simplified navigation, clear form design, and consistent feedback states in usability testing" },
+      { label: "Support Queries", value: "-56%", change: "Design QA workshops caught issues before they reached users" },
+      { label: "Design-to-Dev Handoff", value: "+30%", change: "Standardized specs and shared component documentation removed implementation guesswork" },
+      { label: "Designers Mentored", value: "4", change: "Team members who can independently maintain and extend the system" },
     ],
     learnings: [
-      "In enterprise, the human challenge is harder than the design challenge. 33 business lines means 33 sets of stakeholders who believe their product is 'special.' The breakthrough wasn't the component library — it was building trust that a shared system could flex enough to serve everyone without flattening anyone's needs.",
-      "Governance isn't bureaucracy — it's the immune system. Without a formal change process, the design system would have fragmented within months. The governance framework I co-created wasn't about control; it was about making intentional decisions the default and accidental drift structurally impossible.",
-      "Mentorship multiplies impact. Training four designers on UX methodologies, design processes, and Figma best practices meant the system's quality extended far beyond what I could personally review. The best design systems don't just scale components — they scale design thinking.",
+      "Governance is the design system. The components are the visible layer of something deeper. The governance model — how changes get proposed, reviewed, and implemented — is what determines whether a system stays alive or slowly dies through a thousand local exceptions. I spent as much time on the process as I did on the Figma library, and that investment paid off.",
+      "You can't mandate adoption — you have to earn it. Telling 33 teams to use the design system doesn't work. Showing them it saves time, reduces rework, and makes their output better does. The phased rollout strategy was critical because it let results do the persuading. Stakeholders who were skeptical saw the proof and became advocates.",
+      "Mentoring multiplies impact. Every designer I trained became an ambassador for the system in their own team. By the time I moved on, the system had five people who understood it deeply enough to maintain and extend it — not just one. That's the difference between a design system and a personal project.",
+      "Enterprise design is a patience game. You can't move fast and break things when 33 business lines depend on the platform daily. Incremental rollout, careful stakeholder management, and relentless documentation aren't glamorous — but they're how systems-level change actually happens in large organizations.",
     ],
     reflection:
-      "This project taught me that a design system is never really about the components. It's about changing how an organization makes decisions. Great American had 33 business lines that had been designing in isolation for years — not because they wanted to, but because nobody had given them a shared language or a reason to converge. The real deliverable wasn't a Figma library. It was a governance model that made consistency feel like freedom instead of constraint. The 30% boost in feature delivery wasn't magic — it was the compounding effect of eliminating thousands of small, redundant decisions that had been draining every team, every sprint, for years. I left before seeing the full post-implementation metrics, and that's my one regret. But the foundation was built to outlast any individual contributor — and that, I think, is the mark of a system done right.",
+      "This project taught me that the most impactful design work often isn't visible to users at all. Nobody celebrates a governance model or a design token. But when an agent in Ohio can navigate from property insurance to risk management without relearning the interface — when a developer can ship a feature in half the time because the components already exist — when a team of junior designers can produce senior-quality work because the system guides them — that's the compounding effect of design infrastructure done right. Great American had 33 business lines that had been designing in isolation for years — not because they wanted to, but because nobody had given them a shared language or a reason to converge. The real deliverable wasn't a Figma library. It was a governance model that made consistency feel like freedom instead of constraint.",
     improvements: [
-      "Should have pushed harder for a dedicated accessibility audit at the start, not midway through. Retrofitting inclusive design is always more expensive than building it in from day one.",
-      "The incremental rollout — while necessary for legacy constraints — meant some business lines lived with inconsistency longer than ideal. A parallel 'fast track' for willing early adopters would have built internal momentum faster.",
-      "Needed more formalized design-to-engineering handoff. The governance flow controlled design changes well, but translation to code still relied too heavily on tribal knowledge and individual relationships.",
+      "Should have pushed harder for a dedicated accessibility audit at the start, not midway through. Retrofitting inclusive design is always more expensive than building it in from day one — and the compliance exposure made this a risk that should have been front-loaded.",
+      "The incremental rollout — while necessary given legacy constraints — meant some business lines lived with inconsistency longer than ideal. A parallel 'fast track' for willing early adopters would have built internal momentum faster and given skeptical stakeholders proof points sooner.",
+      "Needed more formalized design-to-engineering handoff documentation. The governance flow controlled design changes well, but translation to code still relied too heavily on tribal knowledge and individual relationships between designers and specific developers.",
     ],
     nextProject: { slug: "rise", title: "RISE", image: riseHeroImg },
   },
@@ -633,139 +637,141 @@ const CASE_STUDIES: CaseStudyData[] = [
   {
     slug: "solstice",
     title: "SOLSTICE",
-    subtitle: "Scaling a consultancy's product through design system discipline",
-    client: "Solstice Innovations (via Technology Consulting)",
+    subtitle: "Architecting a design system from scratch for a cloud-native insurance platform",
+    client: "Solstice Innovations",
     year: "2024 – 2025",
-    role: "Senior Product Designer & Design Lead",
-    timeline: "17 months",
-    team: "3 mentored designers, 2 PMs, cross-functional engineering pods",
-    platform: "Web (Enterprise SaaS — Client Portals & Internal Tools)",
-    tools: ["Figma", "Miro", "Jira", "Storybook", "Slack", "Teams"],
+    role: "Senior Product Designer",
+    timeline: "~17 months · Feb 2024 – Jul 2025",
+    team: "Michael Monk (CTO), TJ Johnston (Co-Founder & Underwriting Specialist), Joe Cooper (Product Owner), Aaron Truitt (Product Manager & Claims Specialist), Jay Mooney (Software Architect), Sindhura Bogadi (UX Researcher)",
+    platform: "Web (B2B SaaS — Insurtech / Flood & P&C Insurance)",
+    tools: ["Figma", "Miro", "Jira"],
     color: "#c4ff00",
     heroImage:
       "https://images.unsplash.com/photo-1702726001096-096efcf640b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwY29uc3VsdGluZyUyMG9mZmljZSUyMG1vZGVybiUyMGRhcmslMjBtb29keXxlbnwxfHx8fDE3NzM4MDMwMTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     problem:
-      "Solstice had built a powerful enterprise platform — but it had grown the way most consultancy products grow: fast, client by client, feature by feature, with no shared design language holding it together. Every new engagement added UI debt. Every new developer interpreted the same component differently. The application worked, technically — but it felt like six different products wearing the same logo. Users stumbled through inconsistent navigation, contradictory interaction patterns, and an interface that demanded relearning with every module. The product was scaling in features but shrinking in usability.",
+      "Insurance carriers managing flood and property & casualty policies were stuck on legacy systems that made simple tasks painfully slow. Processing a claim required navigating fragmented interfaces, entering the same data multiple times, and working around tools that fought against them rather than supported them. Solstice Innovations was building Equinox™ to change that — a cloud-native platform unifying policy management, claims processing, CRM, quoting, and agency administration into a single system. The problem: when I joined, the product existed as engineering logic, not as a usable experience. There was no design system, no component library, no shared visual language. The development team was building features in silos, each engineer making independent UI decisions that were technically functional but experientially incoherent. Every usability failure was a sales failure — a confusing onboarding flow didn't just frustrate a user, it killed a deal. And in the background loomed catastrophe scalability: when a hurricane hits, carriers face thousands of claims in days, and if the interface slowed adjusters down at that exact moment, Equinox™ would fail at the moment it was supposed to prove its value.",
     context:
-      "Solstice is a technology consulting and custom software development firm that builds digital products for enterprise clients across industries. Their internal platform — used by both consultants and client teams — had evolved organically through years of rapid delivery cycles. I was brought in as Senior Product Designer to lead UX research, own the product design for key modules, and — critically — mentor a team of three junior designers who had been shipping features without a unifying design framework. The mandate was clear: stop the bleeding, build the system, and teach the team to sustain it. This wasn't a redesign project. It was a rescue operation disguised as design system work.",
+      "Equinox™ was competing against entrenched players like Guidewire and Duck Creek — platforms with established market share, extensive documentation, and decades of carrier trust. Equinox™ needed to differentiate not just on features but on experience. In a market where every competitor could process a claim, the platform that made processing a claim feel effortless would win. I was brought in to give this powerful backend a face that insurance professionals would actually want to use — and to build the design infrastructure that would let the product scale without collapsing under its own complexity. The key technical constraint that defined the entire design system strategy: the engineering team was already building with Material UI. I couldn't ignore that. I couldn't fight it. I had to design with it.",
     constraints: [
-      "Active client engagements running on the platform — no 'big bang' redesign possible without breaking live workflows",
-      "Three junior designers with varying skill levels who needed upskilling while simultaneously shipping features",
-      "Multiple engineering pods working in parallel sprints — any design system had to be adoptable incrementally, not all-at-once",
-      "Legacy codebase with inconsistent front-end architecture — some modules in React, others still in Angular",
-      "Stakeholders across multiple client accounts, each with different priorities and definitions of 'done'",
+      "Engineering team already committed to Material UI — design system had to mirror MUI semantics from day one, not fight them",
+      "No existing design system, component library, or visual language — building from zero while the product was actively in development",
+      "Catastrophe scalability requirement — the UX had to perform under thousands of claims per day, not just calm conditions",
+      "Startup environment with no established product culture, no discovery process, and no structured design-engineering collaboration",
+      "Heavily regulated domain — insurance workflows involve compliance-specific fields, legal disclosures, and state-by-state rule variations",
     ],
     researchInsights: [
       {
-        title: "Nobody trusts the interface",
+        title: "Mapping what insurance professionals actually do all day",
         detail:
-          "8 user interviews with internal consultants and 6 with client stakeholders revealed a shared pattern: users had learned to distrust the platform's feedback. Buttons that looked clickable weren't. Forms submitted without confirmation. Success states looked identical to error states. One consultant said, 'I always screenshot my submissions because I never know if it actually worked.' The platform had a credibility problem disguised as a UI problem.",
+          "I partnered with the UX Researcher to define study scope and identify core jobs-to-be-done for each user type. A claims adjuster during a catastrophe event has fundamentally different needs than an agency administrator onboarding a new MGA. An underwriting specialist reviewing a quote operates under different cognitive pressures than a policyholder checking their coverage. We needed to design for all of them without designing for none of them. This framing prevented me from applying generic UX patterns to a domain that penalizes generic thinking.",
       },
       {
-        title: "Designers were designing in isolation",
+        title: "Domain experts as design partners, not just stakeholders",
         detail:
-          "The three junior designers were talented but disconnected. Each owned a module, each had developed their own component conventions, and none had visibility into what the others were building. The result: three parallel design dialects that made the product feel schizophrenic. This wasn't a people problem — it was a process problem. Nobody had given them a shared vocabulary.",
+          "Aaron Truitt brought deep claims expertise. TJ Johnston understood underwriting from the inside. These weren't people to present to — they were design partners who could tell me immediately when a proposed workflow violated how insurance actually works. That collaboration was invaluable because it prevented me from designing elegant interfaces that would have been operationally useless. In specialized domains, proximity to expert practitioners is the fastest research method available.",
       },
       {
-        title: "Navigation was a maze built by committee",
+        title: "The existing flows were broken at the structure level",
         detail:
-          "Heuristic evaluation and task analysis showed users averaging 7+ clicks to complete core workflows that should take 3. Navigation patterns changed between modules — sidebar in one, top-bar in another, hamburger menu in a third. Users couldn't build muscle memory because the interface kept changing the rules.",
+          "Analyzing the existing flows against users' actual routines revealed a familiar but sharp pattern: tasks that should take seconds required unnecessary clicks. Information users needed simultaneously was spread across multiple screens. Repetitive actions that screamed for automation were still fully manual. The order entry process alone took approximately 30 minutes — a number I was determined to cut dramatically. The interface wasn't just inconsistent; it was organized around system logic rather than user logic.",
       },
       {
-        title: "Accessibility was an afterthought everywhere",
+        title: "Teams operating in silos were the root cause of the experience gap",
         detail:
-          "An audit revealed critical WCAG failures across every module: missing focus states, color contrast below AA, no keyboard navigation paths, unlabeled form inputs. The platform was functionally inaccessible to anyone using assistive technology — and legally exposed.",
+          "Engineering, product, and what little design existed were making decisions independently. There was no shared understanding of who the users were, what their daily workflows looked like, or how design decisions affected development velocity. The gap between what Equinox™ could do and what users could actually accomplish with it was the company's biggest growth blocker — and it was organizational before it was technical.",
       },
     ],
     strategy:
-      "Build a design system that doesn't just unify components — it unifies the team. Create a shared design language that encodes decisions about interaction, feedback, navigation, and accessibility into reusable, governed primitives. Then embed that system into the team's daily workflow through mentorship, paired design sessions, and a review cadence that makes quality the default, not the exception. The system would scale the product by first scaling the people.",
+      "Build the design system to mirror MUI's semantics from the start — not against them. Every component maps directly to an MUI equivalent, naming conventions match, prop structures align, interaction states correspond. Pair this with a shared operating model between design and engineering: joint design-dev reviews before implementation, shared Figma files with direct developer inspection, component handoffs with MUI-specific implementation notes, regular syncs with the Software Architect to validate feasibility before anything reaches the backlog. The system would be designed to ship cleanly, not polished in Figma and broken in production.",
     strategyPillars: [
       {
-        title: "Foundation-First Design System",
+        title: "MUI-Aligned Design System",
         description:
-          "A token-driven component library built from audit findings — not aspirational ideals. Every component addressed a real inconsistency we'd documented. Color tokens, spacing scales, typography hierarchy, elevation system, and interaction states standardized across all modules. Not a library to admire — a language to speak.",
+          "Every component designed to map directly to an MUI equivalent. Naming conventions match. Prop structures align. Interaction states correspond. This meant developers looking at a Figma spec weren't translating between two languages — they were reading the same one. The trade-off: some visual preferences deferred to preserve development alignment. Worth it. A system that ships consistently beats one that looks perfect in Figma and breaks in implementation.",
       },
       {
-        title: "Mentorship as Multiplier",
+        title: "Workflow Redesign Before Surface Polish",
         description:
-          "Weekly 1:1s with each junior designer. Bi-weekly design critiques where we reviewed work against the system — not aesthetics, but consistency, accessibility, and user intent. Paired design sessions on complex flows. The goal wasn't to create followers — it was to create three designers who could sustain the system without me.",
+          "Claims processing, quoting, policy management, and agency administration were restructured around the tasks users actually perform — not how the database stores data. Information architecture aligned to mental models. Redundant steps eliminated. Repetitive data entry automated. The order entry process target: cut from 30 minutes to a fraction. Every unnecessary click in a claims flow translates directly into delayed payouts for people whose homes are underwater.",
       },
       {
-        title: "Progressive Adoption Strategy",
+        title: "Design–Engineering Operating Model",
         description:
-          "Instead of demanding a full migration, we prioritized the highest-traffic modules first. New features adopted the system by default. Legacy screens were migrated during existing sprint work — never as a separate 'design debt' initiative that could be deprioritized. Consistency spread like an infection, not a mandate.",
+          "Introduced product discovery practices into a team building on assumptions. User interviews, workflow analysis, and competitive benchmarking gave every feature decision an evidence base. Joint design-dev reviews before implementation began. Mentored 3 product designers on Figma workflows, structured critique, and systematic design thinking. Closed the gap between parallel tracks by establishing working rituals, not process documents.",
       },
     ],
     processSteps: [
       {
-        title: "Research & Audit",
+        title: "Discovery & Domain Immersion",
         description:
-          "Conducted 14 user interviews (8 internal consultants, 6 client stakeholders) alongside heuristic evaluation of all 5 core modules. Documented 120+ inconsistencies across navigation, interaction patterns, feedback states, and visual treatment. Built a severity matrix that prioritized fixes by user impact, not visual severity.",
+          "Partnered with the UX Researcher to map jobs-to-be-done across all user types — claims adjusters, underwriters, agency administrators, policyholders. Worked directly with Aaron Truitt (claims) and TJ Johnston (underwriting) as domain experts to understand the regulatory constraints and operational realities that made insurance workflows genuinely different. Analyzed all existing flows against real user routines, documenting where system logic and user logic diverged.",
       },
       {
-        title: "Team Assessment & Mentorship Plan",
+        title: "Design System Architecture — MUI-First",
         description:
-          "Assessed each junior designer's strengths, gaps, and growth goals. Created individualized mentorship tracks: one focused on interaction design rigor, another on visual systems thinking, the third on research-informed design. Established weekly rituals — 1:1s, critiques, paired sessions — that created psychological safety alongside accountability.",
+          "Audited MUI's component semantics, prop structures, and interaction patterns before designing a single component. Built the Figma library to mirror what developers were already working with — matched naming, aligned states, corresponded interaction behaviors. Made deliberate trade-offs where MUI's opinions conflicted with design preferences, always in favor of production alignment. The system was designed to ship, not to sit in a Figma file.",
       },
       {
-        title: "Design System Architecture",
+        title: "Core Workflow Redesigns",
         description:
-          "Designed the token structure, component hierarchy, and pattern library based directly on audit findings. Every token and component traced back to a documented inconsistency. Built the system in Figma with auto-layout, variants, and detailed usage documentation — then worked with engineering to establish a Storybook instance as the source of truth.",
+          "Prioritized by stakes: claims processing first (catastrophe scalability), then quotes and policy management, then agency administration. Each workflow restructured around user logic rather than system architecture. Redundant steps eliminated. Repetitive manual data entry identified for automation. Information users needed simultaneously consolidated onto single views. Catastrophe mode — high-volume surge processing — given dedicated design consideration from day one.",
       },
       {
-        title: "Navigation & IA Redesign",
+        title: "Design–Engineering Operating Model",
         description:
-          "Unified the information architecture across all modules — consistent sidebar navigation, predictable breadcrumb patterns, and a global search that actually worked. Reduced average clicks-to-task from 7+ to 3. Tested with 10 users, iterated on label clarity and grouping logic.",
+          "Established working rituals with Jay Mooney (Software Architect): joint design-dev reviews before implementation, shared Figma inspection access, component handoffs with MUI-specific implementation notes. Introduced lightweight discovery process with Aaron and TJ — user interviews, workflow analysis, competitive benchmarking — so feature decisions had evidence bases, not just assumptions. Regular syncs to validate design feasibility before work entered the backlog.",
       },
       {
-        title: "Feedback & State System",
+        title: "Product Website Redesign",
         description:
-          "Designed a comprehensive feedback framework: loading states, success confirmations, error handling, empty states, and inline validation. Every user action now produced a visible, consistent response. Toasts, banners, inline messages — each with clear hierarchy and accessibility compliance. The platform learned to speak back.",
+          "Revamped the Equinox™ marketing site to clearly communicate the platform's value proposition — not as abstract feature lists, but in terms of the specific problems it solved for carriers. The website needed to do the same job as the product: make something complex feel clear and consequential. Restructured messaging around carrier pain points, with direct lines of sight to how Equinox™ resolved them. Result: 11% increase in lead conversion.",
       },
       {
-        title: "Rollout & Governance",
+        title: "Mentorship & Team Capability",
         description:
-          "Rolled out the design system progressively — highest-traffic modules first, then legacy screens during sprint work. Established a lightweight governance process: any new pattern required documentation, accessibility check, and peer review before entering the library. The system became self-sustaining because the team owned it, not just me.",
+          "Mentored 3 product designers on Figma workflows, structured critique, and systematic design thinking. In a startup where everyone is stretched thin, building team capability wasn't a luxury — it was a survival strategy. Every designer upskilled was one more person who could maintain the system, extend it, and apply it correctly without bottlenecking through me. Established design review rituals that created accountability alongside the shared ownership that makes systems self-sustaining.",
       },
     ],
     wireframeImage:
       "https://images.unsplash.com/photo-1630673489068-d329fa4e2767?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzb2Z0d2FyZSUyMGRldmVsb3BtZW50JTIwdGVhbSUyMGNvbGxhYm9yYXRpb24lMjB3aGl0ZWJvYXJkfGVufDF8fHx8MTc3MzgwMzAxN3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     designSystem: [
-      { label: "Tokens", description: "Color, typography, spacing, elevation, and shadow tokens encoding every visual decision into a single governed source of truth — with dark/light mode support" },
-      { label: "Components", description: "60+ production-ready components — inputs, buttons, tables, modals, toasts, navigation elements — all with built-in states, accessibility, and detailed usage docs" },
-      { label: "Patterns", description: "Reusable page templates for dashboards, forms, detail views, settings, and empty states — reducing design-from-scratch to configure-and-ship" },
-      { label: "Feedback System", description: "Unified loading, success, error, and validation patterns replacing the platform's silence with consistent, trustworthy interaction responses" },
-      { label: "Governance", description: "Lightweight review process for new patterns — documentation, a11y check, peer review — owned by the team, not dependent on any single designer" },
+      { label: "MUI Alignment", description: "Every component mirrors MUI semantics — matched naming conventions, aligned prop structures, corresponding interaction states — so developers implement directly without translation" },
+      { label: "Tokens", description: "Color, typography, spacing, elevation, and shadow tokens as a single governed source of truth — scalable across new insurance product lines, user roles, and regulatory requirements" },
+      { label: "Workflow Patterns", description: "Claims processing, quoting, policy management, and agency administration redesigned around user logic — redundant steps eliminated, information hierarchy matched to daily task sequences" },
+      { label: "Feedback & Validation", description: "Inline validation, loading states, success confirmations, and error handling built into every component — eliminating the silent failures that destroyed trust in legacy insurance platforms" },
+      { label: "Extensibility", description: "Every component designed with configurability for future insurance product lines and user roles — constrained enough to prevent fragmentation, flexible enough to avoid rebuilds" },
     ],
     designSystemImage:
       "https://images.unsplash.com/photo-1731033182396-721f7ba29532?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ24lMjBzeXN0ZW0lMjBjb21wb25lbnRzJTIwVUklMjBsaWJyYXJ5JTIwZGFyayUyMGludGVyZmFjZXxlbnwxfHx8fDE3NzM4MDMwMjF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     prototypeHighlights: [
-      "Unified navigation system with consistent sidebar, breadcrumbs, and global search reducing average task clicks from 7+ to 3",
-      "Comprehensive feedback framework — every action produces visible, accessible confirmation replacing the platform's previous silence",
-      "Token-driven component library with 60+ components, all featuring built-in states, dark/light mode, and WCAG AA compliance",
-      "Progressive adoption strategy allowing live client engagements to migrate incrementally without workflow disruption",
+      "Claims processing flow redesigned for catastrophe scalability — redundant steps eliminated, repetitive data entry automated, information surfaced in the order adjusters need it",
+      "Quotes and policy management restructured around user mental models rather than database architecture — reducing learning curve for experienced adjusters",
+      "Agency administration dashboard with role-based access controls, real-time reporting, and structured MGA onboarding flow",
+      "MUI-aligned component library enabling developers to implement directly from Figma specs without translation — 34% reduction in development time",
+      "Equinox™ marketing site revamp communicating carrier value in terms of solved problems, not feature lists — 11% increase in lead conversion",
     ],
     prototypeImage:
       "https://images.unsplash.com/photo-1760670399462-f5e479452c27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbnRlcnByaXNlJTIwZGFzaGJvYXJkJTIwYW5hbHl0aWNzJTIwcGxhdGZvcm0lMjBkYXJrJTIwcHJvZmVzc2lvbmFsfGVufDF8fHx8MTc3MzgwMzAyNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     outcomes: [
-      { label: "Usability Score", value: "+63%", change: "Measured across all 5 core modules post-system adoption" },
-      { label: "Task Completion", value: "+45%", change: "Users completing core workflows without assistance" },
-      { label: "UI Inconsistencies", value: "-80%", change: "From 120+ documented issues to under 25" },
-      { label: "Design Velocity", value: "+55%", change: "Team shipping features faster with system components" },
-      { label: "Designers Mentored", value: "3", change: "All promoted within 12 months of program" },
-      { label: "Accessibility", value: "WCAG AA", change: "Full compliance achieved across all modules" },
+      { label: "Product Launch Speed", value: "+52%", change: "Modular design system and streamlined configuration cut carrier deployment time dramatically" },
+      { label: "User Errors", value: "-37%", change: "Inline validation, logical workflow sequencing, and consistent feedback states across all modules" },
+      { label: "Task Completion Rate", value: "+28%", change: "Redesigned flows matched how insurance professionals actually work, eliminating abandonment" },
+      { label: "Development Time", value: "-34%", change: "MUI-aligned system meant developers implemented directly — no translation between design and code" },
+      { label: "Claims Processing Time", value: "-25%", change: "Workflow optimizations and automation of repetitive tasks accelerated the core value proposition" },
+      { label: "Website Lead Conversion", value: "+11%", change: "Revamped site communicated carrier value through solved problems, not feature lists" },
     ],
     learnings: [
-      "A design system built in isolation is a museum piece. The reason Solstice's system actually stuck is because the team built it with me, not for me. Every token, every component, every pattern had a designer's name on it — someone who understood the 'why' because they'd fought through the 'how.' When I left, the system didn't leave with me. That's the only metric that matters for design system success.",
-      "Mentorship isn't about making people design like you — it's about giving them the frameworks to make better decisions on their own. The three designers I mentored didn't become copies of my approach. They became stronger versions of their own. One leaned into interaction design, another became the accessibility champion the team needed, the third developed a systems-thinking mindset that reshaped how the team approached new features. The best mentorship creates independence, not dependence.",
-      "Research in a consultancy environment is a political act. You're not just uncovering user needs — you're building the case for why design decisions should be evidence-based in an organization where speed often trumps rigor. Every insight I presented was framed in business terms: not 'users are confused' but 'confusion costs us X hours per week in support escalations.' The language of impact is the only language that travels upward.",
+      "Designing with engineering constraints makes the system stronger, not weaker. Mirroring MUI's semantics felt limiting at first. But that constraint forced discipline — every component had to justify its existence, every deviation had to earn its complexity. The result was a system that shipped cleanly because it was designed to ship cleanly, not retrofitted after the fact.",
+      "Startups don't need less design rigor — they need the right kind. At GAIG, I had a large organization with established processes. At Solstice, every design decision had to prove its value immediately. That pressure clarified my thinking. I stopped designing for theoretical best practices and started designing for the fastest path to user value.",
+      "Domain expertise isn't optional in specialized industries. I could have designed a generically 'good' insurance platform using standard UX patterns. But insurance professionals can tell immediately when a designer doesn't understand their world. Working shoulder-to-shoulder with claims specialists and underwriting experts wasn't just helpful — it was the difference between a product that looked right and one that worked right.",
+      "Closing the gap between teams is design work. The most impactful thing I did at Solstice wasn't a screen or a component — it was establishing the rituals and shared language that let design and engineering work as one team instead of two. That infrastructure multiplied every other design decision I made.",
     ],
     reflection:
-      "This project lives in my memory as the one where I understood that design leadership isn't about the artifacts you create — it's about the capability you leave behind. When I joined Solstice, the platform was held together by duct tape and good intentions. Three talented but unsupported designers were doing their best in a vacuum. The product was growing in features but drowning in inconsistency. Fourteen months later, the platform had a unified design language, a governance process that made consistency automatic, and — most importantly — three designers who didn't need me anymore. The +63% usability improvement and -80% inconsistency reduction are the metrics I report. But the moment I'm proudest of is when one of my mentees pushed back on a stakeholder request using research data she'd gathered herself, defended her recommendation with clarity and confidence, and won. That's not a metric. That's a legacy. The design system was the deliverable. The team was the product.",
+      "This project crystallized something I'd been learning across every role: the highest-leverage design work happens before a single pixel is placed. Aligning teams, establishing shared language, building systems that respect engineering reality — that's the invisible scaffolding that determines whether a product scales or stalls. At Solstice, I got to build that scaffolding from the ground up. The -37% user error reduction and +52% launch speed are the metrics I report. But the result I'm most proud of is that when I left, Equinox™ had a design system that developers actually used, a team of designers who understood why, and a product that carriers could evaluate without needing a week of training. That's what it means to build something that outlasts you.",
     improvements: [
-      "Should have established the Storybook-to-Figma sync pipeline from day one. We built the Figma library first and the code components second, which created a drift window that cost us rework. In hindsight, parallel development with a clear source-of-truth protocol would have saved weeks.",
-      "The Angular-to-React migration happening in parallel with the design system rollout created friction I underestimated. Some engineering pods adopted the system's React components eagerly; others were stuck in Angular and felt left behind. A dedicated Angular component bridge — even a temporary one — would have accelerated adoption across the entire platform.",
-      "I should have documented the mentorship framework more formally. What I did with those three designers worked, but it was intuitive and ad-hoc. A structured mentorship curriculum — with clear milestones, skill assessments, and growth tracks — would have made the model repeatable for future design leads.",
+      "Should have established a Figma-to-MUI component sync protocol from day one. Building the Figma library and the code components in sequence created a drift window that cost rework. Parallel development with a clear source-of-truth handoff would have saved weeks.",
+      "The catastrophe-mode UX needed dedicated usability testing with claims adjusters simulating surge conditions — not just standard workflow testing. High-volume edge cases have different failure modes than everyday tasks, and testing in calm conditions can miss them entirely.",
+      "I should have documented the mentorship framework more formally. What I did with those three designers worked, but it was intuitive and ad-hoc. A structured curriculum with clear milestones and growth tracks would have made the model repeatable for future design leads joining the team.",
     ],
     nextProject: { slug: "healthpilot", title: "HEALTHPILOT", image: hpHeroImg },
   },

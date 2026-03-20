@@ -671,7 +671,8 @@ export function ContactSection() {
 
             <Reveal delay={0.65}>
               <a
-                href="/resume"
+                href="/paulo-alexandre-resume.pdf"
+                download="Paulo_Alexandre_Resume.pdf"
                 className="group flex items-center gap-2"
               >
                 <Download size={12} className="text-[#6b6b76]/40 group-hover:text-[#c4ff00] transition-colors duration-300" />
@@ -679,7 +680,7 @@ export function ContactSection() {
                   className="text-[0.6875rem] tracking-[0.4em] uppercase text-[#6b6b76]/60 group-hover:text-[#c4ff00] transition-colors duration-300"
                   style={{ fontFamily: "var(--font-mono)" }}
                 >
-                  View Resume
+                  Download Resume
                 </span>
               </a>
             </Reveal>

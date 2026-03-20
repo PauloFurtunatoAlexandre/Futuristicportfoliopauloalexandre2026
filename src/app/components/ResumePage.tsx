@@ -478,7 +478,7 @@ export function ResumePage() {
                         </span>
                       </div>
                       <p
-                        className="text-[0.78rem] text-[#e8e6e3]/80 mt-0.5"
+                        className="text-[0.78rem] text-[#c4ff00] mt-0.5"
                         style={{ fontFamily: "var(--font-body)" }}
                       >
                         {edu.degree}

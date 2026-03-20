@@ -70,7 +70,7 @@ const SECTION_LINKS = [
 
 const SOCIALS = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/paulofurtunatoalexandre/" },
-  { label: "Resume", href: "/resume" },
+  { label: "Resume", href: "/paulo-alexandre-resume.pdf", download: "Paulo_Alexandre_Resume.pdf" },
 ];
 
 /* ─────────────────────────────────────────
@@ -490,8 +490,9 @@ export function MenuOverlay({
                         <motion.a
                           key={s.label}
                           href={s.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          {...(s.download
+                            ? { download: s.download }
+                            : { target: "_blank", rel: "noopener noreferrer" })}
                           className="text-[0.75rem] text-[#3a3a42] hover:text-[#c4ff00] transition-colors duration-300"
                           style={{ fontFamily: "var(--font-mono)" }}
                           initial={{ opacity: 0 }}

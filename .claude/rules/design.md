@@ -350,6 +350,8 @@ Custom cursor and floating UI fragments are desktop-only (`hidden lg:block`).
 
 **Do:**
 - Use `--c-accent` (`#c4ff00`) sparingly — it is the single brand accent
+- Use semantic `h1–h4` elements for all headings so they automatically inherit the no-word-break rules
+- Use `text-wrap: balance` on headings — it's already set globally but reinforce it when overriding type styles
 - Use Syne for all display/headline type
 - Use JetBrains Mono for all labels, buttons, captions
 - Animate with `motion/react` — do not use raw CSS `@keyframes` for interactive motion
@@ -363,3 +365,6 @@ Custom cursor and floating UI fragments are desktop-only (`hidden lg:block`).
 - Do not use serif (Instrument Serif) for body copy — it is an editorial accent only
 - Do not use tight line-heights on body copy — use `--lead-relaxed` (1.75) minimum
 - Do not skip motion entrance animations on new sections/components
+- Do not use `word-break: break-word` or `overflow-wrap: break-word` on headings — words must never split mid-character across lines
+- Do not use `hyphens: auto` on headings — hyphenation is disabled site-wide for all titles
+- Do not render heading text in `div` or `span` elements — always use `h1–h4` so the no-word-break CSS rules apply automatically
