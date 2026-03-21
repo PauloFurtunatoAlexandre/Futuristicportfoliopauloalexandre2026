@@ -451,7 +451,7 @@ function StickyProjectCard({
 
                 {/* Title */}
                 <h3
-                  className="text-[clamp(1.8rem,4vw,3.5rem)] leading-[0.88] tracking-[-0.04em] text-[#e8e6e3] mb-3 whitespace-nowrap overflow-hidden"
+                  className="text-[clamp(1.5rem,3.5vw,3.5rem)] leading-[0.88] tracking-[-0.04em] text-[#e8e6e3] mb-3"
                   style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800 }}
                 >
                   {project.title}

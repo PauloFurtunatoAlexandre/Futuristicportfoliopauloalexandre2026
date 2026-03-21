@@ -8,10 +8,10 @@
    ───────────────────────────────────────── */
 :root {
   /* Typographic scale — dramatic contrast between display & body */
-  --type-mega: clamp(3.5rem, 12vw, 11rem);
-  --type-display: clamp(2.8rem, 8vw, 8rem);
-  --type-headline: clamp(2rem, 5vw, 4.5rem);
-  --type-title: clamp(1.6rem, 3.2vw, 3rem);
+  --type-mega: clamp(2rem, 12vw, 11rem);
+  --type-display: clamp(1.75rem, 8vw, 8rem);
+  --type-headline: clamp(1.375rem, 5vw, 4.5rem);
+  --type-title: clamp(1.125rem, 3.2vw, 3rem);
   --type-body-lg: clamp(1.05rem, 1.4vw, 1.35rem);
   --type-body: 0.9375rem;
   --type-caption: 0.8125rem;
@@ -377,7 +377,7 @@ img {
 }
 
 /* Headings — never break mid-word, wrap at word boundaries only */
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6 {
   word-break: keep-all;
   overflow-wrap: normal;
   hyphens: none;
