@@ -21,12 +21,12 @@ import gaigDesignSystemImg from "../../assets/ef8d5502022f65513bc7abb342bbd1ebee
 import gaigWireframesImg from "../../assets/457fbf26f1b28dde307d0333bdc3e4a93e5f38d2.png";
 import gaigPrototypeImg from "../../assets/0142f6db386879a40ccbbf223cde1c8e797dae2b.png";
 import riseHeroImg from "../../assets/rise.jpeg";
-const riseRiskMatrixImg = "https://images.unsplash.com/photo-1508003937473-789a1839fd57?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyaXNrJTIwYXNzZXNzbWVudCUyMG1hdHJpeCUyMGNoYXJ0JTIwZGF0YXxlbnwxfHx8fDE3NzM4MDc4Njd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
-const risePersonasImg = "https://images.unsplash.com/photo-1554103210-26d928978fb5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx1c2VyJTIwcGVyc29uYSUyMHJlc2VhcmNoJTIwYm9hcmQlMjBzdGlja3klMjBub3Rlc3xlbnwxfHx8fDE3NzM4MDc4Njh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
-const riseJourneyImg = "https://images.unsplash.com/photo-1684097821808-6baf8c9dafec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdXN0b21lciUyMGpvdXJuZXklMjBtYXAlMjB3aGl0ZWJvYXJkfGVufDF8fHx8MTc3MzgwNzg2OHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
-const riseWireframesImg = "https://images.unsplash.com/photo-1600531597946-f9b1d7b0f486?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3aXJlZnJhbWUlMjBza2V0Y2glMjBub3RlYm9vayUyMHBlbnxlbnwxfHx8fDE3NzM4MDc4Njl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
-const riseDesignSystemImg = "https://images.unsplash.com/photo-1659035260002-11d486d6e9f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ24lMjBzeXN0ZW0lMjBjb21wb25lbnRzJTIwbWFjYm9vayUyMHNjcmVlbnxlbnwxfHx8fDE3NzM4MDc4Njl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
-const risePrototypeImg = "https://images.unsplash.com/photo-1757301714935-c8127a21abc6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBwcm90b3R5cGUlMjBjYXJ0JTIwY2hlY2tvdXQlMjBzY3JlZW58ZW58MXx8fHwxNzczODA3ODY5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+import riseRiskMatrixImg from "../../assets/impactxeffort matrix.jpg";
+import risePersonasImg from "../../assets/rise personas.jpg";
+import riseJourneyImg from "../../assets/rise journey map.jpg";
+import riseWireframesImg from "../../assets/crazy 8s.jpg";
+import riseDesignSystemImg from "../../assets/cover rise.jpg";
+import risePrototypeImg from "../../assets/mobile version.jpg";
 const rvHeroImg = "https://images.unsplash.com/photo-1758304481488-c323378f89ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9wZXJ0eSUyMG1hbmFnZW1lbnQlMjBhcGFydG1lbnQlMjBidWlsZGluZyUyMG1vZGVybnxlbnwxfHx8fDE3NzM4NTExODB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 const rvResearchImg = "https://images.unsplash.com/photo-1735639013995-086e648eaa38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx1c2VyJTIwcmVzZWFyY2glMjB3aGl0ZWJvYXJkJTIwc3RpY2t5JTIwbm90ZXMlMjBicmFpbnN0b3JtfGVufDF8fHx8MTc3Mzc2MzQxMnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 const rvWireframesImg = "https://images.unsplash.com/photo-1680016661694-1cd3faf31c3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3aXJlZnJhbWUlMjBza2V0Y2hlcyUyMG5vdGVib29rJTIwVVglMjBkZXNpZ258ZW58MXx8fHwxNzczODUxMTc5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
@@ -69,6 +69,7 @@ interface CaseStudyData {
   strategyPillars: { title: string; description: string }[];
   processSteps: { title: string; description: string }[];
   processImage?: string;
+  journeyImage?: string;
   wireframeImage: string;
   designSystem: { label: string; description: string }[];
   designSystemImage: string;
@@ -596,6 +597,7 @@ const CASE_STUDIES: CaseStudyData[] = [
           "Evolved wireframes into polished prototypes featuring the Fit Guide, Feelings in Reviews filter, redesigned dispensary pages, and a marketing page educating users on the new tools. Usability testing revealed a 60% success rate in users finding products aligned with their desired effects on the first attempt — and surfaced the tension around advanced filtering that led to the deliberate scope decision.",
       },
     ],
+    journeyImage: riseJourneyImg,
     wireframeImage: riseWireframesImg,
     designSystem: [
       { label: "Emotional UI", description: "Color, imagery, and micro-copy calibrated to reflect emotional states — warm tones for relaxation, vibrant for energy, soft for calm. Cannabis is personal; the interface honors that." },
@@ -1588,6 +1590,14 @@ export function CaseStudyPage() {
             ))}
           </div>
         </div>
+        {cs.journeyImage && (
+          <ImmersiveImage
+            src={cs.journeyImage}
+            alt="Customer journey map"
+            caption="Customer journey map — emotional states across the full experience"
+            reducedMotion={isMobile || reducedMotion}
+          />
+        )}
       </Section>
 
       {/* ═══════════════════════════════════════
@@ -1595,7 +1605,7 @@ export function CaseStudyPage() {
          ═══════════════════════════════════════ */}
       <Section id="wireframes" className="px-6 md:px-12 lg:px-24 py-20 md:py-32" onInView={handleChapterChange}>
         <ChapterLabel number="07" title="Wireframes & Explorations" accentColor={cs.color} />
-        <ImmersiveImage src={cs.prototypeImage} alt="Final design" caption="High-fidelity screens — final design direction" reducedMotion={isMobile || reducedMotion} />
+        <ImmersiveImage src={cs.wireframeImage} alt="Wireframes and early explorations" caption="Early sketches and wireframe explorations" reducedMotion={isMobile || reducedMotion} />
       </Section>
 
       {/* ═══════════════════════════════════════
