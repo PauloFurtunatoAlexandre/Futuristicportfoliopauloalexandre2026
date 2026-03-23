@@ -33,12 +33,12 @@ import solsticeJourneyImg from "../../assets/🗺️ Consumer Portal - User Jour
 import solsticeFindingsImg from "../../assets/slide findings solstice.png";
 import solsticeHmwImg from "../../assets/hmw solstice.png";
 import solsticeFlowImg from "../../assets/component creation flow.png";
-const rvHeroImg = "https://images.unsplash.com/photo-1758304481488-c323378f89ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9wZXJ0eSUyMG1hbmFnZW1lbnQlMjBhcGFydG1lbnQlMjBidWlsZGluZyUyMG1vZGVybnxlbnwxfHx8fDE3NzM4NTExODB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
-const rvResearchImg = "https://images.unsplash.com/photo-1735639013995-086e648eaa38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx1c2VyJTIwcmVzZWFyY2glMjB3aGl0ZWJvYXJkJTIwc3RpY2t5JTIwbm90ZXMlMjBicmFpbnN0b3JtfGVufDF8fHx8MTc3Mzc2MzQxMnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
-const rvWireframesImg = "https://images.unsplash.com/photo-1680016661694-1cd3faf31c3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3aXJlZnJhbWUlMjBza2V0Y2hlcyUyMG5vdGVib29rJTIwVVglMjBkZXNpZ258ZW58MXx8fHwxNzczODUxMTc5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+import rvHeroImg from "../../assets/lease renewals v2.jpg";
+import rvResearchImg from "../../assets/primarypersona.png";
+import rvJourneyImg from "../../assets/user journey map.png";
+import rvWireframesImg from "../../assets/one click acceptance.jpg";
+import rvPrototypeImg from "../../assets/secondary user journey map.png";
 const rvDesignSystemImg = "https://images.unsplash.com/photo-1769149068959-b11392164add?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ24lMjBzeXN0ZW0lMjBjb21wb25lbnRzJTIwVUklMjBsaWJyYXJ5JTIwc2NyZWVufGVufDF8fHx8MTc3Mzg1MTE3OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
-const rvPrototypeImg = "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxTYWFTJTIwZGFzaGJvYXJkJTIwYW5hbHl0aWNzJTIwcGxhdGZvcm0lMjBwcm9mZXNzaW9uYWx8ZW58MXx8fHwxNzczODUxMTgwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
-const rvProcessImg = "https://images.unsplash.com/photo-1681505504714-4ded1bc247e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsZWFzZSUyMGFncmVlbWVudCUyMGRvY3VtZW50JTIwc2lnbmluZyUyMGRpZ2l0YWx8ZW58MXx8fHwxNzczODUxMTc4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 import { CustomCursor } from "./CustomCursor";
 import { FloatingNav } from "./FloatingNav";
 import { useIsMobile, useReducedMotion } from "./ui/useMediaQuery";
@@ -114,6 +114,7 @@ const CASE_STUDIES: CaseStudyData[] = [
       "Phased delivery mandate — Phase 1 beta had to ship intentionally incomplete to validate the core loop before investing in collaboration and efficiency layers",
     ],
     researchImage: rvResearchImg,
+    journeyImage: rvJourneyImg,
     researchInsights: [
       {
         title: "Four personas, four completely different renewal realities",
@@ -155,7 +156,6 @@ const CASE_STUDIES: CaseStudyData[] = [
           "Documented and operationalized the full Trellis token system. Codified the Rentvine application shell for reuse across every future prototype. Built an engineering principles skill encoding Rentvine's domain model and a seven-step workflow — the team's shared operating model for AI-augmented design. Established a direct Figma-to-Claude MCP connection enabling real-time design context to flow into the prototyping workflow. Infrastructure that pays dividends across every project, not just renewals.",
       },
     ],
-    processImage: rvProcessImg,
     processSteps: [
       {
         title: "Persona Development & Problem Mapping",
@@ -226,7 +226,7 @@ const CASE_STUDIES: CaseStudyData[] = [
       "The owner messaging template system needs smarter state-specific rule handling. The current approach covers common cases well but requires manual overrides for state-specific legal clauses. A template engine that auto-applies state rules would eliminate the last manual bottleneck in the workflow.",
       "The Figma-to-Claude MCP documentation needs to mature into a structured onboarding curriculum. What feels intuitive after months of practice needs codification — clear setup steps, example prompts, and pattern libraries — so designers joining the team can adopt it without bottlenecking through me.",
     ],
-    nextProject: { slug: "solstice", title: "SOLSTICE", image: "https://images.unsplash.com/photo-1702726001096-096efcf640b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwY29uc3VsdGluZyUyMG9mZmljZSUyMG1vZGVybiUyMGRhcmslMjBtb29keXxlbnwxfHx8fDE3NzM4MDMwMTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" },
+    nextProject: { slug: "solstice", title: "SOLSTICE", image: solsticeHeroImg },
   },
   {
     slug: "healthpilot",

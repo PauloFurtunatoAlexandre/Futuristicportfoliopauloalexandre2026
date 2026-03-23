@@ -9,9 +9,11 @@ import {
   useInView,
 } from "motion/react";
 import { useIsMobile } from "./ui/useMediaQuery";
+import rvCoverImg from "../../assets/lease renewals v2.jpg";
 import hpHeroImg from "../../assets/7bbfacf2ed4c6625d9871c3ff14d7a198146a50e.png";
 import gaigHeroImg from "../../assets/cover GAIG.jpg";
 import riseHeroImg from "../../assets/cover rise.jpg";
+import solsticeHeroImg from "../../assets/example of screen.png";
 
 /* ─────────────────────────────────────────
    Data
@@ -43,7 +45,7 @@ const projects: Project[] = [
       "Lease renewals — Rentvine's highest-impact recurring workflow — had no home in the platform. Managers ran them in Airtable, Google Sheets, and Asana. Designed a four-stage pipeline with grid-first UI, assignee accountability, bulk actions, and owner messaging templates — 22% feature adoption, 18% faster task completion.",
     category: "B2B SaaS · Property Management · AI-Augmented Design",
     year: "2025",
-    image: "https://images.unsplash.com/photo-1758304481488-c323378f89ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9wZXJ0eSUyMG1hbmFnZW1lbnQlMjBhcGFydG1lbnQlMjBidWlsZGluZyUyMG1vZGVybnxlbnwxfHx8fDE3NzM4NTExODB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    image: rvCoverImg,
     color: "#c4ff00",
     metrics: [
       { label: "Feature Adoption", value: "+22%" },
@@ -63,8 +65,7 @@ const projects: Project[] = [
       "No design system, no shared language, and a dev team building in silos on a platform competing against Guidewire and Duck Creek. Built a MUI-aligned design system from zero, redesigned core insurance workflows, and established the design–engineering operating model — 52% faster product launches, 37% fewer user errors.",
     category: "Insurtech · Design Systems · B2B SaaS",
     year: "2024 – 2025",
-    image:
-      "https://images.unsplash.com/photo-1702726001096-096efcf640b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwY29uc3VsdGluZyUyMG9mZmljZSUyMG1vZGVybiUyMGRhcmslMjBtb29keXxlbnwxfHx8fDE3NzM4MDMwMTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    image: solsticeHeroImg,
     color: "#c4ff00",
     metrics: [
       { label: "Product Launch Speed", value: "+52%" },
