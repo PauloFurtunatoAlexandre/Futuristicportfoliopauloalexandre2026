@@ -9,11 +9,11 @@ import {
   useInView,
 } from "motion/react";
 import { useIsMobile } from "./ui/useMediaQuery";
-import rvCoverImg from "../../assets/lease renewals v2.jpg";
+import rvCoverImg from "../../assets/rentvine cover.png";
 import hpHeroImg from "../../assets/7bbfacf2ed4c6625d9871c3ff14d7a198146a50e.png";
 import gaigHeroImg from "../../assets/cover GAIG.jpg";
 import riseHeroImg from "../../assets/cover rise.jpg";
-import solsticeHeroImg from "../../assets/example of screen.png";
+import solsticeHeroImg from "../../assets/solstice cover.png";
 
 /* ─────────────────────────────────────────
    Data
