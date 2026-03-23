@@ -2,9 +2,11 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence, useMotionValue, useSpring } from "motion/react";
 import { useNavigate, useLocation } from "react-router";
 import { ArrowUpRight, X } from "lucide-react";
-const gaigHeroImg = "https://images.unsplash.com/photo-1640323240640-ee731d18dcb1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxpbnN1cmFuY2UlMjBlbnRlcnByaXNlJTIwc29mdHdhcmUlMjBkYXNoYm9hcmR8ZW58MXx8fHwxNzczODA3MDc4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+import rvMenuImg from "../../assets/lease renewals v2.jpg";
+import solsticeMenuImg from "../../assets/example of screen.png";
 import hpHeroImg from "../../assets/7bbfacf2ed4c6625d9871c3ff14d7a198146a50e.png";
-const riseHeroImg = "https://images.unsplash.com/photo-1764795849755-ab58c8fef307?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYW5uYWJpcyUyMGRpc3BlbnNhcnklMjBtb2Rlcm4lMjByZXRhaWwlMjBzdG9yZXxlbnwxfHx8fDE3NzM4MDc4Njd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+import gaigHeroImg from "../../assets/cover GAIG.jpg";
+import riseHeroImg from "../../assets/cover rise.jpg";
 
 /* ─────────────────────────────────────────
    Constants
@@ -24,15 +26,7 @@ const PROJECTS = [
     slug: "rentvine",
     year: "2025",
     category: "B2B SaaS & AI-Augmented Design",
-    image: "https://images.unsplash.com/photo-1758304481488-c323378f89ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9wZXJ0eSUyMG1hbmFnZW1lbnQlMjBhcGFydG1lbnQlMjBidWlsZGluZyUyMG1vZGVybnxlbnwxfHx8fDE3NzM4NTExODB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-  },
-  {
-    title: "HEALTHPILOT",
-    subtitle: "Turning Medicare Chaos Into Confident Decisions",
-    slug: "healthpilot",
-    year: "2025",
-    category: "Product Design",
-    image: hpHeroImg,
+    image: rvMenuImg,
   },
   {
     title: "SOLSTICE",
@@ -40,8 +34,15 @@ const PROJECTS = [
     slug: "solstice",
     year: "2024",
     category: "Design Systems & Mentorship",
-    image:
-      "https://images.unsplash.com/photo-1702726001096-096efcf640b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwY29uc3VsdGluZyUyMG9mZmljZSUyMG1vZGVybiUyMGRhcmslMjBtb29keXxlbnwxfHx8fDE3NzM4MDMwMTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    image: solsticeMenuImg,
+  },
+  {
+    title: "HEALTHPILOT",
+    subtitle: "Turning Medicare Chaos Into Confident Decisions",
+    slug: "healthpilot",
+    year: "2023",
+    category: "Product Design",
+    image: hpHeroImg,
   },
   {
     title: "GAIG",

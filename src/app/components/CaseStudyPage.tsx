@@ -1618,8 +1618,7 @@ export function CaseStudyPage() {
          ═══════════════════════════════════════ */}
       <Section id="design-system" className="px-6 md:px-12 lg:px-24 py-20 md:py-32" onInView={handleChapterChange}>
         <ChapterLabel number="08" title="Design System" accentColor={cs.color} />
-        <ImmersiveImage src={cs.designSystemImage} alt="Design system" caption="Component library — 120+ components with dark/light modes" reducedMotion={isMobile || reducedMotion} />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6">
           {cs.designSystem.map((token, i) => (
             <Reveal key={i} delay={i * 0.06}>
               <div className="border border-white/[0.04] p-5 hover:border-white/[0.08] transition-colors duration-500">
