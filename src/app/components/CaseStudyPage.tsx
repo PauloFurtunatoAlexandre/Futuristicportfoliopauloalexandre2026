@@ -27,6 +27,12 @@ import riseJourneyImg from "../../assets/rise journey map.jpg";
 import riseWireframesImg from "../../assets/crazy 8s.jpg";
 import riseDesignSystemImg from "../../assets/cover rise.jpg";
 import risePrototypeImg from "../../assets/mobile version.jpg";
+import solsticeHeroImg from "../../assets/example of screen.png";
+import solsticePersonasImg from "../../assets/solstice personas.jpg";
+import solsticeJourneyImg from "../../assets/🗺️ Consumer Portal - User Journey Map.jpg";
+import solsticeFindingsImg from "../../assets/slide findings solstice.png";
+import solsticeHmwImg from "../../assets/hmw solstice.png";
+import solsticeFlowImg from "../../assets/component creation flow.png";
 const rvHeroImg = "https://images.unsplash.com/photo-1758304481488-c323378f89ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9wZXJ0eSUyMG1hbmFnZW1lbnQlMjBhcGFydG1lbnQlMjBidWlsZGluZyUyMG1vZGVybnxlbnwxfHx8fDE3NzM4NTExODB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 const rvResearchImg = "https://images.unsplash.com/photo-1735639013995-086e648eaa38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx1c2VyJTIwcmVzZWFyY2glMjB3aGl0ZWJvYXJkJTIwc3RpY2t5JTIwbm90ZXMlMjBicmFpbnN0b3JtfGVufDF8fHx8MTc3Mzc2MzQxMnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
 const rvWireframesImg = "https://images.unsplash.com/photo-1680016661694-1cd3faf31c3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3aXJlZnJhbWUlMjBza2V0Y2hlcyUyMG5vdGVib29rJTIwVVglMjBkZXNpZ258ZW58MXx8fHwxNzczODUxMTc5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
@@ -648,8 +654,7 @@ const CASE_STUDIES: CaseStudyData[] = [
     platform: "Web (B2B SaaS — Insurtech / Flood & P&C Insurance)",
     tools: ["Figma", "Miro", "Jira"],
     color: "#c4ff00",
-    heroImage:
-      "https://images.unsplash.com/photo-1702726001096-096efcf640b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNobm9sb2d5JTIwY29uc3VsdGluZyUyMG9mZmljZSUyMG1vZGVybiUyMGRhcmslMjBtb29keXxlbnwxfHx8fDE3NzM4MDMwMTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    heroImage: solsticeHeroImg,
     problem:
       "Insurance carriers managing flood and property & casualty policies were stuck on legacy systems that made simple tasks painfully slow. Processing a claim required navigating fragmented interfaces, entering the same data multiple times, and working around tools that fought against them rather than supported them. Solstice Innovations was building Equinox™ to change that — a cloud-native platform unifying policy management, claims processing, CRM, quoting, and agency administration into a single system. The problem: when I joined, the product existed as engineering logic, not as a usable experience. There was no design system, no component library, no shared visual language. The development team was building features in silos, each engineer making independent UI decisions that were technically functional but experientially incoherent. Every usability failure was a sales failure — a confusing onboarding flow didn't just frustrate a user, it killed a deal. And in the background loomed catastrophe scalability: when a hurricane hits, carriers face thousands of claims in days, and if the interface slowed adjusters down at that exact moment, Equinox™ would fail at the moment it was supposed to prove its value.",
     context:
@@ -734,8 +739,10 @@ const CASE_STUDIES: CaseStudyData[] = [
           "Mentored 3 product designers on Figma workflows, structured critique, and systematic design thinking. In a startup where everyone is stretched thin, building team capability wasn't a luxury — it was a survival strategy. Every designer upskilled was one more person who could maintain the system, extend it, and apply it correctly without bottlenecking through me. Established design review rituals that created accountability alongside the shared ownership that makes systems self-sustaining.",
       },
     ],
-    wireframeImage:
-      "https://images.unsplash.com/photo-1630673489068-d329fa4e2767?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzb2Z0d2FyZSUyMGRldmVsb3BtZW50JTIwdGVhbSUyMGNvbGxhYm9yYXRpb24lMjB3aGl0ZWJvYXJkfGVufDF8fHx8MTc3MzgwMzAxN3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    researchImage: solsticePersonasImg,
+    journeyImage: solsticeJourneyImg,
+    processImage: solsticeFindingsImg,
+    wireframeImage: solsticeHmwImg,
     designSystem: [
       { label: "MUI Alignment", description: "Every component mirrors MUI semantics — matched naming conventions, aligned prop structures, corresponding interaction states — so developers implement directly without translation" },
       { label: "Tokens", description: "Color, typography, spacing, elevation, and shadow tokens as a single governed source of truth — scalable across new insurance product lines, user roles, and regulatory requirements" },
@@ -743,8 +750,7 @@ const CASE_STUDIES: CaseStudyData[] = [
       { label: "Feedback & Validation", description: "Inline validation, loading states, success confirmations, and error handling built into every component — eliminating the silent failures that destroyed trust in legacy insurance platforms" },
       { label: "Extensibility", description: "Every component designed with configurability for future insurance product lines and user roles — constrained enough to prevent fragmentation, flexible enough to avoid rebuilds" },
     ],
-    designSystemImage:
-      "https://images.unsplash.com/photo-1731033182396-721f7ba29532?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ24lMjBzeXN0ZW0lMjBjb21wb25lbnRzJTIwVUklMjBsaWJyYXJ5JTIwZGFyayUyMGludGVyZmFjZXxlbnwxfHx8fDE3NzM4MDMwMjF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    designSystemImage: solsticeFlowImg,
     prototypeHighlights: [
       "Claims processing flow redesigned for catastrophe scalability — redundant steps eliminated, repetitive data entry automated, information surfaced in the order adjusters need it",
       "Quotes and policy management restructured around user mental models rather than database architecture — reducing learning curve for experienced adjusters",
@@ -752,8 +758,7 @@ const CASE_STUDIES: CaseStudyData[] = [
       "MUI-aligned component library enabling developers to implement directly from Figma specs without translation — 34% reduction in development time",
       "Equinox™ marketing site revamp communicating carrier value in terms of solved problems, not feature lists — 11% increase in lead conversion",
     ],
-    prototypeImage:
-      "https://images.unsplash.com/photo-1760670399462-f5e479452c27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbnRlcnByaXNlJTIwZGFzaGJvYXJkJTIwYW5hbHl0aWNzJTIwcGxhdGZvcm0lMjBkYXJrJTIwcHJvZmVzc2lvbmFsfGVufDF8fHx8MTc3MzgwMzAyNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    prototypeImage: solsticeHeroImg,
     outcomes: [
       { label: "Product Launch Speed", value: "+52%", change: "Modular design system and streamlined configuration cut carrier deployment time dramatically" },
       { label: "User Errors", value: "-37%", change: "Inline validation, logical workflow sequencing, and consistent feedback states across all modules" },
