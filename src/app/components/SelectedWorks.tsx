@@ -10,8 +10,8 @@ import {
 } from "motion/react";
 import { useIsMobile } from "./ui/useMediaQuery";
 import hpHeroImg from "../../assets/7bbfacf2ed4c6625d9871c3ff14d7a198146a50e.png";
-import gaigHeroImg from "../../assets/a14953c0d7236138483f4078155353567d3722c4.png";
-const riseHeroImg = "https://images.unsplash.com/photo-1764795849755-ab58c8fef307?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYW5uYWJpcyUyMGRpc3BlbnNhcnklMjBtb2Rlcm4lMjByZXRhaWwlMjBzdG9yZXxlbnwxfHx8fDE3NzM4MDc4Njd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral";
+import gaigHeroImg from "../../assets/cover GAIG.jpg";
+import riseHeroImg from "../../assets/cover rise.jpg";
 
 /* ─────────────────────────────────────────
    Data

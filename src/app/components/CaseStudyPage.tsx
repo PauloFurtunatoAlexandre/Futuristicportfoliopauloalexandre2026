@@ -14,7 +14,7 @@ import hpPersonasImg from "../../assets/14640d519882e99e696e2223fbbf15663f2564eb
 import hpJourneyImg from "../../assets/c352a90999e00126857a04eb13e42e7f5f69f24f.png";
 import hpDesignSystemImg from "../../assets/4557a4d2218b0b670e8fd145275b787327362ddd.png";
 import hpPrototypeImg from "../../assets/034ad9d3633de3ed493e98ea68bb2c011588308f.png";
-import gaigHeroImg from "../../assets/a14953c0d7236138483f4078155353567d3722c4.png";
+import gaigHeroImg from "../../assets/cover GAIG.jpg";
 import gaigGovernanceImg from "../../assets/c35660da526b770b87bc8706aead9e0e29c30947.png";
 import gaigOktaFlowImg from "../../assets/63e5e2c472eddce43fa09e3f9e9d33d39bfaec9b.png";
 import gaigDesignSystemImg from "../../assets/ef8d5502022f65513bc7abb342bbd1ebeec7aad5.png";
@@ -510,7 +510,7 @@ const CASE_STUDIES: CaseStudyData[] = [
     platform: "Web (E-Commerce), Mobile Web",
     tools: ["Figma", "Mural", "Slack", "Photoshop"],
     color: "#c4ff00",
-    heroImage: riseHeroImg,
+    heroImage: riseDesignSystemImg,
     problem:
       "Cannabis isn't like buying a phone case. Nobody walks into a dispensary thinking 'I want 3.5 grams of Blue Dream.' They walk in thinking 'I want to feel relaxed after the worst week of my life' or 'I need something that helps me focus without the jitters.' The purchase decision is fundamentally emotional — but Rise Cannabis's platform was treating it like a catalog. The existing experience was built on a third-party system embedded through iFrames inside a WordPress site. That architecture created three compounding problems: we couldn't see what users were doing, we couldn't control how the experience felt, and the brand was invisible behind a generic shopping shell. Users were stuck translating their feelings into product specifications they didn't understand — and most of them just left. With competition accelerating, this wasn't just a UX problem. It was a business survival question: how do you turn an emotionally-driven purchase into an intuitive digital experience when you can't even track what users are clicking?",
     context:
