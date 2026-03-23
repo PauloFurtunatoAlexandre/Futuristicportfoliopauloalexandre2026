@@ -76,7 +76,7 @@ interface CaseStudyData {
   processSteps: { title: string; description: string }[];
   processImage?: string;
   journeyImage?: string;
-  wireframeImage: string;
+  wireframeImage?: string;
   designSystem: { label: string; description: string }[];
   designSystemImage: string;
   prototypeHighlights: string[];
@@ -188,7 +188,6 @@ const CASE_STUDIES: CaseStudyData[] = [
           "Templates triggered contextually at the Price & Send stage — where the work happens, not in a generic settings library. Pre-populated with system data: property address, unit number, lease dates, current rent, proposed rent, calculated percentage increase. Reduces a 5-minute email to a 30-second review-and-send. Alongside this: documented the full Trellis token system, codified the application shell for reuse, pioneered the Figma-to-Claude MCP connection, and created a comprehensive Claude engineering principles skill adopted as the team's shared AI-augmented design operating model.",
       },
     ],
-    wireframeImage: rvWireframesImg,
     designSystem: [
       { label: "Trellis Tokens", description: "Full documentation of Rentvine's proprietary Trellis system — semantic color tokens with Light/Dark mode, Inter Variable + Space Mono typography scales, spacing 0–3200, border radius/width tokens, and four-breakpoint responsive grid" },
       { label: "Grid-First Patterns", description: "Data grid interaction model with inline editing, keyboard navigation, multi-select (checkbox, Shift-click, Ctrl/Cmd-click), and scan-and-act patterns — spreadsheet speed inside a stateful product interface" },
@@ -808,10 +807,10 @@ const CHAPTERS = [
   { id: "reflection", label: "Reflection" },
 ];
 
-function ChapterNav({ activeChapter, accentColor }: { activeChapter: string; accentColor: string }) {
+function ChapterNav({ activeChapter, accentColor, hideChapters }: { activeChapter: string; accentColor: string; hideChapters?: string[] }) {
   return (
     <nav className="fixed left-6 top-1/2 -translate-y-1/2 z-50 hidden xl:flex flex-col gap-2">
-      {CHAPTERS.map((ch) => {
+      {CHAPTERS.filter((ch) => !hideChapters?.includes(ch.id)).map((ch) => {
         const isActive = activeChapter === ch.id;
         return (
           <a
@@ -1265,7 +1264,7 @@ export function CaseStudyPage() {
       <div className="grain-overlay" />
 
       {/* FloatingNav handles global scroll progress bar */}
-      <ChapterNav activeChapter={activeChapter} accentColor={cs.color} />
+      <ChapterNav activeChapter={activeChapter} accentColor={cs.color} hideChapters={!cs.wireframeImage ? ["wireframes"] : undefined} />
       <MobileChapterDrawer activeChapter={activeChapter} accentColor={cs.color} />
 
       {/* ═══════════════════════════════════════
@@ -1608,10 +1607,12 @@ export function CaseStudyPage() {
       {/* ═══════════════════════════════════════
          8. WIREFRAMES
          ═══════════════════════════════════════ */}
-      <Section id="wireframes" className="px-6 md:px-12 lg:px-24 py-20 md:py-32" onInView={handleChapterChange}>
-        <ChapterLabel number="07" title="Wireframes & Explorations" accentColor={cs.color} />
-        <ImmersiveImage src={cs.wireframeImage} alt="Wireframes and early explorations" caption="Early sketches and wireframe explorations" reducedMotion={isMobile || reducedMotion} />
-      </Section>
+      {cs.wireframeImage && (
+        <Section id="wireframes" className="px-6 md:px-12 lg:px-24 py-20 md:py-32" onInView={handleChapterChange}>
+          <ChapterLabel number="07" title="Wireframes & Explorations" accentColor={cs.color} />
+          <ImmersiveImage src={cs.wireframeImage} alt="Wireframes and early explorations" caption="Early sketches and wireframe explorations" reducedMotion={isMobile || reducedMotion} />
+        </Section>
+      )}
 
       {/* ═══════════════════════════════════════
          9. DESIGN SYSTEM
