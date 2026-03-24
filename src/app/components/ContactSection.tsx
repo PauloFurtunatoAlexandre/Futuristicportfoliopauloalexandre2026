@@ -20,7 +20,7 @@ const EMAIL = "furtuna.alexandre@gmail.com";
 
 const SOCIAL_LINKS = [
   { label: "LinkedIn", url: "https://www.linkedin.com/in/paulofurtunatoalexandre/", desc: "Professional" },
-  { label: "Read.cv", url: "/resume", desc: "Background" },
+  { label: "Resume", url: "/paulo-alexandre-resume.pdf", desc: "Download PDF", download: "Paulo_Alexandre_Resume.pdf" },
   { label: "Medium", url: "https://medium.com/@paulo-alexandreuxd", desc: "Writing" },
 ];
 
@@ -317,19 +317,22 @@ function SocialLink({
   url,
   desc,
   index,
+  download,
 }: {
   label: string;
   url: string;
   desc: string;
   index: number;
+  download?: string;
 }) {
   const [hovered, setHovered] = useState(false);
 
   return (
     <motion.a
       href={url}
-      target="_blank"
-      rel="noopener noreferrer"
+      {...(download
+        ? { download }
+        : { target: "_blank", rel: "noopener noreferrer" })}
       className="group flex items-center justify-between py-4 border-b border-white/[0.03] last:border-0"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -799,6 +802,7 @@ export function ContactSection() {
                     url={link.url}
                     desc={link.desc}
                     index={i}
+                    download={link.download}
                   />
                 ))}
               </div>

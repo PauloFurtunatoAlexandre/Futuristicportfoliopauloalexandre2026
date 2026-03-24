@@ -187,17 +187,10 @@ export function ResumePage() {
   const { scrollYProgress } = useScroll({ target: containerRef });
   const progressWidth = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
-  // Print handler
-  const handlePrint = () => window.print();
-
   // Keyboard shortcut
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.key === "Escape") navigate("/");
-      if ((e.metaKey || e.ctrlKey) && e.key === "p") {
-        e.preventDefault();
-        handlePrint();
-      }
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
@@ -242,14 +235,9 @@ export function ResumePage() {
             </button>
 
             <div className="flex items-center gap-4">
-              <span
-                className="text-[0.5rem] tracking-[0.4em] uppercase text-[#6b6b76]/40 hidden md:block"
-                style={{ fontFamily: "var(--font-mono)" }}
-              >
-                Cmd+P to print
-              </span>
-              <button
-                onClick={handlePrint}
+              <a
+                href="/paulo-alexandre-resume.pdf"
+                download="Paulo_Alexandre_Resume.pdf"
                 className="group flex items-center gap-2 px-4 py-2 border border-[#c4ff00]/20 hover:border-[#c4ff00]/60 hover:bg-[#c4ff00]/[0.04] transition-all duration-300"
               >
                 <Download size={12} className="text-[#c4ff00]/60 group-hover:text-[#c4ff00] transition-colors" />
@@ -257,9 +245,9 @@ export function ResumePage() {
                   className="text-[0.6rem] tracking-[0.3em] uppercase text-[#c4ff00]/60 group-hover:text-[#c4ff00] transition-colors"
                   style={{ fontFamily: "var(--font-mono)" }}
                 >
-                  Print / Save PDF
+                  Download PDF
                 </span>
-              </button>
+              </a>
             </div>
           </div>
         </motion.header>
